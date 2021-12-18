@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:flutter/services.dart';
+import 'package:pantomim/views/auth/home_screans.dart';
 
 void main() {
   runApp(const MyApp());
@@ -9,7 +11,11 @@ class MyApp extends StatelessWidget {
 
   // This widget is the root of your application.
   @override
-  Widget build(BuildContext context) {
-    return MaterialApp();
+  Widget build(
+    BuildContext context,
+  ) {
+    return MaterialApp(
+      home: HomeScreans(),
+    );
   }
 }

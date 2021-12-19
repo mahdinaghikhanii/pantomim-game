@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
+import 'package:pantomim/theme/theme.dart';
+import 'package:pantomim/views/auth/getStart_screans.dart';
 import 'package:pantomim/views/auth/home_screans.dart';
 
 void main() {
@@ -15,7 +17,11 @@ class MyApp extends StatelessWidget {
     BuildContext context,
   ) {
     return MaterialApp(
-      home: HomeScreans(),
+      debugShowCheckedModeBanner: false,
+      home: GetStartScreans(),
+      theme: MyThemes.lightTheme,
+      themeMode: ThemeMode.system,
+      darkTheme: MyThemes.darkTheme,
     );
   }
 }

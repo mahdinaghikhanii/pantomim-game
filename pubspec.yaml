@@ -54,10 +54,12 @@ flutter_native_splash:
 
   android: true
   ios: true 
-  web: false
+  web: true
 
   color: "#42a5f5"
-  #background_image: "assets/images/mahdi.jpg"
+  image: assets/images/welcome.png
+  #background_image: assets/images/welcome.png
+  
   
 
 # For information on the generic Dart part of this file, see the

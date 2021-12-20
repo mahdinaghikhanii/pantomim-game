@@ -8,19 +8,22 @@ class GetStartScreans extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       bottomNavigationBar: Padding(
-        padding: EdgeInsets.all(25),
+        padding: const EdgeInsets.all(25),
         child: ClipRRect(
           borderRadius: BorderRadius.circular(20),
           child: Container(
               width: double.infinity,
               height: 70,
-              color: Color(0xFFDC9298),
+              color: const Color(0xFFDC9298),
               child: ElevatedButton(
-                style: ElevatedButton.styleFrom(primary: Color(0xFFDC9298)),
-                child: Text('data'),
+                style:
+                    ElevatedButton.styleFrom(primary: const Color(0xFFDC9298)),
+                child: const Text('Lets Go'),
                 onPressed: () {
-                  Navigator.pushReplacement(context,
-                      MaterialPageRoute(builder: (context) => HomeScreans()));
+                  Navigator.pushReplacement(
+                      context,
+                      MaterialPageRoute(
+                          builder: (context) => const HomeScreans()));
                 },
               )),
         ),
@@ -31,21 +34,21 @@ class GetStartScreans extends StatelessWidget {
           child: Column(
             mainAxisAlignment: MainAxisAlignment.center,
             children: [
-              SizedBox(
+              const SizedBox(
                 height: 80,
               ),
               Padding(
-                padding: EdgeInsets.all(10),
+                padding: const EdgeInsets.all(10),
                 child: Image.asset(
                   'assets/images/getstart.png',
                   width: 400,
                 ),
               ),
-              SizedBox(
+              const SizedBox(
                 height: 20,
               ),
               Padding(
-                padding: EdgeInsets.all(10),
+                padding: const EdgeInsets.all(10),
                 child: Text(
                   '😍 خوش اومدید \n شما می تونید بازی پانتومیم یا ادا بازی کنید \nکلی لذت ببرید ',
                   textAlign: TextAlign.center,

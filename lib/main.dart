@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
-import 'package:flutter/services.dart';
 import 'package:pantomim/theme/theme.dart';
-import 'package:pantomim/views/auth/getStart_screans.dart';
+import 'package:pantomim/views/auth/get_start_screans.dart';
 import 'package:pantomim/views/auth/home_screans.dart';
+import 'package:pantomim/views/auth/meno_screans.dart';
 
 void main() {
   runApp(const MyApp());
@@ -18,7 +18,7 @@ class MyApp extends StatelessWidget {
   ) {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
-      home: GetStartScreans(),
+      home: const MenoScreans(),
       theme: MyThemes.lightTheme,
       themeMode: ThemeMode.system,
       darkTheme: MyThemes.darkTheme,

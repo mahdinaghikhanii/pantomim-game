@@ -11,7 +11,7 @@ class MenoScreans extends StatelessWidget {
       backgroundColor: Theme.of(context).scaffoldBackgroundColor,
       body: SafeArea(
         child: Column(
-          crossAxisAlignment: CrossAxisAlignment.start,
+          crossAxisAlignment: CrossAxisAlignment.center,
           children: [
             Padding(
               padding: const EdgeInsets.all(8.0),
@@ -26,8 +26,9 @@ class MenoScreans extends StatelessWidget {
                       height: 90,
                     ),
                   ),
+                  Spacer(),
                   const SizedBox(
-                    width: 40,
+                    width: 00,
                   ),
                   Column(
                     crossAxisAlignment: CrossAxisAlignment.end,
@@ -92,8 +93,9 @@ class MenoScreans extends StatelessWidget {
             ),
             Center(
               child: Wrap(
-                spacing: 0,
-                runSpacing: 8,
+                spacing: 6,
+
+                runSpacing: 0,
                 direction: Axis.horizontal,
                 // ignore: prefer_const_literals_to_create_immutables
                 children: [

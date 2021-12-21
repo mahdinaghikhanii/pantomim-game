@@ -12,7 +12,7 @@ class BoxForMenoImage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return (Padding(
-      padding: const EdgeInsets.fromLTRB(10, 8, 2, 10),
+      padding: const EdgeInsets.fromLTRB(0, 2, 2, 0),
       child: ClipRRect(
         borderRadius: BorderRadius.circular(20),
         child: Container(
@@ -21,6 +21,7 @@ class BoxForMenoImage extends StatelessWidget {
           height: 140,
           color: color,
           child: Row(
+            mainAxisAlignment: MainAxisAlignment.center,
             children: [
               Image.asset(
                 image,

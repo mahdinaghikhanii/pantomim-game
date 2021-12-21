@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:pantomim/theme/constant.dart';
+import 'package:pantomim/views/widgets/box_.meno_image.dart';
 
 class MenoScreans extends StatelessWidget {
   const MenoScreans({Key? key}) : super(key: key);
@@ -10,6 +11,7 @@ class MenoScreans extends StatelessWidget {
       backgroundColor: Theme.of(context).scaffoldBackgroundColor,
       body: SafeArea(
         child: Column(
+          crossAxisAlignment: CrossAxisAlignment.start,
           children: [
             Padding(
               padding: const EdgeInsets.all(8.0),
@@ -50,7 +52,7 @@ class MenoScreans extends StatelessWidget {
                 ],
               ),
             ),
-            SizedBox(
+            const SizedBox(
               height: 10,
             ),
             Padding(
@@ -58,26 +60,26 @@ class MenoScreans extends StatelessWidget {
               child: ClipRRect(
                 borderRadius: BorderRadius.circular(20),
                 child: Container(
-                  padding: EdgeInsets.all(20),
+                  padding: EdgeInsets.all(12),
                   width: double.infinity,
                   height: 150,
-                  color: kpink,
+                  color: kpurple,
                   child: Row(
                     children: [
                       Image.asset(
-                        'assets/images/star.png',
+                        'assets/images/car.png',
                         width: 120,
                       ),
-                      Spacer(),
+                      const Spacer(),
                       ClipRRect(
                           borderRadius: BorderRadius.circular(20),
                           child: Container(
                               padding: EdgeInsets.all(3),
-                              width: 100,
+                              width: 200,
                               height: 30,
                               color: kwhite,
                               child: Text(
-                                'Scored',
+                                '10 second questions',
                                 textAlign: TextAlign.center,
                                 style: Theme.of(context)
                                     .primaryTextTheme
@@ -86,6 +88,26 @@ class MenoScreans extends StatelessWidget {
                     ],
                   ),
                 ),
+              ),
+            ),
+            Center(
+              child: Wrap(
+                spacing: 0,
+                runSpacing: 8,
+                direction: Axis.horizontal,
+                // ignore: prefer_const_literals_to_create_immutables
+                children: [
+                  const BoxForMenoImage(
+                    image: 'assets/images/star.png',
+                    text: 'Normal',
+                    color: kyellow,
+                  ),
+                  const BoxForMenoImage(
+                    color: klightgrean,
+                    image: 'assets/images/frinds.png',
+                    text: 'Frinds',
+                  )
+                ],
               ),
             ),
           ],

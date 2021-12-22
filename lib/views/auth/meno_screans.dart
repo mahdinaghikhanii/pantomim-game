@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:pantomim/theme/constant.dart';
+import 'package:pantomim/views/auth/choice_your_topic.dart';
 import 'package:pantomim/views/widgets/box_.meno_image.dart';
 
 class MenoScreans extends StatelessWidget {
@@ -26,7 +27,7 @@ class MenoScreans extends StatelessWidget {
                       height: 90,
                     ),
                   ),
-                  Spacer(),
+                  const Spacer(),
                   const SizedBox(
                     width: 00,
                   ),
@@ -60,33 +61,41 @@ class MenoScreans extends StatelessWidget {
               padding: const EdgeInsets.all(10.0),
               child: ClipRRect(
                 borderRadius: BorderRadius.circular(20),
-                child: Container(
-                  padding: EdgeInsets.all(12),
-                  width: double.infinity,
-                  height: 150,
-                  color: kpurple,
-                  child: Row(
-                    children: [
-                      Image.asset(
-                        'assets/images/car.png',
-                        width: 120,
-                      ),
-                      const Spacer(),
-                      ClipRRect(
-                          borderRadius: BorderRadius.circular(20),
-                          child: Container(
-                              padding: EdgeInsets.all(3),
-                              width: 200,
-                              height: 30,
-                              color: kwhite,
-                              child: Text(
-                                '10 second questions',
-                                textAlign: TextAlign.center,
-                                style: Theme.of(context)
-                                    .primaryTextTheme
-                                    .subtitle1,
-                              )))
-                    ],
+                child: InkWell(
+                  onTap: () {
+                    Navigator.push(
+                        context,
+                        MaterialPageRoute(
+                            builder: (context) => const ChoiceYourTopic()));
+                  },
+                  child: Container(
+                    padding: const EdgeInsets.all(12),
+                    width: double.infinity,
+                    height: 150,
+                    color: kpurple,
+                    child: Row(
+                      children: [
+                        Image.asset(
+                          'assets/images/car.png',
+                          width: 120,
+                        ),
+                        const Spacer(),
+                        ClipRRect(
+                            borderRadius: BorderRadius.circular(20),
+                            child: Container(
+                                padding: const EdgeInsets.all(3),
+                                width: 200,
+                                height: 30,
+                                color: kwhite,
+                                child: Text(
+                                  '10 second questions',
+                                  textAlign: TextAlign.center,
+                                  style: Theme.of(context)
+                                      .primaryTextTheme
+                                      .subtitle1,
+                                )))
+                      ],
+                    ),
                   ),
                 ),
               ),
@@ -99,19 +108,35 @@ class MenoScreans extends StatelessWidget {
                 direction: Axis.horizontal,
                 // ignore: prefer_const_literals_to_create_immutables
                 children: [
-                  const BoxForMenoImage(
+                  BoxForMenoImage(
                     image: 'assets/images/star.png',
                     text: 'Normal',
                     color: kyellow,
+                    tap: () {
+                      Navigator.push(
+                          context,
+                          MaterialPageRoute(
+                              builder: (context) => const ChoiceYourTopic()));
+                    },
                   ),
-                  const BoxForMenoImage(
+                  BoxForMenoImage(
                     color: klightgrean,
                     image: 'assets/images/frinds.png',
                     text: 'Frinds',
+                    tap: () {
+                      Navigator.push(
+                          context,
+                          MaterialPageRoute(
+                              builder: (context) => const ChoiceYourTopic()));
+                    },
                   )
                 ],
               ),
             ),
+            const SizedBox(
+              height: 40,
+            ),
+            const Divider()
           ],
         ),
       ),

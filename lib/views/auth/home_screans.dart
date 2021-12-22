@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:pantomim/theme/constant.dart';
-import 'package:pantomim/views/auth/get_start_screans.dart';
 import 'package:pantomim/views/auth/meno_screans.dart';
 
 class HomeScreans extends StatelessWidget {
@@ -48,7 +47,7 @@ class HomeScreans extends StatelessWidget {
               ),
             ),
             Padding(
-              padding: EdgeInsets.all(20),
+              padding: const EdgeInsets.all(20),
               child: Text(
                 'Lets Go Play Game',
                 style: Theme.of(context).primaryTextTheme.subtitle2,

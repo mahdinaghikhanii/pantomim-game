@@ -11,6 +11,7 @@ class MyThemes {
             TextStyle(fontFamily: 'StitleEnglish', fontSize: 45, color: kpink),
       ));
   static final lightTheme = ThemeData(
+      splashColor: Colors.white10,
       scaffoldBackgroundColor: kwhite,
       appBarTheme: const AppBarTheme(color: kpink),
       primaryTextTheme: const TextTheme(

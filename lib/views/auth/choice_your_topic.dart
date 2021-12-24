@@ -93,7 +93,7 @@ class _ChoiceYourTopicState extends State<ChoiceYourTopic> {
         child: Column(
           children: [
             const SizedBox(
-              height: 20,
+              height: 30,
             ),
             Center(
                 child: Text(
@@ -101,7 +101,7 @@ class _ChoiceYourTopicState extends State<ChoiceYourTopic> {
               style: Theme.of(context).primaryTextTheme.subtitle1,
             )),
             const SizedBox(
-              height: 20,
+              height: 30,
             ),
             Center(
               child: Wrap(

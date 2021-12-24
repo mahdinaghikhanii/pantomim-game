@@ -25,6 +25,7 @@ enum Topic {
   music,
   tecnology
 }
+bool viewVisibleButton = false;
 
 class _ChoiceYourTopicState extends State<ChoiceYourTopic> {
   Topic _topic = Topic.food;
@@ -34,22 +35,40 @@ class _ChoiceYourTopicState extends State<ChoiceYourTopic> {
     });
   }
 
+  void ShowButton() {
+    setState(() {
+      viewVisibleButton = true;
+    });
+  }
+
+  void HindButton() {
+    setState(() {
+      viewVisibleButton = false;
+    });
+  }
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       bottomNavigationBar: Padding(
         padding: const EdgeInsets.all(20),
         child: ClipRRect(
-          borderRadius: BorderRadius.circular(20),
-          child: Container(
-            height: 70,
-            width: double.infinity,
-            color: kpink,
-            child: Center(
-              child: Text(
-                'Lets Go !',
-                style: Theme.of(context).primaryTextTheme.bodyText1,
-                textAlign: TextAlign.center,
+          borderRadius: BorderRadius.circular(30),
+          child: Visibility(
+            maintainSize: true,
+            maintainAnimation: true,
+            maintainState: true,
+            visible: viewVisibleButton,
+            child: Container(
+              height: 70,
+              width: double.infinity,
+              color: kpink,
+              child: Center(
+                child: Text(
+                  'Lets Go !',
+                  style: Theme.of(context).primaryTextTheme.bodyText1,
+                  textAlign: TextAlign.center,
+                ),
               ),
             ),
           ),
@@ -93,6 +112,7 @@ class _ChoiceYourTopicState extends State<ChoiceYourTopic> {
                   ChoiceTopic(
                     image: 'assets/images/topic/food.png',
                     onTap: () {
+                      ShowButton();
                       updateSelectTopic(Topic.food);
                     },
                     title: 'Food',
@@ -102,6 +122,7 @@ class _ChoiceYourTopicState extends State<ChoiceYourTopic> {
                   ChoiceTopic(
                     image: 'assets/images/topic/fotbal.png',
                     onTap: () {
+                      ShowButton();
                       updateSelectTopic(Topic.sport);
                     },
                     title: 'Sport',
@@ -111,6 +132,7 @@ class _ChoiceYourTopicState extends State<ChoiceYourTopic> {
                   ChoiceTopic(
                     image: 'assets/images/topic/animal.png',
                     onTap: () {
+                      ShowButton();
                       updateSelectTopic(Topic.animal);
                     },
                     title: 'animal',
@@ -120,6 +142,7 @@ class _ChoiceYourTopicState extends State<ChoiceYourTopic> {
                   ChoiceTopic(
                     image: 'assets/images/topic/movie.png',
                     onTap: () {
+                      ShowButton();
                       updateSelectTopic(Topic.movie);
                     },
                     title: 'Movie-seris',
@@ -129,6 +152,7 @@ class _ChoiceYourTopicState extends State<ChoiceYourTopic> {
                   ChoiceTopic(
                     image: 'assets/images/topic/thing.png',
                     onTap: () {
+                      ShowButton();
                       updateSelectTopic(Topic.thing);
                     },
                     title: 'Thing ',
@@ -138,6 +162,7 @@ class _ChoiceYourTopicState extends State<ChoiceYourTopic> {
                   ChoiceTopic(
                     image: 'assets/images/topic/country.png',
                     onTap: () {
+                      ShowButton();
                       updateSelectTopic(Topic.country);
                     },
                     title: 'Country',
@@ -147,6 +172,7 @@ class _ChoiceYourTopicState extends State<ChoiceYourTopic> {
                   ChoiceTopic(
                     image: 'assets/images/topic/general.png',
                     onTap: () {
+                      ShowButton();
                       updateSelectTopic(Topic.general);
                     },
                     title: 'general',
@@ -156,6 +182,7 @@ class _ChoiceYourTopicState extends State<ChoiceYourTopic> {
                   ChoiceTopic(
                     image: 'assets/images/topic/tourism.png',
                     onTap: () {
+                      ShowButton();
                       updateSelectTopic(Topic.tourism);
                     },
                     title: 'Tourism',
@@ -165,6 +192,7 @@ class _ChoiceYourTopicState extends State<ChoiceYourTopic> {
                   ChoiceTopic(
                     image: 'assets/images/topic/book.png',
                     onTap: () {
+                      ShowButton();
                       updateSelectTopic(Topic.book);
                     },
                     title: 'Book',
@@ -175,6 +203,7 @@ class _ChoiceYourTopicState extends State<ChoiceYourTopic> {
                     image: 'assets/images/topic/job.png',
                     onTap: () {
                       updateSelectTopic(Topic.job);
+                      ShowButton();
                     },
                     title: 'Job',
                     isActive: _topic == Topic.job,
@@ -183,6 +212,7 @@ class _ChoiceYourTopicState extends State<ChoiceYourTopic> {
                   ChoiceTopic(
                     image: 'assets/images/topic/music.png',
                     onTap: () {
+                      ShowButton();
                       updateSelectTopic(Topic.music);
                     },
                     title: 'Music',
@@ -192,6 +222,8 @@ class _ChoiceYourTopicState extends State<ChoiceYourTopic> {
                   ChoiceTopic(
                       image: 'assets/images/topic/tecnology.png',
                       onTap: () {
+                        ShowButton();
+
                         updateSelectTopic(Topic.tecnology);
                       },
                       title: 'Tecnology',

@@ -15,6 +15,7 @@ class MyThemes {
       scaffoldBackgroundColor: kwhite,
       appBarTheme: const AppBarTheme(color: kpink),
       primaryTextTheme: const TextTheme(
+          bodyText1: TextStyle(color: kwhite, fontSize: 20),
           subtitle2: TextStyle(
               fontFamily: 'StitleEnglish', fontSize: 45, color: kpink),
           button: TextStyle(color: kpink),

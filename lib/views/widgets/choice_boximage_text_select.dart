@@ -1,16 +1,21 @@
 import 'package:flutter/material.dart';
 import 'package:pantomim/theme/constant.dart';
+import 'package:pantomim/views/auth/choice_your_topic.dart';
 
 class ChoiceTopic extends StatelessWidget {
   final Function() onTap;
+  final bool isActive;
+  final Topic topic;
   final String title;
   final String image;
 
   const ChoiceTopic({
     Key? key,
+    required this.isActive,
     required this.onTap,
     required this.title,
     required this.image,
+    required this.topic,
   }) : super(key: key);
 
   @override
@@ -21,16 +26,20 @@ class ChoiceTopic extends StatelessWidget {
       child: Container(
         width: 110,
         height: 110,
-        decoration: BoxDecoration(
-          color: Theme.of(context).splashColor,
-          borderRadius: BorderRadius.circular(12),
-        ),
+        decoration: isActive
+            ? BoxDecoration(
+                color: Theme.of(context).splashColor,
+                borderRadius: BorderRadius.circular(12),
+              )
+            : null,
         child: Column(children: [
           Column(mainAxisAlignment: MainAxisAlignment.center, children: [
             Container(
-                decoration: BoxDecoration(boxShadow: [
-                  BoxShadow(color: kpink.withOpacity(0.8), blurRadius: 20)
-                ]),
+                decoration: isActive
+                    ? BoxDecoration(boxShadow: [
+                        BoxShadow(color: kpink.withOpacity(0.8), blurRadius: 20)
+                      ])
+                    : null,
                 child: Padding(
                   padding: const EdgeInsets.all(4.0),
                   child: Image.asset(

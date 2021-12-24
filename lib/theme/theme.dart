@@ -12,7 +12,7 @@ class MyThemes {
       ));
   static final lightTheme = ThemeData(
       scaffoldBackgroundColor: kwhite,
-      appBarTheme: AppBarTheme(color: kpink),
+      appBarTheme: const AppBarTheme(color: kpink),
       primaryTextTheme: const TextTheme(
           subtitle2: TextStyle(
               fontFamily: 'StitleEnglish', fontSize: 45, color: kpink),

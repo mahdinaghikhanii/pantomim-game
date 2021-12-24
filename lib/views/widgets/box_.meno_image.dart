@@ -39,7 +39,7 @@ class BoxForMenoImage extends StatelessWidget {
                 ClipRRect(
                     borderRadius: BorderRadius.circular(16),
                     child: Container(
-                        padding: EdgeInsets.all(3),
+                        padding: const EdgeInsets.all(3),
                         width: 80,
                         height: 30,
                         color: kwhite,

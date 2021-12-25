@@ -4,6 +4,7 @@ import 'package:pantomim/views/auth/choice_your_topic.dart';
 import 'package:pantomim/views/auth/get_start_screans.dart';
 import 'package:pantomim/views/auth/home_screans.dart';
 import 'package:pantomim/views/auth/meno_screans.dart';
+import 'package:pantomim/views/widgets/dialog.dart';
 
 void main() {
   runApp(const MyApp());

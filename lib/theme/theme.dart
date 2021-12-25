@@ -4,6 +4,7 @@ import 'package:pantomim/theme/constant.dart';
 class MyThemes {
   static final darkTheme = ThemeData(
       scaffoldBackgroundColor: kblack,
+      appBarTheme: const AppBarTheme(color: kblackappbar),
       primaryTextTheme: const TextTheme(
         subtitle1:
             TextStyle(color: kpink, fontWeight: FontWeight.bold, fontSize: 18),

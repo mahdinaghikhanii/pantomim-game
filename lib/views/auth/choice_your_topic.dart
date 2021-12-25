@@ -3,6 +3,9 @@
 import 'package:flutter/material.dart';
 import 'package:pantomim/theme/constant.dart';
 import 'package:pantomim/views/widgets/choice_boximage_text_select.dart';
+import 'package:pantomim/views/widgets/dialog.dart';
+
+import '../../constants.dart';
 
 class ChoiceYourTopic extends StatefulWidget {
   const ChoiceYourTopic({Key? key}) : super(key: key);
@@ -60,21 +63,31 @@ class _ChoiceYourTopicState extends State<ChoiceYourTopic> {
             maintainState: true,
             visible: viewVisibleButton,
             child: Container(
-              height: 70,
-              width: double.infinity,
-              color: kpink,
-              child: Center(
-                child: Text(
-                  'Lets Go !',
-                  style: Theme.of(context).primaryTextTheme.bodyText1,
-                  textAlign: TextAlign.center,
-                ),
-              ),
-            ),
+                width: 70,
+                height: 70,
+                color: const Color(0xFFDC9298),
+                child: ElevatedButton(
+                  style: ElevatedButton.styleFrom(
+                      primary: const Color(0xFFDC9298)),
+                  child: const Text('Lets Go'),
+                  onPressed: () {
+                    showDialog(
+                        context: context,
+                        builder: (context) => Dialog(
+                            shape: RoundedRectangleBorder(
+                              borderRadius:
+                                  BorderRadius.circular(Constants.padding),
+                            ),
+                            elevation: 0,
+                            backgroundColor: Colors.white,
+                            child: DialogShow()));
+                  },
+                )),
           ),
         ),
       ),
       appBar: AppBar(
+        backgroundColor: Theme.of(context).appBarTheme.backgroundColor,
         // ignore: prefer_const_literals_to_create_immutables
         actions: [
           // ignore: prefer_const_constructors

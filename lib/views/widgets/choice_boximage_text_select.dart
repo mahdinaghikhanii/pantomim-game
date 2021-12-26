@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:pantomim/model/pantomim_provider.dart';
 import 'package:pantomim/theme/constant.dart';
 import 'package:pantomim/views/auth/choice_your_topic.dart';
 
@@ -42,11 +43,14 @@ class ChoiceTopic extends StatelessWidget {
                     : null,
                 child: Padding(
                   padding: const EdgeInsets.all(4.0),
-                  child: Image.asset(
-                    image,
-                    width: 70,
-                    height: 65,
-                    fit: BoxFit.fill,
+                  child: Hero(
+                    tag: 1,
+                    child: Image.asset(
+                      image,
+                      width: 70,
+                      height: 65,
+                      fit: BoxFit.fill,
+                    ),
                   ),
                 )),
             const SizedBox(height: 8),

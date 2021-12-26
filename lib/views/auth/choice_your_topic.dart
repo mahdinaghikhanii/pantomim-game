@@ -1,6 +1,7 @@
 // ignore_for_file: unnecessary_this
 
 import 'package:flutter/material.dart';
+import 'package:pantomim/model/pantomim_provider.dart';
 import 'package:pantomim/theme/constant.dart';
 import 'package:pantomim/views/widgets/choice_boximage_text_select.dart';
 import 'package:pantomim/views/widgets/dialog.dart';
@@ -52,6 +53,7 @@ class _ChoiceYourTopicState extends State<ChoiceYourTopic> {
 
   @override
   Widget build(BuildContext context) {
+    PantomimProvider dataPantomim = PantomimProvider();
     return Scaffold(
       bottomNavigationBar: Padding(
         padding: const EdgeInsets.all(20),
@@ -73,14 +75,17 @@ class _ChoiceYourTopicState extends State<ChoiceYourTopic> {
                   onPressed: () {
                     showDialog(
                         context: context,
-                        builder: (context) => Dialog(
-                            shape: RoundedRectangleBorder(
-                              borderRadius:
-                                  BorderRadius.circular(Constants.padding),
-                            ),
-                            elevation: 0,
-                            backgroundColor: Colors.white,
-                            child: DialogShow()));
+                        builder: (
+                          context,
+                        ) =>
+                            Dialog(
+                                shape: RoundedRectangleBorder(
+                                  borderRadius:
+                                      BorderRadius.circular(Constants.padding),
+                                ),
+                                elevation: 0,
+                                backgroundColor: Colors.white,
+                                child: DialogShow()));
                   },
                 )),
           ),
@@ -123,123 +128,122 @@ class _ChoiceYourTopicState extends State<ChoiceYourTopic> {
                 direction: Axis.horizontal,
                 children: [
                   ChoiceTopic(
-                    image: 'assets/images/topic/food.png',
+                    image: dataPantomim.imageListTopic[0],
                     onTap: () {
                       ShowButton();
                       updateSelectTopic(Topic.food);
                     },
-                    title: 'Food',
+                    title: dataPantomim.nameTopic[0],
                     isActive: _topic == Topic.food,
                     topic: Topic.food,
                   ),
                   ChoiceTopic(
-                    image: 'assets/images/topic/fotbal.png',
+                    image: dataPantomim.imageListTopic[1],
                     onTap: () {
                       ShowButton();
                       updateSelectTopic(Topic.sport);
                     },
-                    title: 'Sport',
+                    title: dataPantomim.nameTopic[1],
                     isActive: _topic == Topic.sport,
                     topic: Topic.sport,
                   ),
                   ChoiceTopic(
-                    image: 'assets/images/topic/animal.png',
+                    image: dataPantomim.imageListTopic[2],
                     onTap: () {
                       ShowButton();
                       updateSelectTopic(Topic.animal);
                     },
-                    title: 'animal',
+                    title: dataPantomim.nameTopic[2],
                     isActive: _topic == Topic.animal,
                     topic: Topic.animal,
                   ),
                   ChoiceTopic(
-                    image: 'assets/images/topic/movie.png',
+                    image: dataPantomim.imageListTopic[3],
                     onTap: () {
                       ShowButton();
                       updateSelectTopic(Topic.movie);
                     },
-                    title: 'Movie-seris',
+                    title: dataPantomim.nameTopic[3],
                     isActive: _topic == Topic.movie,
                     topic: Topic.movie,
                   ),
                   ChoiceTopic(
-                    image: 'assets/images/topic/thing.png',
+                    image: dataPantomim.imageListTopic[4],
                     onTap: () {
                       ShowButton();
                       updateSelectTopic(Topic.thing);
                     },
-                    title: 'Thing ',
+                    title: dataPantomim.nameTopic[4],
                     isActive: _topic == Topic.thing,
                     topic: Topic.thing,
                   ),
                   ChoiceTopic(
-                    image: 'assets/images/topic/country.png',
+                    image: dataPantomim.imageListTopic[5],
                     onTap: () {
                       ShowButton();
                       updateSelectTopic(Topic.country);
                     },
-                    title: 'Country',
+                    title: dataPantomim.nameTopic[5],
                     isActive: _topic == Topic.country,
                     topic: Topic.country,
                   ),
                   ChoiceTopic(
-                    image: 'assets/images/topic/general.png',
+                    image: dataPantomim.imageListTopic[6],
                     onTap: () {
                       ShowButton();
                       updateSelectTopic(Topic.general);
                     },
-                    title: 'general',
+                    title: dataPantomim.nameTopic[6],
                     isActive: _topic == Topic.general,
                     topic: Topic.general,
                   ),
                   ChoiceTopic(
-                    image: 'assets/images/topic/tourism.png',
+                    image: dataPantomim.imageListTopic[7],
                     onTap: () {
                       ShowButton();
                       updateSelectTopic(Topic.tourism);
                     },
-                    title: 'Tourism',
+                    title: dataPantomim.nameTopic[7],
                     isActive: _topic == Topic.tourism,
                     topic: Topic.tourism,
                   ),
                   ChoiceTopic(
-                    image: 'assets/images/topic/book.png',
+                    image: dataPantomim.imageListTopic[8],
                     onTap: () {
                       ShowButton();
                       updateSelectTopic(Topic.book);
                     },
-                    title: 'Book',
+                    title: dataPantomim.nameTopic[8],
                     isActive: _topic == Topic.book,
                     topic: Topic.book,
                   ),
                   ChoiceTopic(
-                    image: 'assets/images/topic/job.png',
+                    image: dataPantomim.imageListTopic[9],
                     onTap: () {
                       updateSelectTopic(Topic.job);
                       ShowButton();
                     },
-                    title: 'Job',
+                    title: dataPantomim.nameTopic[9],
                     isActive: _topic == Topic.job,
                     topic: Topic.job,
                   ),
                   ChoiceTopic(
-                    image: 'assets/images/topic/music.png',
+                    image: dataPantomim.imageListTopic[10],
                     onTap: () {
                       ShowButton();
                       updateSelectTopic(Topic.music);
                     },
-                    title: 'Music',
+                    title: dataPantomim.nameTopic[10],
                     isActive: _topic == Topic.music,
                     topic: Topic.music,
                   ),
                   ChoiceTopic(
-                      image: 'assets/images/topic/tecnology.png',
+                      image: dataPantomim.imageListTopic[11],
                       onTap: () {
                         ShowButton();
-
                         updateSelectTopic(Topic.tecnology);
                       },
-                      title: 'Tecnology',
+                      title: dataPantomim.nameTopic[11],
                       isActive: _topic == Topic.tecnology,
                       topic: Topic.tecnology),
                 ],

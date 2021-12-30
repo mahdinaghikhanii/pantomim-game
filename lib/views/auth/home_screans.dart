@@ -1,5 +1,6 @@
 // ignore_for_file: prefer_const_constructors
 
+import 'package:animate_do/animate_do.dart';
 import 'package:flutter/material.dart';
 import 'package:pantomim/theme/constant.dart';
 import 'package:pantomim/views/auth/meno_screans.dart';
@@ -26,42 +27,58 @@ class HomeScreans extends StatelessWidget {
             child: Column(
               crossAxisAlignment: CrossAxisAlignment.center,
               children: [
-                Center(
-                  child: Image.asset(
-                    'assets/images/frinds1.png',
-                    width: size.width,
-                    height: size.height * 0.40,
+                FadeInUp(
+                  duration: Duration(milliseconds: 1200),
+                  delay: Duration(microseconds: 1200),
+                  child: Center(
+                    child: Image.asset(
+                      'assets/images/frinds1.png',
+                      width: size.width,
+                      height: size.height * 0.40,
+                    ),
                   ),
                 ),
                 Column(crossAxisAlignment: CrossAxisAlignment.start, children: [
                   // ignore: prefer_const_literals_to_create_immutables
                   Row(mainAxisAlignment: MainAxisAlignment.start, children: [
-                    const Padding(
-                        padding: EdgeInsets.only(left: 30),
-                        child: Text(
-                          'Play',
-                          style: TextStyle(
-                              color: Color(0xFF0D47A1),
-                              fontSize: 38,
-                              fontWeight: FontWeight.bold),
-                        )),
-                    Text(
-                      ' with',
-                      style: TextStyle(
-                          color: Colors.white,
-                          fontSize: 38,
-                          fontWeight: FontWeight.bold),
-                    )
-                  ]),
-                  Padding(
-                      padding: EdgeInsets.only(left: 30, top: 10),
+                    FadeInUp(
+                      duration: Duration(milliseconds: 1200),
+                      delay: Duration(microseconds: 1200),
+                      child: Padding(
+                          padding: EdgeInsets.only(left: 30),
+                          child: Text(
+                            'Play',
+                            style: TextStyle(
+                                color: Color(0xFF0D47A1),
+                                fontSize: 38,
+                                fontWeight: FontWeight.bold),
+                          )),
+                    ),
+                    FadeInUp(
+                      duration: Duration(milliseconds: 1200),
+                      delay: Duration(microseconds: 1200),
                       child: Text(
-                        'Friends',
+                        ' with',
                         style: TextStyle(
                             color: Colors.white,
                             fontSize: 38,
                             fontWeight: FontWeight.bold),
-                      )),
+                      ),
+                    )
+                  ]),
+                  FadeInUp(
+                    duration: Duration(milliseconds: 1200),
+                    delay: Duration(microseconds: 1200),
+                    child: Padding(
+                        padding: EdgeInsets.only(left: 30, top: 10),
+                        child: Text(
+                          'Friends',
+                          style: TextStyle(
+                              color: Colors.white,
+                              fontSize: 38,
+                              fontWeight: FontWeight.bold),
+                        )),
+                  ),
                 ]),
                 SizedBox(
                   height: size.height * 0.12,
@@ -98,24 +115,29 @@ class Button_widget extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     final size = MediaQuery.of(context).size;
-    return Padding(
-      padding: const EdgeInsets.only(left: 30, right: 30, top: 10, bottom: 10),
-      child: ClipRRect(
-        borderRadius: BorderRadius.circular(20),
-        child: InkWell(
-          onTap: ontap,
-          child: Container(
-            width: double.infinity,
-            height: size.height * 0.10,
-            color: color,
-            child: Center(
-                child: Text(
-              text,
-              style: const TextStyle(
-                  color: Colors.white,
-                  fontWeight: FontWeight.bold,
-                  fontSize: 16),
-            )),
+    return FadeInUp(
+      duration: Duration(milliseconds: 1200),
+      delay: Duration(microseconds: 1200),
+      child: Padding(
+        padding:
+            const EdgeInsets.only(left: 30, right: 30, top: 10, bottom: 10),
+        child: ClipRRect(
+          borderRadius: BorderRadius.circular(20),
+          child: InkWell(
+            onTap: ontap,
+            child: Container(
+              width: double.infinity,
+              height: size.height * 0.10,
+              color: color,
+              child: Center(
+                  child: Text(
+                text,
+                style: const TextStyle(
+                    color: Colors.white,
+                    fontWeight: FontWeight.bold,
+                    fontSize: 16),
+              )),
+            ),
           ),
         ),
       ),

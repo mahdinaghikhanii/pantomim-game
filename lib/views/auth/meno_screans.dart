@@ -66,23 +66,15 @@ class MenoScreans extends StatelessWidget {
               SizedBox(
                 height: size.height * 0.02,
               ),
-              Column(
-                children: [
-                  Padding(
-                    padding: const EdgeInsets.all(10.0),
-                    child: Container(
-                      width: double.infinity,
-                      height: size.height * 0.25,
-                      decoration: BoxDecoration(
-                          color: kblue,
-                          borderRadius: BorderRadius.circular(20)),
-                      child: Column(
-                        children: [],
-                      ),
-                    ),
-                  )
-                ],
-              )
+              Padding(
+                padding: const EdgeInsets.all(10.0),
+                child: Container(
+                    width: double.infinity,
+                    height: size.height * 0.25,
+                    decoration: BoxDecoration(
+                        color: kblue, borderRadius: BorderRadius.circular(20)),
+                    child: Container()),
+              ),
             ],
           ),
         ),

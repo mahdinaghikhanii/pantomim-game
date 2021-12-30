@@ -18,8 +18,8 @@ class MyThemes {
       primaryTextTheme: const TextTheme(
           bodyText1: TextStyle(color: kwhite, fontSize: 20),
           subtitle2: TextStyle(
-              fontFamily: 'StitleEnglish', fontSize: 45, color: kpink),
+              fontWeight: FontWeight.bold, fontSize: 28, color: kwhite),
           button: TextStyle(color: kpink),
           subtitle1: TextStyle(
-              color: kpink, fontWeight: FontWeight.bold, fontSize: 18)));
+              color: kwhite, fontWeight: FontWeight.bold, fontSize: 21)));
 }

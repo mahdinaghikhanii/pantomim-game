@@ -7,3 +7,4 @@ const Color kpurple = Color(0xFF6A1B9A);
 const Color kyellow = Color(0xFFFF9800);
 const Color klightgrean = Color(0xFFAFB42B);
 const Color kblackappbar = Colors.black;
+const Color kblue = Color(0xFF0D47A1);

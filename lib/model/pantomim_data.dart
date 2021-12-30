@@ -1,6 +1,5 @@
 class PantomimData {
-  final String image;
-  final int id;
-  final String name;
-  PantomimData({required this.image, required this.id, required this.name});
+  final String image, desc, name;
+
+  PantomimData(this.image, this.desc, this.name);
 }

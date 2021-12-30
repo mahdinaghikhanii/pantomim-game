@@ -1,66 +1,59 @@
 import 'package:flutter/material.dart';
-import 'package:pantomim/model/pantomim_provider.dart';
 import 'package:pantomim/theme/constant.dart';
-import 'package:pantomim/views/auth/choice_your_topic.dart';
 
-class ChoiceTopic extends StatelessWidget {
+class ChoiceTopic extends StatefulWidget {
   final Function() onTap;
-  final bool isActive;
-  final Topic topic;
+
   final String title;
   final String image;
 
   const ChoiceTopic({
     Key? key,
-    required this.isActive,
     required this.onTap,
     required this.title,
     required this.image,
-    required this.topic,
   }) : super(key: key);
 
   @override
+  State<ChoiceTopic> createState() => _ChoiceTopicState();
+}
+
+class _ChoiceTopicState extends State<ChoiceTopic> {
+  @override
   Widget build(BuildContext context) {
-    return InkWell(
-      borderRadius: BorderRadius.circular(12),
-      onTap: onTap,
-      child: Container(
-        width: 110,
-        height: 110,
-        decoration: isActive
-            ? BoxDecoration(
-                color: Theme.of(context).splashColor,
-                borderRadius: BorderRadius.circular(12),
-              )
-            : null,
-        child: Column(children: [
-          Column(mainAxisAlignment: MainAxisAlignment.center, children: [
-            Container(
-                decoration: isActive
-                    ? BoxDecoration(boxShadow: [
-                        BoxShadow(color: kpink.withOpacity(0.8), blurRadius: 20)
-                      ])
-                    : null,
-                child: Padding(
-                  padding: const EdgeInsets.all(4.0),
-                  child: Hero(
-                    tag: 1,
-                    child: Image.asset(
-                      image,
-                      width: 70,
-                      height: 65,
-                      fit: BoxFit.fill,
-                    ),
-                  ),
-                )),
-            const SizedBox(height: 8),
+    return Column(children: [
+      InkWell(
+        borderRadius: BorderRadius.circular(12),
+        onTap: widget.onTap,
+        child: Container(
+          width: 110,
+          height: 110,
+          decoration: BoxDecoration(
+            borderRadius: BorderRadius.circular(12),
+          ),
+          child: Column(children: [
+            Column(mainAxisAlignment: MainAxisAlignment.center, children: [
+              Container(
+                margin: EdgeInsets.only(top: 24.0),
+                decoration: BoxDecoration(boxShadow: [
+                  BoxShadow(
+                      color: Colors.white10.withOpacity(0.2), blurRadius: 25)
+                ]),
+                child: Image.asset(
+                  widget.image,
+                  width: 70,
+                  height: 65,
+                  fit: BoxFit.fill,
+                ),
+              ),
+            ]),
+            Text(
+              widget.title,
+              style: Theme.of(context).primaryTextTheme.subtitle1,
+            )
           ]),
-          Text(
-            title,
-            style: Theme.of(context).primaryTextTheme.subtitle1,
-          )
-        ]),
+        ),
       ),
-    );
+    ]);
   }
 }

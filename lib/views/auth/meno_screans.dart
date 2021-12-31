@@ -64,17 +64,117 @@ class MenoScreans extends StatelessWidget {
                 ),
               ),
               SizedBox(
-                height: size.height * 0.02,
+                height: size.height * 0.01,
               ),
               Padding(
                 padding: const EdgeInsets.all(10.0),
                 child: Container(
-                    width: double.infinity,
-                    height: size.height * 0.25,
-                    decoration: BoxDecoration(
-                        color: kblue, borderRadius: BorderRadius.circular(20)),
-                    child: Container()),
+                  width: size.width,
+                  height: size.height * 0.23,
+                  decoration: BoxDecoration(
+                      color: Colors.yellow.shade800,
+                      borderRadius: BorderRadius.circular(20)),
+                  child: Center(
+                    child: Column(
+                      crossAxisAlignment: CrossAxisAlignment.center,
+                      mainAxisAlignment: MainAxisAlignment.center,
+                      children: [
+                        Row(
+                            mainAxisAlignment: MainAxisAlignment.center,
+                            children: [
+                              Column(children: [
+                                Padding(
+                                  padding:
+                                      const EdgeInsets.only(left: 0, top: 0),
+                                  child: Text(
+                                      'Let`s Become\na New\nNormal Game',
+                                      style: Theme.of(context)
+                                          .primaryTextTheme
+                                          .subtitle1),
+                                ),
+                                SizedBox(height: size.height * 0.03),
+                                Container(
+                                  width: size.width * 0.29,
+                                  height: size.height * 0.05,
+                                  decoration: BoxDecoration(
+                                      color: const Color(0xFF6A1B9A),
+                                      borderRadius: BorderRadius.circular(10)),
+                                  child: Row(
+                                    mainAxisAlignment: MainAxisAlignment.center,
+                                    children: [
+                                      Text(
+                                        'Lets Go',
+                                        style: Theme.of(context)
+                                            .primaryTextTheme
+                                            .bodyText2,
+                                        textAlign: TextAlign.center,
+                                      ),
+                                      const Icon(
+                                        Icons.chevron_right_rounded,
+                                        color: Colors.white,
+                                      )
+                                    ],
+                                  ),
+                                ),
+                              ]),
+                              Padding(
+                                padding: const EdgeInsets.only(
+                                  top: 10,
+                                ),
+                                child: Image.asset(
+                                  'assets/images/normal.png',
+                                  width: size.width * 0.50,
+                                  height: size.height * 0.21,
+                                ),
+                              )
+                            ])
+                      ],
+                    ),
+                  ),
+                ),
               ),
+              Center(
+                child: Wrap(
+                  spacing: 4,
+                  children: [
+                    BoxForMenoImage(
+                      color: Colors.red,
+                      tap: () {},
+                      image: 'assets/images/mahdi.jpg',
+                      text: 'letsGo',
+                    ),
+                    Padding(
+                      padding: const EdgeInsets.only(top: 2),
+                      child: Container(
+                        width: 170,
+                        height: 70,
+                        decoration: BoxDecoration(
+                          borderRadius: BorderRadius.circular(18),
+                          color: Colors.green,
+                        ),
+                        child: Center(
+                          child: Row(
+                              mainAxisAlignment: MainAxisAlignment.center,
+                              // ignore: prefer_const_literals_to_create_immutables
+                              children: [
+                                Image.asset('assets/images/medal.png',
+                                    width: 50),
+                                SizedBox(
+                                  width: size.width * 0.03,
+                                ),
+                                Text(
+                                  'Score',
+                                  style: Theme.of(context)
+                                      .primaryTextTheme
+                                      .bodyText1,
+                                )
+                              ]),
+                        ),
+                      ),
+                    ),
+                  ],
+                ),
+              )
             ],
           ),
         ),

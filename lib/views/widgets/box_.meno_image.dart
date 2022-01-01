@@ -15,44 +15,43 @@ class BoxForMenoImage extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return (Padding(
-      padding: const EdgeInsets.fromLTRB(0, 2, 2, 0),
-      child: InkWell(
-        onTap: tap,
-        child: Container(
-          padding: const EdgeInsets.all(5),
-          width: 170,
-          height: 140,
-          decoration: BoxDecoration(
-            borderRadius: BorderRadius.circular(18),
-            color: color,
-          ),
-          child: Row(
-            mainAxisAlignment: MainAxisAlignment.center,
-            children: [
-              Image.asset(
-                image,
-                width: 70,
-              ),
-              const SizedBox(
-                width: 5,
-              ),
-              ClipRRect(
-                  borderRadius: BorderRadius.circular(16),
-                  child: Container(
-                      padding: const EdgeInsets.all(3),
-                      width: 80,
-                      height: 30,
-                      color: kwhite,
-                      child: Text(
-                        text,
-                        textAlign: TextAlign.center,
-                        style: Theme.of(context).primaryTextTheme.subtitle1,
-                      )))
-            ],
-          ),
+    final size = MediaQuery.of(context).size;
+    return InkWell(
+      onTap: tap,
+      child: Container(
+        padding: const EdgeInsets.all(4),
+        width: size.width * 0.46,
+        height: 140,
+        decoration: BoxDecoration(
+          borderRadius: BorderRadius.circular(18),
+          color: color,
+        ),
+        child: Row(
+          mainAxisAlignment: MainAxisAlignment.center,
+          children: [
+            Image.asset(
+              image,
+              height: size.height * 0.20,
+              width: size.width * 0.20,
+            ),
+            SizedBox(
+              width: size.width * 0.02,
+            ),
+            ClipRRect(
+                borderRadius: BorderRadius.circular(16),
+                child: Container(
+                    padding: const EdgeInsets.all(3),
+                    width: 80,
+                    height: 30,
+                    color: kwhite,
+                    child: Text(
+                      text,
+                      textAlign: TextAlign.center,
+                      style: Theme.of(context).primaryTextTheme.subtitle1,
+                    )))
+          ],
         ),
       ),
-    ));
+    );
   }
 }

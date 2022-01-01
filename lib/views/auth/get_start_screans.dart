@@ -6,6 +6,7 @@ class GetStartScreans extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final size = MediaQuery.of(context).size;
     return Scaffold(
       bottomNavigationBar: Padding(
         padding: const EdgeInsets.all(25),
@@ -35,13 +36,14 @@ class GetStartScreans extends StatelessWidget {
             mainAxisAlignment: MainAxisAlignment.center,
             children: [
               const SizedBox(
-                height: 80,
+                height: 70,
               ),
               Padding(
                 padding: const EdgeInsets.all(10),
                 child: Image.asset(
                   'assets/images/getstart.png',
-                  width: 400,
+                  width: size.width * 1.0,
+                  height: size.height * 0.45,
                 ),
               ),
               const SizedBox(
@@ -50,9 +52,9 @@ class GetStartScreans extends StatelessWidget {
               Padding(
                 padding: const EdgeInsets.all(10),
                 child: Text(
-                  '😍 خوش اومدید \n شما می تونید بازی پانتومیم یا ادا بازی کنید \nکلی لذت ببرید ',
+                  'Welcome\n Your Playing game Pantomim\nHere Enjoy Kelly',
                   textAlign: TextAlign.center,
-                  style: Theme.of(context).primaryTextTheme.subtitle1,
+                  style: Theme.of(context).primaryTextTheme.bodyText1,
                 ),
               ),
             ],
@@ -62,3 +64,4 @@ class GetStartScreans extends StatelessWidget {
     );
   }
 }
+ //'😍 خوش اومدید \n شما می تونید بازی پانتومیم یا ادا بازی کنید \nکلی لذت ببرید ',

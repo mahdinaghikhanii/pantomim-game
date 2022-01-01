@@ -133,51 +133,72 @@ class MenoScreans extends StatelessWidget {
                   ),
                 ),
               ),
-              Center(
-                child: Wrap(
-                  spacing: 4,
-                  children: [
-                    BoxForMenoImage(
-                      color: Colors.red,
-                      tap: () {},
-                      image: 'assets/images/mahdi.jpg',
-                      text: 'letsGo',
-                    ),
-                    Padding(
-                      padding: const EdgeInsets.only(top: 2),
-                      child: Container(
-                        width: 170,
-                        height: 70,
-                        decoration: BoxDecoration(
-                          borderRadius: BorderRadius.circular(18),
-                          color: Colors.green,
-                        ),
-                        child: Center(
-                          child: Row(
-                              mainAxisAlignment: MainAxisAlignment.center,
-                              // ignore: prefer_const_literals_to_create_immutables
-                              children: [
-                                Image.asset('assets/images/medal.png',
-                                    width: 50),
-                                SizedBox(
-                                  width: size.width * 0.03,
-                                ),
-                                Text(
-                                  'Score',
-                                  style: Theme.of(context)
-                                      .primaryTextTheme
-                                      .bodyText1,
-                                )
-                              ]),
-                        ),
-                      ),
-                    ),
-                  ],
-                ),
-              )
+              Wrap(
+                runSpacing: 8,
+                spacing: 8,
+                children: [
+                  BoxForMenoImage(
+                    color: Colors.red,
+                    tap: () {},
+                    image: 'assets/images/mahdi.jpg',
+                    text: 'letsGo',
+                  ),
+                  const SmalBox_For_MenoScreans(
+                    text: 'Score',
+                    image: 'assets/images/medal.png',
+                  ),
+                  SmalBox_For_MenoScreans(
+                    text: 'Score',
+                    image: 'assets/images/medal.png',
+                  ),
+                  BoxForMenoImage(
+                    color: Colors.red,
+                    tap: () {},
+                    image: 'assets/images/mahdi.jpg',
+                    text: 'letsGo',
+                  ),
+                ],
+              ),
             ],
           ),
         ),
+      ),
+    );
+  }
+}
+
+class SmalBox_For_MenoScreans extends StatelessWidget {
+  final String text;
+  final String image;
+  const SmalBox_For_MenoScreans({required this.text, required this.image});
+
+  @override
+  Widget build(BuildContext context) {
+    final size = MediaQuery.of(context).size;
+    return Container(
+      width: size.width * 0.46,
+      height: 70,
+      decoration: BoxDecoration(
+        borderRadius: BorderRadius.circular(18),
+        color: Colors.green,
+      ),
+      child: Center(
+        child: Row(mainAxisAlignment: MainAxisAlignment.center,
+            // ignore: prefer_const_literals_to_create_immutables
+            children: [
+              Image.asset(
+                image,
+                width: size.width * 0.12,
+                height: size.height * 0.10,
+              ),
+              SizedBox(
+                width: size.width * 0.04,
+              ),
+              Text(
+                text,
+                style: Theme.of(context).primaryTextTheme.bodyText1,
+              )
+            ]),
       ),
     );
   }

@@ -1,10 +1,23 @@
 import 'package:flutter/material.dart';
-import 'package:pantomim/theme/constant.dart';
 import 'package:pantomim/views/auth/home_screans.dart';
+import 'package:shared_preferences/shared_preferences.dart';
 
-class GetStartScreans extends StatelessWidget {
+class GetStartScreans extends StatefulWidget {
   const GetStartScreans({Key? key}) : super(key: key);
 
+  @override
+  State<GetStartScreans> createState() => _GetStartScreansState();
+}
+
+_storeOnboardInfo() async {
+  print("Shared pref called");
+  int isViewed = 0;
+  SharedPreferences prefs = await SharedPreferences.getInstance();
+  await prefs.setInt('onBoard', isViewed);
+  print(prefs.getInt('onBoard'));
+}
+
+class _GetStartScreansState extends State<GetStartScreans> {
   @override
   Widget build(BuildContext context) {
     final size = MediaQuery.of(context).size;
@@ -27,11 +40,10 @@ class GetStartScreans extends StatelessWidget {
                   'Lets Go',
                   style: Theme.of(context).primaryTextTheme.bodyText1,
                 ),
-                onPressed: () {
-                  Navigator.pushReplacement(
-                      context,
-                      MaterialPageRoute(
-                          builder: (context) => const HomeScreans()));
+                onPressed: () async {
+                  await _storeOnboardInfo();
+                  Navigator.pushReplacement(context,
+                      MaterialPageRoute(builder: (context) => HomeScreans()));
                 },
               )),
         ),

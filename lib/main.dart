@@ -5,22 +5,33 @@ import 'package:pantomim/views/auth/get_start_screans.dart';
 import 'package:pantomim/views/auth/home_screans.dart';
 import 'package:pantomim/views/auth/meno_screans.dart';
 import 'package:pantomim/views/widgets/dialog.dart';
+import 'package:shared_preferences/shared_preferences.dart';
 
-void main() {
+int? isviewed;
+void main() async {
+  WidgetsFlutterBinding.ensureInitialized();
+  SharedPreferences sharedPreferences = await SharedPreferences.getInstance();
+  isviewed = sharedPreferences.getInt('onBoard');
   runApp(const MyApp());
 }
 
-class MyApp extends StatelessWidget {
+class MyApp extends StatefulWidget {
   const MyApp({Key? key}) : super(key: key);
 
-  // This widget is the root of your application.
+  @override
+  State<MyApp> createState() => _MyAppState();
+}
+
+class _MyAppState extends State<MyApp> {
+  SharedPreferences? sharedPreferences;
+
   @override
   Widget build(
     BuildContext context,
   ) {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
-      home: const GetStartScreans(),
+      home: isviewed != 0 ? const GetStartScreans() : const HomeScreans(),
       theme: MyThemes.lightTheme,
       themeMode: ThemeMode.system,
       darkTheme: MyThemes.darkTheme,

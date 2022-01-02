@@ -29,7 +29,7 @@ class DialogShow extends StatelessWidget {
                   width: 90,
                   height: 90,
                   child: CircleAvatar(
-                      backgroundColor: kpink,
+                      backgroundColor: Colors.black,
                       backgroundImage: AssetImage(pantomimData.image)),
                 ),
               ),

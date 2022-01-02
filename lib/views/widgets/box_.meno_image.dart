@@ -18,7 +18,7 @@ class BoxForMenoImage extends StatelessWidget {
     final size = MediaQuery.of(context).size;
     return SizedBox(
       width: size.width * 0.46,
-      height: 140,
+      height: 160,
       child: InkWell(
         onTap: tap,
         child: Container(

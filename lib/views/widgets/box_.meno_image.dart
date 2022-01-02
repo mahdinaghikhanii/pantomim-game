@@ -16,40 +16,42 @@ class BoxForMenoImage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     final size = MediaQuery.of(context).size;
-    return InkWell(
-      onTap: tap,
-      child: Container(
-        padding: const EdgeInsets.all(4),
-        width: size.width * 0.46,
-        height: 140,
-        decoration: BoxDecoration(
-          borderRadius: BorderRadius.circular(18),
-          color: color,
-        ),
-        child: Row(
-          mainAxisAlignment: MainAxisAlignment.center,
-          children: [
-            Image.asset(
-              image,
-              height: size.height * 0.20,
-              width: size.width * 0.20,
+    return SizedBox(
+      width: size.width * 0.46,
+      height: 140,
+      child: InkWell(
+        onTap: tap,
+        child: Container(
+          padding: const EdgeInsets.all(0),
+          decoration: BoxDecoration(
+            borderRadius: BorderRadius.circular(18),
+            color: color,
+          ),
+          child:
+              Column(crossAxisAlignment: CrossAxisAlignment.center, children: [
+            Row(
+              mainAxisAlignment: MainAxisAlignment.center,
+              crossAxisAlignment: CrossAxisAlignment.start,
+              children: [
+                Padding(
+                  padding: const EdgeInsets.only(left: 0, top: 8),
+                  child: Text(
+                    text,
+                    textAlign: TextAlign.center,
+                    style: Theme.of(context).primaryTextTheme.subtitle1,
+                  ),
+                ),
+                Padding(
+                  padding: const EdgeInsets.only(top: 30, left: 2),
+                  child: Image.asset(
+                    image,
+                    height: size.height * 0.14,
+                    width: size.width * 0.25,
+                  ),
+                ),
+              ],
             ),
-            SizedBox(
-              width: size.width * 0.02,
-            ),
-            ClipRRect(
-                borderRadius: BorderRadius.circular(16),
-                child: Container(
-                    padding: const EdgeInsets.all(3),
-                    width: 80,
-                    height: 30,
-                    color: kwhite,
-                    child: Text(
-                      text,
-                      textAlign: TextAlign.center,
-                      style: Theme.of(context).primaryTextTheme.subtitle1,
-                    )))
-          ],
+          ]),
         ),
       ),
     );

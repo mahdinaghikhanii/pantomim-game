@@ -20,7 +20,8 @@ class MyThemes {
           bodyText1: TextStyle(color: kwhite, fontSize: 20),
           subtitle2: TextStyle(
               fontWeight: FontWeight.bold, fontSize: 28, color: kwhite),
-          button: TextStyle(color: kpink),
+          button: TextStyle(
+              color: kblack, fontSize: 21, fontWeight: FontWeight.bold),
           subtitle1: TextStyle(
               color: kwhite, fontWeight: FontWeight.bold, fontSize: 21)));
 }

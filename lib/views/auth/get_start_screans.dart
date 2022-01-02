@@ -49,13 +49,13 @@ class GetStartScreans extends StatelessWidget {
               const SizedBox(
                 height: 20,
               ),
+              // ignore: prefer_const_constructors
               Padding(
                 padding: const EdgeInsets.all(10),
-                child: Text(
-                  'Welcome\n Your Playing game Pantomim\nHere Enjoy Kelly',
-                  textAlign: TextAlign.center,
-                  style: Theme.of(context).primaryTextTheme.bodyText1,
-                ),
+                child: const Text(
+                    'Welcome\n Your Playing game Pantomim\nHere Enjoy Kelly',
+                    textAlign: TextAlign.center,
+                    style: TextStyle(color: Colors.blue)),
               ),
             ],
           ),

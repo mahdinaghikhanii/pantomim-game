@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:pantomim/theme/constant.dart';
-import 'package:pantomim/views/auth/choice_your_topic.dart';
 import 'package:pantomim/views/widgets/box_.meno_image.dart';
 
 class MenoScreans extends StatelessWidget {
@@ -70,7 +69,7 @@ class MenoScreans extends StatelessWidget {
                 padding: const EdgeInsets.all(10.0),
                 child: Container(
                   width: size.width,
-                  height: size.height * 0.23,
+                  height: size.height * 0.30,
                   decoration: BoxDecoration(
                       color: Colors.yellow.shade800,
                       borderRadius: BorderRadius.circular(20)),
@@ -95,10 +94,10 @@ class MenoScreans extends StatelessWidget {
                                 SizedBox(height: size.height * 0.03),
                                 Container(
                                   width: size.width * 0.29,
-                                  height: size.height * 0.05,
+                                  height: size.height * 0.06,
                                   decoration: BoxDecoration(
                                       color: const Color(0xFF6A1B9A),
-                                      borderRadius: BorderRadius.circular(10)),
+                                      borderRadius: BorderRadius.circular(11)),
                                   child: Row(
                                     mainAxisAlignment: MainAxisAlignment.center,
                                     children: [
@@ -124,7 +123,7 @@ class MenoScreans extends StatelessWidget {
                                 child: Image.asset(
                                   'assets/images/normal.png',
                                   width: size.width * 0.50,
-                                  height: size.height * 0.21,
+                                  height: size.height * 0.24,
                                 ),
                               )
                             ])
@@ -138,24 +137,27 @@ class MenoScreans extends StatelessWidget {
                 spacing: 8,
                 children: [
                   BoxForMenoImage(
-                    color: Colors.red,
+                    color: Color(0xFF6A1B9A),
                     tap: () {},
-                    image: 'assets/images/mahdi.jpg',
-                    text: 'letsGo',
+                    image: 'assets/images/spead.png',
+                    text: 'Fight',
                   ),
-                  const SmalBox_For_MenoScreans(
-                    text: 'Score',
-                    image: 'assets/images/medal.png',
+                  BoxForMenoImage(
+                    color: kblue,
+                    tap: () {},
+                    image: 'assets/images/car.png',
+                    text: 'Spead',
                   ),
                   SmalBox_For_MenoScreans(
                     text: 'Score',
-                    image: 'assets/images/medal.png',
+                    color: Colors.yellow.shade800,
+                    image: 'assets/images/score.png',
                   ),
                   BoxForMenoImage(
-                    color: Colors.red,
+                    color: Color(0xFF6A1B9A),
                     tap: () {},
-                    image: 'assets/images/mahdi.jpg',
-                    text: 'letsGo',
+                    image: 'assets/images/setting.png',
+                    text: 'Setting',
                   ),
                 ],
               ),
@@ -170,7 +172,9 @@ class MenoScreans extends StatelessWidget {
 class SmalBox_For_MenoScreans extends StatelessWidget {
   final String text;
   final String image;
-  const SmalBox_For_MenoScreans({required this.text, required this.image});
+  final Color color;
+  const SmalBox_For_MenoScreans(
+      {required this.text, required this.image, required this.color});
 
   @override
   Widget build(BuildContext context) {
@@ -180,7 +184,7 @@ class SmalBox_For_MenoScreans extends StatelessWidget {
       height: 70,
       decoration: BoxDecoration(
         borderRadius: BorderRadius.circular(18),
-        color: Colors.green,
+        color: color,
       ),
       child: Center(
         child: Row(mainAxisAlignment: MainAxisAlignment.center,
@@ -194,10 +198,7 @@ class SmalBox_For_MenoScreans extends StatelessWidget {
               SizedBox(
                 width: size.width * 0.04,
               ),
-              Text(
-                text,
-                style: Theme.of(context).primaryTextTheme.bodyText1,
-              )
+              Text(text, style: Theme.of(context).primaryTextTheme.button)
             ]),
       ),
     );

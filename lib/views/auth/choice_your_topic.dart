@@ -42,6 +42,7 @@ class _ChoiceYourTopicState extends State<ChoiceYourTopic> {
     'Music',
     'Tecnology',
   ];
+  // ignore: non_constant_identifier_names
   final List<PantomimData> Fruitdata = List.generate(
       imageListTopic.length,
       (index) => PantomimData('${imageListTopic[index]}', '${nameTopic[index]}',
@@ -49,25 +50,18 @@ class _ChoiceYourTopicState extends State<ChoiceYourTopic> {
 
   @override
   Widget build(BuildContext context) {
+    final size = MediaQuery.of(context).size;
     return Container(
-      decoration: BoxDecoration(
+      decoration: const BoxDecoration(
           gradient: LinearGradient(
               begin: Alignment.centerLeft,
               end: Alignment.centerRight,
-              colors: [Colors.purple, Colors.blue])),
+              colors: [Colors.white38, Colors.blue])),
       child: Scaffold(
         backgroundColor: Colors.transparent,
         appBar: AppBar(
           elevation: 0,
-          flexibleSpace: Container(
-            decoration: const BoxDecoration(
-                gradient: LinearGradient(
-                    begin: Alignment.centerLeft,
-                    end: Alignment.centerRight,
-                    colors: [Colors.purple, Colors.blue])),
-          ),
-
-          backgroundColor: Theme.of(context).appBarTheme.backgroundColor,
+          backgroundColor: Colors.transparent,
           // ignore: prefer_const_literals_to_create_immutables
           actions: [
             // ignore: prefer_const_constructors
@@ -82,69 +76,66 @@ class _ChoiceYourTopicState extends State<ChoiceYourTopic> {
             ),
           ],
         ),
-        body: Column(children: [
-          Container(
-              decoration: BoxDecoration(
-                  gradient: LinearGradient(
-                      begin: Alignment.centerLeft,
-                      end: Alignment.centerRight,
-                      colors: [Colors.purple, Colors.blue])),
-              width: double.infinity,
-              height: 100,
-              child: Column(
-                crossAxisAlignment: CrossAxisAlignment.center,
-                children: [
-                  Row(
-                    mainAxisAlignment: MainAxisAlignment.center,
-                    children: [
-                      Image.asset(
-                        'assets/images/choice.png',
-                        width: 90,
-                      ),
-                      Text('Pls Choice Your Topic',
-                          style: Theme.of(context).primaryTextTheme.bodyText1),
-                    ],
-                  ),
-                ],
-              )),
-          Container(
-            decoration: const BoxDecoration(
-                gradient: LinearGradient(
-                    begin: Alignment.centerLeft,
-                    end: Alignment.centerRight,
-                    colors: [Colors.purple, Colors.blue])),
-            height: 590,
-            padding: EdgeInsets.all(10),
-            width: double.infinity,
-            child: GridView.builder(
-                itemCount: Fruitdata.length,
-                gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
-                    crossAxisCount: 3, crossAxisSpacing: 5, mainAxisSpacing: 5),
-                itemBuilder: (BuildContext context, int index) {
-                  return ChoiceTopic(
-                    image: Fruitdata[index].image,
-                    title: Fruitdata[index].name,
-                    onTap: () {
-                      switch (index) {
-                        case 1:
-                          print('object');
+        body: SingleChildScrollView(
+          child: Column(children: [
+            Container(
+                color: Colors.transparent,
+                width: double.infinity,
+                height: size.height * 0.14,
+                child: Column(
+                  crossAxisAlignment: CrossAxisAlignment.center,
+                  children: [
+                    Row(
+                      mainAxisAlignment: MainAxisAlignment.center,
+                      children: [
+                        Image.asset(
+                          'assets/images/choice.png',
+                          width: size.width * 0.20,
+                        ),
+                        Text('Pls Choice Your Topic',
+                            style:
+                                Theme.of(context).primaryTextTheme.bodyText1),
+                      ],
+                    ),
+                  ],
+                )),
+            Container(
+              color: Colors.transparent,
+              height: size.height * 0.98,
+              padding: const EdgeInsets.all(10),
+              width: size.width,
+              child: GridView.builder(
+                  itemCount: Fruitdata.length,
+                  gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
+                      crossAxisCount: 3,
+                      crossAxisSpacing: 1,
+                      mainAxisSpacing: 5),
+                  itemBuilder: (BuildContext context, int index) {
+                    return ChoiceTopic(
+                      image: Fruitdata[index].image,
+                      title: Fruitdata[index].name,
+                      onTap: () {
+                        switch (index) {
+                          case 1:
+                            print('object');
 
-                          break;
-                        default:
-                      }
-                      showDialog(
-                          context: context,
-                          builder: (
-                            context,
-                          ) =>
-                              DialogShow(
-                                pantomimData: Fruitdata[index],
-                              ));
-                    },
-                  );
-                }),
-          )
-        ]),
+                            break;
+                          default:
+                        }
+                        showDialog(
+                            context: context,
+                            builder: (
+                              context,
+                            ) =>
+                                DialogShow(
+                                  pantomimData: Fruitdata[index],
+                                ));
+                      },
+                    );
+                  }),
+            )
+          ]),
+        ),
       ),
     );
   }

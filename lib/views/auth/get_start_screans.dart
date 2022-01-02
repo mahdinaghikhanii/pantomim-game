@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:pantomim/theme/constant.dart';
 import 'package:pantomim/views/auth/home_screans.dart';
 
 class GetStartScreans extends StatelessWidget {
@@ -13,13 +14,19 @@ class GetStartScreans extends StatelessWidget {
         child: ClipRRect(
           borderRadius: BorderRadius.circular(20),
           child: Container(
+              decoration: const BoxDecoration(
+                  gradient: LinearGradient(
+                      begin: Alignment.centerLeft,
+                      end: Alignment.centerRight,
+                      colors: [Colors.white38, Colors.blue])),
               width: double.infinity,
               height: 70,
-              color: const Color(0xFFDC9298),
               child: ElevatedButton(
-                style:
-                    ElevatedButton.styleFrom(primary: const Color(0xFFDC9298)),
-                child: const Text('Lets Go'),
+                style: ElevatedButton.styleFrom(primary: Colors.transparent),
+                child: Text(
+                  'Lets Go',
+                  style: Theme.of(context).primaryTextTheme.bodyText1,
+                ),
                 onPressed: () {
                   Navigator.pushReplacement(
                       context,
@@ -35,27 +42,30 @@ class GetStartScreans extends StatelessWidget {
           child: Column(
             mainAxisAlignment: MainAxisAlignment.center,
             children: [
-              const SizedBox(
-                height: 70,
+              SizedBox(
+                height: size.height * 0.10,
               ),
               Padding(
                 padding: const EdgeInsets.all(10),
                 child: Image.asset(
-                  'assets/images/getstart.png',
+                  'assets/images/new-years-eve.png',
                   width: size.width * 1.0,
-                  height: size.height * 0.45,
+                  height: size.height * 0.40,
                 ),
               ),
-              const SizedBox(
-                height: 20,
+              SizedBox(
+                height: size.height * 0.03,
               ),
               // ignore: prefer_const_constructors
               Padding(
                 padding: const EdgeInsets.all(10),
-                child: const Text(
-                    'Welcome\n Your Playing game Pantomim\nHere Enjoy Kelly',
+                child: Text(
+                    'Welcome😍\n Your Playing game Pantomim\nHere Enjoy Kelly',
                     textAlign: TextAlign.center,
-                    style: TextStyle(color: Colors.blue)),
+                    style: TextStyle(
+                        fontSize: 22,
+                        color: Colors.blue.shade200,
+                        fontWeight: FontWeight.bold)),
               ),
             ],
           ),

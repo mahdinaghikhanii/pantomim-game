@@ -42,11 +42,11 @@ class BoxForMenoImage extends StatelessWidget {
                   ),
                 ),
                 Padding(
-                  padding: const EdgeInsets.only(top: 30, left: 2),
+                  padding: const EdgeInsets.only(top: 20, left: 2),
                   child: Image.asset(
                     image,
                     height: size.height * 0.14,
-                    width: size.width * 0.25,
+                    width: size.width * 0.24,
                   ),
                 ),
               ],

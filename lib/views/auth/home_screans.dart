@@ -2,7 +2,6 @@
 
 import 'package:animate_do/animate_do.dart';
 import 'package:flutter/material.dart';
-import 'package:pantomim/theme/constant.dart';
 import 'package:pantomim/views/auth/meno_screans.dart';
 
 class HomeScreans extends StatelessWidget {
@@ -21,7 +20,7 @@ class HomeScreans extends StatelessWidget {
       child: Scaffold(
         backgroundColor: Colors.transparent,
         body: SafeArea(
-          child: Container(
+          child: SizedBox(
             width: double.infinity,
             height: size.height,
             child: Column(

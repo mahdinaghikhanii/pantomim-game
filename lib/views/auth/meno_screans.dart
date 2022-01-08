@@ -2,9 +2,9 @@ import 'package:animate_do/animate_do.dart';
 import 'package:flutter/material.dart';
 import 'package:pantomim/theme/constant.dart';
 import 'package:pantomim/views/auth/choice_your_topic.dart';
-import 'package:pantomim/views/auth/dialog_setting.dart';
+
+import 'package:pantomim/views/dialog_screns/dialog_setting.dart';
 import 'package:pantomim/views/widgets/box_.meno_image.dart';
-import 'package:pantomim/views/widgets/dialog.dart';
 
 class MenoScreans extends StatelessWidget {
   const MenoScreans({Key? key}) : super(key: key);

@@ -14,3 +14,7 @@ const Color kblue = Color(0xFF0D47A1);
 //Text Style
 const styleTextForSetting =
     TextStyle(color: kblack, fontWeight: FontWeight.bold, fontSize: 20);
+const styleTextForDialogHowToPlay = TextStyle(
+  color: kblack,
+  fontSize: 15,
+);

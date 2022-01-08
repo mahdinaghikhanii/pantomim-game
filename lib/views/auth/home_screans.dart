@@ -3,6 +3,7 @@
 import 'package:animate_do/animate_do.dart';
 import 'package:flutter/material.dart';
 import 'package:pantomim/views/auth/meno_screans.dart';
+import 'package:pantomim/views/dialog_screns/dialog_how_to_play.dart';
 
 class HomeScreans extends StatelessWidget {
   const HomeScreans({Key? key}) : super(key: key);
@@ -93,7 +94,14 @@ class HomeScreans extends StatelessWidget {
                 Button_widget(
                   color: Colors.transparent,
                   text: "HOW TO PLAY ?",
-                  ontap: () {},
+                  ontap: () {
+                    showDialog(
+                        context: context,
+                        builder: (
+                          context,
+                        ) =>
+                            DialogHowToPlay());
+                  },
                 )
               ],
             ),

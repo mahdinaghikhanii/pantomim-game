@@ -1,7 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:pantomim/model/pantomim_data.dart';
-import 'package:pantomim/theme/constant.dart';
-
+import 'package:pantomim/module/pantomim_data.dart';
 import '../../constants.dart';
 
 class DialogShow extends StatelessWidget {
@@ -25,7 +23,7 @@ class DialogShow extends StatelessWidget {
               const SizedBox(width: 10),
               Padding(
                 padding: const EdgeInsets.all(Constants.padding),
-                child: Container(
+                child: SizedBox(
                   width: 90,
                   height: 90,
                   child: CircleAvatar(

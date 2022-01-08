@@ -1,10 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:pantomim/theme/theme.dart';
-import 'package:pantomim/views/auth/choice_your_topic.dart';
 import 'package:pantomim/views/auth/get_start_screans.dart';
 import 'package:pantomim/views/auth/home_screans.dart';
-import 'package:pantomim/views/auth/meno_screans.dart';
-import 'package:pantomim/views/widgets/dialog.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 
 int? isviewed;

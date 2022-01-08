@@ -28,7 +28,7 @@ class _SettingDialogState extends State<SettingDialog> {
   Widget build(BuildContext context) {
     final size = MediaQuery.of(context).size;
     return Dialog(
-        insetPadding: EdgeInsets.all(20),
+        insetPadding: const EdgeInsets.all(20),
         shape: RoundedRectangleBorder(
           borderRadius: BorderRadius.circular(Constants.padding),
         ),
@@ -44,11 +44,11 @@ class _SettingDialogState extends State<SettingDialog> {
                 decoration: BoxDecoration(
                     borderRadius: BorderRadius.circular(15),
                     color: Colors.white),
-                padding: EdgeInsets.fromLTRB(20, 50, 20, 20),
+                padding: const EdgeInsets.fromLTRB(20, 50, 20, 20),
                 child: Column(
                   children: [
                     Padding(
-                      padding: const EdgeInsets.only(top: 20),
+                      padding: const EdgeInsets.only(top: 40),
                       child: Center(
                         child: Container(
                           decoration: BoxDecoration(
@@ -106,26 +106,23 @@ class _SettingDialogState extends State<SettingDialog> {
               Positioned(
                   top: -size.height * 0.12,
                   child: Image.asset('assets/images/setting.png'),
-                  width: 150,
-                  height: 150),
+                  width: size.width * 0.55,
+                  height: size.height * 0.17),
               Padding(
-                padding: const EdgeInsets.only(left: 40),
+                padding: const EdgeInsets.only(left: 40, right: 30, top: 50),
                 child: Row(
                   crossAxisAlignment: CrossAxisAlignment.start,
+                  // ignore: prefer_const_literals_to_create_immutables
                   children: [
-                    Text('Music', style: styleTextForSetting),
-                    Spacer(),
-                    Padding(
-                      padding: const EdgeInsets.only(right: 20.0),
-                      child: Container(
-                          child: Icon(
-                        Icons.music_note,
-                        size: 30,
-                      )),
-                    )
+                    const Text('Music', style: styleTextForSetting),
+                    const Spacer(),
+                    const Icon(
+                      Icons.music_note,
+                      size: 30,
+                    ),
                   ],
                 ),
-              )
+              ),
             ]));
   }
 }

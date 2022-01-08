@@ -1,8 +1,7 @@
 import 'package:flutter/material.dart';
-import 'package:pantomim/model/pantomim_data.dart';
-import 'package:pantomim/theme/constant.dart';
+import 'package:pantomim/module/pantomim_data.dart';
 import 'package:pantomim/views/widgets/choice_boximage_text_select.dart';
-import 'package:pantomim/views/widgets/dialog.dart';
+import 'package:pantomim/views/dialog_screns/dialog.dart';
 
 class ChoiceYourTopic extends StatefulWidget {
   const ChoiceYourTopic({Key? key}) : super(key: key);

@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_localizations/flutter_localizations.dart';
-import 'package:pantomim/theme/textTheme.dart';
-import 'package:pantomim/theme/theme.dart';
+import 'package:pantomim/theme/configtheme.dart';
+
 import 'package:pantomim/views/auth/get_start_screans.dart';
 import 'package:pantomim/views/auth/home_screans.dart';
 import 'package:shared_preferences/shared_preferences.dart';
@@ -24,25 +24,24 @@ class MyApp extends StatefulWidget {
 
 class _MyAppState extends State<MyApp> {
   SharedPreferences? sharedPreferences;
+  Locale _locale = Locale('en');
 
   @override
   Widget build(
     BuildContext context,
   ) {
     return MaterialApp(
+        // ignore: prefer_const_literals_to_create_immutables
         localizationsDelegates: [
           AppLocalizations.delegate,
           GlobalMaterialLocalizations.delegate,
           GlobalWidgetsLocalizations.delegate,
           GlobalCupertinoLocalizations.delegate,
         ],
-        locale: Locale('fa'),
-        supportedLocales: [
-          Locale('en', ''), // English, no country code
-          Locale('fa', ''), // Spanish, no country code
-        ],
+        locale: _locale,
+        supportedLocales: AppLocalizations.supportedLocales,
         debugShowCheckedModeBanner: false,
         home: isviewed != 0 ? const GetStartScreans() : const HomeScreans(),
-        theme: MyThemes2.light().getTheme('en'));
+        theme: ConfigTheme.light().getTheme(_locale.languageCode));
   }
 }

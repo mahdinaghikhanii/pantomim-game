@@ -12,7 +12,7 @@ class HomeScreans extends StatelessWidget {
   Widget build(BuildContext context) {
     // ignore: unused_local_variable
     final size = MediaQuery.of(context).size;
-    var local = AppLocalizations.of(context)!;
+    var localApp = AppLocalizations.of(context)!;
     return Container(
       decoration: const BoxDecoration(
           gradient: LinearGradient(
@@ -29,8 +29,8 @@ class HomeScreans extends StatelessWidget {
               crossAxisAlignment: CrossAxisAlignment.center,
               children: [
                 FadeInUp(
-                  duration: Duration(milliseconds: 1200),
-                  delay: Duration(microseconds: 1200),
+                  duration: const Duration(milliseconds: 1200),
+                  delay: const Duration(microseconds: 1200),
                   child: Center(
                     child: Image.asset(
                       'assets/images/frinds1.png',
@@ -40,14 +40,30 @@ class HomeScreans extends StatelessWidget {
                   ),
                 ),
                 Column(crossAxisAlignment: CrossAxisAlignment.start, children: [
-                  Row(children: [])
+                  Row(children: [
+                    FadeInUp(
+                        duration: const Duration(milliseconds: 1200),
+                        delay: const Duration(microseconds: 1200),
+                        child: Padding(
+                          padding: const EdgeInsets.only(left: 30, right: 30),
+                          child: RichText(
+                              text: TextSpan(children: [
+                            TextSpan(
+                                text: localApp.titleHomeScreans1,
+                                style: Theme.of(context).textTheme.headline1),
+                            TextSpan(
+                                text: localApp.titleHomeScreans2,
+                                style: Theme.of(context).textTheme.headline2)
+                          ])),
+                        ))
+                  ])
                   // ignore: prefer_const_literals_to_create_immutables
                 ]),
                 SizedBox(
-                  height: size.height * 0.12,
+                  height: size.height * 0.10,
                 ),
                 Button_widget(
-                  text: 'START PLAY',
+                  text: localApp.textButtonHomeScrens,
                   color: const Color(0xFF0D47A1),
                   ontap: () {
                     Navigator.push(context,
@@ -56,14 +72,14 @@ class HomeScreans extends StatelessWidget {
                 ),
                 Button_widget(
                   color: Colors.transparent,
-                  text: "HOW TO PLAY ?",
+                  text: localApp.textButtonHowToPlayHomeScreans,
                   ontap: () {
                     showDialog(
                         context: context,
                         builder: (
                           context,
                         ) =>
-                            DialogHowToPlay());
+                            const DialogHowToPlay());
                   },
                 )
               ],

@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_localizations/flutter_localizations.dart';
 import 'package:pantomim/theme/theme.dart';
 import 'package:pantomim/views/auth/get_start_screans.dart';
 import 'package:pantomim/views/auth/home_screans.dart';
@@ -27,6 +28,15 @@ class _MyAppState extends State<MyApp> {
     BuildContext context,
   ) {
     return MaterialApp(
+      localizationsDelegates: [
+        GlobalMaterialLocalizations.delegate,
+        GlobalWidgetsLocalizations.delegate,
+        GlobalCupertinoLocalizations.delegate,
+      ],
+      supportedLocales: [
+        Locale('en', ''), // English, no country code
+        Locale('fa', ''), // Spanish, no country code
+      ],
       debugShowCheckedModeBanner: false,
       home: isviewed != 0 ? const GetStartScreans() : const HomeScreans(),
       theme: MyThemes.lightTheme,

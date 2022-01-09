@@ -1,8 +1,8 @@
-// ignore_for_file: prefer_const_constructors
-
 import 'package:animate_do/animate_do.dart';
 import 'package:flutter/material.dart';
+import 'package:pantomim/theme/constant.dart';
 import 'package:pantomim/views/auth/meno_screans.dart';
+import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 import 'package:pantomim/views/dialog_screns/dialog_how_to_play.dart';
 
 class HomeScreans extends StatelessWidget {
@@ -12,6 +12,7 @@ class HomeScreans extends StatelessWidget {
   Widget build(BuildContext context) {
     // ignore: unused_local_variable
     final size = MediaQuery.of(context).size;
+    var local = AppLocalizations.of(context)!;
     return Container(
       decoration: const BoxDecoration(
           gradient: LinearGradient(
@@ -39,46 +40,8 @@ class HomeScreans extends StatelessWidget {
                   ),
                 ),
                 Column(crossAxisAlignment: CrossAxisAlignment.start, children: [
+                  Row(children: [])
                   // ignore: prefer_const_literals_to_create_immutables
-                  Row(mainAxisAlignment: MainAxisAlignment.start, children: [
-                    FadeInUp(
-                      duration: Duration(milliseconds: 1200),
-                      delay: Duration(microseconds: 1200),
-                      child: Padding(
-                          padding: EdgeInsets.only(left: 30),
-                          child: Text(
-                            'Play',
-                            style: TextStyle(
-                                color: Color(0xFF0D47A1),
-                                fontSize: 38,
-                                fontWeight: FontWeight.bold),
-                          )),
-                    ),
-                    FadeInUp(
-                      duration: Duration(milliseconds: 1200),
-                      delay: Duration(microseconds: 1200),
-                      child: Text(
-                        ' with',
-                        style: TextStyle(
-                            color: Colors.white,
-                            fontSize: 38,
-                            fontWeight: FontWeight.bold),
-                      ),
-                    )
-                  ]),
-                  FadeInUp(
-                    duration: Duration(milliseconds: 1200),
-                    delay: Duration(microseconds: 1200),
-                    child: Padding(
-                        padding: EdgeInsets.only(left: 30, top: 10),
-                        child: Text(
-                          'Friends',
-                          style: TextStyle(
-                              color: Colors.white,
-                              fontSize: 38,
-                              fontWeight: FontWeight.bold),
-                        )),
-                  ),
                 ]),
                 SizedBox(
                   height: size.height * 0.12,

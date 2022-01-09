@@ -103,7 +103,7 @@ flutter:
   fonts:
       - family: IranYekan
         fonts:
-          - asset: fonts/MooLahLah-Regular.ttf
+          - asset: assets/fonts/IRANYekanMobileMedium.ttf
   #       - asset: fonts/Schyler-Italic.ttf
   #         style: italic
   #   - family: Trajan Pro

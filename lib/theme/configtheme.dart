@@ -26,6 +26,9 @@ class ConfigTheme {
         headline1: TextStyle(
             fontFamily: faPrimaryFontFamily, fontSize: 45, color: kblue),
         headline2: TextStyle(
-            fontSize: 35, color: kwhite, fontFamily: faPrimaryFontFamily),
+            height: 0,
+            fontSize: 35,
+            color: kwhite,
+            fontFamily: faPrimaryFontFamily),
       );
 }

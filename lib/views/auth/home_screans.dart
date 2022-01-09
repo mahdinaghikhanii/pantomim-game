@@ -1,6 +1,5 @@
 import 'package:animate_do/animate_do.dart';
 import 'package:flutter/material.dart';
-import 'package:pantomim/theme/constant.dart';
 import 'package:pantomim/views/auth/meno_screans.dart';
 import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 import 'package:pantomim/views/dialog_screns/dialog_how_to_play.dart';
@@ -42,20 +41,21 @@ class HomeScreans extends StatelessWidget {
                 Column(crossAxisAlignment: CrossAxisAlignment.start, children: [
                   Row(children: [
                     FadeInUp(
-                        duration: const Duration(milliseconds: 1200),
-                        delay: const Duration(microseconds: 1200),
-                        child: Padding(
-                          padding: const EdgeInsets.only(left: 30, right: 30),
-                          child: RichText(
-                              text: TextSpan(children: [
-                            TextSpan(
-                                text: localApp.titleHomeScreans1,
-                                style: Theme.of(context).textTheme.headline1),
-                            TextSpan(
-                                text: localApp.titleHomeScreans2,
-                                style: Theme.of(context).textTheme.headline2)
-                          ])),
-                        ))
+                      duration: const Duration(milliseconds: 1200),
+                      delay: const Duration(microseconds: 1200),
+                      child: Padding(
+                        padding: const EdgeInsets.only(left: 30, right: 30),
+                        child: RichText(
+                            text: TextSpan(children: [
+                          TextSpan(
+                              text: localApp.titleHomeScreans1,
+                              style: Theme.of(context).textTheme.headline1),
+                          TextSpan(
+                              text: localApp.titleHomeScreans2,
+                              style: Theme.of(context).textTheme.headline2)
+                        ])),
+                      ),
+                    )
                   ])
                   // ignore: prefer_const_literals_to_create_immutables
                 ]),

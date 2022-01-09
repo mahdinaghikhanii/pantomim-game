@@ -24,7 +24,7 @@ class MyApp extends StatefulWidget {
 
 class _MyAppState extends State<MyApp> {
   SharedPreferences? sharedPreferences;
-  Locale _locale = Locale('en');
+  Locale _locale = Locale('fa');
 
   @override
   Widget build(

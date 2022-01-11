@@ -1,11 +1,12 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_localizations/flutter_localizations.dart';
+import 'package:pantomim/generated/l10n.dart';
 import 'package:pantomim/theme/configtheme.dart';
-
 import 'package:pantomim/views/auth/get_start_screans.dart';
 import 'package:pantomim/views/auth/home_screans.dart';
+import 'package:provider/provider.dart';
 import 'package:shared_preferences/shared_preferences.dart';
-import 'package:flutter_gen/gen_l10n/app_localizations.dart';
+import 'module/language_provider.dart';
 
 int? isviewed;
 void main() async {
@@ -24,24 +25,32 @@ class MyApp extends StatefulWidget {
 
 class _MyAppState extends State<MyApp> {
   SharedPreferences? sharedPreferences;
-  Locale _locale = Locale('fa');
 
   @override
   Widget build(
     BuildContext context,
   ) {
-    return MaterialApp(
-        // ignore: prefer_const_literals_to_create_immutables
-        localizationsDelegates: [
-          AppLocalizations.delegate,
-          GlobalMaterialLocalizations.delegate,
-          GlobalWidgetsLocalizations.delegate,
-          GlobalCupertinoLocalizations.delegate,
-        ],
-        locale: _locale,
-        supportedLocales: AppLocalizations.supportedLocales,
-        debugShowCheckedModeBanner: false,
-        home: isviewed != 0 ? const GetStartScreans() : const HomeScreans(),
-        theme: ConfigTheme.light().getTheme(_locale.languageCode));
+    return ChangeNotifierProvider<LanguageChangeProvider>(
+        create: (context) => LanguageChangeProvider(),
+        child: Builder(
+          builder: (context) => MaterialApp(
+              locale: Provider.of<LanguageChangeProvider>(context, listen: true)
+                  .currentLocale,
+              // ignore: prefer_const_literals_to_create_immutables
+              localizationsDelegates: [
+                S.delegate,
+                GlobalMaterialLocalizations.delegate,
+                GlobalWidgetsLocalizations.delegate,
+                GlobalCupertinoLocalizations.delegate,
+              ],
+              supportedLocales: S.delegate.supportedLocales,
+              debugShowCheckedModeBanner: false,
+              home:
+                  isviewed != 0 ? const GetStartScreans() : const HomeScreans(),
+              theme: ConfigTheme.light().getTheme(
+                  Provider.of<LanguageChangeProvider>(context, listen: true)
+                      .currentLocale
+                      .languageCode)),
+        ));
   }
 }

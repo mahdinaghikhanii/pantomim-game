@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
+import 'package:pantomim/module/language_provider.dart';
 import 'package:pantomim/theme/constant.dart';
+import 'package:provider/src/provider.dart';
 
 import '../../constants.dart';
 
@@ -17,13 +19,16 @@ class _SettingDialogState extends State<SettingDialog> {
       'id': '1',
       'image': 'assets/images/usa.png',
       'name': 'English',
+      'ontap': 'en',
     },
     {
       'id': '2',
       'image': 'assets/images/topic/country.png',
       'name': 'Persian',
+      'ontap': 'fa'
     }
   ];
+
   @override
   Widget build(BuildContext context) {
     final size = MediaQuery.of(context).size;
@@ -75,6 +80,13 @@ class _SettingDialogState extends State<SettingDialog> {
                                       items: myJson.map((bankIteam) {
                                         return DropdownMenuItem(
                                             value: bankIteam['id'].toString(),
+                                            onTap: () {
+                                              context
+                                                  .read<
+                                                      LanguageChangeProvider>()
+                                                  .changeLocale(
+                                                      bankIteam['ontap']);
+                                            },
                                             child: Row(
                                               mainAxisAlignment:
                                                   MainAxisAlignment

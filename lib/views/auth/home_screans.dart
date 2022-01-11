@@ -1,7 +1,10 @@
 import 'package:animate_do/animate_do.dart';
 import 'package:flutter/material.dart';
+import 'package:pantomim/generated/l10n.dart';
+import 'package:pantomim/generated/l10n.dart';
+import 'package:pantomim/generated/l10n.dart';
 import 'package:pantomim/views/auth/meno_screans.dart';
-import 'package:flutter_gen/gen_l10n/app_localizations.dart';
+
 import 'package:pantomim/views/dialog_screns/dialog_how_to_play.dart';
 
 class HomeScreans extends StatelessWidget {
@@ -11,7 +14,7 @@ class HomeScreans extends StatelessWidget {
   Widget build(BuildContext context) {
     // ignore: unused_local_variable
     final size = MediaQuery.of(context).size;
-    var localApp = AppLocalizations.of(context)!;
+    var localApp = S.of(context);
     return Container(
       decoration: const BoxDecoration(
           gradient: LinearGradient(

@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/cupertino.dart';
 
-class LanguageChangeNotifierProvider with ChangeNotifier {
+class LanguageChangeProvider with ChangeNotifier {
   Locale _currentLocale = new Locale("en");
 
   Locale get currentLocale => _currentLocale;

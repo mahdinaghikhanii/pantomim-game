@@ -1,5 +1,6 @@
 import 'package:animate_do/animate_do.dart';
 import 'package:flutter/material.dart';
+import 'package:pantomim/generated/l10n.dart';
 import 'package:pantomim/theme/constant.dart';
 import 'package:pantomim/views/auth/choice_your_topic.dart';
 
@@ -12,6 +13,7 @@ class MenoScreans extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     final size = MediaQuery.of(context).size;
+    var localApp = S.of(context);
     return FadeInUp(
       duration: const Duration(milliseconds: 1200),
       delay: const Duration(microseconds: 1200),

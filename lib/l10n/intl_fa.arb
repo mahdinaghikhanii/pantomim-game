@@ -1,16 +1,17 @@
 {
-    "titleHomeScreans1": "بازی",
-    "titleHomeScreans2": " همراه \nبا دوستان",
-    "textButtonHomeScrens": "شروع بازی",
-    "textButtonHowToPlayHomeScreans": "چگونه بازی کنیم ؟",
-    "textTitleMenoScreans1": " بازی",
-    "textTitleMenoScreans2": "پانتومیم",
-    "textTitleMenoScreans3": "بهترین بازی برای خانواده",
+    "titleHomeScreans1" : "بازی",
+    "titleHomeScreans2" : " همراه \nبا دوستان",
+    "textButtonHomeScrens" : "شروع بازی",
+    "textButtonHowToPlayHomeScreans" : "چگونه بازی کنیم ؟",
+    "textTitleMenoScreans1" : " بازی",
+    "textTitleMenoScreans2" : " پانتومیم ",
+    "textTitleMenoScreans3" : "بهترین بازی برای خانواده",
     "detailButtonMenoScreansNormalGame" : "بریم واسه \nیه بازی\nجدید نرمال",
+    "detailButtonMenoScreansNormalGameLestsGo" : "بزن بریم",
     "detailButtonMenoScreansFight" : "جنگی",
     "detailButtonMenoScreansSpead" : "سرعتی",
     "detailButtonMenoScreansScore" : "امتیاز ها",
-    "detailButtonMenoScreansSetting" : "تنظیمات "
-    
-
+    "detailButtonMenoScreansSetting" : "تنظیمات ",
+    "dialogSettingsSelectLanguage" : "زبان را انتخاب کنید",
+    "dialogSettingsMusick" : "موسیقی"
 }

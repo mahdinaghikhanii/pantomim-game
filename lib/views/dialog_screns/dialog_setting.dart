@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:pantomim/generated/l10n.dart';
 import 'package:pantomim/module/language_provider.dart';
 import 'package:pantomim/theme/constant.dart';
 import 'package:provider/src/provider.dart';
@@ -32,6 +33,7 @@ class _SettingDialogState extends State<SettingDialog> {
   @override
   Widget build(BuildContext context) {
     final size = MediaQuery.of(context).size;
+    var localApp = S.of(context);
     return Dialog(
         insetPadding: const EdgeInsets.all(20),
         shape: RoundedRectangleBorder(
@@ -69,7 +71,8 @@ class _SettingDialogState extends State<SettingDialog> {
                                 child: ButtonTheme(
                                   alignedDropdown: true,
                                   child: DropdownButton(
-                                      hint: const Text('Select Language',
+                                      hint: Text(
+                                          localApp.dialogSettingsSelectLanguage,
                                           style: styleTextForSetting),
                                       value: _select,
                                       onChanged: (newValue) {
@@ -126,7 +129,8 @@ class _SettingDialogState extends State<SettingDialog> {
                   crossAxisAlignment: CrossAxisAlignment.start,
                   // ignore: prefer_const_literals_to_create_immutables
                   children: [
-                    const Text('Music', style: styleTextForSetting),
+                    Text(localApp.dialogSettingsMusick,
+                        style: styleTextForSetting),
                     const Spacer(),
                     const Icon(
                       Icons.music_note,

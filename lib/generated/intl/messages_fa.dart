@@ -22,10 +22,31 @@ class MessageLookup extends MessageLookupByLibrary {
 
   final messages = _notInlinedMessages(_notInlinedMessages);
   static Map<String, Function> _notInlinedMessages(_) => <String, Function>{
+        "detailButtonMenoScreansFight":
+            MessageLookupByLibrary.simpleMessage("جنگی"),
+        "detailButtonMenoScreansNormalGame":
+            MessageLookupByLibrary.simpleMessage(
+                "بریم واسه \nیه بازی\nجدید نرمال"),
+        "detailButtonMenoScreansNormalGameLestsGo":
+            MessageLookupByLibrary.simpleMessage("بزن بریم"),
+        "detailButtonMenoScreansScore":
+            MessageLookupByLibrary.simpleMessage("امتیاز ها"),
+        "detailButtonMenoScreansSetting":
+            MessageLookupByLibrary.simpleMessage("تنظیمات "),
+        "detailButtonMenoScreansSpead":
+            MessageLookupByLibrary.simpleMessage("سرعتی"),
+        "dialogSettingsMusick": MessageLookupByLibrary.simpleMessage("موسیقی"),
+        "dialogSettingsSelectLanguage":
+            MessageLookupByLibrary.simpleMessage("زبان را انتخاب کنید"),
         "textButtonHomeScrens":
             MessageLookupByLibrary.simpleMessage("شروع بازی"),
         "textButtonHowToPlayHomeScreans":
             MessageLookupByLibrary.simpleMessage("چگونه بازی کنیم ؟"),
+        "textTitleMenoScreans1": MessageLookupByLibrary.simpleMessage(" بازی"),
+        "textTitleMenoScreans2":
+            MessageLookupByLibrary.simpleMessage(" پانتومیم "),
+        "textTitleMenoScreans3":
+            MessageLookupByLibrary.simpleMessage("بهترین بازی برای خانواده"),
         "titleHomeScreans1": MessageLookupByLibrary.simpleMessage("بازی"),
         "titleHomeScreans2":
             MessageLookupByLibrary.simpleMessage(" همراه \nبا دوستان")

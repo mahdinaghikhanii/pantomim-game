@@ -1,14 +1,18 @@
 {
-    "titleHomeScreans1": "Play",
-    "titleHomeScreans2": " with\nFriends",
-    "textButtonHomeScrens": "START PLAY",
-    "textButtonHowToPlayHomeScreans": "HOW TO PLAY ?"
-    "textTitleMenoScreans1": " Pantomim",
-    "textTitleMenoScreans2": "Game",
-    "textTitleMenoScreans3": "Best Game For Family",
+    "titleHomeScreans1" : "Play",
+    "titleHomeScreans2" : " with\nFriends",
+    "textButtonHomeScrens" : "START PLAY",
+    "textButtonHowToPlayHomeScreans" : "HOW TO PLAY ?",
+    "textTitleMenoScreans1" : " Pantomim",
+    "textTitleMenoScreans2" : "Game",
+    "textTitleMenoScreans3" : "Best Game For Family",
     "detailButtonMenoScreansNormalGame" : "Let`s Become\na New\nNormal Game",
+    "detailButtonMenoScreansNormalGameLestsGo" : "Lets Go",
     "detailButtonMenoScreansFight" : "Fight",
     "detailButtonMenoScreansSpead" : "Spead",
     "detailButtonMenoScreansScore" : "Score",
-    "detailButtonMenoScreansSetting" : "Setting"
+    "detailButtonMenoScreansSetting" : "Setting",
+    "dialogSettingsSelectLanguage" : "Select Language",
+    "dialogSettingsMusick" : "Music"
+   
 }

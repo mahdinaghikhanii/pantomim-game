@@ -7,6 +7,7 @@ import 'package:pantomim/views/auth/home_screans.dart';
 import 'package:provider/provider.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 import 'module/language_provider.dart';
+import 'generated/l10n.dart';
 
 int? isviewed;
 void main() async {

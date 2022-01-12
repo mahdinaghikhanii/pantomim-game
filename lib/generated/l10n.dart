@@ -89,6 +89,116 @@ class S {
       args: [],
     );
   }
+
+  /// ` Pantomim`
+  String get textTitleMenoScreans1 {
+    return Intl.message(
+      ' Pantomim',
+      name: 'textTitleMenoScreans1',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Game`
+  String get textTitleMenoScreans2 {
+    return Intl.message(
+      'Game',
+      name: 'textTitleMenoScreans2',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Best Game For Family`
+  String get textTitleMenoScreans3 {
+    return Intl.message(
+      'Best Game For Family',
+      name: 'textTitleMenoScreans3',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Let's Become\na New\nNormal Game`
+  String get detailButtonMenoScreansNormalGame {
+    return Intl.message(
+      'Let`s Become\na New\nNormal Game',
+      name: 'detailButtonMenoScreansNormalGame',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Lets Go`
+  String get detailButtonMenoScreansNormalGameLestsGo {
+    return Intl.message(
+      'Lets Go',
+      name: 'detailButtonMenoScreansNormalGameLestsGo',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Fight`
+  String get detailButtonMenoScreansFight {
+    return Intl.message(
+      'Fight',
+      name: 'detailButtonMenoScreansFight',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Spead`
+  String get detailButtonMenoScreansSpead {
+    return Intl.message(
+      'Spead',
+      name: 'detailButtonMenoScreansSpead',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Score`
+  String get detailButtonMenoScreansScore {
+    return Intl.message(
+      'Score',
+      name: 'detailButtonMenoScreansScore',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Setting`
+  String get detailButtonMenoScreansSetting {
+    return Intl.message(
+      'Setting',
+      name: 'detailButtonMenoScreansSetting',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Select Language`
+  String get dialogSettingsSelectLanguage {
+    return Intl.message(
+      'Select Language',
+      name: 'dialogSettingsSelectLanguage',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Music`
+  String get dialogSettingsMusick {
+    return Intl.message(
+      'Music',
+      name: 'dialogSettingsMusick',
+      desc: '',
+      args: [],
+    );
+  }
 }
 
 class AppLocalizationDelegate extends LocalizationsDelegate<S> {

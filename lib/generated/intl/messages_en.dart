@@ -22,10 +22,31 @@ class MessageLookup extends MessageLookupByLibrary {
 
   final messages = _notInlinedMessages(_notInlinedMessages);
   static Map<String, Function> _notInlinedMessages(_) => <String, Function>{
+        "detailButtonMenoScreansFight":
+            MessageLookupByLibrary.simpleMessage("Fight"),
+        "detailButtonMenoScreansNormalGame":
+            MessageLookupByLibrary.simpleMessage(
+                "Let`s Become\na New\nNormal Game"),
+        "detailButtonMenoScreansNormalGameLestsGo":
+            MessageLookupByLibrary.simpleMessage("Lets Go"),
+        "detailButtonMenoScreansScore":
+            MessageLookupByLibrary.simpleMessage("Score"),
+        "detailButtonMenoScreansSetting":
+            MessageLookupByLibrary.simpleMessage("Setting"),
+        "detailButtonMenoScreansSpead":
+            MessageLookupByLibrary.simpleMessage("Spead"),
+        "dialogSettingsMusick": MessageLookupByLibrary.simpleMessage("Music"),
+        "dialogSettingsSelectLanguage":
+            MessageLookupByLibrary.simpleMessage("Select Language"),
         "textButtonHomeScrens":
             MessageLookupByLibrary.simpleMessage("START PLAY"),
         "textButtonHowToPlayHomeScreans":
             MessageLookupByLibrary.simpleMessage("HOW TO PLAY ?"),
+        "textTitleMenoScreans1":
+            MessageLookupByLibrary.simpleMessage(" Pantomim"),
+        "textTitleMenoScreans2": MessageLookupByLibrary.simpleMessage("Game"),
+        "textTitleMenoScreans3":
+            MessageLookupByLibrary.simpleMessage("Best Game For Family"),
         "titleHomeScreans1": MessageLookupByLibrary.simpleMessage("Play"),
         "titleHomeScreans2":
             MessageLookupByLibrary.simpleMessage(" with\nFriends")

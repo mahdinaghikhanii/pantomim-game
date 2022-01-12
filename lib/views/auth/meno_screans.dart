@@ -40,16 +40,19 @@ class MenoScreans extends StatelessWidget {
                           Padding(
                             padding: const EdgeInsets.all(8.0),
                             child: Row(
-                              children: const [
+                              children: [
                                 Text(
-                                  'Pantomim',
+                                  localApp.textTitleMenoScreans1,
                                   style: TextStyle(
                                       color: Color(0xFF0D47A1),
                                       fontSize: 28,
                                       fontWeight: FontWeight.bold),
                                 ),
+                                SizedBox(
+                                  width: 4,
+                                ),
                                 Text(
-                                  ' Game ',
+                                  localApp.textTitleMenoScreans2,
                                   style: TextStyle(
                                       color: kwhite,
                                       fontSize: 28,
@@ -62,7 +65,7 @@ class MenoScreans extends StatelessWidget {
                             padding: const EdgeInsets.only(
                                 left: 8, right: 8, top: 0),
                             child: Text(
-                              'Best Game For Family',
+                              localApp.textTitleMenoScreans3,
                               style:
                                   Theme.of(context).primaryTextTheme.subtitle1,
                             ),
@@ -96,7 +99,8 @@ class MenoScreans extends StatelessWidget {
                                     padding:
                                         const EdgeInsets.only(left: 0, top: 0),
                                     child: Text(
-                                        'Let`s Become\na New\nNormal Game',
+                                        localApp
+                                            .detailButtonMenoScreansNormalGame,
                                         style: Theme.of(context)
                                             .primaryTextTheme
                                             .subtitle1),
@@ -114,7 +118,8 @@ class MenoScreans extends StatelessWidget {
                                           MainAxisAlignment.center,
                                       children: [
                                         Text(
-                                          'Lets Go',
+                                          localApp
+                                              .detailButtonMenoScreansNormalGameLestsGo,
                                           style: Theme.of(context)
                                               .primaryTextTheme
                                               .bodyText2,
@@ -157,16 +162,16 @@ class MenoScreans extends StatelessWidget {
                                 builder: (context) => ChoiceYourTopic()));
                       },
                       image: 'assets/images/spead.png',
-                      text: 'Fight',
+                      text: localApp.detailButtonMenoScreansFight,
                     ),
                     BoxForMenoImage(
                       color: kblue,
                       tap: () {},
                       image: 'assets/images/car.png',
-                      text: 'Spead',
+                      text: localApp.detailButtonMenoScreansSpead,
                     ),
                     SmalBox_For_MenoScreans(
-                      text: 'Score',
+                      text: localApp.detailButtonMenoScreansNormalGameLestsGo,
                       color: Colors.yellow.shade800,
                       image: 'assets/images/score.png',
                     ),
@@ -181,7 +186,7 @@ class MenoScreans extends StatelessWidget {
                                 SettingDialog());
                       },
                       image: 'assets/images/setting.png',
-                      text: 'Setting',
+                      text: localApp.detailButtonMenoScreansSetting,
                     ),
                   ],
                 ),

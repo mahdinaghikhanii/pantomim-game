@@ -29,6 +29,7 @@ environment:
 dependencies:
   flutter:
     sdk: flutter
+
   flutter_localizations: # Add this line
     sdk: flutter
   provider: ^6.0.1
@@ -45,6 +46,7 @@ dev_dependencies:
   flutter_test:
     sdk: flutter
   flutter_native_splash: ^1.3.2
+  
 
   # The "flutter_lints" package below contains a set of recommended lints to
   # encourage good coding practices. The lint set provided by the package is
@@ -53,12 +55,13 @@ dev_dependencies:
   # rules and activating additional ones.
   flutter_lints: ^1.0.0
 
+  
+
 flutter_native_splash:
 
   android: true
   ios: true
   web: true
-
   color: "#42a5f5"
   image: assets/images/welcome.png
   #background_image: assets/images/welcome.png

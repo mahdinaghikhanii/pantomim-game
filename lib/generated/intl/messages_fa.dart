@@ -38,11 +38,39 @@ class MessageLookup extends MessageLookupByLibrary {
         "dialogSettingsMusick": MessageLookupByLibrary.simpleMessage("موسیقی"),
         "dialogSettingsSelectLanguage":
             MessageLookupByLibrary.simpleMessage("زبان را انتخاب کنید"),
+        "dialogTypeOfMatchNumberofteamsTitle":
+            MessageLookupByLibrary.simpleMessage("تعداد تیم ها"),
+        "dialogTypeOfMatchSubjectTitle":
+            MessageLookupByLibrary.simpleMessage("موضوع مسابقه جدید :"),
+        "dialogTypeOfMatchbuttontextAnimal":
+            MessageLookupByLibrary.simpleMessage("حیوان"),
+        "dialogTypeOfMatchbuttontextBook":
+            MessageLookupByLibrary.simpleMessage("کتاب"),
+        "dialogTypeOfMatchbuttontextCountry":
+            MessageLookupByLibrary.simpleMessage("کشور"),
+        "dialogTypeOfMatchbuttontextFood":
+            MessageLookupByLibrary.simpleMessage("غذا"),
+        "dialogTypeOfMatchbuttontextGeneral":
+            MessageLookupByLibrary.simpleMessage("عمومی"),
+        "dialogTypeOfMatchbuttontextMovie":
+            MessageLookupByLibrary.simpleMessage("فیلم"),
+        "dialogTypeOfMatchbuttontextMusic":
+            MessageLookupByLibrary.simpleMessage("موزیک"),
+        "dialogTypeOfMatchbuttontextSport":
+            MessageLookupByLibrary.simpleMessage("ورزشی"),
+        "dialogTypeOfMatchbuttontextTecnology":
+            MessageLookupByLibrary.simpleMessage("تکنولوژی"),
+        "dialogTypeOfMatchbuttontextThing":
+            MessageLookupByLibrary.simpleMessage("اشیا"),
+        "dialogTypeOfMatchbuttontextTourism":
+            MessageLookupByLibrary.simpleMessage("گردشگری"),
+        "dialogTypeOfMatchbuttontextjob":
+            MessageLookupByLibrary.simpleMessage("شغل"),
         "textButtonHomeScrens":
             MessageLookupByLibrary.simpleMessage("شروع بازی"),
         "textButtonHowToPlayHomeScreans":
             MessageLookupByLibrary.simpleMessage("چگونه بازی کنیم ؟"),
-        "textTitleMenoScreans1": MessageLookupByLibrary.simpleMessage(" بازی"),
+        "textTitleMenoScreans1": MessageLookupByLibrary.simpleMessage("بازی"),
         "textTitleMenoScreans2":
             MessageLookupByLibrary.simpleMessage(" پانتومیم "),
         "textTitleMenoScreans3":

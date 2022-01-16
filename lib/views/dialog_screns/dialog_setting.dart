@@ -3,8 +3,7 @@ import 'package:pantomim/generated/l10n.dart';
 import 'package:pantomim/module/language_provider.dart';
 import 'package:pantomim/theme/constant.dart';
 import 'package:provider/src/provider.dart';
-
-import '../../constants.dart';
+import 'package:shared_preferences/shared_preferences.dart';
 
 class SettingDialog extends StatefulWidget {
   const SettingDialog({Key? key}) : super(key: key);
@@ -30,6 +29,13 @@ class _SettingDialogState extends State<SettingDialog> {
     }
   ];
 
+  savedata(String data) async {
+    SharedPreferences preferences = await SharedPreferences.getInstance();
+    preferences.setString('my', data);
+    String m = preferences.getString('my').toString();
+    context.read<LanguageChangeProvider>().changeLocale;
+  }
+
   @override
   Widget build(BuildContext context) {
     final size = MediaQuery.of(context).size;
@@ -37,7 +43,7 @@ class _SettingDialogState extends State<SettingDialog> {
     return Dialog(
         insetPadding: const EdgeInsets.all(20),
         shape: RoundedRectangleBorder(
-          borderRadius: BorderRadius.circular(Constants.padding),
+          borderRadius: BorderRadius.circular(Constans.padding),
         ),
         elevation: 0,
         backgroundColor: Colors.transparent,
@@ -84,6 +90,7 @@ class _SettingDialogState extends State<SettingDialog> {
                                         return DropdownMenuItem(
                                             value: bankIteam['id'].toString(),
                                             onTap: () {
+                                              savedata(bankIteam['ontap']);
                                               context
                                                   .read<
                                                       LanguageChangeProvider>()

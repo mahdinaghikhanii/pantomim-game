@@ -90,10 +90,10 @@ class S {
     );
   }
 
-  /// ` Pantomim`
+  /// `Pantomim`
   String get textTitleMenoScreans1 {
     return Intl.message(
-      ' Pantomim',
+      'Pantomim',
       name: 'textTitleMenoScreans1',
       desc: '',
       args: [],
@@ -195,6 +195,146 @@ class S {
     return Intl.message(
       'Music',
       name: 'dialogSettingsMusick',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `New contest theme :`
+  String get dialogTypeOfMatchSubjectTitle {
+    return Intl.message(
+      'New contest theme :',
+      name: 'dialogTypeOfMatchSubjectTitle',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Animal`
+  String get dialogTypeOfMatchbuttontextAnimal {
+    return Intl.message(
+      'Animal',
+      name: 'dialogTypeOfMatchbuttontextAnimal',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Sport`
+  String get dialogTypeOfMatchbuttontextSport {
+    return Intl.message(
+      'Sport',
+      name: 'dialogTypeOfMatchbuttontextSport',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Food`
+  String get dialogTypeOfMatchbuttontextFood {
+    return Intl.message(
+      'Food',
+      name: 'dialogTypeOfMatchbuttontextFood',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Country`
+  String get dialogTypeOfMatchbuttontextCountry {
+    return Intl.message(
+      'Country',
+      name: 'dialogTypeOfMatchbuttontextCountry',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Thing`
+  String get dialogTypeOfMatchbuttontextThing {
+    return Intl.message(
+      'Thing',
+      name: 'dialogTypeOfMatchbuttontextThing',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Movie`
+  String get dialogTypeOfMatchbuttontextMovie {
+    return Intl.message(
+      'Movie',
+      name: 'dialogTypeOfMatchbuttontextMovie',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Book`
+  String get dialogTypeOfMatchbuttontextBook {
+    return Intl.message(
+      'Book',
+      name: 'dialogTypeOfMatchbuttontextBook',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Tourism`
+  String get dialogTypeOfMatchbuttontextTourism {
+    return Intl.message(
+      'Tourism',
+      name: 'dialogTypeOfMatchbuttontextTourism',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `General`
+  String get dialogTypeOfMatchbuttontextGeneral {
+    return Intl.message(
+      'General',
+      name: 'dialogTypeOfMatchbuttontextGeneral',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Tecnology`
+  String get dialogTypeOfMatchbuttontextTecnology {
+    return Intl.message(
+      'Tecnology',
+      name: 'dialogTypeOfMatchbuttontextTecnology',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Music`
+  String get dialogTypeOfMatchbuttontextMusic {
+    return Intl.message(
+      'Music',
+      name: 'dialogTypeOfMatchbuttontextMusic',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Job`
+  String get dialogTypeOfMatchbuttontextjob {
+    return Intl.message(
+      'Job',
+      name: 'dialogTypeOfMatchbuttontextjob',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Number Of Teams`
+  String get dialogTypeOfMatchNumberofteamsTitle {
+    return Intl.message(
+      'Number Of Teams',
+      name: 'dialogTypeOfMatchNumberofteamsTitle',
       desc: '',
       args: [],
     );

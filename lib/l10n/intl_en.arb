@@ -3,7 +3,7 @@
     "titleHomeScreans2" : " with\nFriends",
     "textButtonHomeScrens" : "START PLAY",
     "textButtonHowToPlayHomeScreans" : "HOW TO PLAY ?",
-    "textTitleMenoScreans1" : " Pantomim",
+    "textTitleMenoScreans1" : "Pantomim",
     "textTitleMenoScreans2" : "Game",
     "textTitleMenoScreans3" : "Best Game For Family",
     "detailButtonMenoScreansNormalGame" : "Let`s Become\na New\nNormal Game",
@@ -13,6 +13,20 @@
     "detailButtonMenoScreansScore" : "Score",
     "detailButtonMenoScreansSetting" : "Setting",
     "dialogSettingsSelectLanguage" : "Select Language",
-    "dialogSettingsMusick" : "Music"
-   
+    "dialogSettingsMusick" : "Music",
+    "dialogTypeOfMatchSubjectTitle" : "New contest theme :",
+    "dialogTypeOfMatchbuttontextAnimal" : "Animal",
+    "dialogTypeOfMatchbuttontextSport" : "Sport",
+    "dialogTypeOfMatchbuttontextFood" : "Food",
+    "dialogTypeOfMatchbuttontextCountry" : "Country",
+    "dialogTypeOfMatchbuttontextThing" : "Thing",
+    "dialogTypeOfMatchbuttontextMovie" : "Movie",
+    "dialogTypeOfMatchbuttontextBook" : "Book",
+    "dialogTypeOfMatchbuttontextTourism" : "Tourism",
+    "dialogTypeOfMatchbuttontextGeneral" : "General",
+    "dialogTypeOfMatchbuttontextTecnology" : "Tecnology",
+    "dialogTypeOfMatchbuttontextMusic" : "Music",
+    "dialogTypeOfMatchbuttontextjob" : "Job",
+    "dialogTypeOfMatchNumberofteamsTitle" : "Number Of Teams"
+    
 }

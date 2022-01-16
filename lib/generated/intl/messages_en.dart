@@ -38,12 +38,40 @@ class MessageLookup extends MessageLookupByLibrary {
         "dialogSettingsMusick": MessageLookupByLibrary.simpleMessage("Music"),
         "dialogSettingsSelectLanguage":
             MessageLookupByLibrary.simpleMessage("Select Language"),
+        "dialogTypeOfMatchNumberofteamsTitle":
+            MessageLookupByLibrary.simpleMessage("Number Of Teams"),
+        "dialogTypeOfMatchSubjectTitle":
+            MessageLookupByLibrary.simpleMessage("New contest theme :"),
+        "dialogTypeOfMatchbuttontextAnimal":
+            MessageLookupByLibrary.simpleMessage("Animal"),
+        "dialogTypeOfMatchbuttontextBook":
+            MessageLookupByLibrary.simpleMessage("Book"),
+        "dialogTypeOfMatchbuttontextCountry":
+            MessageLookupByLibrary.simpleMessage("Country"),
+        "dialogTypeOfMatchbuttontextFood":
+            MessageLookupByLibrary.simpleMessage("Food"),
+        "dialogTypeOfMatchbuttontextGeneral":
+            MessageLookupByLibrary.simpleMessage("General"),
+        "dialogTypeOfMatchbuttontextMovie":
+            MessageLookupByLibrary.simpleMessage("Movie"),
+        "dialogTypeOfMatchbuttontextMusic":
+            MessageLookupByLibrary.simpleMessage("Music"),
+        "dialogTypeOfMatchbuttontextSport":
+            MessageLookupByLibrary.simpleMessage("Sport"),
+        "dialogTypeOfMatchbuttontextTecnology":
+            MessageLookupByLibrary.simpleMessage("Tecnology"),
+        "dialogTypeOfMatchbuttontextThing":
+            MessageLookupByLibrary.simpleMessage("Thing"),
+        "dialogTypeOfMatchbuttontextTourism":
+            MessageLookupByLibrary.simpleMessage("Tourism"),
+        "dialogTypeOfMatchbuttontextjob":
+            MessageLookupByLibrary.simpleMessage("Job"),
         "textButtonHomeScrens":
             MessageLookupByLibrary.simpleMessage("START PLAY"),
         "textButtonHowToPlayHomeScreans":
             MessageLookupByLibrary.simpleMessage("HOW TO PLAY ?"),
         "textTitleMenoScreans1":
-            MessageLookupByLibrary.simpleMessage(" Pantomim"),
+            MessageLookupByLibrary.simpleMessage("Pantomim"),
         "textTitleMenoScreans2": MessageLookupByLibrary.simpleMessage("Game"),
         "textTitleMenoScreans3":
             MessageLookupByLibrary.simpleMessage("Best Game For Family"),

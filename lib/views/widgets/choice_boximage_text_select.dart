@@ -25,6 +25,7 @@ class _ChoiceTopicState extends State<ChoiceTopic> {
       borderRadius: BorderRadius.circular(12),
       onTap: widget.onTap,
       child: Container(
+        margin: EdgeInsets.only(top: 12),
         width: size.width * 0.32,
         height: size.height * 0.50,
         decoration: BoxDecoration(

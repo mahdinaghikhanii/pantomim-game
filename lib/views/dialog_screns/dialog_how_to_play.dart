@@ -1,8 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:pantomim/theme/constant.dart';
 
-import '../../constants.dart';
-
 class DialogHowToPlay extends StatelessWidget {
   const DialogHowToPlay({Key? key}) : super(key: key);
 
@@ -12,7 +10,7 @@ class DialogHowToPlay extends StatelessWidget {
     return Dialog(
         insetPadding: const EdgeInsets.all(00),
         shape: RoundedRectangleBorder(
-          borderRadius: BorderRadius.circular(Constants.padding),
+          borderRadius: BorderRadius.circular(Constans.padding),
         ),
         elevation: 0,
         backgroundColor: kwhite,

@@ -2,7 +2,7 @@ import 'package:animate_do/animate_do.dart';
 import 'package:flutter/material.dart';
 import 'package:pantomim/generated/l10n.dart';
 import 'package:pantomim/theme/constant.dart';
-import 'package:pantomim/views/auth/choice_your_topic.dart';
+import 'package:pantomim/views/auth/type_of_match_screans.dart';
 
 import 'package:pantomim/views/dialog_screns/dialog_setting.dart';
 import 'package:pantomim/views/widgets/box_.meno_image.dart';
@@ -25,172 +25,178 @@ class MenoScreans extends StatelessWidget {
                 colors: [Colors.white38, Colors.blue])),
         child: Scaffold(
           backgroundColor: Colors.transparent,
-          body: SafeArea(
-            child: Column(
-              crossAxisAlignment: CrossAxisAlignment.center,
-              children: [
-                Padding(
-                  padding: const EdgeInsets.all(8.0),
-                  child: Row(
-                    mainAxisAlignment: MainAxisAlignment.start,
+          body: SingleChildScrollView(
+            child: SafeArea(
+              child: Column(
+                crossAxisAlignment: CrossAxisAlignment.center,
+                children: [
+                  Padding(
+                    padding: const EdgeInsets.all(8.0),
+                    child: Row(
+                      mainAxisAlignment: MainAxisAlignment.start,
+                      children: [
+                        Column(
+                          crossAxisAlignment: CrossAxisAlignment.start,
+                          children: [
+                            Padding(
+                              padding: const EdgeInsets.all(8.0),
+                              child: Row(
+                                children: [
+                                  Text(
+                                    localApp.textTitleMenoScreans1,
+                                    style: const TextStyle(
+                                        color: Color(0xFF0D47A1),
+                                        fontSize: 28,
+                                        fontWeight: FontWeight.bold),
+                                  ),
+                                  const SizedBox(
+                                    width: 4,
+                                  ),
+                                  Text(
+                                    localApp.textTitleMenoScreans2,
+                                    style: const TextStyle(
+                                        color: kwhite,
+                                        fontSize: 28,
+                                        fontWeight: FontWeight.bold),
+                                  )
+                                ],
+                              ),
+                            ),
+                            Padding(
+                              padding: const EdgeInsets.only(
+                                  left: 8, right: 8, top: 0),
+                              child: Text(
+                                localApp.textTitleMenoScreans3,
+                                style: Theme.of(context)
+                                    .primaryTextTheme
+                                    .subtitle1,
+                              ),
+                            ),
+                          ],
+                        ),
+                      ],
+                    ),
+                  ),
+                  SizedBox(
+                    height: size.height * 0.01,
+                  ),
+                  Padding(
+                    padding: const EdgeInsets.all(10.0),
+                    child: Container(
+                      width: size.width,
+                      height: size.height * 0.30,
+                      decoration: BoxDecoration(
+                          color: Colors.yellow.shade800,
+                          borderRadius: BorderRadius.circular(20)),
+                      child: Center(
+                        child: Column(
+                          crossAxisAlignment: CrossAxisAlignment.center,
+                          mainAxisAlignment: MainAxisAlignment.center,
+                          children: [
+                            Row(
+                                mainAxisAlignment: MainAxisAlignment.center,
+                                children: [
+                                  Column(children: [
+                                    Padding(
+                                      padding: const EdgeInsets.only(
+                                          left: 0, top: 0),
+                                      child: Text(
+                                          localApp
+                                              .detailButtonMenoScreansNormalGame,
+                                          style: Theme.of(context)
+                                              .primaryTextTheme
+                                              .subtitle1),
+                                    ),
+                                    SizedBox(height: size.height * 0.03),
+                                    Container(
+                                      width: size.width * 0.29,
+                                      height: size.height * 0.06,
+                                      decoration: BoxDecoration(
+                                          color: const Color(0xFF6A1B9A),
+                                          borderRadius:
+                                              BorderRadius.circular(11)),
+                                      child: Row(
+                                        mainAxisAlignment:
+                                            MainAxisAlignment.center,
+                                        children: [
+                                          Text(
+                                            localApp
+                                                .detailButtonMenoScreansNormalGameLestsGo,
+                                            style: Theme.of(context)
+                                                .primaryTextTheme
+                                                .bodyText2,
+                                            textAlign: TextAlign.center,
+                                          ),
+                                          const Icon(
+                                            Icons.chevron_right_rounded,
+                                            color: Colors.white,
+                                          )
+                                        ],
+                                      ),
+                                    ),
+                                  ]),
+                                  Padding(
+                                    padding: const EdgeInsets.only(
+                                      top: 10,
+                                    ),
+                                    child: Image.asset(
+                                      'assets/images/normal.png',
+                                      width: size.width * 0.50,
+                                      height: size.height * 0.24,
+                                    ),
+                                  )
+                                ])
+                          ],
+                        ),
+                      ),
+                    ),
+                  ),
+                  Wrap(
+                    runSpacing: 8,
+                    spacing: 8,
                     children: [
-                      Column(
-                        crossAxisAlignment: CrossAxisAlignment.start,
-                        children: [
-                          Padding(
-                            padding: const EdgeInsets.all(8.0),
-                            child: Row(
-                              children: [
-                                Text(
-                                  localApp.textTitleMenoScreans1,
-                                  style: TextStyle(
-                                      color: Color(0xFF0D47A1),
-                                      fontSize: 28,
-                                      fontWeight: FontWeight.bold),
-                                ),
-                                SizedBox(
-                                  width: 4,
-                                ),
-                                Text(
-                                  localApp.textTitleMenoScreans2,
-                                  style: TextStyle(
-                                      color: kwhite,
-                                      fontSize: 28,
-                                      fontWeight: FontWeight.bold),
-                                )
-                              ],
-                            ),
-                          ),
-                          Padding(
-                            padding: const EdgeInsets.only(
-                                left: 8, right: 8, top: 0),
-                            child: Text(
-                              localApp.textTitleMenoScreans3,
-                              style:
-                                  Theme.of(context).primaryTextTheme.subtitle1,
-                            ),
-                          ),
-                        ],
+                      BoxForMenoImage(
+                        color: const Color(0xFF6A1B9A),
+                        tap: () {
+                          Navigator.push(
+                              context,
+                              MaterialPageRoute(
+                                  builder: (context) => ChoiceYourTopic()));
+                        },
+                        image: 'assets/images/spead.png',
+                        text: localApp.detailButtonMenoScreansFight,
+                      ),
+                      BoxForMenoImage(
+                        color: kblue,
+                        tap: () {},
+                        image: 'assets/images/car.png',
+                        text: localApp.detailButtonMenoScreansSpead,
+                      ),
+                      SmalBox_For_MenoScreans(
+                        text: localApp.detailButtonMenoScreansNormalGameLestsGo,
+                        color: Colors.yellow.shade800,
+                        image: 'assets/images/score.png',
+                      ),
+                      BoxForMenoImage(
+                        color: const Color(0xFF6A1B9A),
+                        tap: () {
+                          showDialog(
+                              context: context,
+                              builder: (
+                                context,
+                              ) =>
+                                  const SettingDialog());
+                        },
+                        image: 'assets/images/setting.png',
+                        text: localApp.detailButtonMenoScreansSetting,
                       ),
                     ],
                   ),
-                ),
-                SizedBox(
-                  height: size.height * 0.01,
-                ),
-                Padding(
-                  padding: const EdgeInsets.all(10.0),
-                  child: Container(
-                    width: size.width,
-                    height: size.height * 0.30,
-                    decoration: BoxDecoration(
-                        color: Colors.yellow.shade800,
-                        borderRadius: BorderRadius.circular(20)),
-                    child: Center(
-                      child: Column(
-                        crossAxisAlignment: CrossAxisAlignment.center,
-                        mainAxisAlignment: MainAxisAlignment.center,
-                        children: [
-                          Row(
-                              mainAxisAlignment: MainAxisAlignment.center,
-                              children: [
-                                Column(children: [
-                                  Padding(
-                                    padding:
-                                        const EdgeInsets.only(left: 0, top: 0),
-                                    child: Text(
-                                        localApp
-                                            .detailButtonMenoScreansNormalGame,
-                                        style: Theme.of(context)
-                                            .primaryTextTheme
-                                            .subtitle1),
-                                  ),
-                                  SizedBox(height: size.height * 0.03),
-                                  Container(
-                                    width: size.width * 0.29,
-                                    height: size.height * 0.06,
-                                    decoration: BoxDecoration(
-                                        color: const Color(0xFF6A1B9A),
-                                        borderRadius:
-                                            BorderRadius.circular(11)),
-                                    child: Row(
-                                      mainAxisAlignment:
-                                          MainAxisAlignment.center,
-                                      children: [
-                                        Text(
-                                          localApp
-                                              .detailButtonMenoScreansNormalGameLestsGo,
-                                          style: Theme.of(context)
-                                              .primaryTextTheme
-                                              .bodyText2,
-                                          textAlign: TextAlign.center,
-                                        ),
-                                        const Icon(
-                                          Icons.chevron_right_rounded,
-                                          color: Colors.white,
-                                        )
-                                      ],
-                                    ),
-                                  ),
-                                ]),
-                                Padding(
-                                  padding: const EdgeInsets.only(
-                                    top: 10,
-                                  ),
-                                  child: Image.asset(
-                                    'assets/images/normal.png',
-                                    width: size.width * 0.50,
-                                    height: size.height * 0.24,
-                                  ),
-                                )
-                              ])
-                        ],
-                      ),
-                    ),
-                  ),
-                ),
-                Wrap(
-                  runSpacing: 8,
-                  spacing: 8,
-                  children: [
-                    BoxForMenoImage(
-                      color: Color(0xFF6A1B9A),
-                      tap: () {
-                        Navigator.push(
-                            context,
-                            MaterialPageRoute(
-                                builder: (context) => ChoiceYourTopic()));
-                      },
-                      image: 'assets/images/spead.png',
-                      text: localApp.detailButtonMenoScreansFight,
-                    ),
-                    BoxForMenoImage(
-                      color: kblue,
-                      tap: () {},
-                      image: 'assets/images/car.png',
-                      text: localApp.detailButtonMenoScreansSpead,
-                    ),
-                    SmalBox_For_MenoScreans(
-                      text: localApp.detailButtonMenoScreansNormalGameLestsGo,
-                      color: Colors.yellow.shade800,
-                      image: 'assets/images/score.png',
-                    ),
-                    BoxForMenoImage(
-                      color: Color(0xFF6A1B9A),
-                      tap: () {
-                        showDialog(
-                            context: context,
-                            builder: (
-                              context,
-                            ) =>
-                                SettingDialog());
-                      },
-                      image: 'assets/images/setting.png',
-                      text: localApp.detailButtonMenoScreansSetting,
-                    ),
-                  ],
-                ),
-              ],
+                  const SizedBox(
+                    height: 10,
+                  )
+                ],
+              ),
             ),
           ),
         ),

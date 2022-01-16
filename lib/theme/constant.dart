@@ -18,3 +18,11 @@ const styleTextForDialogHowToPlay = TextStyle(
   color: kblack,
   fontSize: 15,
 );
+const styleTextDialogTypeOfMatch =
+    TextStyle(color: kblack, fontSize: 17, fontWeight: FontWeight.bold);
+
+class Constans {
+  static const double padding = 20;
+  static const double avatarRadius = 45;
+  static const double kborderRadios = 20;
+}

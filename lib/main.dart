@@ -25,6 +25,16 @@ class MyApp extends StatefulWidget {
 }
 
 class _MyAppState extends State<MyApp> {
+  setData(String _local) async {
+    SharedPreferences preferences = await SharedPreferences.getInstance();
+
+    preferences.setString(
+        'language',
+        Provider.of<LanguageChangeProvider>(context, listen: true)
+            .currentLocale
+            .toString());
+  }
+
   SharedPreferences? sharedPreferences;
 
   @override

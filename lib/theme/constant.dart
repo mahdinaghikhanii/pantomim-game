@@ -20,6 +20,8 @@ const styleTextForDialogHowToPlay = TextStyle(
 );
 const styleTextDialogTypeOfMatch =
     TextStyle(color: kblack, fontSize: 17, fontWeight: FontWeight.bold);
+const styleCupertinoSlidingSegmentedControl =
+    TextStyle(fontSize: 15, color: kblack);
 
 class Constans {
   static const double padding = 20;

@@ -27,6 +27,10 @@ class _ChoiceYourTopicState extends State<ChoiceYourTopic> {
     });
   }
 
+  _backPage() {
+    Navigator.pop(context);
+  }
+
   _toggleVisibility() {
     setState(() {
       _viewAuto = false;
@@ -64,6 +68,7 @@ class _ChoiceYourTopicState extends State<ChoiceYourTopic> {
       child: Scaffold(
           backgroundColor: Colors.transparent,
           body: Container(
+            padding: EdgeInsets.only(top: 20),
             child: SafeArea(
               child: Padding(
                 padding: const EdgeInsets.all(Constans.padding),
@@ -77,7 +82,7 @@ class _ChoiceYourTopicState extends State<ChoiceYourTopic> {
                             style: Theme.of(context).textTheme.headline2),
                         TextSpan(
                             text: " NEWGAME",
-                            style: Theme.of(context).textTheme.headline2)
+                            style: Theme.of(context).textTheme.subtitle2)
                       ]),
                     ),
                     SizedBox(
@@ -157,7 +162,7 @@ class _ChoiceYourTopicState extends State<ChoiceYourTopic> {
                               ],
                             ),
                           )),
-                      SizedBox(
+                      const SizedBox(
                         width: 10,
                       ),
                       Container(
@@ -207,7 +212,7 @@ class _ChoiceYourTopicState extends State<ChoiceYourTopic> {
                     const Divider(),
                     Padding(
                         padding: const EdgeInsets.only(
-                            left: 9, right: 9, top: 10, bottom: 10),
+                            left: 9, right: 9, top: 20, bottom: 10),
                         child: Column(
                             crossAxisAlignment: CrossAxisAlignment.start,
                             children: [
@@ -298,7 +303,7 @@ class _ChoiceYourTopicState extends State<ChoiceYourTopic> {
                                     ],
                                   )),
                               const SizedBox(
-                                height: 15,
+                                height: 20,
                               ),
                               const Divider(),
                               Padding(
@@ -327,7 +332,58 @@ class _ChoiceYourTopicState extends State<ChoiceYourTopic> {
                                           child: const Icon(Icons.remove,
                                               color: kwhite)),
                                     ],
-                                  ))
+                                  )),
+                              Divider(),
+                              Padding(
+                                padding: EdgeInsets.only(top: 20),
+                                child: Row(
+                                    mainAxisAlignment:
+                                        MainAxisAlignment.spaceBetween,
+                                    children: [
+                                      InkWell(
+                                        borderRadius: BorderRadius.circular(20),
+                                        onTap: _backPage,
+                                        child: Container(
+                                            width: size.width * 0.35,
+                                            height: size.height * 0.08,
+                                            decoration: BoxDecoration(
+                                                color: kblue,
+                                                borderRadius:
+                                                    BorderRadius.circular(20)),
+                                            // ignore: prefer_const_constructors
+                                            child: Center(
+                                                // ignore: prefer_const_constructors
+                                                child: Text(
+                                              'BACK PAGE',
+                                              style: const TextStyle(
+                                                  color: Colors.white,
+                                                  fontWeight: FontWeight.bold,
+                                                  fontSize: 16),
+                                            ))),
+                                      ),
+                                      InkWell(
+                                        borderRadius: BorderRadius.circular(20),
+                                        onTap: () {},
+                                        child: Container(
+                                            width: size.width * 0.35,
+                                            height: size.height * 0.08,
+                                            decoration: BoxDecoration(
+                                                color: Colors.transparent,
+                                                borderRadius:
+                                                    BorderRadius.circular(20)),
+                                            // ignore: prefer_const_constructors
+                                            child: Center(
+                                                // ignore: prefer_const_constructors
+                                                child: Text(
+                                              ' NEXT PAGE',
+                                              style: const TextStyle(
+                                                  color: Colors.white,
+                                                  fontWeight: FontWeight.bold,
+                                                  fontSize: 16),
+                                            ))),
+                                      )
+                                    ]),
+                              )
                             ])),
                   ],
                 ),

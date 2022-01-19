@@ -27,9 +27,11 @@ class ConfigTheme {
   TextTheme get faPrimaryTextTheme => TextTheme(
         bodyText1: TextStyle(fontSize: 20, color: kwhite),
         bodyText2: TextStyle(fontSize: 18, color: kwhite),
+        subtitle2: TextStyle(
+            fontSize: 35, color: kwhite, fontFamily: faPrimaryFontFamily),
         headline1: TextStyle(
             fontFamily: faPrimaryFontFamily, fontSize: 45, color: kblue),
         headline2: TextStyle(
-            fontSize: 35, color: kwhite, fontFamily: faPrimaryFontFamily),
+            fontSize: 35, color: kblue, fontFamily: faPrimaryFontFamily),
       );
 }

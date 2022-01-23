@@ -27,5 +27,18 @@
     "dialogTypeOfMatchbuttontextTecnology" : "تکنولوژی",
     "dialogTypeOfMatchbuttontextMusic" : "موزیک",
     "dialogTypeOfMatchbuttontextjob" : "شغل",
-    "dialogTypeOfMatchNumberofteamsTitle" : "تعداد تیم ها"
+    "dialogTypeOfMatchNumberofteamsTitle" : "تعداد تیم ها",
+    "typeOfMatchScreansTitleScreans1" : "شروع ",
+    "typeOfMatchScreansTitleScreans2" : "بازی جدید",
+    "typeOfMatchScreansTextFiledInputTeam1" : "تیم ۱",
+    "typeOfMatchScreansTextFiledInputTeam2" : "تیم ۲",
+    "typeOfMatchScreansTextFiledInputTeam3" : "تیم ۳",
+    "typeOfMatchScreansTextFiledInputTeam4" : "تیم ۴",
+    "typeOfMatchScreansTextDetailButton" : "زمان بازی",
+    "typeOfMatchScreansTextDetailNameButtonAUTO" : "خودکار",
+    "typeOfMatchScreansTextDetailNameButtonCUSTOM" : "دستی",
+    "typeOfMatchScreansTextDetailNameButtonAUTODetail" : "نسبت به سختی کلمتات",
+    "typeOfMatchScreansTextDetailForNumberofRounds" : "تعداد دور ها     ",
+    "typeOfMatchScreansButtonBACKPAGE" : "صفحه قبل",
+    "typeOfMatchScreansButtonNextPage" : "صفحه بعد"
 }

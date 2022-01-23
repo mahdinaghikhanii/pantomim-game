@@ -77,6 +77,33 @@ class MessageLookup extends MessageLookupByLibrary {
             MessageLookupByLibrary.simpleMessage("Best Game For Family"),
         "titleHomeScreans1": MessageLookupByLibrary.simpleMessage("Play"),
         "titleHomeScreans2":
-            MessageLookupByLibrary.simpleMessage(" with\nFriends")
+            MessageLookupByLibrary.simpleMessage(" with\nFriends"),
+        "typeOfMatchScreansButtonBACKPAGE":
+            MessageLookupByLibrary.simpleMessage("BACK PAGE"),
+        "typeOfMatchScreansButtonNextPage":
+            MessageLookupByLibrary.simpleMessage("NEXT PAGE"),
+        "typeOfMatchScreansTextDetailButton":
+            MessageLookupByLibrary.simpleMessage("TIME GAME"),
+        "typeOfMatchScreansTextDetailForNumberofRounds":
+            MessageLookupByLibrary.simpleMessage("Number of Rounds"),
+        "typeOfMatchScreansTextDetailNameButtonAUTO":
+            MessageLookupByLibrary.simpleMessage("AUTO"),
+        "typeOfMatchScreansTextDetailNameButtonAUTODetail":
+            MessageLookupByLibrary.simpleMessage(
+                "To the difficulty of the word"),
+        "typeOfMatchScreansTextDetailNameButtonCUSTOM":
+            MessageLookupByLibrary.simpleMessage("CUSTOM"),
+        "typeOfMatchScreansTextFiledInputTeam1":
+            MessageLookupByLibrary.simpleMessage("Team 1"),
+        "typeOfMatchScreansTextFiledInputTeam2":
+            MessageLookupByLibrary.simpleMessage("Team2"),
+        "typeOfMatchScreansTextFiledInputTeam3":
+            MessageLookupByLibrary.simpleMessage("Team3"),
+        "typeOfMatchScreansTextFiledInputTeam4":
+            MessageLookupByLibrary.simpleMessage("Team4"),
+        "typeOfMatchScreansTitleScreans1":
+            MessageLookupByLibrary.simpleMessage("START "),
+        "typeOfMatchScreansTitleScreans2":
+            MessageLookupByLibrary.simpleMessage("NEWGAME")
       };
 }

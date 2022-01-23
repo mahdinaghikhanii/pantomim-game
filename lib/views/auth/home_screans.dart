@@ -36,7 +36,7 @@ class HomeScreans extends StatelessWidget {
                     child: Image.asset(
                       'assets/images/frinds1.png',
                       width: size.width,
-                      height: size.height * 0.40,
+                      height: size.height * 0.42,
                     ),
                   ),
                 ),
@@ -51,7 +51,7 @@ class HomeScreans extends StatelessWidget {
                             text: TextSpan(children: [
                           TextSpan(
                               text: localApp.titleHomeScreans1,
-                              style: Theme.of(context).textTheme.headline1),
+                              style: Theme.of(context).textTheme.subtitle1),
                           TextSpan(
                               text: localApp.titleHomeScreans2,
                               style: Theme.of(context).textTheme.headline2)
@@ -62,7 +62,7 @@ class HomeScreans extends StatelessWidget {
                   // ignore: prefer_const_literals_to_create_immutables
                 ]),
                 SizedBox(
-                  height: size.height * 0.10,
+                  height: size.height * 0.12,
                 ),
                 Button_widget(
                   text: localApp.textButtonHomeScrens,

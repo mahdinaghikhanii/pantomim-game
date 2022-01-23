@@ -131,7 +131,7 @@ class _SettingDialogState extends State<SettingDialog> {
                   width: size.width * 0.55,
                   height: size.height * 0.17),
               Padding(
-                padding: const EdgeInsets.only(left: 40, right: 30, top: 50),
+                padding: const EdgeInsets.only(left: 30, right: 30, top: 50),
                 child: Row(
                   crossAxisAlignment: CrossAxisAlignment.start,
                   // ignore: prefer_const_literals_to_create_immutables
@@ -141,7 +141,7 @@ class _SettingDialogState extends State<SettingDialog> {
                     const Spacer(),
                     const Icon(
                       Icons.music_note,
-                      size: 30,
+                      size: 28,
                     ),
                   ],
                 ),

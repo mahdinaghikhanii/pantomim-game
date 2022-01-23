@@ -12,20 +12,23 @@ class ConfigTheme {
 
   ThemeData getTheme(String languageCode) {
     return ThemeData(
-      textTheme: languageCode == 'fa' ? enPrimaryTextTheme : faPrimaryTextTheme,
+      textTheme: languageCode == 'en' ? enPrimaryTextTheme : faPrimaryTextTheme,
       scaffoldBackgroundColor: scafolldColor,
       brightness: brightness,
     );
   }
 
   TextTheme get enPrimaryTextTheme => const TextTheme(
-      headline1: TextStyle(fontSize: 35, color: kblue),
       bodyText1: TextStyle(fontSize: 20, color: kwhite),
       bodyText2: TextStyle(fontSize: 14, color: kwhite),
+      subtitle2: TextStyle(fontSize: 35, color: kblue),
+      headline1: TextStyle(fontSize: 45, color: kblue),
       headline2: TextStyle(fontSize: 35, color: kwhite));
 
   TextTheme get faPrimaryTextTheme => TextTheme(
         bodyText1: TextStyle(fontSize: 20, color: kwhite),
+        subtitle1: TextStyle(
+            fontFamily: faPrimaryFontFamily, fontSize: 45, color: kwhite),
         bodyText2: TextStyle(fontSize: 18, color: kwhite),
         subtitle2: TextStyle(
             fontSize: 35, color: kwhite, fontFamily: faPrimaryFontFamily),

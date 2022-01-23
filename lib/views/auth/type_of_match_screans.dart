@@ -17,18 +17,51 @@ bool viewVisibleButton = false;
 int selectValue = 0;
 bool _viewAuto = true;
 bool _viewCustom = true;
-Function? function;
+int _counter = 2;
 
 class _ChoiceYourTopicState extends State<ChoiceYourTopic> {
+  //This state for plus number
+  _counterPlus() {
+    setState(() {
+      if (_counter > 3) {
+        _counter;
+      } else {
+        _counter++;
+      }
+    });
+  }
+
+//this state for nagative state
+  _counterNagative() {
+    setState(() {
+      if (_counter == 2) {
+        _counter;
+      } else {
+        _counter--;
+      }
+    });
+  }
+
+  //this methode for unvisibility Text in Screans
+
   _unsetVisibility() {
     setState(() {
       _viewAuto = true;
       _viewCustom = false;
     });
   }
+  // this state for back page
 
   _backPage() {
     Navigator.pop(context);
+  }
+
+  _nextPage() {
+    showDialog(
+        builder: (BuildContext context) {
+          return DialogShow();
+        },
+        context: context);
   }
 
   _toggleVisibility() {
@@ -51,11 +84,13 @@ class _ChoiceYourTopicState extends State<ChoiceYourTopic> {
 
   @override
   Widget build(BuildContext context) {
-    final Map<int, Widget> mytab = <int, Widget>{
-      0: Text('AUTO', style: styleCupertinoSlidingSegmentedControl),
-      1: Text('CUSTOM', style: styleCupertinoSlidingSegmentedControl),
-    };
     var localApp = S.of(context);
+    final Map<int, Widget> mytab = <int, Widget>{
+      0: Text(localApp.typeOfMatchScreansTextDetailNameButtonAUTO,
+          style: styleCupertinoSlidingSegmentedControl),
+      1: Text(localApp.typeOfMatchScreansTextDetailNameButtonCUSTOM,
+          style: styleCupertinoSlidingSegmentedControl),
+    };
 
     final size = MediaQuery.of(context).size;
 
@@ -66,9 +101,53 @@ class _ChoiceYourTopicState extends State<ChoiceYourTopic> {
               end: Alignment.centerRight,
               colors: [Colors.white38, Colors.blue])),
       child: Scaffold(
+          floatingActionButton:
+              Row(mainAxisAlignment: MainAxisAlignment.spaceEvenly, children: [
+            InkWell(
+              borderRadius: BorderRadius.circular(20),
+              onTap: _backPage,
+              child: Container(
+                  width: size.width * 0.35,
+                  height: size.height * 0.08,
+                  decoration: BoxDecoration(
+                      color: kblue, borderRadius: BorderRadius.circular(20)),
+                  // ignore: prefer_const_constructors
+                  child: Center(
+                      // ignore: prefer_const_constructors
+                      child: Text(
+                    localApp.typeOfMatchScreansButtonBACKPAGE,
+                    style: const TextStyle(
+                        color: Colors.white,
+                        fontWeight: FontWeight.bold,
+                        fontSize: 16),
+                  ))),
+            ),
+            InkWell(
+              borderRadius: BorderRadius.circular(20),
+              onTap: () {
+                _nextPage();
+              },
+              child: Container(
+                  width: size.width * 0.26,
+                  height: size.height * 0.08,
+                  decoration: BoxDecoration(
+                      color: Colors.transparent,
+                      borderRadius: BorderRadius.circular(20)),
+                  // ignore: prefer_const_constructors
+                  child: Center(
+                      // ignore: prefer_const_constructors
+                      child: Text(
+                    localApp.typeOfMatchScreansButtonNextPage,
+                    style: const TextStyle(
+                        color: Colors.white,
+                        fontWeight: FontWeight.bold,
+                        fontSize: 16),
+                  ))),
+            )
+          ]),
           backgroundColor: Colors.transparent,
           body: Container(
-            padding: EdgeInsets.only(top: 20),
+            padding: const EdgeInsets.only(top: 20),
             child: SafeArea(
               child: Padding(
                 padding: const EdgeInsets.all(Constans.padding),
@@ -78,10 +157,10 @@ class _ChoiceYourTopicState extends State<ChoiceYourTopic> {
                     RichText(
                       text: TextSpan(children: [
                         TextSpan(
-                            text: "START",
+                            text: localApp.typeOfMatchScreansTitleScreans1,
                             style: Theme.of(context).textTheme.headline2),
                         TextSpan(
-                            text: " NEWGAME",
+                            text: localApp.typeOfMatchScreansTitleScreans2,
                             style: Theme.of(context).textTheme.subtitle2)
                       ]),
                     ),
@@ -94,71 +173,77 @@ class _ChoiceYourTopicState extends State<ChoiceYourTopic> {
                               border: Border.all(color: kwhite),
                               borderRadius: BorderRadius.circular(15)),
                           width: size.width * 0.62,
-                          height: size.height * 0.22,
+                          height: size.height * 0.23,
                           child: Center(
                             child: Wrap(
                               crossAxisAlignment: WrapCrossAlignment.end,
                               children: [
                                 Container(
-                                    padding: EdgeInsets.all(8),
+                                    padding: const EdgeInsets.all(10),
                                     color: Colors.transparent,
                                     width: size.width * 0.30,
                                     height: size.height * 0.10,
                                     child: TextField(
-                                      decoration: InputDecoration(
-                                        border: InputBorder.none,
-                                        hintText: "Team 1",
-                                        hintStyle: Theme.of(context)
-                                            .textTheme
-                                            .bodyText1,
-                                      ),
-                                      textAlign: TextAlign.center,
-                                    )),
+                                        decoration: InputDecoration(
+                                          border: InputBorder.none,
+                                          hintText: localApp
+                                              .typeOfMatchScreansTextFiledInputTeam1,
+                                          hintStyle: Theme.of(context)
+                                              .textTheme
+                                              .bodyText1,
+                                        ),
+                                        textAlign: TextAlign.center,
+                                        style: styleTextInputTextField)),
                                 Container(
-                                    padding: EdgeInsets.all(8),
+                                    padding: EdgeInsets.all(10),
                                     color: Colors.transparent,
                                     width: size.width * 0.30,
                                     height: size.height * 0.10,
                                     child: TextField(
-                                      decoration: InputDecoration(
-                                        hintText: "Team 2",
-                                        hintStyle: Theme.of(context)
-                                            .textTheme
-                                            .bodyText1,
-                                        border: InputBorder.none,
-                                      ),
-                                      textAlign: TextAlign.center,
-                                    )),
+                                        decoration: InputDecoration(
+                                          hintText: localApp
+                                              .typeOfMatchScreansTextFiledInputTeam2,
+                                          hintStyle: Theme.of(context)
+                                              .textTheme
+                                              .bodyText1,
+                                          border: InputBorder.none,
+                                        ),
+                                        textAlign: TextAlign.center,
+                                        style: styleTextInputTextField)),
                                 Container(
-                                    padding: EdgeInsets.all(8),
+                                    padding: EdgeInsets.all(10),
                                     color: Colors.transparent,
                                     width: size.width * 0.30,
                                     height: size.height * 0.10,
                                     child: TextField(
-                                      decoration: InputDecoration(
-                                        hintText: "Team 3",
-                                        hintStyle: Theme.of(context)
-                                            .textTheme
-                                            .bodyText1,
-                                        border: InputBorder.none,
-                                      ),
-                                      textAlign: TextAlign.center,
-                                    )),
+                                        decoration: InputDecoration(
+                                          floatingLabelStyle:
+                                              styleTextInputTextField,
+                                          hintText: localApp
+                                              .typeOfMatchScreansTextFiledInputTeam3,
+                                          hintStyle: Theme.of(context)
+                                              .textTheme
+                                              .bodyText1,
+                                          border: InputBorder.none,
+                                        ),
+                                        textAlign: TextAlign.center,
+                                        style: styleTextInputTextField)),
                                 Container(
-                                    padding: EdgeInsets.all(8),
+                                    padding: EdgeInsets.all(10),
                                     color: Colors.transparent,
                                     width: size.width * 0.30,
                                     height: size.height * 0.10,
                                     child: TextField(
-                                      decoration: InputDecoration(
-                                        hintText: "Team 4",
-                                        hintStyle: Theme.of(context)
-                                            .textTheme
-                                            .bodyText1,
-                                        border: InputBorder.none,
-                                      ),
-                                      textAlign: TextAlign.center,
-                                    )),
+                                        decoration: InputDecoration(
+                                          hintText: localApp
+                                              .typeOfMatchScreansTextFiledInputTeam4,
+                                          hintStyle: Theme.of(context)
+                                              .textTheme
+                                              .bodyText1,
+                                          border: InputBorder.none,
+                                        ),
+                                        textAlign: TextAlign.center,
+                                        style: styleTextInputTextField)),
                               ],
                             ),
                           )),
@@ -167,7 +252,7 @@ class _ChoiceYourTopicState extends State<ChoiceYourTopic> {
                       ),
                       Container(
                           width: size.width * 0.24,
-                          height: size.height * 0.22,
+                          height: size.height * 0.23,
                           decoration: BoxDecoration(
                               borderRadius: BorderRadius.circular(15),
                               border: Border.all(
@@ -177,30 +262,39 @@ class _ChoiceYourTopicState extends State<ChoiceYourTopic> {
                             const SizedBox(
                               height: 10,
                             ),
-                            Container(
-                                height: size.height * 0.06,
-                                width: size.width * 0.18,
-                                decoration: BoxDecoration(
-                                    shape: BoxShape.circle,
-                                    border: Border.all(color: kwhite)),
-                                child: Icon(Icons.add, color: kwhite)),
+                            InkWell(
+                              onTap: _counterPlus,
+                              child: Container(
+                                  height: size.height * 0.06,
+                                  width: size.width * 0.18,
+                                  decoration: BoxDecoration(
+                                      shape: BoxShape.circle,
+                                      border: Border.all(color: kwhite)),
+                                  child: const Icon(Icons.add, color: kwhite)),
+                            ),
                             SizedBox(
                               height: size.height * 0.02,
                             ),
                             Text(
-                              '2',
+                              _counter.toString(),
+                              maxLines: 1,
                               style: Theme.of(context).textTheme.bodyText1,
                             ),
                             SizedBox(
                               height: size.height * 0.02,
                             ),
-                            Container(
-                                height: size.height * 0.06,
-                                width: size.width * 0.18,
-                                decoration: BoxDecoration(
-                                    shape: BoxShape.circle,
-                                    border: Border.all(color: kwhite)),
-                                child: Icon(Icons.remove, color: kwhite)),
+                            InkWell(
+                              onTap: _counterNagative,
+                              borderRadius: BorderRadius.circular(50),
+                              child: Container(
+                                  height: size.height * 0.06,
+                                  width: size.width * 0.18,
+                                  decoration: BoxDecoration(
+                                      shape: BoxShape.circle,
+                                      border: Border.all(color: kwhite)),
+                                  child:
+                                      const Icon(Icons.remove, color: kwhite)),
+                            ),
                             const SizedBox(
                               height: 10,
                             ),
@@ -220,7 +314,9 @@ class _ChoiceYourTopicState extends State<ChoiceYourTopic> {
                                   mainAxisAlignment:
                                       MainAxisAlignment.spaceBetween,
                                   children: [
-                                    Text('TIME GAME',
+                                    Text(
+                                        localApp
+                                            .typeOfMatchScreansTextDetailButton,
                                         style: Theme.of(context)
                                             .textTheme
                                             .bodyText1),
@@ -259,7 +355,9 @@ class _ChoiceYourTopicState extends State<ChoiceYourTopic> {
                               ),
                               Visibility(
                                 visible: _viewAuto,
-                                child: Text('To the difficulty of the word ',
+                                child: Text(
+                                    localApp
+                                        .typeOfMatchScreansTextDetailNameButtonAUTODetail,
                                     style:
                                         Theme.of(context).textTheme.bodyText1),
                               ),
@@ -282,6 +380,7 @@ class _ChoiceYourTopicState extends State<ChoiceYourTopic> {
                                                 .textTheme
                                                 .bodyText2),
                                       ])),
+                                      Spacer(),
                                       Container(
                                           height: size.height * 0.06,
                                           width: size.width * 0.12,
@@ -291,6 +390,7 @@ class _ChoiceYourTopicState extends State<ChoiceYourTopic> {
                                                   Border.all(color: kwhite)),
                                           child: const Icon(Icons.add,
                                               color: kwhite)),
+                                      SizedBox(width: 20),
                                       Container(
                                           height: size.height * 0.06,
                                           width: size.width * 0.12,
@@ -307,12 +407,27 @@ class _ChoiceYourTopicState extends State<ChoiceYourTopic> {
                               ),
                               const Divider(),
                               Padding(
-                                  padding: EdgeInsets.only(top: 10, bottom: 30),
+                                  padding: const EdgeInsets.only(
+                                      top: 10, bottom: 30),
                                   child: Row(
                                     mainAxisAlignment:
                                         MainAxisAlignment.spaceBetween,
                                     children: [
-                                      Text('Number of Rounds      '),
+                                      RichText(
+                                          text: TextSpan(children: [
+                                        TextSpan(
+                                            text: localApp
+                                                .typeOfMatchScreansTextDetailForNumberofRounds,
+                                            style: Theme.of(context)
+                                                .textTheme
+                                                .bodyText2),
+                                        TextSpan(
+                                            text: "1",
+                                            style: Theme.of(context)
+                                                .textTheme
+                                                .bodyText2),
+                                      ])),
+                                      Spacer(),
                                       Container(
                                           height: size.height * 0.06,
                                           width: size.width * 0.12,
@@ -322,6 +437,9 @@ class _ChoiceYourTopicState extends State<ChoiceYourTopic> {
                                                   Border.all(color: kwhite)),
                                           child: const Icon(Icons.add,
                                               color: kwhite)),
+                                      SizedBox(
+                                        width: 20,
+                                      ),
                                       Container(
                                           height: size.height * 0.06,
                                           width: size.width * 0.12,
@@ -333,57 +451,7 @@ class _ChoiceYourTopicState extends State<ChoiceYourTopic> {
                                               color: kwhite)),
                                     ],
                                   )),
-                              Divider(),
-                              Padding(
-                                padding: EdgeInsets.only(top: 20),
-                                child: Row(
-                                    mainAxisAlignment:
-                                        MainAxisAlignment.spaceBetween,
-                                    children: [
-                                      InkWell(
-                                        borderRadius: BorderRadius.circular(20),
-                                        onTap: _backPage,
-                                        child: Container(
-                                            width: size.width * 0.35,
-                                            height: size.height * 0.08,
-                                            decoration: BoxDecoration(
-                                                color: kblue,
-                                                borderRadius:
-                                                    BorderRadius.circular(20)),
-                                            // ignore: prefer_const_constructors
-                                            child: Center(
-                                                // ignore: prefer_const_constructors
-                                                child: Text(
-                                              'BACK PAGE',
-                                              style: const TextStyle(
-                                                  color: Colors.white,
-                                                  fontWeight: FontWeight.bold,
-                                                  fontSize: 16),
-                                            ))),
-                                      ),
-                                      InkWell(
-                                        borderRadius: BorderRadius.circular(20),
-                                        onTap: () {},
-                                        child: Container(
-                                            width: size.width * 0.35,
-                                            height: size.height * 0.08,
-                                            decoration: BoxDecoration(
-                                                color: Colors.transparent,
-                                                borderRadius:
-                                                    BorderRadius.circular(20)),
-                                            // ignore: prefer_const_constructors
-                                            child: Center(
-                                                // ignore: prefer_const_constructors
-                                                child: Text(
-                                              ' NEXT PAGE',
-                                              style: const TextStyle(
-                                                  color: Colors.white,
-                                                  fontWeight: FontWeight.bold,
-                                                  fontSize: 16),
-                                            ))),
-                                      )
-                                    ]),
-                              )
+                              const Divider(),
                             ])),
                   ],
                 ),

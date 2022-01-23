@@ -339,6 +339,136 @@ class S {
       args: [],
     );
   }
+
+  /// `START `
+  String get typeOfMatchScreansTitleScreans1 {
+    return Intl.message(
+      'START ',
+      name: 'typeOfMatchScreansTitleScreans1',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `NEWGAME`
+  String get typeOfMatchScreansTitleScreans2 {
+    return Intl.message(
+      'NEWGAME',
+      name: 'typeOfMatchScreansTitleScreans2',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Team 1`
+  String get typeOfMatchScreansTextFiledInputTeam1 {
+    return Intl.message(
+      'Team 1',
+      name: 'typeOfMatchScreansTextFiledInputTeam1',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Team2`
+  String get typeOfMatchScreansTextFiledInputTeam2 {
+    return Intl.message(
+      'Team2',
+      name: 'typeOfMatchScreansTextFiledInputTeam2',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Team3`
+  String get typeOfMatchScreansTextFiledInputTeam3 {
+    return Intl.message(
+      'Team3',
+      name: 'typeOfMatchScreansTextFiledInputTeam3',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Team4`
+  String get typeOfMatchScreansTextFiledInputTeam4 {
+    return Intl.message(
+      'Team4',
+      name: 'typeOfMatchScreansTextFiledInputTeam4',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `TIME GAME`
+  String get typeOfMatchScreansTextDetailButton {
+    return Intl.message(
+      'TIME GAME',
+      name: 'typeOfMatchScreansTextDetailButton',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `AUTO`
+  String get typeOfMatchScreansTextDetailNameButtonAUTO {
+    return Intl.message(
+      'AUTO',
+      name: 'typeOfMatchScreansTextDetailNameButtonAUTO',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `CUSTOM`
+  String get typeOfMatchScreansTextDetailNameButtonCUSTOM {
+    return Intl.message(
+      'CUSTOM',
+      name: 'typeOfMatchScreansTextDetailNameButtonCUSTOM',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `To the difficulty of the word`
+  String get typeOfMatchScreansTextDetailNameButtonAUTODetail {
+    return Intl.message(
+      'To the difficulty of the word',
+      name: 'typeOfMatchScreansTextDetailNameButtonAUTODetail',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Number of Rounds`
+  String get typeOfMatchScreansTextDetailForNumberofRounds {
+    return Intl.message(
+      'Number of Rounds',
+      name: 'typeOfMatchScreansTextDetailForNumberofRounds',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `BACK PAGE`
+  String get typeOfMatchScreansButtonBACKPAGE {
+    return Intl.message(
+      'BACK PAGE',
+      name: 'typeOfMatchScreansButtonBACKPAGE',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `NEXT PAGE`
+  String get typeOfMatchScreansButtonNextPage {
+    return Intl.message(
+      'NEXT PAGE',
+      name: 'typeOfMatchScreansButtonNextPage',
+      desc: '',
+      args: [],
+    );
+  }
 }
 
 class AppLocalizationDelegate extends LocalizationsDelegate<S> {

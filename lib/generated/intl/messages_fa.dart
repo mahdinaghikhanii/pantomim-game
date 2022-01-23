@@ -77,6 +77,32 @@ class MessageLookup extends MessageLookupByLibrary {
             MessageLookupByLibrary.simpleMessage("بهترین بازی برای خانواده"),
         "titleHomeScreans1": MessageLookupByLibrary.simpleMessage("بازی"),
         "titleHomeScreans2":
-            MessageLookupByLibrary.simpleMessage(" همراه \nبا دوستان")
+            MessageLookupByLibrary.simpleMessage(" همراه \nبا دوستان"),
+        "typeOfMatchScreansButtonBACKPAGE":
+            MessageLookupByLibrary.simpleMessage("صفحه قبل"),
+        "typeOfMatchScreansButtonNextPage":
+            MessageLookupByLibrary.simpleMessage("صفحه بعد"),
+        "typeOfMatchScreansTextDetailButton":
+            MessageLookupByLibrary.simpleMessage("زمان بازی"),
+        "typeOfMatchScreansTextDetailForNumberofRounds":
+            MessageLookupByLibrary.simpleMessage("تعداد دور ها     "),
+        "typeOfMatchScreansTextDetailNameButtonAUTO":
+            MessageLookupByLibrary.simpleMessage("خودکار"),
+        "typeOfMatchScreansTextDetailNameButtonAUTODetail":
+            MessageLookupByLibrary.simpleMessage("نسبت به سختی کلمتات"),
+        "typeOfMatchScreansTextDetailNameButtonCUSTOM":
+            MessageLookupByLibrary.simpleMessage("دستی"),
+        "typeOfMatchScreansTextFiledInputTeam1":
+            MessageLookupByLibrary.simpleMessage("تیم ۱"),
+        "typeOfMatchScreansTextFiledInputTeam2":
+            MessageLookupByLibrary.simpleMessage("تیم ۲"),
+        "typeOfMatchScreansTextFiledInputTeam3":
+            MessageLookupByLibrary.simpleMessage("تیم ۳"),
+        "typeOfMatchScreansTextFiledInputTeam4":
+            MessageLookupByLibrary.simpleMessage("تیم ۴"),
+        "typeOfMatchScreansTitleScreans1":
+            MessageLookupByLibrary.simpleMessage("شروع "),
+        "typeOfMatchScreansTitleScreans2":
+            MessageLookupByLibrary.simpleMessage("بازی جدید")
       };
 }

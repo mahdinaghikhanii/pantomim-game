@@ -23,6 +23,8 @@ const styleTextDialogTypeOfMatch =
 const styleCupertinoSlidingSegmentedControl =
     TextStyle(fontSize: 15, color: kblack);
 
+const styleTextInputTextField = TextStyle(color: kwhite, fontSize: 20);
+
 class Constans {
   static const double padding = 20;
   static const double avatarRadius = 45;

@@ -51,7 +51,7 @@ class _ChoiceTopicState extends State<ChoiceTopic> {
           ),
           Text(
             widget.title,
-            style: Theme.of(context).primaryTextTheme.subtitle1,
+            style: styleTextForDialogHowToPlay,
           )
         ]),
       ),

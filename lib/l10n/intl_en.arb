@@ -27,6 +27,23 @@
     "dialogTypeOfMatchbuttontextTecnology" : "Tecnology",
     "dialogTypeOfMatchbuttontextMusic" : "Music",
     "dialogTypeOfMatchbuttontextjob" : "Job",
-    "dialogTypeOfMatchNumberofteamsTitle" : "Number Of Teams"
+    "dialogTypeOfMatchNumberofteamsTitle" : "Number Of Teams",
+    "typeOfMatchScreansTitleScreans1" : "START ",
+    "typeOfMatchScreansTitleScreans2" : "NEWGAME",
+    "typeOfMatchScreansTextFiledInputTeam1" : "Team 1",
+    "typeOfMatchScreansTextFiledInputTeam2" : "Team2",
+    "typeOfMatchScreansTextFiledInputTeam3" : "Team3",
+    "typeOfMatchScreansTextFiledInputTeam4" : "Team4",
+    "typeOfMatchScreansTextDetailButton" : "TIME GAME",
+    "typeOfMatchScreansTextDetailNameButtonAUTO" : "AUTO",
+    "typeOfMatchScreansTextDetailNameButtonCUSTOM" : "CUSTOM",
+    "typeOfMatchScreansTextDetailNameButtonAUTODetail" : "To the difficulty of the word",
+    "typeOfMatchScreansTextDetailForNumberofRounds" : "Number of Rounds",
+    "typeOfMatchScreansButtonBACKPAGE" : "BACK PAGE",
+    "typeOfMatchScreansButtonNextPage" : "NEXT PAGE"
+
+
+
+
     
 }

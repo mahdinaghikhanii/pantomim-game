@@ -29,13 +29,6 @@ class _SettingDialogState extends State<SettingDialog> {
     }
   ];
 
-  savedata(String data) async {
-    SharedPreferences preferences = await SharedPreferences.getInstance();
-    preferences.setString('my', data);
-    String m = preferences.getString('my').toString();
-    context.read<LanguageChangeProvider>().changeLocale;
-  }
-
   @override
   Widget build(BuildContext context) {
     final size = MediaQuery.of(context).size;
@@ -90,7 +83,7 @@ class _SettingDialogState extends State<SettingDialog> {
                                         return DropdownMenuItem(
                                             value: bankIteam['id'].toString(),
                                             onTap: () {
-                                              savedata(bankIteam['ontap']);
+                                              (bankIteam['ontap']);
                                               context
                                                   .read<
                                                       LanguageChangeProvider>()
@@ -108,9 +101,10 @@ class _SettingDialogState extends State<SettingDialog> {
                                                 ),
                                                 Container(
                                                   margin: const EdgeInsets.only(
-                                                      left: 10),
-                                                  child:
-                                                      Text(bankIteam['name']),
+                                                      left: 10, right: 10),
+                                                  child: Text(bankIteam['name'],
+                                                      style:
+                                                          dropwdownTextDialogSetting),
                                                 )
                                               ],
                                             ));

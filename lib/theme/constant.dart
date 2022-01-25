@@ -25,6 +25,9 @@ const styleCupertinoSlidingSegmentedControl =
 
 const styleTextInputTextField = TextStyle(color: kwhite, fontSize: 20);
 
+//this is style for dialogSetting drowpDown Text
+const dropwdownTextDialogSetting = TextStyle(color: kblack, fontSize: 20);
+
 class Constans {
   static const double padding = 20;
   static const double avatarRadius = 45;

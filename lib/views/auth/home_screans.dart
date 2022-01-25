@@ -36,7 +36,7 @@ class HomeScreans extends StatelessWidget {
                     child: Image.asset(
                       'assets/images/frinds1.png',
                       width: size.width,
-                      height: size.height * 0.42,
+                      height: size.height * 0.40,
                     ),
                   ),
                 ),

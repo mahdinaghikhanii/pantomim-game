@@ -85,7 +85,7 @@ class MessageLookup extends MessageLookupByLibrary {
         "typeOfMatchScreansTextDetailButton":
             MessageLookupByLibrary.simpleMessage("زمان بازی"),
         "typeOfMatchScreansTextDetailForNumberofRounds":
-            MessageLookupByLibrary.simpleMessage("تعداد دور ها     "),
+            MessageLookupByLibrary.simpleMessage("تعداد دور ها "),
         "typeOfMatchScreansTextDetailNameButtonAUTO":
             MessageLookupByLibrary.simpleMessage("خودکار"),
         "typeOfMatchScreansTextDetailNameButtonAUTODetail":

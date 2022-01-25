@@ -19,11 +19,16 @@ class ConfigTheme {
   }
 
   TextTheme get enPrimaryTextTheme => const TextTheme(
-      bodyText1: TextStyle(fontSize: 20, color: kwhite),
-      bodyText2: TextStyle(fontSize: 14, color: kwhite),
-      subtitle2: TextStyle(fontSize: 35, color: kblue),
-      headline1: TextStyle(fontSize: 45, color: kblue),
-      headline2: TextStyle(fontSize: 35, color: kwhite));
+        bodyText1: TextStyle(fontSize: 20, color: kwhite),
+        subtitle1: TextStyle(fontSize: 45, color: kwhite),
+        bodyText2: TextStyle(fontSize: 18, color: kwhite),
+        subtitle2: TextStyle(
+          fontSize: 35,
+          color: kwhite,
+        ),
+        headline1: TextStyle(fontSize: 45, color: kblue),
+        headline2: TextStyle(fontSize: 35, color: kblue),
+      );
 
   TextTheme get faPrimaryTextTheme => TextTheme(
         bodyText1: TextStyle(fontSize: 20, color: kwhite),

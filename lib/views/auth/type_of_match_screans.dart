@@ -195,7 +195,7 @@ class _ChoiceYourTopicState extends State<ChoiceYourTopic> {
                                         textAlign: TextAlign.center,
                                         style: styleTextInputTextField)),
                                 Container(
-                                    padding: EdgeInsets.all(10),
+                                    padding: const EdgeInsets.all(10),
                                     color: Colors.transparent,
                                     width: size.width * 0.30,
                                     height: size.height * 0.10,
@@ -211,7 +211,7 @@ class _ChoiceYourTopicState extends State<ChoiceYourTopic> {
                                         textAlign: TextAlign.center,
                                         style: styleTextInputTextField)),
                                 Container(
-                                    padding: EdgeInsets.all(10),
+                                    padding: const EdgeInsets.all(10),
                                     color: Colors.transparent,
                                     width: size.width * 0.30,
                                     height: size.height * 0.10,
@@ -229,7 +229,7 @@ class _ChoiceYourTopicState extends State<ChoiceYourTopic> {
                                         textAlign: TextAlign.center,
                                         style: styleTextInputTextField)),
                                 Container(
-                                    padding: EdgeInsets.all(10),
+                                    padding: const EdgeInsets.all(10),
                                     color: Colors.transparent,
                                     width: size.width * 0.30,
                                     height: size.height * 0.10,
@@ -264,6 +264,7 @@ class _ChoiceYourTopicState extends State<ChoiceYourTopic> {
                             ),
                             InkWell(
                               onTap: _counterPlus,
+                              borderRadius: BorderRadius.circular(50),
                               child: Container(
                                   height: size.height * 0.06,
                                   width: size.width * 0.18,
@@ -380,7 +381,7 @@ class _ChoiceYourTopicState extends State<ChoiceYourTopic> {
                                                 .textTheme
                                                 .bodyText2),
                                       ])),
-                                      Spacer(),
+                                      const Spacer(),
                                       Container(
                                           height: size.height * 0.06,
                                           width: size.width * 0.12,
@@ -390,7 +391,7 @@ class _ChoiceYourTopicState extends State<ChoiceYourTopic> {
                                                   Border.all(color: kwhite)),
                                           child: const Icon(Icons.add,
                                               color: kwhite)),
-                                      SizedBox(width: 20),
+                                      const SizedBox(width: 20),
                                       Container(
                                           height: size.height * 0.06,
                                           width: size.width * 0.12,
@@ -421,13 +422,16 @@ class _ChoiceYourTopicState extends State<ChoiceYourTopic> {
                                             style: Theme.of(context)
                                                 .textTheme
                                                 .bodyText2),
-                                        TextSpan(
-                                            text: "1",
-                                            style: Theme.of(context)
-                                                .textTheme
-                                                .bodyText2),
+                                        WidgetSpan(
+                                            child: Container(
+                                          padding: EdgeInsets.only(right: 10),
+                                          child: Text("1",
+                                              style: Theme.of(context)
+                                                  .textTheme
+                                                  .bodyText2),
+                                        )),
                                       ])),
-                                      Spacer(),
+                                      const Spacer(),
                                       Container(
                                           height: size.height * 0.06,
                                           width: size.width * 0.12,
@@ -437,7 +441,7 @@ class _ChoiceYourTopicState extends State<ChoiceYourTopic> {
                                                   Border.all(color: kwhite)),
                                           child: const Icon(Icons.add,
                                               color: kwhite)),
-                                      SizedBox(
+                                      const SizedBox(
                                         width: 20,
                                       ),
                                       Container(

@@ -1,3 +1,5 @@
+// ignore_for_file: prefer_const_constructors
+
 import 'package:animate_do/animate_do.dart';
 import 'package:flutter/material.dart';
 import 'package:pantomim/theme/constant.dart';
@@ -22,7 +24,8 @@ class TimerScreans extends StatelessWidget {
           elevation: 0,
           actions: [
             Padding(
-              padding: EdgeInsets.only(right: Constans.padding, top: 12),
+              padding: const EdgeInsets.only(
+                  right: Constans.padding, top: 12, left: Constans.padding),
               child:
                   Text('4 Score', style: Theme.of(context).textTheme.bodyText1),
             )
@@ -41,7 +44,7 @@ class TimerScreans extends StatelessWidget {
                       style: Theme.of(context).textTheme.headline1,
                     )),
               ),
-              SizedBox(
+              const SizedBox(
                 height: 90,
               ),
               Column(
@@ -54,7 +57,7 @@ class TimerScreans extends StatelessWidget {
                     'Time',
                     style: Theme.of(context).textTheme.bodyText2,
                   ),
-                  SizedBox(
+                  const SizedBox(
                     height: 50,
                   ),
                   FadeInUp(

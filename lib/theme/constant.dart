@@ -2,6 +2,7 @@ import 'dart:ui';
 
 import 'package:flutter/material.dart';
 
+String faPrimaryFontFamily = 'IranYekan';
 const Color kpink = Color(0xFFDC9298);
 const Color kwhite = Colors.white;
 const Color kblack = Color(0xFF212121);
@@ -10,7 +11,7 @@ const Color kyellow = Color(0xFFFF9800);
 const Color klightgrean = Color(0xFFAFB42B);
 const Color kblackappbar = Colors.black;
 const Color kblue = Color(0xFF0D47A1);
-
+const Color dialogSettingColor = Colors.white60;
 //Text Style
 const styleTextForSetting =
     TextStyle(color: kblack, fontWeight: FontWeight.bold, fontSize: 20);
@@ -20,8 +21,11 @@ const styleTextForDialogHowToPlay = TextStyle(
 );
 const styleTextDialogTypeOfMatch =
     TextStyle(color: kblack, fontSize: 17, fontWeight: FontWeight.bold);
-const styleCupertinoSlidingSegmentedControl =
-    TextStyle(fontSize: 15, color: kblack);
+const styleCupertinoSlidingSegmentedControl = TextStyle(
+  fontSize: 15,
+  color: kblack,
+  fontFamily: 'IranYekan',
+);
 
 const styleTextInputTextField = TextStyle(color: kwhite, fontSize: 20);
 

@@ -1,10 +1,12 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:pantomim/generated/l10n.dart';
-import 'package:pantomim/module/pantomim_data.dart';
+import 'package:pantomim/module/typeof_match_provider.dart';
 import 'package:pantomim/theme/constant.dart';
-import 'package:pantomim/views/widgets/choice_boximage_text_select.dart';
+import 'package:pantomim/views/auth/detail_game_screans_for_lunch.dart';
 import 'package:pantomim/views/dialog_screns/dialog_choice_your_topic.dart';
+import 'package:pantomim/views/widgets/double_floatingac_button.dart';
+import 'package:provider/src/provider.dart';
 
 class ChoiceYourTopic extends StatefulWidget {
   const ChoiceYourTopic({Key? key}) : super(key: key);
@@ -57,11 +59,8 @@ class _ChoiceYourTopicState extends State<ChoiceYourTopic> {
   }
 
   _nextPage() {
-    showDialog(
-        builder: (BuildContext context) {
-          return DialogShow();
-        },
-        context: context);
+    Navigator.push(
+        context, MaterialPageRoute(builder: (context) => DetailGameScreans()));
   }
 
   _toggleVisibility() {
@@ -85,14 +84,15 @@ class _ChoiceYourTopicState extends State<ChoiceYourTopic> {
   @override
   Widget build(BuildContext context) {
     var localApp = S.of(context);
+
     final Map<int, Widget> mytab = <int, Widget>{
       0: Text(localApp.typeOfMatchScreansTextDetailNameButtonAUTO,
           style: styleCupertinoSlidingSegmentedControl),
       1: Text(localApp.typeOfMatchScreansTextDetailNameButtonCUSTOM,
           style: styleCupertinoSlidingSegmentedControl),
     };
-
     final size = MediaQuery.of(context).size;
+    // final modelProvider = Provider.of<ModelTypeOfMatch>(context);
 
     return Container(
       decoration: const BoxDecoration(
@@ -103,47 +103,19 @@ class _ChoiceYourTopicState extends State<ChoiceYourTopic> {
       child: Scaffold(
           floatingActionButton:
               Row(mainAxisAlignment: MainAxisAlignment.spaceEvenly, children: [
-            InkWell(
-              borderRadius: BorderRadius.circular(20),
-              onTap: _backPage,
-              child: Container(
-                  width: size.width * 0.35,
-                  height: size.height * 0.08,
-                  decoration: BoxDecoration(
-                      color: kblue, borderRadius: BorderRadius.circular(20)),
-                  // ignore: prefer_const_constructors
-                  child: Center(
-                      // ignore: prefer_const_constructors
-                      child: Text(
-                    localApp.typeOfMatchScreansButtonBACKPAGE,
-                    style: const TextStyle(
-                        color: Colors.white,
-                        fontWeight: FontWeight.bold,
-                        fontSize: 16),
-                  ))),
-            ),
-            InkWell(
-              borderRadius: BorderRadius.circular(20),
-              onTap: () {
-                _nextPage();
+            DounleFloattingButton(
+              ontap: () {
+                _backPage();
               },
-              child: Container(
-                  width: size.width * 0.26,
-                  height: size.height * 0.08,
-                  decoration: BoxDecoration(
-                      color: Colors.transparent,
-                      borderRadius: BorderRadius.circular(20)),
-                  // ignore: prefer_const_constructors
-                  child: Center(
-                      // ignore: prefer_const_constructors
-                      child: Text(
-                    localApp.typeOfMatchScreansButtonNextPage,
-                    style: const TextStyle(
-                        color: Colors.white,
-                        fontWeight: FontWeight.bold,
-                        fontSize: 16),
-                  ))),
-            )
+              colorBtn: kblue,
+              textBtn: localApp.typeOfMatchScreansButtonBACKPAGE,
+            ),
+            DounleFloattingButton(
+                ontap: () {
+                  _nextPage();
+                },
+                colorBtn: Colors.transparent,
+                textBtn: localApp.typeOfMatchScreansButtonNextPage)
           ]),
           backgroundColor: Colors.transparent,
           body: Container(
@@ -263,7 +235,7 @@ class _ChoiceYourTopicState extends State<ChoiceYourTopic> {
                               height: 10,
                             ),
                             InkWell(
-                              onTap: _counterPlus,
+                              //onTap: context.read<ModelTypeOfMatch>().increment,
                               borderRadius: BorderRadius.circular(50),
                               child: Container(
                                   height: size.height * 0.06,
@@ -424,8 +396,9 @@ class _ChoiceYourTopicState extends State<ChoiceYourTopic> {
                                                 .bodyText2),
                                         WidgetSpan(
                                             child: Container(
-                                          padding: EdgeInsets.only(right: 10),
-                                          child: Text("1",
+                                          padding:
+                                              const EdgeInsets.only(right: 10),
+                                          child: Text('s',
                                               style: Theme.of(context)
                                                   .textTheme
                                                   .bodyText2),
@@ -444,15 +417,17 @@ class _ChoiceYourTopicState extends State<ChoiceYourTopic> {
                                       const SizedBox(
                                         width: 20,
                                       ),
-                                      Container(
-                                          height: size.height * 0.06,
-                                          width: size.width * 0.12,
-                                          decoration: BoxDecoration(
-                                              shape: BoxShape.circle,
-                                              border:
-                                                  Border.all(color: kwhite)),
-                                          child: const Icon(Icons.remove,
-                                              color: kwhite)),
+                                      InkWell(
+                                        child: Container(
+                                            height: size.height * 0.06,
+                                            width: size.width * 0.12,
+                                            decoration: BoxDecoration(
+                                                shape: BoxShape.circle,
+                                                border:
+                                                    Border.all(color: kwhite)),
+                                            child: const Icon(Icons.remove,
+                                                color: kwhite)),
+                                      ),
                                     ],
                                   )),
                               const Divider(),

@@ -1,9 +1,11 @@
 import 'package:flutter/material.dart';
+import 'package:pantomim/module/typeof_match_provider.dart';
 import 'package:pantomim/theme/constant.dart';
 import 'package:pantomim/views/auth/type_of_match_screans.dart';
 import 'package:pantomim/views/dialog_screns/dialog_choice_your_topic.dart';
 import 'package:pantomim/views/dialog_screns/dialog_quit.dart';
 import 'package:pantomim/views/widgets/double_floatingac_button.dart';
+import 'package:provider/provider.dart';
 
 class DetailGameScreans extends StatelessWidget {
   const DetailGameScreans({Key? key}) : super(key: key);
@@ -11,6 +13,8 @@ class DetailGameScreans extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     final size = MediaQuery.of(context).size;
+    final modelProvider = Provider.of<ModelTypeOfMatch>(context);
+
     return Container(
       decoration: const BoxDecoration(
           gradient: LinearGradient(
@@ -48,21 +52,29 @@ class DetailGameScreans extends StatelessWidget {
                 child: Padding(
                   padding: const EdgeInsets.all(Constans.padding),
                   child: Container(
-                    child: Text(
-                      'Rounds 1 in 3',
-                    ),
-                  ),
+                      child: RichText(
+                          text: TextSpan(children: [
+                    TextSpan(
+                        text: "Rounds ",
+                        style: Theme.of(context).textTheme.bodyText1),
+                    TextSpan(
+                        text: modelProvider.getCounterMatch().toString(),
+                        style: Theme.of(context).textTheme.bodyText1),
+                    TextSpan(
+                        text: " in 1",
+                        style: Theme.of(context).textTheme.bodyText1),
+                  ]))),
                 ),
               ),
             ),
-            Divider(),
+            const Divider(),
             Padding(
               padding: EdgeInsets.all(Constans.padding),
               child: Column(
                 children: [
                   Row(
                     children: [
-                      const Text(
+                      Text(
                         'Name Teams',
                       ),
                       Spacer(),

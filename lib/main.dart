@@ -8,6 +8,7 @@ import 'package:provider/provider.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 import 'module/language_provider.dart';
 import 'generated/l10n.dart';
+import 'module/typeof_match_provider.dart';
 
 int? isviewed;
 void main() async {
@@ -41,8 +42,15 @@ class _MyAppState extends State<MyApp> {
   Widget build(
     BuildContext context,
   ) {
-    return ChangeNotifierProvider<LanguageChangeProvider>(
-        create: (context) => LanguageChangeProvider(),
+    return MultiProvider(
+        providers: [
+          ChangeNotifierProvider<LanguageChangeProvider>(
+            create: (context) => LanguageChangeProvider(),
+          ),
+          ChangeNotifierProvider<ModelTypeOfMatch>(
+            create: (context) => ModelTypeOfMatch(),
+          ),
+        ],
         child: Builder(
           builder: (context) => MaterialApp(
               locale: Provider.of<LanguageChangeProvider>(context, listen: true)

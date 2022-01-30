@@ -75,6 +75,24 @@ class MessageLookup extends MessageLookupByLibrary {
         "textTitleMenoScreans2": MessageLookupByLibrary.simpleMessage("Game"),
         "textTitleMenoScreans3":
             MessageLookupByLibrary.simpleMessage("Best Game For Family"),
+        "timeFOrStartGame1Min20Seconds":
+            MessageLookupByLibrary.simpleMessage("1 Minutes 20 Seconds"),
+        "timeFOrStartGame1Min50Seconds":
+            MessageLookupByLibrary.simpleMessage("1 Minutes 50 Seconds"),
+        "timeFOrStartGame2Min50Seconds":
+            MessageLookupByLibrary.simpleMessage("2 Minutes 50 Seconds"),
+        "timeFOrStartGame3Min20Seconds":
+            MessageLookupByLibrary.simpleMessage("3 Minutes 20 Seconds"),
+        "timeFOrStartGame3Min50Seconds":
+            MessageLookupByLibrary.simpleMessage("3 Minutes 50 Seconds"),
+        "timeFOrStartGame4Min20Seconds":
+            MessageLookupByLibrary.simpleMessage("4 Minutes 20 Seconds"),
+        "timeFOrStartGame4Min50Seconds":
+            MessageLookupByLibrary.simpleMessage("4 Minutes 50 Seconds"),
+        "timeForStartGame2min20Seconds":
+            MessageLookupByLibrary.simpleMessage("2 Minutes 20 Seconds"),
+        "timeForStartGame50Seconds":
+            MessageLookupByLibrary.simpleMessage("50 Seconds"),
         "titleHomeScreans1": MessageLookupByLibrary.simpleMessage("Play"),
         "titleHomeScreans2":
             MessageLookupByLibrary.simpleMessage(" with\nFriends"),
@@ -85,7 +103,7 @@ class MessageLookup extends MessageLookupByLibrary {
         "typeOfMatchScreansTextDetailButton":
             MessageLookupByLibrary.simpleMessage("TIME GAME"),
         "typeOfMatchScreansTextDetailForNumberofRounds":
-            MessageLookupByLibrary.simpleMessage("Number of Rounds"),
+            MessageLookupByLibrary.simpleMessage("Number of Rounds "),
         "typeOfMatchScreansTextDetailNameButtonAUTO":
             MessageLookupByLibrary.simpleMessage("AUTO"),
         "typeOfMatchScreansTextDetailNameButtonAUTODetail":

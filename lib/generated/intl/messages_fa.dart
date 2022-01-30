@@ -75,6 +75,24 @@ class MessageLookup extends MessageLookupByLibrary {
             MessageLookupByLibrary.simpleMessage(" پانتومیم "),
         "textTitleMenoScreans3":
             MessageLookupByLibrary.simpleMessage("بهترین بازی برای خانواده"),
+        "timeFOrStartGame1Min20Seconds":
+            MessageLookupByLibrary.simpleMessage("۱ دقیقه ۲۰ ثانیه"),
+        "timeFOrStartGame1Min50Seconds":
+            MessageLookupByLibrary.simpleMessage("۱ دقیقه ۵۰ ثانیه"),
+        "timeFOrStartGame2Min50Seconds":
+            MessageLookupByLibrary.simpleMessage("۲ دقیقه ۵۰ ثانیه"),
+        "timeFOrStartGame3Min20Seconds":
+            MessageLookupByLibrary.simpleMessage("۳ دقیقه ۲۰ ثانیه"),
+        "timeFOrStartGame3Min50Seconds":
+            MessageLookupByLibrary.simpleMessage("۳ دقیقه ۵۰ ثانیه"),
+        "timeFOrStartGame4Min20Seconds":
+            MessageLookupByLibrary.simpleMessage("۴ دقیقه ۲۰ ثانیه"),
+        "timeFOrStartGame4Min50Seconds":
+            MessageLookupByLibrary.simpleMessage("۴ دقیقه ۵۰ ثانیه"),
+        "timeForStartGame2min20Seconds":
+            MessageLookupByLibrary.simpleMessage("۲ دقیقه ۲۰ ثانیه"),
+        "timeForStartGame50Seconds":
+            MessageLookupByLibrary.simpleMessage("50 ثانیه"),
         "titleHomeScreans1": MessageLookupByLibrary.simpleMessage("بازی"),
         "titleHomeScreans2":
             MessageLookupByLibrary.simpleMessage(" همراه \nبا دوستان"),
@@ -85,7 +103,7 @@ class MessageLookup extends MessageLookupByLibrary {
         "typeOfMatchScreansTextDetailButton":
             MessageLookupByLibrary.simpleMessage("زمان بازی"),
         "typeOfMatchScreansTextDetailForNumberofRounds":
-            MessageLookupByLibrary.simpleMessage("تعداد دور ها "),
+            MessageLookupByLibrary.simpleMessage(" تعداد دور ها "),
         "typeOfMatchScreansTextDetailNameButtonAUTO":
             MessageLookupByLibrary.simpleMessage("خودکار"),
         "typeOfMatchScreansTextDetailNameButtonAUTODetail":

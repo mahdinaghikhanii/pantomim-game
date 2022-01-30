@@ -440,10 +440,10 @@ class S {
     );
   }
 
-  /// `Number of Rounds`
+  /// `Number of Rounds `
   String get typeOfMatchScreansTextDetailForNumberofRounds {
     return Intl.message(
-      'Number of Rounds',
+      'Number of Rounds ',
       name: 'typeOfMatchScreansTextDetailForNumberofRounds',
       desc: '',
       args: [],
@@ -465,6 +465,96 @@ class S {
     return Intl.message(
       'NEXT PAGE',
       name: 'typeOfMatchScreansButtonNextPage',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `50 Seconds`
+  String get timeForStartGame50Seconds {
+    return Intl.message(
+      '50 Seconds',
+      name: 'timeForStartGame50Seconds',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `1 Minutes 20 Seconds`
+  String get timeFOrStartGame1Min20Seconds {
+    return Intl.message(
+      '1 Minutes 20 Seconds',
+      name: 'timeFOrStartGame1Min20Seconds',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `1 Minutes 50 Seconds`
+  String get timeFOrStartGame1Min50Seconds {
+    return Intl.message(
+      '1 Minutes 50 Seconds',
+      name: 'timeFOrStartGame1Min50Seconds',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `2 Minutes 20 Seconds`
+  String get timeForStartGame2min20Seconds {
+    return Intl.message(
+      '2 Minutes 20 Seconds',
+      name: 'timeForStartGame2min20Seconds',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `2 Minutes 50 Seconds`
+  String get timeFOrStartGame2Min50Seconds {
+    return Intl.message(
+      '2 Minutes 50 Seconds',
+      name: 'timeFOrStartGame2Min50Seconds',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `3 Minutes 20 Seconds`
+  String get timeFOrStartGame3Min20Seconds {
+    return Intl.message(
+      '3 Minutes 20 Seconds',
+      name: 'timeFOrStartGame3Min20Seconds',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `3 Minutes 50 Seconds`
+  String get timeFOrStartGame3Min50Seconds {
+    return Intl.message(
+      '3 Minutes 50 Seconds',
+      name: 'timeFOrStartGame3Min50Seconds',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `4 Minutes 20 Seconds`
+  String get timeFOrStartGame4Min20Seconds {
+    return Intl.message(
+      '4 Minutes 20 Seconds',
+      name: 'timeFOrStartGame4Min20Seconds',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `4 Minutes 50 Seconds`
+  String get timeFOrStartGame4Min50Seconds {
+    return Intl.message(
+      '4 Minutes 50 Seconds',
+      name: 'timeFOrStartGame4Min50Seconds',
       desc: '',
       args: [],
     );

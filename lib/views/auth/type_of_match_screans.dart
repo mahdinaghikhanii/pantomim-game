@@ -4,7 +4,6 @@ import 'package:pantomim/generated/l10n.dart';
 import 'package:pantomim/module/typeof_match_provider.dart';
 import 'package:pantomim/theme/constant.dart';
 import 'package:pantomim/views/auth/detail_game_screans_for_lunch.dart';
-import 'package:pantomim/views/dialog_screns/dialog_choice_your_topic.dart';
 import 'package:pantomim/views/widgets/double_floatingac_button.dart';
 import 'package:provider/src/provider.dart';
 
@@ -22,28 +21,7 @@ bool _viewCustom = true;
 int _counter = 2;
 
 class _ChoiceYourTopicState extends State<ChoiceYourTopic> {
-  //This state for plus number
-  _counterPlus() {
-    setState(() {
-      if (_counter > 3) {
-        _counter;
-      } else {
-        _counter++;
-      }
-    });
-  }
-
-//this state for nagative state
-  _counterNagative() {
-    setState(() {
-      if (_counter == 2) {
-        _counter;
-      } else {
-        _counter--;
-      }
-    });
-  }
-
+  //This state for plus numbe
   //this methode for unvisibility Text in Screans
 
   _unsetVisibility() {
@@ -52,6 +30,7 @@ class _ChoiceYourTopicState extends State<ChoiceYourTopic> {
       _viewCustom = false;
     });
   }
+
   // this state for back page
 
   _backPage() {
@@ -85,6 +64,20 @@ class _ChoiceYourTopicState extends State<ChoiceYourTopic> {
   Widget build(BuildContext context) {
     var localApp = S.of(context);
 
+    List<String> nameTeamTextFiledInput = [
+      localApp.timeForStartGame50Seconds,
+      localApp.timeFOrStartGame1Min20Seconds,
+      localApp.timeFOrStartGame1Min50Seconds,
+      localApp.timeForStartGame2min20Seconds,
+      localApp.timeFOrStartGame2Min50Seconds,
+      localApp.timeFOrStartGame3Min20Seconds,
+      localApp.timeFOrStartGame3Min50Seconds,
+      localApp.timeFOrStartGame4Min20Seconds,
+      localApp.timeFOrStartGame4Min50Seconds,
+    ];
+
+    int stringCounter = 0;
+
     final Map<int, Widget> mytab = <int, Widget>{
       0: Text(localApp.typeOfMatchScreansTextDetailNameButtonAUTO,
           style: styleCupertinoSlidingSegmentedControl),
@@ -92,7 +85,7 @@ class _ChoiceYourTopicState extends State<ChoiceYourTopic> {
           style: styleCupertinoSlidingSegmentedControl),
     };
     final size = MediaQuery.of(context).size;
-    // final modelProvider = Provider.of<ModelTypeOfMatch>(context);
+    final modelProvider = Provider.of<ModelTypeOfMatch>(context);
 
     return Container(
       decoration: const BoxDecoration(
@@ -235,7 +228,7 @@ class _ChoiceYourTopicState extends State<ChoiceYourTopic> {
                               height: 10,
                             ),
                             InkWell(
-                              //onTap: context.read<ModelTypeOfMatch>().increment,
+                              onTap: context.read<ModelTypeOfMatch>().increment,
                               borderRadius: BorderRadius.circular(50),
                               child: Container(
                                   height: size.height * 0.06,
@@ -249,7 +242,7 @@ class _ChoiceYourTopicState extends State<ChoiceYourTopic> {
                               height: size.height * 0.02,
                             ),
                             Text(
-                              _counter.toString(),
+                              modelProvider.getCounterMatch().toString(),
                               maxLines: 1,
                               style: Theme.of(context).textTheme.bodyText1,
                             ),
@@ -257,7 +250,7 @@ class _ChoiceYourTopicState extends State<ChoiceYourTopic> {
                               height: size.height * 0.02,
                             ),
                             InkWell(
-                              onTap: _counterNagative,
+                              onTap: () => modelProvider.lowoff(),
                               borderRadius: BorderRadius.circular(50),
                               child: Container(
                                   height: size.height * 0.06,
@@ -340,39 +333,40 @@ class _ChoiceYourTopicState extends State<ChoiceYourTopic> {
                                     mainAxisAlignment:
                                         MainAxisAlignment.spaceBetween,
                                     children: [
-                                      RichText(
-                                          text: TextSpan(children: [
-                                        TextSpan(
-                                            text: '5 ',
-                                            style: Theme.of(context)
-                                                .textTheme
-                                                .bodyText2),
-                                        TextSpan(
-                                            text: 'minuts 40 secounds',
-                                            style: Theme.of(context)
-                                                .textTheme
-                                                .bodyText2),
-                                      ])),
+                                      Text(
+                                          nameTeamTextFiledInput[
+                                              modelProvider.getTimeForMatch()],
+                                          style: Theme.of(context)
+                                              .textTheme
+                                              .bodyText2),
                                       const Spacer(),
-                                      Container(
-                                          height: size.height * 0.06,
-                                          width: size.width * 0.12,
-                                          decoration: BoxDecoration(
-                                              shape: BoxShape.circle,
-                                              border:
-                                                  Border.all(color: kwhite)),
-                                          child: const Icon(Icons.add,
-                                              color: kwhite)),
+                                      InkWell(
+                                        onTap: () =>
+                                            modelProvider.incermentstring(),
+                                        child: Container(
+                                            height: size.height * 0.06,
+                                            width: size.width * 0.12,
+                                            decoration: BoxDecoration(
+                                                shape: BoxShape.circle,
+                                                border:
+                                                    Border.all(color: kwhite)),
+                                            child: const Icon(Icons.add,
+                                                color: kwhite)),
+                                      ),
                                       const SizedBox(width: 20),
-                                      Container(
-                                          height: size.height * 0.06,
-                                          width: size.width * 0.12,
-                                          decoration: BoxDecoration(
-                                              shape: BoxShape.circle,
-                                              border:
-                                                  Border.all(color: kwhite)),
-                                          child: const Icon(Icons.remove,
-                                              color: kwhite)),
+                                      InkWell(
+                                        onTap: () =>
+                                            modelProvider.lowoffstring(),
+                                        child: Container(
+                                            height: size.height * 0.06,
+                                            width: size.width * 0.12,
+                                            decoration: BoxDecoration(
+                                                shape: BoxShape.circle,
+                                                border:
+                                                    Border.all(color: kwhite)),
+                                            child: const Icon(Icons.remove,
+                                                color: kwhite)),
+                                      ),
                                     ],
                                   )),
                               const SizedBox(
@@ -398,26 +392,35 @@ class _ChoiceYourTopicState extends State<ChoiceYourTopic> {
                                             child: Container(
                                           padding:
                                               const EdgeInsets.only(right: 10),
-                                          child: Text('s',
+                                          child: Text(
+                                              modelProvider
+                                                  .getNumberOfRounds()
+                                                  .toString(),
                                               style: Theme.of(context)
                                                   .textTheme
                                                   .bodyText2),
                                         )),
                                       ])),
                                       const Spacer(),
-                                      Container(
-                                          height: size.height * 0.06,
-                                          width: size.width * 0.12,
-                                          decoration: BoxDecoration(
-                                              shape: BoxShape.circle,
-                                              border:
-                                                  Border.all(color: kwhite)),
-                                          child: const Icon(Icons.add,
-                                              color: kwhite)),
+                                      InkWell(
+                                        onTap: () => modelProvider
+                                            .incermentnumberofrounds(),
+                                        child: Container(
+                                            height: size.height * 0.06,
+                                            width: size.width * 0.12,
+                                            decoration: BoxDecoration(
+                                                shape: BoxShape.circle,
+                                                border:
+                                                    Border.all(color: kwhite)),
+                                            child: const Icon(Icons.add,
+                                                color: kwhite)),
+                                      ),
                                       const SizedBox(
                                         width: 20,
                                       ),
                                       InkWell(
+                                        onTap: () => modelProvider
+                                            .lowoffnumberofrounds(),
                                         child: Container(
                                             height: size.height * 0.06,
                                             width: size.width * 0.12,

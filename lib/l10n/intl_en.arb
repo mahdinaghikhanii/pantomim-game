@@ -38,9 +38,20 @@
     "typeOfMatchScreansTextDetailNameButtonAUTO" : "AUTO",
     "typeOfMatchScreansTextDetailNameButtonCUSTOM" : "CUSTOM",
     "typeOfMatchScreansTextDetailNameButtonAUTODetail" : "To the difficulty of the word",
-    "typeOfMatchScreansTextDetailForNumberofRounds" : "Number of Rounds",
+    "typeOfMatchScreansTextDetailForNumberofRounds" : "Number of Rounds ",
     "typeOfMatchScreansButtonBACKPAGE" : "BACK PAGE",
-    "typeOfMatchScreansButtonNextPage" : "NEXT PAGE"
+    "typeOfMatchScreansButtonNextPage" : "NEXT PAGE",
+    "timeForStartGame50Seconds" : "50 Seconds",
+    "timeFOrStartGame1Min20Seconds" : "1 Minutes 20 Seconds",
+    "timeFOrStartGame1Min50Seconds" : "1 Minutes 50 Seconds",
+    "timeForStartGame2min20Seconds" : "2 Minutes 20 Seconds",
+    "timeFOrStartGame2Min50Seconds" : "2 Minutes 50 Seconds",
+    "timeFOrStartGame3Min20Seconds" : "3 Minutes 20 Seconds",
+    "timeFOrStartGame3Min50Seconds" : "3 Minutes 50 Seconds",
+    "timeFOrStartGame4Min20Seconds" : "4 Minutes 20 Seconds",
+    "timeFOrStartGame4Min50Seconds" : "4 Minutes 50 Seconds"
+
+
 
 
 

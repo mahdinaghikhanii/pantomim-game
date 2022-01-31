@@ -1,1 +1,64 @@
+<<<<<<< HEAD
 {}
+=======
+{
+    "titleHomeScreans1" : "Play",
+    "titleHomeScreans2" : " with\nFriends",
+    "textButtonHomeScrens" : "START PLAY",
+    "textButtonHowToPlayHomeScreans" : "HOW TO PLAY ?",
+    "textTitleMenoScreans1" : "Pantomim",
+    "textTitleMenoScreans2" : "Game",
+    "textTitleMenoScreans3" : "Best Game For Family",
+    "detailButtonMenoScreansNormalGame" : "Let`s Become\na New\nNormal Game",
+    "detailButtonMenoScreansNormalGameLestsGo" : "Lets Go",
+    "detailButtonMenoScreansFight" : "Fight",
+    "detailButtonMenoScreansSpead" : "Spead",
+    "detailButtonMenoScreansScore" : "Score",
+    "detailButtonMenoScreansSetting" : "Setting",
+    "dialogSettingsSelectLanguage" : "Select Language",
+    "dialogSettingsMusick" : "Music",
+    "dialogTypeOfMatchSubjectTitle" : "New contest theme :",
+    "dialogTypeOfMatchbuttontextAnimal" : "Animal",
+    "dialogTypeOfMatchbuttontextSport" : "Sport",
+    "dialogTypeOfMatchbuttontextFood" : "Food",
+    "dialogTypeOfMatchbuttontextCountry" : "Country",
+    "dialogTypeOfMatchbuttontextThing" : "Thing",
+    "dialogTypeOfMatchbuttontextMovie" : "Movie",
+    "dialogTypeOfMatchbuttontextBook" : "Book",
+    "dialogTypeOfMatchbuttontextTourism" : "Tourism",
+    "dialogTypeOfMatchbuttontextGeneral" : "General",
+    "dialogTypeOfMatchbuttontextTecnology" : "Tecnology",
+    "dialogTypeOfMatchbuttontextMusic" : "Music",
+    "dialogTypeOfMatchbuttontextjob" : "Job",
+    "dialogTypeOfMatchNumberofteamsTitle" : "Number Of Teams",
+    "typeOfMatchScreansTitleScreans1" : "START ",
+    "typeOfMatchScreansTitleScreans2" : "NEWGAME",
+    "typeOfMatchScreansTextFiledInputTeam1" : "Team 1",
+    "typeOfMatchScreansTextFiledInputTeam2" : "Team2",
+    "typeOfMatchScreansTextFiledInputTeam3" : "Team3",
+    "typeOfMatchScreansTextFiledInputTeam4" : "Team4",
+    "typeOfMatchScreansTextDetailButton" : "TIME GAME",
+    "typeOfMatchScreansTextDetailNameButtonAUTO" : "AUTO",
+    "typeOfMatchScreansTextDetailNameButtonCUSTOM" : "CUSTOM",
+    "typeOfMatchScreansTextDetailNameButtonAUTODetail" : "To the difficulty of the word",
+    "typeOfMatchScreansTextDetailForNumberofRounds" : "Number of Rounds ",
+    "typeOfMatchScreansButtonBACKPAGE" : "BACK PAGE",
+    "typeOfMatchScreansButtonNextPage" : "NEXT PAGE",
+    "timeForStartGame50Seconds" : "50 Seconds",
+    "timeFOrStartGame1Min20Seconds" : "1 Minutes 20 Seconds",
+    "timeFOrStartGame1Min50Seconds" : "1 Minutes 50 Seconds",
+    "timeForStartGame2min20Seconds" : "2 Minutes 20 Seconds",
+    "timeFOrStartGame2Min50Seconds" : "2 Minutes 50 Seconds",
+    "timeFOrStartGame3Min20Seconds" : "3 Minutes 20 Seconds",
+    "timeFOrStartGame3Min50Seconds" : "3 Minutes 50 Seconds",
+    "timeFOrStartGame4Min20Seconds" : "4 Minutes 20 Seconds",
+    "timeFOrStartGame4Min50Seconds" : "4 Minutes 50 Seconds"
+
+
+
+
+
+
+    
+}
+>>>>>>> temp_branch

@@ -15,44 +15,45 @@ class BoxForMenoImage extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return (Padding(
-      padding: const EdgeInsets.fromLTRB(0, 2, 2, 0),
-      child: ClipRRect(
-        borderRadius: BorderRadius.circular(20),
-        child: InkWell(
-          onTap: tap,
-          child: Container(
-            padding: const EdgeInsets.all(5),
-            width: 170,
-            height: 140,
+    final size = MediaQuery.of(context).size;
+    return SizedBox(
+      width: size.width * 0.46,
+      height: 160,
+      child: InkWell(
+        onTap: tap,
+        child: Container(
+          padding: const EdgeInsets.all(0),
+          decoration: BoxDecoration(
+            borderRadius: BorderRadius.circular(18),
             color: color,
-            child: Row(
+          ),
+          child:
+              Column(crossAxisAlignment: CrossAxisAlignment.center, children: [
+            Row(
               mainAxisAlignment: MainAxisAlignment.center,
+              crossAxisAlignment: CrossAxisAlignment.start,
               children: [
-                Image.asset(
-                  image,
-                  width: 70,
+                Padding(
+                  padding: const EdgeInsets.only(left: 0, top: 8),
+                  child: Text(
+                    text,
+                    textAlign: TextAlign.center,
+                    style: Theme.of(context).primaryTextTheme.subtitle1,
+                  ),
                 ),
-                const SizedBox(
-                  width: 5,
+                Padding(
+                  padding: const EdgeInsets.only(top: 20, left: 2),
+                  child: Image.asset(
+                    image,
+                    height: size.height * 0.14,
+                    width: size.width * 0.24,
+                  ),
                 ),
-                ClipRRect(
-                    borderRadius: BorderRadius.circular(16),
-                    child: Container(
-                        padding: EdgeInsets.all(3),
-                        width: 80,
-                        height: 30,
-                        color: kwhite,
-                        child: Text(
-                          text,
-                          textAlign: TextAlign.center,
-                          style: Theme.of(context).primaryTextTheme.subtitle1,
-                        )))
               ],
             ),
-          ),
+          ]),
         ),
       ),
-    ));
+    );
   }
 }

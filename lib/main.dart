@@ -19,7 +19,7 @@ class MyApp extends StatelessWidget {
   ) {
     return MaterialApp(
 <<<<<<< HEAD
-      theme: ThemeData(),
+     
 =======
       debugShowCheckedModeBanner: false,
       home: const ChoiceYourTopic(),

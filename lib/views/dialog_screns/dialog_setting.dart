@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:pantomim/generated/l10n.dart';
-import 'package:pantomim/module/language_provider.dart';
+import 'package:pantomim/util/view_models/provider.dart';
 import 'package:pantomim/theme/constant.dart';
 import 'package:provider/src/provider.dart';
 import 'package:shared_preferences/shared_preferences.dart';
@@ -85,8 +85,7 @@ class _SettingDialogState extends State<SettingDialog> {
                                             onTap: () {
                                               (bankIteam['ontap']);
                                               context
-                                                  .read<
-                                                      LanguageChangeProvider>()
+                                                  .read<AppProvider>()
                                                   .changeLocale(
                                                       bankIteam['ontap']);
                                             },

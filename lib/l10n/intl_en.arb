@@ -52,7 +52,9 @@
     "timeFOrStartGame3Min20Seconds" : "3 Minutes 20 Seconds",
     "timeFOrStartGame3Min50Seconds" : "3 Minutes 50 Seconds",
     "timeFOrStartGame4Min20Seconds" : "4 Minutes 20 Seconds",
-    "timeFOrStartGame4Min50Seconds" : "4 Minutes 50 Seconds"
+    "timeFOrStartGame4Min50Seconds" : "4 Minutes 50 Seconds",
+    "detailGameScreansForLunchNameTeam" : "Name Teams",
+    "detailGameScreansForLunchScore" : "Score"
 
 
 

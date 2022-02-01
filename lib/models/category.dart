@@ -9,3 +9,8 @@ class ListTypeOfMatch {
 
   ListTypeOfMatch(this.team1, this.team2, this.team3, this.team4);
 }
+
+class TextFiledInputNameTeam {
+  final String value;
+  TextFiledInputNameTeam(this.value);
+}

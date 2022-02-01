@@ -35,6 +35,10 @@ class MessageLookup extends MessageLookupByLibrary {
             MessageLookupByLibrary.simpleMessage("Setting"),
         "detailButtonMenoScreansSpead":
             MessageLookupByLibrary.simpleMessage("Spead"),
+        "detailGameScreansForLunchNameTeam":
+            MessageLookupByLibrary.simpleMessage("Name Teams"),
+        "detailGameScreansForLunchScore":
+            MessageLookupByLibrary.simpleMessage("Score"),
         "dialogSettingsMusick": MessageLookupByLibrary.simpleMessage("Music"),
         "dialogSettingsSelectLanguage":
             MessageLookupByLibrary.simpleMessage("Select Language"),

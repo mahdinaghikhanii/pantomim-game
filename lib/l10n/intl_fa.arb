@@ -49,5 +49,7 @@
     "timeFOrStartGame3Min20Seconds" : "۳ دقیقه ۲۰ ثانیه",
     "timeFOrStartGame3Min50Seconds" : "۳ دقیقه ۵۰ ثانیه",
     "timeFOrStartGame4Min20Seconds" : "۴ دقیقه ۲۰ ثانیه",
-    "timeFOrStartGame4Min50Seconds" : "۴ دقیقه ۵۰ ثانیه"
+    "timeFOrStartGame4Min50Seconds" : "۴ دقیقه ۵۰ ثانیه",
+    "detailGameScreansForLunchNameTeam" : "نام تیم",
+    "detailGameScreansForLunchScore" : "امتیاز"
 }

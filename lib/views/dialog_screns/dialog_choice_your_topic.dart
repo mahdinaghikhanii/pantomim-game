@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:pantomim/generated/l10n.dart';
-import 'package:pantomim/module/pantomim_data.dart';
+import 'package:pantomim/models/category.dart';
 import 'package:pantomim/theme/constant.dart';
 import 'package:pantomim/views/auth/time_screans.dart';
 import 'package:pantomim/views/widgets/choice_boximage_text_select.dart';

@@ -1,7 +1,7 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:pantomim/generated/l10n.dart';
-import 'package:pantomim/module/typeof_match_provider.dart';
+import 'package:pantomim/util/view_models/provider.dart';
 import 'package:pantomim/theme/constant.dart';
 import 'package:pantomim/views/auth/detail_game_screans_for_lunch.dart';
 import 'package:pantomim/views/widgets/double_floatingac_button.dart';
@@ -31,6 +31,17 @@ class _ChoiceYourTopicState extends State<ChoiceYourTopic> {
     });
   }
 
+  _hintStyle() {
+    setState(() {
+      final modelProvider = Provider.of<AppProvider>(context);
+      if (modelProvider.getCounterMatch() >= 2) {
+        Theme.of(context).textTheme.bodyText1;
+      } else {
+        TextStyle(color: Colors.red);
+      }
+    });
+  }
+
   // this state for back page
 
   _backPage() {
@@ -56,7 +67,6 @@ class _ChoiceYourTopicState extends State<ChoiceYourTopic> {
     if (selectValue == 0) {
       _viewCustom = false;
     }
-    ;
   }
   // ignore: non_constant_identifier_names
 
@@ -85,7 +95,7 @@ class _ChoiceYourTopicState extends State<ChoiceYourTopic> {
           style: styleCupertinoSlidingSegmentedControl),
     };
     final size = MediaQuery.of(context).size;
-    final modelProvider = Provider.of<ModelTypeOfMatch>(context);
+    final modelProvider = Provider.of<AppProvider>(context);
 
     return Container(
       decoration: const BoxDecoration(
@@ -149,6 +159,9 @@ class _ChoiceYourTopicState extends State<ChoiceYourTopic> {
                                     width: size.width * 0.30,
                                     height: size.height * 0.10,
                                     child: TextField(
+                                        onChanged: (String value) {
+                                          modelProvider.changeNameTeams1(value);
+                                        },
                                         decoration: InputDecoration(
                                           border: InputBorder.none,
                                           hintText: localApp
@@ -165,6 +178,9 @@ class _ChoiceYourTopicState extends State<ChoiceYourTopic> {
                                     width: size.width * 0.30,
                                     height: size.height * 0.10,
                                     child: TextField(
+                                        onChanged: (String value) {
+                                          modelProvider.changeNameTeams2(value);
+                                        },
                                         decoration: InputDecoration(
                                           hintText: localApp
                                               .typeOfMatchScreansTextFiledInputTeam2,
@@ -181,14 +197,27 @@ class _ChoiceYourTopicState extends State<ChoiceYourTopic> {
                                     width: size.width * 0.30,
                                     height: size.height * 0.10,
                                     child: TextField(
+                                        onChanged: (String value) {
+                                          modelProvider.changeNameTeams3(value);
+                                        },
                                         decoration: InputDecoration(
+                                          enabled:
+                                              modelProvider.getCounterMatch() >
+                                                      2
+                                                  ? true
+                                                  : false,
                                           floatingLabelStyle:
                                               styleTextInputTextField,
                                           hintText: localApp
                                               .typeOfMatchScreansTextFiledInputTeam3,
-                                          hintStyle: Theme.of(context)
-                                              .textTheme
-                                              .bodyText1,
+                                          hintStyle:
+                                              modelProvider.getCounterMatch() >
+                                                      2
+                                                  ? Theme.of(context)
+                                                      .textTheme
+                                                      .bodyText1
+                                                  : const TextStyle(
+                                                      color: Colors.grey),
                                           border: InputBorder.none,
                                         ),
                                         textAlign: TextAlign.center,
@@ -199,12 +228,24 @@ class _ChoiceYourTopicState extends State<ChoiceYourTopic> {
                                     width: size.width * 0.30,
                                     height: size.height * 0.10,
                                     child: TextField(
+                                        enabled:
+                                            modelProvider.getCounterMatch() > 3
+                                                ? true
+                                                : false,
+                                        onChanged: (String value) {
+                                          modelProvider.changeNameTeams4(value);
+                                        },
                                         decoration: InputDecoration(
                                           hintText: localApp
                                               .typeOfMatchScreansTextFiledInputTeam4,
-                                          hintStyle: Theme.of(context)
-                                              .textTheme
-                                              .bodyText1,
+                                          hintStyle:
+                                              modelProvider.getCounterMatch() >
+                                                      3
+                                                  ? Theme.of(context)
+                                                      .textTheme
+                                                      .bodyText1
+                                                  : const TextStyle(
+                                                      color: Colors.grey),
                                           border: InputBorder.none,
                                         ),
                                         textAlign: TextAlign.center,
@@ -228,7 +269,7 @@ class _ChoiceYourTopicState extends State<ChoiceYourTopic> {
                               height: 10,
                             ),
                             InkWell(
-                              onTap: context.read<ModelTypeOfMatch>().increment,
+                              onTap: context.read<AppProvider>().increment,
                               borderRadius: BorderRadius.circular(50),
                               child: Container(
                                   height: size.height * 0.06,

@@ -559,6 +559,26 @@ class S {
       args: [],
     );
   }
+
+  /// `Name Teams`
+  String get detailGameScreansForLunchNameTeam {
+    return Intl.message(
+      'Name Teams',
+      name: 'detailGameScreansForLunchNameTeam',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Score`
+  String get detailGameScreansForLunchScore {
+    return Intl.message(
+      'Score',
+      name: 'detailGameScreansForLunchScore',
+      desc: '',
+      args: [],
+    );
+  }
 }
 
 class AppLocalizationDelegate extends LocalizationsDelegate<S> {

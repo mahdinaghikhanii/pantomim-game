@@ -6,9 +6,8 @@ import 'package:pantomim/views/auth/get_start_screans.dart';
 import 'package:pantomim/views/auth/home_screans.dart';
 import 'package:provider/provider.dart';
 import 'package:shared_preferences/shared_preferences.dart';
-import 'module/language_provider.dart';
 import 'generated/l10n.dart';
-import 'module/typeof_match_provider.dart';
+import 'util/view_models/provider.dart';
 
 int? isviewed;
 void main() async {
@@ -31,7 +30,7 @@ class _MyAppState extends State<MyApp> {
 
     preferences.setString(
         'language',
-        Provider.of<LanguageChangeProvider>(context, listen: true)
+        Provider.of<AppProvider>(context, listen: true)
             .currentLocale
             .toString());
   }
@@ -44,17 +43,17 @@ class _MyAppState extends State<MyApp> {
   ) {
     return MultiProvider(
         providers: [
-          ChangeNotifierProvider<LanguageChangeProvider>(
-            create: (context) => LanguageChangeProvider(),
+          ChangeNotifierProvider<AppProvider>(
+            create: (context) => AppProvider(),
           ),
-          ChangeNotifierProvider<ModelTypeOfMatch>(
-            create: (context) => ModelTypeOfMatch(),
+          ChangeNotifierProvider<AppProvider>(
+            create: (context) => AppProvider(),
           ),
         ],
         child: Builder(
           builder: (context) => MaterialApp(
-              locale: Provider.of<LanguageChangeProvider>(context, listen: true)
-                  .currentLocale,
+              locale:
+                  Provider.of<AppProvider>(context, listen: true).currentLocale,
               // ignore: prefer_const_literals_to_create_immutables
               localizationsDelegates: [
                 S.delegate,
@@ -67,7 +66,7 @@ class _MyAppState extends State<MyApp> {
               home:
                   isviewed != 0 ? const GetStartScreans() : const HomeScreans(),
               theme: ConfigTheme.light().getTheme(
-                  Provider.of<LanguageChangeProvider>(context, listen: true)
+                  Provider.of<AppProvider>(context, listen: true)
                       .currentLocale
                       .languageCode)),
         ));

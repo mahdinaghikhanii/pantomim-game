@@ -17,11 +17,7 @@ class DetailGameScreans extends StatelessWidget {
     final modelProvider = Provider.of<AppProvider>(context);
 
     return Container(
-      decoration: const BoxDecoration(
-          gradient: LinearGradient(
-              begin: Alignment.centerLeft,
-              end: Alignment.centerRight,
-              colors: [Colors.white38, Colors.blue])),
+      decoration: backgroundDefaultScafold,
       child: Scaffold(
         backgroundColor: Colors.transparent,
         floatingActionButton:

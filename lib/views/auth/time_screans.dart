@@ -12,11 +12,7 @@ class TimerScreans extends StatelessWidget {
   Widget build(BuildContext context) {
     final size = MediaQuery.of(context).size;
     return Container(
-      decoration: const BoxDecoration(
-          gradient: LinearGradient(
-              begin: Alignment.centerLeft,
-              end: Alignment.centerRight,
-              colors: [Colors.white38, Colors.blue])),
+      decoration: backgroundDefaultScafold,
       child: Scaffold(
         backgroundColor: Colors.transparent,
         appBar: AppBar(

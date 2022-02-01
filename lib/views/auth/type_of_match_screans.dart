@@ -98,11 +98,7 @@ class _ChoiceYourTopicState extends State<ChoiceYourTopic> {
     final modelProvider = Provider.of<AppProvider>(context);
 
     return Container(
-      decoration: const BoxDecoration(
-          gradient: LinearGradient(
-              begin: Alignment.centerLeft,
-              end: Alignment.centerRight,
-              colors: [Colors.white38, Colors.blue])),
+      decoration: backgroundDefaultScafold,
       child: Scaffold(
           floatingActionButton:
               Row(mainAxisAlignment: MainAxisAlignment.spaceEvenly, children: [

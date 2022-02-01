@@ -18,11 +18,7 @@ class MenoScreans extends StatelessWidget {
       duration: const Duration(milliseconds: 1200),
       delay: const Duration(microseconds: 1200),
       child: Container(
-        decoration: const BoxDecoration(
-            gradient: LinearGradient(
-                begin: Alignment.centerLeft,
-                end: Alignment.centerRight,
-                colors: [Colors.white38, Colors.blue])),
+        decoration: backgroundDefaultScafold,
         child: Scaffold(
           backgroundColor: Colors.transparent,
           body: SingleChildScrollView(

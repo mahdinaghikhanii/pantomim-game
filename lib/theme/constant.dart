@@ -28,12 +28,10 @@ const styleCupertinoSlidingSegmentedControl = TextStyle(
 );
 
 final backgroundDefaultScafold = BoxDecoration(
-  gradient: LinearGradient(colors: [Colors.black, Colors.redAccent]),
-  border: Border.all(
-    color: Colors.transparent,
-  ),
-  borderRadius: BorderRadius.circular(32),
-);
+    gradient: LinearGradient(
+        begin: Alignment.centerLeft,
+        end: Alignment.centerRight,
+        colors: [Colors.white38, Colors.blue]));
 const styleTextInputTextField = TextStyle(color: kwhite, fontSize: 20);
 
 //this is style for dialogSetting drowpDown Text

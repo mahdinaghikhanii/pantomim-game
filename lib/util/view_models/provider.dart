@@ -1,12 +1,11 @@
 // ignore_for_file: unnecessary_null_comparison
 import 'package:flutter/material.dart';
 import 'package:pantomim/models/category.dart';
-import 'package:pantomim/views/auth/detail_game_screans_for_lunch.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 
 class AppProvider extends ChangeNotifier {
   //this part and function for number ofteam 1 2 3 or 4
-  int _counterOfMatch = 3;
+  int _counterOfMatch = 2;
   getCounterMatch() => _counterOfMatch;
   setConunterMatch(int counter) => _counterOfMatch;
 
@@ -89,8 +88,8 @@ class AppProvider extends ChangeNotifier {
 
   TextFiledInputNameTeam _nameTeam1 = TextFiledInputNameTeam('Team1');
   TextFiledInputNameTeam _nameTeam2 = TextFiledInputNameTeam('Team2');
-  TextFiledInputNameTeam _nameTeam3 = TextFiledInputNameTeam('');
-  TextFiledInputNameTeam _nameTeam4 = TextFiledInputNameTeam('');
+  TextFiledInputNameTeam _nameTeam3 = TextFiledInputNameTeam('Team3');
+  TextFiledInputNameTeam _nameTeam4 = TextFiledInputNameTeam('Team4');
   TextFiledInputNameTeam get team1 => _nameTeam1;
   TextFiledInputNameTeam get team2 => _nameTeam2;
   TextFiledInputNameTeam get team3 => _nameTeam3;
@@ -129,6 +128,8 @@ class AppProvider extends ChangeNotifier {
     if (value.length > 2) {
       _nameTeam3 = TextFiledInputNameTeam(value);
       //ye dialog neshon bede bege nahayat 7 tast
+    } else {
+      _nameTeam3 = TextFiledInputNameTeam('');
     }
     notifyListeners();
   }
@@ -137,6 +138,8 @@ class AppProvider extends ChangeNotifier {
     if (value.length > 2) {
       _nameTeam4 = TextFiledInputNameTeam(value);
       //ye dialog neshon bede bege nahayat 7 tast
+    } else {
+      _nameTeam4 = TextFiledInputNameTeam('');
     }
     notifyListeners();
   }
@@ -161,10 +164,30 @@ class AppProvider extends ChangeNotifier {
 
   //this part for Score Team Win or lose
 
-  int _counterOfScore = 0;
+  int _counterOfScoreTeam1 = 0;
 
-  getCounterOfScore() => _counterOfScore;
-  setCounterOfScore(int score) => _counterOfMatch;
+  getCounterOfScoreTeam1() => _counterOfScoreTeam1;
+  setCounterOfScoreTeam1(int score) => _counterOfScoreTeam1;
+
+  int _counterOfScoreTeam2 = 0;
+
+  getCounterOfScoreTeam2() => _counterOfScoreTeam2;
+  setCounterOfScoreTeam2(int score) => _counterOfScoreTeam2;
+
+  int _counterOfScoreTeam3 = 0;
+
+  getCounterOfScoreTeam3() => _counterOfScoreTeam3;
+  setCounterOfScoreTeam3(int score) => _counterOfScoreTeam3;
+
+  int _counterOfScoreTeam4 = 0;
+
+  getCounterOfScoreTeam4() => _counterOfScoreTeam4;
+  setCounterOfScoreTeam4(int score) => _counterOfScoreTeam4;
 
   void incermentScore() {}
+
+  // this part for Icon visibility
+  bool get visibilityIconChoice {
+    return true;
+  }
 }

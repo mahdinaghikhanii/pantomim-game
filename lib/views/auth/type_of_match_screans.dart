@@ -90,9 +90,9 @@ class _ChoiceYourTopicState extends State<ChoiceYourTopic> {
 
     final Map<int, Widget> mytab = <int, Widget>{
       0: Text(localApp.typeOfMatchScreansTextDetailNameButtonAUTO,
-          style: styleCupertinoSlidingSegmentedControl),
+          style: Theme.of(context).textTheme.headline4),
       1: Text(localApp.typeOfMatchScreansTextDetailNameButtonCUSTOM,
-          style: styleCupertinoSlidingSegmentedControl),
+          style: Theme.of(context).textTheme.headline4),
     };
     final size = MediaQuery.of(context).size;
     final modelProvider = Provider.of<AppProvider>(context);
@@ -100,6 +100,7 @@ class _ChoiceYourTopicState extends State<ChoiceYourTopic> {
     return Container(
       decoration: backgroundDefaultScafold,
       child: Scaffold(
+          resizeToAvoidBottomInset: false,
           floatingActionButton:
               Row(mainAxisAlignment: MainAxisAlignment.spaceEvenly, children: [
             DounleFloattingButton(
@@ -424,7 +425,7 @@ class _ChoiceYourTopicState extends State<ChoiceYourTopic> {
                                                 .typeOfMatchScreansTextDetailForNumberofRounds,
                                             style: Theme.of(context)
                                                 .textTheme
-                                                .bodyText2),
+                                                .bodyText1),
                                         WidgetSpan(
                                             child: Container(
                                           padding:
@@ -435,7 +436,7 @@ class _ChoiceYourTopicState extends State<ChoiceYourTopic> {
                                                   .toString(),
                                               style: Theme.of(context)
                                                   .textTheme
-                                                  .bodyText2),
+                                                  .bodyText1),
                                         )),
                                       ])),
                                       const Spacer(),

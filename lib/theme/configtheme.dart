@@ -19,18 +19,26 @@ class ConfigTheme {
   }
 
   TextTheme get enPrimaryTextTheme => const TextTheme(
-        bodyText1: TextStyle(fontSize: 20, color: kwhite),
-        subtitle1: TextStyle(fontSize: 45, color: kwhite),
-        bodyText2: TextStyle(fontSize: 18, color: kwhite),
-        subtitle2: TextStyle(
-          fontSize: 35,
-          color: kwhite,
-        ),
-        headline1: TextStyle(fontSize: 45, color: kblue),
-        headline2: TextStyle(fontSize: 35, color: kblue),
-      );
+      bodyText1: TextStyle(fontSize: 20, color: kwhite),
+      subtitle1: TextStyle(fontSize: 45, color: kwhite),
+      bodyText2: TextStyle(fontSize: 18, color: kwhite),
+      subtitle2: TextStyle(
+        fontSize: 35,
+        color: kwhite,
+      ),
+      headline1: TextStyle(fontSize: 45, color: kblue),
+      headline2: TextStyle(fontSize: 35, color: kblue),
+      headline4: (TextStyle(
+        fontSize: 13,
+        color: kblack,
+      )));
 
   TextTheme get faPrimaryTextTheme => TextTheme(
+        headline4: const TextStyle(
+          fontSize: 15,
+          color: kblack,
+          fontFamily: 'IranYekan',
+        ),
         bodyText1: TextStyle(
             fontSize: 20, color: kwhite, fontFamily: faPrimaryFontFamily),
         subtitle1: TextStyle(

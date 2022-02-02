@@ -91,7 +91,8 @@ class DetailGameScreans extends StatelessWidget {
                     ),
                     RowShowTeamAndScore(
                       nameTeam: modelProvider.team1.value,
-                      scoreTeam: "1",
+                      scoreTeam:
+                          modelProvider.getCounterOfScoreTeam1().toString(),
                       visiblity: true,
                     ),
                     const SizedBox(
@@ -99,15 +100,25 @@ class DetailGameScreans extends StatelessWidget {
                     ),
                     RowShowTeamAndScore(
                         nameTeam: modelProvider.team2.value,
-                        scoreTeam: "1",
+                        scoreTeam:
+                            modelProvider.getCounterOfScoreTeam2().toString(),
                         visiblity: true),
                     const SizedBox(
                       height: 20,
                     ),
                     RowShowTeamAndScore(
                         nameTeam: modelProvider.team3.value,
-                        scoreTeam: "1",
-                        visiblity: modelProvider.visibilityTeam3)
+                        scoreTeam:
+                            modelProvider.getCounterOfScoreTeam3().toString(),
+                        visiblity: modelProvider.visibilityTeam3),
+                    const SizedBox(
+                      height: 20,
+                    ),
+                    RowShowTeamAndScore(
+                        nameTeam: modelProvider.team4.value,
+                        scoreTeam:
+                            modelProvider.getCounterOfScoreTeam4().toString(),
+                        visiblity: modelProvider.visibilityTeam4)
                   ],
                 ),
               ),

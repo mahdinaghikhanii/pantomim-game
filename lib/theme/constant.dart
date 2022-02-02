@@ -21,13 +21,8 @@ const styleTextForDialogHowToPlay = TextStyle(
 );
 const styleTextDialogTypeOfMatch =
     TextStyle(color: kblack, fontSize: 17, fontWeight: FontWeight.bold);
-const styleCupertinoSlidingSegmentedControl = TextStyle(
-  fontSize: 15,
-  color: kblack,
-  fontFamily: 'IranYekan',
-);
 
-final backgroundDefaultScafold = BoxDecoration(
+const backgroundDefaultScafold = const BoxDecoration(
     gradient: LinearGradient(
         begin: Alignment.centerLeft,
         end: Alignment.centerRight,

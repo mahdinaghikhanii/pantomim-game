@@ -3,13 +3,13 @@
 import 'package:animate_do/animate_do.dart';
 import 'package:flutter/material.dart';
 import 'package:pantomim/theme/constant.dart';
-import 'package:pantomim/views/auth/home_screans.dart';
+import 'package:pantomim/util/view_models/provider.dart';
+import 'package:provider/provider.dart';
 
 class TimerScreans extends StatelessWidget {
-  const TimerScreans({Key? key}) : super(key: key);
-
   @override
   Widget build(BuildContext context) {
+    final modelProvider = Provider.of<AppProvider>(context);
     final size = MediaQuery.of(context).size;
     return Container(
       decoration: backgroundDefaultScafold,
@@ -68,14 +68,24 @@ class TimerScreans extends StatelessWidget {
                             border: Border.all(
                                 color: kblue.withOpacity(1), width: 3)),
                         child: InkWell(
-                          onTap: () {},
+                          borderRadius: BorderRadius.circular(20),
+                          onTap: () {
+                            if (modelProvider.checkbtn == false) {
+                              modelProvider.changenamebtn('Start');
+                              if (modelProvider.namebtn == 'start') {}
+                              modelProvider.setbtnboolForCheck(true);
+                            } else {
+                              modelProvider.changenamebtn('Stop');
+                              modelProvider.setbtnboolForCheck(false);
+                            }
+                          },
                           child: Container(
                             width: double.infinity,
                             height: size.height * 0.09,
                             color: Colors.transparent.withOpacity(0.05),
                             child: Center(
                                 child: Text(
-                              "START",
+                              modelProvider.namebtn.toString(),
                               style: TextStyle(
                                   color: kblue,
                                   fontWeight: FontWeight.bold,
@@ -95,6 +105,8 @@ class TimerScreans extends StatelessWidget {
                       child: ClipRRect(
                         borderRadius: BorderRadius.circular(20),
                         child: InkWell(
+                          highlightColor: Colors.red.withOpacity(0.8),
+                          borderRadius: BorderRadius.circular(20),
                           onTap: () {},
                           child: Container(
                             width: double.infinity,

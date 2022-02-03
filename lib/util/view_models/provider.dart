@@ -88,8 +88,8 @@ class AppProvider extends ChangeNotifier {
 
   TextFiledInputNameTeam _nameTeam1 = TextFiledInputNameTeam('Team1');
   TextFiledInputNameTeam _nameTeam2 = TextFiledInputNameTeam('Team2');
-  TextFiledInputNameTeam _nameTeam3 = TextFiledInputNameTeam('Team3');
-  TextFiledInputNameTeam _nameTeam4 = TextFiledInputNameTeam('Team4');
+  TextFiledInputNameTeam _nameTeam3 = TextFiledInputNameTeam('');
+  TextFiledInputNameTeam _nameTeam4 = TextFiledInputNameTeam('');
   TextFiledInputNameTeam get team1 => _nameTeam1;
   TextFiledInputNameTeam get team2 => _nameTeam2;
   TextFiledInputNameTeam get team3 => _nameTeam3;
@@ -145,7 +145,7 @@ class AppProvider extends ChangeNotifier {
   }
 
   bool get visibilityTeam3 {
-    if (_nameTeam3.value == null) {
+    if (_nameTeam3.value == '') {
       return false;
     } else {
       return true;
@@ -153,7 +153,7 @@ class AppProvider extends ChangeNotifier {
   }
 
   bool get visibilityTeam4 {
-    if (_nameTeam4.value == null) {
+    if (_nameTeam4.value == '') {
       return false;
     } else {
       return true;
@@ -189,5 +189,21 @@ class AppProvider extends ChangeNotifier {
   // this part for Icon visibility
   bool get visibilityIconChoice {
     return true;
+  }
+
+  //Time Screans Change Text in click
+
+  bool _checkbtn = false;
+  bool get checkbtn => _checkbtn;
+  void setbtnboolForCheck(bool checkbtn) {
+    _checkbtn = checkbtn;
+    notifyListeners();
+  }
+
+  String _nameBTn = 'start';
+  String get namebtn => _nameBTn;
+  void changenamebtn(String btnName) {
+    _nameBTn = btnName;
+    notifyListeners();
   }
 }

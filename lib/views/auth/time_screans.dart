@@ -12,7 +12,7 @@ class TimerScreans extends StatefulWidget {
 }
 
 class _TimerScreansState extends State<TimerScreans> {
-  static const countdownDuration = Duration(minutes: 1);
+  static const countdownDuration = Duration(seconds: 2);
   Duration duration = Duration();
   Timer? timer;
   bool isCountdown = true;
@@ -22,6 +22,15 @@ class _TimerScreansState extends State<TimerScreans> {
     super.initState();
     //startTimer();
     reset();
+  }
+
+  void stopTimper({bool reseets = true}) {
+    if (reseets) {
+      reset();
+    }
+    setState(() {
+      timer?.cancel();
+    });
   }
 
   void addTime() {
@@ -48,7 +57,10 @@ class _TimerScreansState extends State<TimerScreans> {
     }
   }
 
-  void startTimer() {
+  void startTimer({bool resets = true}) {
+    if (resets) {
+      reset();
+    }
     timer = Timer.periodic(Duration(seconds: 1), (_) => addTime());
   }
 
@@ -57,8 +69,11 @@ class _TimerScreansState extends State<TimerScreans> {
     String twDigits(int n) => n.toString().padLeft(2, '0');
     final minutes = twDigits(duration.inMinutes.remainder(60));
     final seconds = twDigits(duration.inSeconds.remainder(60));
+
+    final isCompelect = duration.inSeconds == 0;
     final isRounning = timer == null ? false : timer!.isActive;
     final modelProvider = Provider.of<AppProvider>(context);
+
     final size = MediaQuery.of(context).size;
     return Container(
       decoration: backgroundDefaultScafold,
@@ -119,7 +134,11 @@ class _TimerScreansState extends State<TimerScreans> {
                         child: InkWell(
                           borderRadius: BorderRadius.circular(20),
                           onTap: () {
-                            startTimer();
+                            if (isRounning) {
+                              stopTimper();
+                            } else {
+                              startTimer(resets: true);
+                            }
                           },
                           child: Container(
                             width: double.infinity,
@@ -127,7 +146,7 @@ class _TimerScreansState extends State<TimerScreans> {
                             color: Colors.transparent.withOpacity(0.05),
                             child: Center(
                                 child: Text(
-                              modelProvider.namebtn.toString(),
+                              isRounning ? "Stop" : "Start",
                               style: TextStyle(
                                   color: kblue,
                                   fontWeight: FontWeight.bold,

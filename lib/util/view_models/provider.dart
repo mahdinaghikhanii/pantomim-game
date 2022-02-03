@@ -42,21 +42,47 @@ class AppProvider extends ChangeNotifier {
     notifyListeners();
   }
 
-  void setTimeForTimeScreans() {
-    if (_timeCounter == 0) {
-      print('fuck');
-    } else {
-      print('object');
+  Duration? _duration;
+  getduration() => _duration;
+  setdo(Duration duration) => _duration;
+
+  void mahdi() {
+    switch (_timeCounter) {
+      case 0:
+        const countdownDuration = Duration(seconds: 50);
+        setdo(countdownDuration);
+        break;
+      case 1:
+        const countdownDuration = Duration(minutes: 1, seconds: 20);
+        setdo(countdownDuration);
+        break;
+      case 2:
+        const countdownDuration = Duration(minutes: 1, seconds: 50);
+        setdo(countdownDuration);
+        break;
+      case 3:
+        const countdownDuration = Duration(minutes: 2, seconds: 20);
+        setdo(countdownDuration);
+        break;
     }
+    notifyListeners();
   }
 
   void startTimer() {
     switch (_timeCounter) {
       case 0:
-        Timer.periodic(Duration(seconds: 1), (timer) {
-          if (_timeCounter == 0) {}
-        });
+        const countdownDuration = Duration(seconds: 50);
         break;
+      case 1:
+        const countdownDuration = Duration(minutes: 1, seconds: 20);
+        break;
+      case 2:
+        const countdownDuration = Duration(minutes: 1, seconds: 50);
+        break;
+      case 3:
+        const countdownDuration = Duration(minutes: 2, seconds: 20);
+        break;
+      case 4:
       default:
     }
   }

@@ -1,4 +1,6 @@
 // ignore_for_file: unnecessary_null_comparison
+import 'dart:async';
+
 import 'package:flutter/material.dart';
 import 'package:pantomim/models/category.dart';
 import 'package:shared_preferences/shared_preferences.dart';
@@ -39,6 +41,27 @@ class AppProvider extends ChangeNotifier {
     }
     notifyListeners();
   }
+
+  void setTimeForTimeScreans() {
+    if (_timeCounter == 0) {
+      print('fuck');
+    } else {
+      print('object');
+    }
+  }
+
+  void startTimer() {
+    switch (_timeCounter) {
+      case 0:
+        Timer.periodic(Duration(seconds: 1), (timer) {
+          if (_timeCounter == 0) {}
+        });
+        break;
+      default:
+    }
+  }
+
+  void stopTimer() {}
 
   void lowoffstring() {
     if (_timeCounter == 0) {

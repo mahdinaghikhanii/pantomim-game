@@ -1,14 +1,63 @@
 // ignore_for_file: prefer_const_constructors
-
+import 'dart:async';
 import 'package:animate_do/animate_do.dart';
 import 'package:flutter/material.dart';
 import 'package:pantomim/theme/constant.dart';
 import 'package:pantomim/util/view_models/provider.dart';
 import 'package:provider/provider.dart';
 
-class TimerScreans extends StatelessWidget {
+class TimerScreans extends StatefulWidget {
+  @override
+  State<TimerScreans> createState() => _TimerScreansState();
+}
+
+class _TimerScreansState extends State<TimerScreans> {
+  static const countdownDuration = Duration(minutes: 1);
+  Duration duration = Duration();
+  Timer? timer;
+  bool isCountdown = true;
+  @override
+  void initState() {
+    // TODO: implement initState
+    super.initState();
+    //startTimer();
+    reset();
+  }
+
+  void addTime() {
+    final addSeconds = isCountdown ? -1 : 1;
+    setState(() {
+      final seconds = duration.inSeconds + addSeconds;
+      if (seconds < 0) {
+        timer?.cancel();
+      } else {
+        duration = Duration(seconds: seconds);
+      }
+    });
+  }
+
+  void reset() {
+    if (isCountdown) {
+      setState(() {
+        duration = countdownDuration;
+      });
+    } else {
+      setState(() {
+        duration = Duration();
+      });
+    }
+  }
+
+  void startTimer() {
+    timer = Timer.periodic(Duration(seconds: 1), (_) => addTime());
+  }
+
   @override
   Widget build(BuildContext context) {
+    String twDigits(int n) => n.toString().padLeft(2, '0');
+    final minutes = twDigits(duration.inMinutes.remainder(60));
+    final seconds = twDigits(duration.inSeconds.remainder(60));
+    final isRounning = timer == null ? false : timer!.isActive;
     final modelProvider = Provider.of<AppProvider>(context);
     final size = MediaQuery.of(context).size;
     return Container(
@@ -46,8 +95,8 @@ class TimerScreans extends StatelessWidget {
               Column(
                 children: [
                   Text(
-                    '0:23',
-                    style: Theme.of(context).textTheme.subtitle2,
+                    '$minutes:$seconds',
+                    style: Theme.of(context).textTheme.bodyText1,
                   ),
                   Text(
                     'Time',
@@ -70,14 +119,7 @@ class TimerScreans extends StatelessWidget {
                         child: InkWell(
                           borderRadius: BorderRadius.circular(20),
                           onTap: () {
-                            if (modelProvider.checkbtn == false) {
-                              modelProvider.changenamebtn('Start');
-                              if (modelProvider.namebtn == 'start') {}
-                              modelProvider.setbtnboolForCheck(true);
-                            } else {
-                              modelProvider.changenamebtn('Stop');
-                              modelProvider.setbtnboolForCheck(false);
-                            }
+                            startTimer();
                           },
                           child: Container(
                             width: double.infinity,

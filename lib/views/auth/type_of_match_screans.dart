@@ -31,17 +31,6 @@ class _ChoiceYourTopicState extends State<ChoiceYourTopic> {
     });
   }
 
-  _hintStyle() {
-    setState(() {
-      final modelProvider = Provider.of<AppProvider>(context);
-      if (modelProvider.getCounterMatch() >= 2) {
-        Theme.of(context).textTheme.bodyText1;
-      } else {
-        TextStyle(color: Colors.red);
-      }
-    });
-  }
-
   // this state for back page
 
   _backPage() {
@@ -62,7 +51,6 @@ class _ChoiceYourTopicState extends State<ChoiceYourTopic> {
 
   @override
   void initState() {
-    // TODO: implement initState
     super.initState();
     if (selectValue == 0) {
       _viewCustom = false;
@@ -73,6 +61,8 @@ class _ChoiceYourTopicState extends State<ChoiceYourTopic> {
   @override
   Widget build(BuildContext context) {
     var localApp = S.of(context);
+    final size = MediaQuery.of(context).size;
+    final modelProvider = Provider.of<AppProvider>(context);
 
     List<String> nameTeamTextFiledInput = [
       localApp.timeForStartGame50Seconds,
@@ -85,8 +75,8 @@ class _ChoiceYourTopicState extends State<ChoiceYourTopic> {
       localApp.timeFOrStartGame4Min20Seconds,
       localApp.timeFOrStartGame4Min50Seconds,
     ];
-
-    int stringCounter = 0;
+    // modelProvider
+    //   .timeScrans(nameTeamTextFiledInput[modelProvider.getTimeForMatch()]);
 
     final Map<int, Widget> mytab = <int, Widget>{
       0: Text(localApp.typeOfMatchScreansTextDetailNameButtonAUTO,
@@ -94,8 +84,6 @@ class _ChoiceYourTopicState extends State<ChoiceYourTopic> {
       1: Text(localApp.typeOfMatchScreansTextDetailNameButtonCUSTOM,
           style: Theme.of(context).textTheme.headline4),
     };
-    final size = MediaQuery.of(context).size;
-    final modelProvider = Provider.of<AppProvider>(context);
 
     return Container(
       decoration: backgroundDefaultScafold,
@@ -425,7 +413,7 @@ class _ChoiceYourTopicState extends State<ChoiceYourTopic> {
                                                 .typeOfMatchScreansTextDetailForNumberofRounds,
                                             style: Theme.of(context)
                                                 .textTheme
-                                                .bodyText1),
+                                                .bodyText2),
                                         WidgetSpan(
                                             child: Container(
                                           padding:
@@ -436,7 +424,7 @@ class _ChoiceYourTopicState extends State<ChoiceYourTopic> {
                                                   .toString(),
                                               style: Theme.of(context)
                                                   .textTheme
-                                                  .bodyText1),
+                                                  .bodyText2),
                                         )),
                                       ])),
                                       const Spacer(),

@@ -59,7 +59,12 @@
     "timeScreansbtnStart" : "START",
     "timeScreansbtnStop" : "STOP",
     "timeScreansbtnWrong" : "WRONG",
-    "timeSreansTimeTextTitle" : "Time"
+    "timeSreansTimeTextTitle" : "Time",
+    "dialogquittextTitleAreYourSureQuitgame" : "Are you sure quit this Game ?",
+    "dialogquitbtnTextNoPlaying" : "NO PLAYING",
+    "dialogquitQuitgame" : "QUIT GAME",
+    "dialogquitTitleTextquit1" : "QUIT",
+    "dialogquitTitleTextgame2" : "GAME"
 }
 
 

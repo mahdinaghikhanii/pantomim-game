@@ -59,6 +59,11 @@
     "timeScreansbtnStart" : "شروع",
     "timeScreansbtnStop" : "اتمام",
     "timeScreansbtnWrong" : "اخطار",
-    "timeSreansTimeTextTitle" : "زمان"
-    
+    "timeSreansTimeTextTitle" : "زمان",
+    "dialogquittextTitleAreYourSureQuitgame" : "ایا مطمئن هستید از بازی خارج بشید ؟",
+    "dialogquitbtnTextNoPlaying" : "بازی میکنم",
+    "dialogquitQuitgame" : "خروج بازی",
+    "dialogquitTitleTextquit1" : " خروج",
+    "dialogquitTitleTextgame2" : "بازی"
+
 }

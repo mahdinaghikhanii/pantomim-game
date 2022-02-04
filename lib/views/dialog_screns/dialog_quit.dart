@@ -39,10 +39,10 @@ class DialogQuit extends StatelessWidget {
                           textAlign: TextAlign.center,
                           text: TextSpan(children: [
                             TextSpan(
-                                text: 'QUIT ',
+                                text: localApp.dialogquitTitleTextquit1,
                                 style: Theme.of(context).textTheme.subtitle2),
                             TextSpan(
-                                text: 'GAME',
+                                text: localApp.dialogquitTitleTextgame2,
                                 style: Theme.of(context).textTheme.headline2)
                           ]),
                         ),
@@ -50,7 +50,7 @@ class DialogQuit extends StatelessWidget {
                       const SizedBox(
                         height: 30,
                       ),
-                      Text('Are You Sure Quit This Game ?',
+                      Text(localApp.dialogquittextTitleAreYourSureQuitgame,
                           style: Theme.of(context).textTheme.bodyText1),
                       const SizedBox(
                         height: 30,
@@ -69,13 +69,13 @@ class DialogQuit extends StatelessWidget {
                                         (Route<dynamic> route) => false);
                                   },
                                   colorBtn: Colors.transparent,
-                                  textBtn: 'QUIT GAME'),
+                                  textBtn: localApp.dialogquitQuitgame),
                               DounleFloattingButton(
                                   ontap: () {
                                     Navigator.pop(context);
                                   },
                                   colorBtn: kblue,
-                                  textBtn: 'NO PLAYING')
+                                  textBtn: localApp.dialogquitbtnTextNoPlaying)
                             ]),
                       ),
                     ],

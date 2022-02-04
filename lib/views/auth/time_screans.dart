@@ -5,6 +5,8 @@ import 'package:flutter/material.dart';
 import 'package:pantomim/generated/l10n.dart';
 import 'package:pantomim/theme/constant.dart';
 import 'package:pantomim/util/view_models/provider.dart';
+import 'package:pantomim/views/dialog_screns/dialog_choice_your_topic.dart';
+import 'package:pantomim/views/auth/score_screans.dart';
 import 'package:provider/provider.dart';
 
 class TimerScreans extends StatefulWidget {
@@ -219,7 +221,12 @@ class _TimerScreansState extends State<TimerScreans> {
                         child: InkWell(
                           highlightColor: Colors.red.withOpacity(0.8),
                           borderRadius: BorderRadius.circular(20),
-                          onTap: () {},
+                          onTap: () {
+                            Navigator.push(
+                                context,
+                                MaterialPageRoute(
+                                    builder: (context) => ScoreScreans()));
+                          },
                           child: Container(
                             width: double.infinity,
                             height: size.height * 0.09,

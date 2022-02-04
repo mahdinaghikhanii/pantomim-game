@@ -659,6 +659,56 @@ class S {
       args: [],
     );
   }
+
+  /// `Are you sure quit this Game ?`
+  String get dialogquittextTitleAreYourSureQuitgame {
+    return Intl.message(
+      'Are you sure quit this Game ?',
+      name: 'dialogquittextTitleAreYourSureQuitgame',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `NO PLAYING`
+  String get dialogquitbtnTextNoPlaying {
+    return Intl.message(
+      'NO PLAYING',
+      name: 'dialogquitbtnTextNoPlaying',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `QUIT GAME`
+  String get dialogquitQuitgame {
+    return Intl.message(
+      'QUIT GAME',
+      name: 'dialogquitQuitgame',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `QUIT`
+  String get dialogquitTitleTextquit1 {
+    return Intl.message(
+      'QUIT',
+      name: 'dialogquitTitleTextquit1',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `GAME`
+  String get dialogquitTitleTextgame2 {
+    return Intl.message(
+      'GAME',
+      name: 'dialogquitTitleTextgame2',
+      desc: '',
+      args: [],
+    );
+  }
 }
 
 class AppLocalizationDelegate extends LocalizationsDelegate<S> {

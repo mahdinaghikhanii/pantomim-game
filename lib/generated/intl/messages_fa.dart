@@ -78,6 +78,16 @@ class MessageLookup extends MessageLookupByLibrary {
             MessageLookupByLibrary.simpleMessage("گردشگری"),
         "dialogTypeOfMatchbuttontextjob":
             MessageLookupByLibrary.simpleMessage("شغل"),
+        "dialogquitQuitgame": MessageLookupByLibrary.simpleMessage("خروج بازی"),
+        "dialogquitTitleTextgame2":
+            MessageLookupByLibrary.simpleMessage("بازی"),
+        "dialogquitTitleTextquit1":
+            MessageLookupByLibrary.simpleMessage(" خروج"),
+        "dialogquitbtnTextNoPlaying":
+            MessageLookupByLibrary.simpleMessage("بازی میکنم"),
+        "dialogquittextTitleAreYourSureQuitgame":
+            MessageLookupByLibrary.simpleMessage(
+                "ایا مطمئن هستید از بازی خارج بشید ؟"),
         "textButtonHomeScrens":
             MessageLookupByLibrary.simpleMessage("شروع بازی"),
         "textButtonHowToPlayHomeScreans":

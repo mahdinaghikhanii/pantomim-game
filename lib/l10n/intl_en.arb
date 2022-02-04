@@ -54,6 +54,8 @@
     "detailGameScreansForLunchScore" : "Score",
     "detailGameScreansForLunchTitleTextRounds" : "Rounds ",
     "detailGameScreansForLunchTitleTextIn" : " in ",
+    "detailGameScreansForLunchBtnNameLetsGo" : "LETS GO !",
+    "detailGameScreansForLunchBtnNameQuitGame" : "QUIT GAME",
     "timeScreansbtnStart" : "START",
     "timeScreansbtnStop" : "STOP",
     "timeScreansbtnWrong" : "WRONG",

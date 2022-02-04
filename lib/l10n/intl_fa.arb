@@ -54,6 +54,8 @@
     "detailGameScreansForLunchScore" : "امتیاز",
     "detailGameScreansForLunchTitleTextRounds" : "راند",
     "detailGameScreansForLunchTitleTextIn" : " از",
+    "detailGameScreansForLunchBtnNameLetsGo" : "بزن بریم !",
+    "detailGameScreansForLunchBtnNameQuitGame" : "خروج از بازی",
     "timeScreansbtnStart" : "شروع",
     "timeScreansbtnStop" : "اتمام",
     "timeScreansbtnWrong" : "اخطار",

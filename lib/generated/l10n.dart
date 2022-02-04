@@ -600,6 +600,26 @@ class S {
     );
   }
 
+  /// `LETS GO !`
+  String get detailGameScreansForLunchBtnNameLetsGo {
+    return Intl.message(
+      'LETS GO !',
+      name: 'detailGameScreansForLunchBtnNameLetsGo',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `QUIT GAME`
+  String get detailGameScreansForLunchBtnNameQuitGame {
+    return Intl.message(
+      'QUIT GAME',
+      name: 'detailGameScreansForLunchBtnNameQuitGame',
+      desc: '',
+      args: [],
+    );
+  }
+
   /// `START`
   String get timeScreansbtnStart {
     return Intl.message(

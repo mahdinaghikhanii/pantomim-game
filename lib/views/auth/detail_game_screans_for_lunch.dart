@@ -32,14 +32,14 @@ class DetailGameScreans extends StatelessWidget {
                         const DialogQuit());
               },
               colorBtn: kblue,
-              textBtn: 'QUIT GAME'),
+              textBtn: localApp.detailGameScreansForLunchBtnNameQuitGame),
           DounleFloattingButton(
               ontap: () {
                 showDialog(
                     context: context, builder: (context) => DialogShow());
               },
               colorBtn: Colors.transparent,
-              textBtn: 'LETS GO !')
+              textBtn: localApp.detailGameScreansForLunchBtnNameLetsGo)
         ]),
         body: SafeArea(
           child: Column(

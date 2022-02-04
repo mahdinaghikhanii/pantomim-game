@@ -579,6 +579,66 @@ class S {
       args: [],
     );
   }
+
+  /// `Rounds `
+  String get detailGameScreansForLunchTitleTextRounds {
+    return Intl.message(
+      'Rounds ',
+      name: 'detailGameScreansForLunchTitleTextRounds',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// ` in `
+  String get detailGameScreansForLunchTitleTextIn {
+    return Intl.message(
+      ' in ',
+      name: 'detailGameScreansForLunchTitleTextIn',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `START`
+  String get timeScreansbtnStart {
+    return Intl.message(
+      'START',
+      name: 'timeScreansbtnStart',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `STOP`
+  String get timeScreansbtnStop {
+    return Intl.message(
+      'STOP',
+      name: 'timeScreansbtnStop',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `WRONG`
+  String get timeScreansbtnWrong {
+    return Intl.message(
+      'WRONG',
+      name: 'timeScreansbtnWrong',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Time`
+  String get timeSreansTimeTextTitle {
+    return Intl.message(
+      'Time',
+      name: 'timeSreansTimeTextTitle',
+      desc: '',
+      args: [],
+    );
+  }
 }
 
 class AppLocalizationDelegate extends LocalizationsDelegate<S> {

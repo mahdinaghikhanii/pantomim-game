@@ -1,6 +1,3 @@
-<<<<<<< HEAD
-{}
-=======
 {
     "titleHomeScreans1" : "Play",
     "titleHomeScreans2" : " with\nFriends",
@@ -54,13 +51,13 @@
     "timeFOrStartGame4Min20Seconds" : "4 Minutes 20 Seconds",
     "timeFOrStartGame4Min50Seconds" : "4 Minutes 50 Seconds",
     "detailGameScreansForLunchNameTeam" : "Name Teams",
-    "detailGameScreansForLunchScore" : "Score"
-
-
-
-
-
-
-    
+    "detailGameScreansForLunchScore" : "Score",
+    "detailGameScreansForLunchTitleTextRounds" : "Rounds ",
+    "detailGameScreansForLunchTitleTextIn" : " in ",
+    "timeScreansbtnStart" : "START",
+    "timeScreansbtnStop" : "STOP",
+    "timeScreansbtnWrong" : "WRONG",
+    "timeSreansTimeTextTitle" : "Time"
 }
->>>>>>> temp_branch
+
+

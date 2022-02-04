@@ -51,5 +51,12 @@
     "timeFOrStartGame4Min20Seconds" : "۴ دقیقه ۲۰ ثانیه",
     "timeFOrStartGame4Min50Seconds" : "۴ دقیقه ۵۰ ثانیه",
     "detailGameScreansForLunchNameTeam" : "نام تیم",
-    "detailGameScreansForLunchScore" : "امتیاز"
+    "detailGameScreansForLunchScore" : "امتیاز",
+    "detailGameScreansForLunchTitleTextRounds" : "راند",
+    "detailGameScreansForLunchTitleTextIn" : " از",
+    "timeScreansbtnStart" : "شروع",
+    "timeScreansbtnStop" : "اتمام",
+    "timeScreansbtnWrong" : "اخطار",
+    "timeSreansTimeTextTitle" : "زمان"
+    
 }

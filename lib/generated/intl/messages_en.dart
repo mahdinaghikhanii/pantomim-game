@@ -39,6 +39,10 @@ class MessageLookup extends MessageLookupByLibrary {
             MessageLookupByLibrary.simpleMessage("Name Teams"),
         "detailGameScreansForLunchScore":
             MessageLookupByLibrary.simpleMessage("Score"),
+        "detailGameScreansForLunchTitleTextIn":
+            MessageLookupByLibrary.simpleMessage(" in "),
+        "detailGameScreansForLunchTitleTextRounds":
+            MessageLookupByLibrary.simpleMessage("Rounds "),
         "dialogSettingsMusick": MessageLookupByLibrary.simpleMessage("Music"),
         "dialogSettingsSelectLanguage":
             MessageLookupByLibrary.simpleMessage("Select Language"),
@@ -97,6 +101,10 @@ class MessageLookup extends MessageLookupByLibrary {
             MessageLookupByLibrary.simpleMessage("2 Minutes 20 Seconds"),
         "timeForStartGame50Seconds":
             MessageLookupByLibrary.simpleMessage("50 Seconds"),
+        "timeScreansbtnStart": MessageLookupByLibrary.simpleMessage("START"),
+        "timeScreansbtnStop": MessageLookupByLibrary.simpleMessage("STOP"),
+        "timeScreansbtnWrong": MessageLookupByLibrary.simpleMessage("WRONG"),
+        "timeSreansTimeTextTitle": MessageLookupByLibrary.simpleMessage("Time"),
         "titleHomeScreans1": MessageLookupByLibrary.simpleMessage("Play"),
         "titleHomeScreans2":
             MessageLookupByLibrary.simpleMessage(" with\nFriends"),

@@ -2,6 +2,7 @@
 import 'dart:async';
 import 'package:animate_do/animate_do.dart';
 import 'package:flutter/material.dart';
+import 'package:pantomim/generated/l10n.dart';
 import 'package:pantomim/theme/constant.dart';
 import 'package:pantomim/util/view_models/provider.dart';
 import 'package:provider/provider.dart';
@@ -73,6 +74,7 @@ class _TimerScreansState extends State<TimerScreans> {
     final isCompelect = duration.inSeconds == 0;
     final isRounning = timer == null ? false : timer!.isActive;
     final modelProvider = Provider.of<AppProvider>(context);
+    var localApp = S.of(context);
 
     final size = MediaQuery.of(context).size;
     return Container(
@@ -113,8 +115,11 @@ class _TimerScreansState extends State<TimerScreans> {
                     '$minutes:$seconds',
                     style: Theme.of(context).textTheme.headline3,
                   ),
+                  const SizedBox(
+                    height: 5,
+                  ),
                   Text(
-                    'Time',
+                    localApp.timeSreansTimeTextTitle,
                     style: Theme.of(context).textTheme.bodyText1,
                   ),
                   const SizedBox(
@@ -190,7 +195,9 @@ class _TimerScreansState extends State<TimerScreans> {
                             color: Colors.transparent.withOpacity(0.05),
                             child: Center(
                                 child: Text(
-                              isRounning ? "Stop" : "Start",
+                              isRounning
+                                  ? localApp.timeScreansbtnStop
+                                  : localApp.timeScreansbtnStart,
                               style: TextStyle(
                                   color: kblue,
                                   fontWeight: FontWeight.bold,
@@ -219,7 +226,7 @@ class _TimerScreansState extends State<TimerScreans> {
                             color: Colors.transparent,
                             child: Center(
                                 child: Text(
-                              "WRONG",
+                              localApp.timeScreansbtnWrong,
                               style: const TextStyle(
                                   color: Colors.white,
                                   fontWeight: FontWeight.bold,

@@ -39,6 +39,10 @@ class MessageLookup extends MessageLookupByLibrary {
             MessageLookupByLibrary.simpleMessage("نام تیم"),
         "detailGameScreansForLunchScore":
             MessageLookupByLibrary.simpleMessage("امتیاز"),
+        "detailGameScreansForLunchTitleTextIn":
+            MessageLookupByLibrary.simpleMessage(" از"),
+        "detailGameScreansForLunchTitleTextRounds":
+            MessageLookupByLibrary.simpleMessage("راند"),
         "dialogSettingsMusick": MessageLookupByLibrary.simpleMessage("موسیقی"),
         "dialogSettingsSelectLanguage":
             MessageLookupByLibrary.simpleMessage("زبان را انتخاب کنید"),
@@ -97,6 +101,10 @@ class MessageLookup extends MessageLookupByLibrary {
             MessageLookupByLibrary.simpleMessage("۲ دقیقه ۲۰ ثانیه"),
         "timeForStartGame50Seconds":
             MessageLookupByLibrary.simpleMessage("50 ثانیه"),
+        "timeScreansbtnStart": MessageLookupByLibrary.simpleMessage("شروع"),
+        "timeScreansbtnStop": MessageLookupByLibrary.simpleMessage("اتمام"),
+        "timeScreansbtnWrong": MessageLookupByLibrary.simpleMessage("اخطار"),
+        "timeSreansTimeTextTitle": MessageLookupByLibrary.simpleMessage("زمان"),
         "titleHomeScreans1": MessageLookupByLibrary.simpleMessage("بازی"),
         "titleHomeScreans2":
             MessageLookupByLibrary.simpleMessage(" همراه \nبا دوستان"),

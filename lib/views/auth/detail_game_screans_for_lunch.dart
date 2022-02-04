@@ -51,13 +51,16 @@ class DetailGameScreans extends StatelessWidget {
                   child: RichText(
                       text: TextSpan(children: [
                     TextSpan(
-                        text: "Rounds ",
+                        text: localApp.detailGameScreansForLunchTitleTextRounds,
                         style: Theme.of(context).textTheme.bodyText1),
                     TextSpan(
-                        text: modelProvider.getCounterMatch().toString(),
+                        text: modelProvider.getNumberOfRounds().toString(),
                         style: Theme.of(context).textTheme.bodyText1),
                     TextSpan(
-                        text: " in 1",
+                        text: localApp.detailGameScreansForLunchTitleTextIn,
+                        style: Theme.of(context).textTheme.bodyText1),
+                    TextSpan(
+                        text: "1",
                         style: Theme.of(context).textTheme.bodyText1),
                   ])),
                 ),

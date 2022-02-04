@@ -12,8 +12,7 @@ class TimerScreans extends StatefulWidget {
 }
 
 class _TimerScreansState extends State<TimerScreans> {
-  static const countdownDuration = Duration(seconds: 2);
-  Duration duration = Duration();
+  Duration duration = Duration(seconds: 1);
   Timer? timer;
   bool isCountdown = true;
   @override
@@ -21,6 +20,7 @@ class _TimerScreansState extends State<TimerScreans> {
     // TODO: implement initState
     super.initState();
     //startTimer();
+
     reset();
   }
 
@@ -48,7 +48,7 @@ class _TimerScreansState extends State<TimerScreans> {
   void reset() {
     if (isCountdown) {
       setState(() {
-        duration = countdownDuration;
+        duration = Duration(minutes: 2);
       });
     } else {
       setState(() {
@@ -138,6 +138,50 @@ class _TimerScreansState extends State<TimerScreans> {
                               stopTimper();
                             } else {
                               startTimer(resets: true);
+                              setState(() {
+                                if (isCountdown) {
+                                  switch (modelProvider.getTimeForMatch()) {
+                                    case 0:
+                                      duration = Duration(seconds: 50);
+                                      break;
+                                    case 1:
+                                      duration =
+                                          Duration(minutes: 1, seconds: 20);
+                                      break;
+                                    case 2:
+                                      duration =
+                                          Duration(minutes: 1, seconds: 50);
+                                      break;
+                                    case 3:
+                                      duration =
+                                          Duration(minutes: 2, seconds: 20);
+                                      break;
+                                    case 4:
+                                      duration =
+                                          Duration(minutes: 2, seconds: 50);
+                                      break;
+                                    case 5:
+                                      duration = Duration(
+                                        minutes: 3,
+                                        seconds: 20,
+                                      );
+                                      break;
+
+                                    case 6:
+                                      duration =
+                                          Duration(minutes: 3, seconds: 50);
+                                      break;
+                                    case 7:
+                                      duration =
+                                          Duration(minutes: 4, seconds: 20);
+                                      break;
+                                    case 8:
+                                      duration =
+                                          Duration(minutes: 4, seconds: 50);
+                                      break;
+                                  }
+                                }
+                              });
                             }
                           },
                           child: Container(

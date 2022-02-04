@@ -111,11 +111,11 @@ class _TimerScreansState extends State<TimerScreans> {
                 children: [
                   Text(
                     '$minutes:$seconds',
-                    style: Theme.of(context).textTheme.bodyText1,
+                    style: Theme.of(context).textTheme.headline3,
                   ),
                   Text(
                     'Time',
-                    style: Theme.of(context).textTheme.bodyText2,
+                    style: Theme.of(context).textTheme.bodyText1,
                   ),
                   const SizedBox(
                     height: 50,

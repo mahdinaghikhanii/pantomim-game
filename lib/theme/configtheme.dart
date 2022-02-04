@@ -28,12 +28,16 @@ class ConfigTheme {
       ),
       headline1: TextStyle(fontSize: 45, color: kblue),
       headline2: TextStyle(fontSize: 35, color: kblue),
+      //heqeline 3 using for tine showing
+      headline3: TextStyle(fontSize: 30, color: kwhite),
       headline4: (TextStyle(
         fontSize: 13,
         color: kblack,
       )));
 
   TextTheme get faPrimaryTextTheme => TextTheme(
+        headline3: TextStyle(
+            fontSize: 30, color: kwhite, fontFamily: faPrimaryFontFamily),
         headline4: const TextStyle(
           fontSize: 15,
           color: kblack,

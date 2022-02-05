@@ -23,23 +23,26 @@ class DetailGameScreans extends StatelessWidget {
         floatingActionButton:
             Row(mainAxisAlignment: MainAxisAlignment.spaceEvenly, children: [
           DounleFloattingButton(
-              ontap: () {
-                showDialog(
-                    context: context,
-                    builder: (
-                      context,
-                    ) =>
-                        const DialogQuit());
-              },
-              colorBtn: kblue,
-              textBtn: localApp.detailGameScreansForLunchBtnNameQuitGame),
+            ontap: () {
+              showDialog(
+                  context: context,
+                  builder: (
+                    context,
+                  ) =>
+                      const DialogQuit());
+            },
+            colorBtn: kblue,
+            textBtn: localApp.detailGameScreansForLunchBtnNameQuitGame,
+            highlightColor: Colors.transparent,
+          ),
           DounleFloattingButton(
-              ontap: () {
-                showDialog(
-                    context: context, builder: (context) => DialogShow());
-              },
-              colorBtn: Colors.transparent,
-              textBtn: localApp.detailGameScreansForLunchBtnNameLetsGo)
+            ontap: () {
+              showDialog(context: context, builder: (context) => DialogShow());
+            },
+            colorBtn: Colors.transparent,
+            textBtn: localApp.detailGameScreansForLunchBtnNameLetsGo,
+            highlightColor: Colors.transparent,
+          )
         ]),
         body: SafeArea(
           child: Column(

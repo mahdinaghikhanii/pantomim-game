@@ -61,21 +61,23 @@ class DialogQuit extends StatelessWidget {
                             mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                             children: [
                               DounleFloattingButton(
-                                  ontap: () {
-                                    Navigator.of(context).pushAndRemoveUntil(
-                                        MaterialPageRoute(
-                                            builder: (context) =>
-                                                HomeScreans()),
-                                        (Route<dynamic> route) => false);
-                                  },
-                                  colorBtn: Colors.transparent,
-                                  textBtn: localApp.dialogquitQuitgame),
+                                ontap: () {
+                                  Navigator.of(context).pushAndRemoveUntil(
+                                      MaterialPageRoute(
+                                          builder: (context) => HomeScreans()),
+                                      (Route<dynamic> route) => false);
+                                },
+                                colorBtn: Colors.transparent,
+                                textBtn: localApp.dialogquitQuitgame,
+                                highlightColor: Colors.transparent,
+                              ),
                               DounleFloattingButton(
                                   ontap: () {
                                     Navigator.pop(context);
                                   },
                                   colorBtn: kblue,
-                                  textBtn: localApp.dialogquitbtnTextNoPlaying)
+                                  textBtn: localApp.dialogquitbtnTextNoPlaying,
+                                  highlightColor: Colors.transparent)
                             ]),
                       ),
                     ],

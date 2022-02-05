@@ -66,7 +66,9 @@
     "dialogquitTitleTextquit1" : "QUIT",
     "dialogquitTitleTextgame2" : "GAME",
     "dialogwinorloseTextTextSpan1" : "What ",
-    "dialogwinorloseTextTextSpan2" : "happened ?"
+    "dialogwinorloseTextTextSpan2" : "happened ?",
+    "dialogwinorlosebtnNameTrue" : "TRUE",
+    "dialogwinorlosebtnNamefalse" : "FALSE"
 }
 
 

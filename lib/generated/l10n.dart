@@ -729,6 +729,26 @@ class S {
       args: [],
     );
   }
+
+  /// `TRUE`
+  String get dialogwinorlosebtnNameTrue {
+    return Intl.message(
+      'TRUE',
+      name: 'dialogwinorlosebtnNameTrue',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `FALSE`
+  String get dialogwinorlosebtnNamefalse {
+    return Intl.message(
+      'FALSE',
+      name: 'dialogwinorlosebtnNamefalse',
+      desc: '',
+      args: [],
+    );
+  }
 }
 
 class AppLocalizationDelegate extends LocalizationsDelegate<S> {

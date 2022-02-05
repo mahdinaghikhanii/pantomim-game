@@ -92,6 +92,10 @@ class MessageLookup extends MessageLookupByLibrary {
             MessageLookupByLibrary.simpleMessage("چی "),
         "dialogwinorloseTextTextSpan2":
             MessageLookupByLibrary.simpleMessage("شد ؟"),
+        "dialogwinorlosebtnNameTrue":
+            MessageLookupByLibrary.simpleMessage("درست"),
+        "dialogwinorlosebtnNamefalse":
+            MessageLookupByLibrary.simpleMessage("غلط"),
         "textButtonHomeScrens":
             MessageLookupByLibrary.simpleMessage("شروع بازی"),
         "textButtonHowToPlayHomeScreans":

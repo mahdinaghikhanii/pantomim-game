@@ -97,13 +97,16 @@ class _ChoiceYourTopicState extends State<ChoiceYourTopic> {
               },
               colorBtn: kblue,
               textBtn: localApp.typeOfMatchScreansButtonBACKPAGE,
+              highlightColor: Colors.transparent,
             ),
             DounleFloattingButton(
-                ontap: () {
-                  _nextPage();
-                },
-                colorBtn: Colors.transparent,
-                textBtn: localApp.typeOfMatchScreansButtonNextPage)
+              ontap: () {
+                _nextPage();
+              },
+              colorBtn: Colors.transparent,
+              textBtn: localApp.typeOfMatchScreansButtonNextPage,
+              highlightColor: Colors.transparent,
+            )
           ]),
           backgroundColor: Colors.transparent,
           body: Container(

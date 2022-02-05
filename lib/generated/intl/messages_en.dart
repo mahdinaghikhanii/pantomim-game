@@ -92,6 +92,10 @@ class MessageLookup extends MessageLookupByLibrary {
             MessageLookupByLibrary.simpleMessage("What "),
         "dialogwinorloseTextTextSpan2":
             MessageLookupByLibrary.simpleMessage("happened ?"),
+        "dialogwinorlosebtnNameTrue":
+            MessageLookupByLibrary.simpleMessage("TRUE"),
+        "dialogwinorlosebtnNamefalse":
+            MessageLookupByLibrary.simpleMessage("FALSE"),
         "textButtonHomeScrens":
             MessageLookupByLibrary.simpleMessage("START PLAY"),
         "textButtonHowToPlayHomeScreans":

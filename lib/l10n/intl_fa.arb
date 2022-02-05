@@ -66,6 +66,8 @@
     "dialogquitTitleTextquit1" : " خروج",
     "dialogquitTitleTextgame2" : "بازی",
     "dialogwinorloseTextTextSpan1" : "چی ",
-    "dialogwinorloseTextTextSpan2" : "شد ؟"
+    "dialogwinorloseTextTextSpan2" : "شد ؟",
+    "dialogwinorlosebtnNameTrue" : "درست",
+    "dialogwinorlosebtnNamefalse" : "غلط"
 
 }

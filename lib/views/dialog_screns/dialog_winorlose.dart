@@ -64,15 +64,19 @@ class DialogWinOrLose extends StatelessWidget {
                                     DounleFloattingButton(
                                       colorBtn: Colors.blue,
                                       ontap: () {},
-                                      textBtn: 'WIN',
+                                      textBtn:
+                                          localApp.dialogwinorlosebtnNameTrue,
+                                      highlightColor: Colors.transparent,
                                     ),
-                                    SizedBox(
+                                    const SizedBox(
                                       width: 10,
                                     ),
                                     DounleFloattingButton(
                                       colorBtn: Colors.transparent,
                                       ontap: () {},
-                                      textBtn: 'LOSE',
+                                      textBtn:
+                                          localApp.dialogwinorlosebtnNamefalse,
+                                      highlightColor: Colors.red,
                                     )
                                   ],
                                 ),

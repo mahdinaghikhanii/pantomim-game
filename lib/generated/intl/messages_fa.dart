@@ -88,6 +88,10 @@ class MessageLookup extends MessageLookupByLibrary {
         "dialogquittextTitleAreYourSureQuitgame":
             MessageLookupByLibrary.simpleMessage(
                 "ایا مطمئن هستید از بازی خارج بشید ؟"),
+        "dialogwinorloseTextTextSpan1":
+            MessageLookupByLibrary.simpleMessage("چی "),
+        "dialogwinorloseTextTextSpan2":
+            MessageLookupByLibrary.simpleMessage("شد ؟"),
         "textButtonHomeScrens":
             MessageLookupByLibrary.simpleMessage("شروع بازی"),
         "textButtonHowToPlayHomeScreans":

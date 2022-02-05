@@ -709,6 +709,26 @@ class S {
       args: [],
     );
   }
+
+  /// `What `
+  String get dialogwinorloseTextTextSpan1 {
+    return Intl.message(
+      'What ',
+      name: 'dialogwinorloseTextTextSpan1',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `happened ?`
+  String get dialogwinorloseTextTextSpan2 {
+    return Intl.message(
+      'happened ?',
+      name: 'dialogwinorloseTextTextSpan2',
+      desc: '',
+      args: [],
+    );
+  }
 }
 
 class AppLocalizationDelegate extends LocalizationsDelegate<S> {

@@ -88,6 +88,10 @@ class MessageLookup extends MessageLookupByLibrary {
         "dialogquittextTitleAreYourSureQuitgame":
             MessageLookupByLibrary.simpleMessage(
                 "Are you sure quit this Game ?"),
+        "dialogwinorloseTextTextSpan1":
+            MessageLookupByLibrary.simpleMessage("What "),
+        "dialogwinorloseTextTextSpan2":
+            MessageLookupByLibrary.simpleMessage("happened ?"),
         "textButtonHomeScrens":
             MessageLookupByLibrary.simpleMessage("START PLAY"),
         "textButtonHowToPlayHomeScreans":

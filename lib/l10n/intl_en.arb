@@ -64,7 +64,9 @@
     "dialogquitbtnTextNoPlaying" : "NO PLAYING",
     "dialogquitQuitgame" : "QUIT GAME",
     "dialogquitTitleTextquit1" : "QUIT",
-    "dialogquitTitleTextgame2" : "GAME"
+    "dialogquitTitleTextgame2" : "GAME",
+    "dialogwinorloseTextTextSpan1" : "What ",
+    "dialogwinorloseTextTextSpan2" : "happened ?"
 }
 
 

@@ -64,6 +64,8 @@
     "dialogquitbtnTextNoPlaying" : "بازی میکنم",
     "dialogquitQuitgame" : "خروج بازی",
     "dialogquitTitleTextquit1" : " خروج",
-    "dialogquitTitleTextgame2" : "بازی"
+    "dialogquitTitleTextgame2" : "بازی",
+    "dialogwinorloseTextTextSpan1" : "چی ",
+    "dialogwinorloseTextTextSpan2" : "شد ؟"
 
 }

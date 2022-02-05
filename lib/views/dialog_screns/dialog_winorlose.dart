@@ -73,7 +73,17 @@ class DialogWinOrLose extends StatelessWidget {
                                     ),
                                     DounleFloattingButton(
                                       colorBtn: Colors.transparent,
-                                      ontap: () {},
+                                      ontap: () {
+                                        showDialog(
+                                            context: context,
+                                            builder: (BuildContext context) {
+                                              return Dialog(
+                                                  child: new Row(
+                                                mainAxisSize: MainAxisSize.min,
+                                                children: [Text('data')],
+                                              ));
+                                            });
+                                      },
                                       textBtn:
                                           localApp.dialogwinorlosebtnNamefalse,
                                       highlightColor: Colors.red,

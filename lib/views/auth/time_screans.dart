@@ -34,6 +34,13 @@ class _TimerScreansState extends State<TimerScreans> {
     }
     setState(() {
       timer?.cancel();
+      showDialog(
+          barrierDismissible: false,
+          context: context,
+          builder: (
+            context,
+          ) =>
+              const DialogWinOrLose());
     });
   }
 
@@ -43,6 +50,12 @@ class _TimerScreansState extends State<TimerScreans> {
       final seconds = duration.inSeconds + addSeconds;
       if (seconds < 0) {
         timer?.cancel();
+        showDialog(
+            context: context,
+            builder: (
+              context,
+            ) =>
+                const DialogWinOrLose());
       } else {
         duration = Duration(seconds: seconds);
       }
@@ -222,14 +235,7 @@ class _TimerScreansState extends State<TimerScreans> {
                         child: InkWell(
                           highlightColor: Colors.red.withOpacity(0.8),
                           borderRadius: BorderRadius.circular(20),
-                          onTap: () {
-                            showDialog(
-                                context: context,
-                                builder: (
-                                  context,
-                                ) =>
-                                    const DialogWinOrLose());
-                          },
+                          onTap: () {},
                           child: Container(
                             width: double.infinity,
                             height: size.height * 0.09,

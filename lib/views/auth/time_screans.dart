@@ -6,7 +6,8 @@ import 'package:pantomim/generated/l10n.dart';
 import 'package:pantomim/theme/constant.dart';
 import 'package:pantomim/util/view_models/provider.dart';
 import 'package:pantomim/views/dialog_screns/dialog_choice_your_topic.dart';
-import 'package:pantomim/views/auth/score_screans.dart';
+import 'package:pantomim/views/dialog_screns/dialog_how_to_play.dart';
+import 'package:pantomim/views/dialog_screns/dialog_winorlose.dart';
 import 'package:provider/provider.dart';
 
 class TimerScreans extends StatefulWidget {
@@ -222,10 +223,12 @@ class _TimerScreansState extends State<TimerScreans> {
                           highlightColor: Colors.red.withOpacity(0.8),
                           borderRadius: BorderRadius.circular(20),
                           onTap: () {
-                            Navigator.push(
-                                context,
-                                MaterialPageRoute(
-                                    builder: (context) => ScoreScreans()));
+                            showDialog(
+                                context: context,
+                                builder: (
+                                  context,
+                                ) =>
+                                    const DialogWinOrLose());
                           },
                           child: Container(
                             width: double.infinity,

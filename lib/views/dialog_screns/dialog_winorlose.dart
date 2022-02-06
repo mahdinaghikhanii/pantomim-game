@@ -75,11 +75,11 @@ class DialogWinOrLose extends StatelessWidget {
                                     DounleFloattingButton(
                                       colorBtn: Colors.transparent,
                                       ontap: () {
-                                        Navigator.push(
+                                        /*  Navigator.push(
                                             context,
                                             MaterialPageRoute(
                                                 builder: (context) =>
-                                                    ScoreScreans()));
+                                                    ScoreScreans()));*/
                                       },
                                       textBtn:
                                           localApp.dialogwinorlosebtnNamefalse,

@@ -2,30 +2,34 @@ import 'dart:math' as math;
 
 import 'package:flutter/material.dart';
 import 'package:pantomim/models/category.dart';
+import 'package:pantomim/theme/constant.dart';
 
 class MyPainter extends CustomPainter {
   final List<Particle> particles;
+  final double theta;
 
-  MyPainter({required this.particles});
+  MyPainter({required this.particles, required this.theta});
   @override
   void paint(Canvas canvas, Size size) {
+    backgroundDefaultScafold:
+    Colors.red;
+    // paint brush
+    var paint = Paint()..strokeWidth = 20;
+
     //generative art
     // double radius = 200.0;
 
     // ignore: avoid_function_literals_in_foreach_calls
     particles.forEach((particle) {
-      // paint brush
-      var paint = Paint()
-        ..color = particle.color
-        ..strokeWidth = 10;
+      double randomTheta = particle.startingTheta + theta;
+      double radius = particle.radius;
 
-      double radius = math.Random().nextDouble() * 200 + 20;
-      double theta = math.Random().nextDouble() * (2 * math.pi);
-
-      double dx = radius * math.cos(theta) + size.width / 2;
-      double dy = radius * math.sin(theta) + size.height / 2;
+      double dx = radius * math.cos(randomTheta) + size.width / 2;
+      double dy = radius * math.sin(randomTheta) + size.height / 2;
 
       Offset position = Offset(dx, dy);
+
+      paint.color = particle.color;
 
       canvas.drawCircle(position, particle.size, paint);
     });

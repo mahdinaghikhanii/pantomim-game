@@ -4,6 +4,7 @@ import 'package:pantomim/generated/l10n.dart';
 import 'package:pantomim/theme/constant.dart';
 
 import 'package:pantomim/views/auth/meno_screans.dart';
+import 'package:pantomim/views/auth/score_screans.dart';
 
 import 'package:pantomim/views/dialog_screns/dialog_how_to_play.dart';
 
@@ -73,12 +74,16 @@ class HomeScreans extends StatelessWidget {
                   color: Colors.transparent,
                   text: localApp.textButtonHowToPlayHomeScreans,
                   ontap: () {
-                    showDialog(
+                    Navigator.push(
+                        context,
+                        MaterialPageRoute(
+                            builder: (context) => ScoreScreans()));
+                    /* showDialog(
                         context: context,
                         builder: (
                           context,
                         ) =>
-                            const DialogHowToPlay());
+                            const DialogHowToPlay());*/
                   },
                 )
               ],

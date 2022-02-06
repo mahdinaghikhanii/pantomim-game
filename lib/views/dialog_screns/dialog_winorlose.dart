@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:pantomim/generated/l10n.dart';
 import 'package:pantomim/theme/constant.dart';
+import 'package:pantomim/views/auth/score_screans.dart';
 import 'package:pantomim/views/widgets/double_floatingac_button.dart';
 
 class DialogWinOrLose extends StatelessWidget {
@@ -74,15 +75,11 @@ class DialogWinOrLose extends StatelessWidget {
                                     DounleFloattingButton(
                                       colorBtn: Colors.transparent,
                                       ontap: () {
-                                        showDialog(
-                                            context: context,
-                                            builder: (BuildContext context) {
-                                              return Dialog(
-                                                  child: new Row(
-                                                mainAxisSize: MainAxisSize.min,
-                                                children: [Text('data')],
-                                              ));
-                                            });
+                                        Navigator.push(
+                                            context,
+                                            MaterialPageRoute(
+                                                builder: (context) =>
+                                                    ScoreScreans()));
                                       },
                                       textBtn:
                                           localApp.dialogwinorlosebtnNamefalse,

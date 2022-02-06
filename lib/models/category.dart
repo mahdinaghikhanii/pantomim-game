@@ -1,3 +1,5 @@
+import 'package:flutter/material.dart';
+
 class PantomimData {
   final String image, desc, name;
 
@@ -13,4 +15,11 @@ class ListTypeOfMatch {
 class TextFiledInputNameTeam {
   final String value;
   TextFiledInputNameTeam(this.value);
+}
+
+class Particle {
+  int size;
+  Color color;
+
+  Particle({required this.size, required this.color});
 }

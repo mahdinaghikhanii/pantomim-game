@@ -9,18 +9,25 @@ class MyPainter extends CustomPainter {
   MyPainter({required this.particles});
   @override
   void paint(Canvas canvas, Size size) {
-    // paint brush
-    var paint = Paint()
-      ..color = Colors.red
-      ..strokeCap = StrokeCap.round
-      ..strokeWidth = 10;
+    //generative art
+    // double radius = 200.0;
 
-    //draw circle
-    Offset centerPoint = Offset(size.width / 2, size.height / 2);
-    canvas.drawCircle(centerPoint, 180, paint);
+    // ignore: avoid_function_literals_in_foreach_calls
+    particles.forEach((particle) {
+      // paint brush
+      var paint = Paint()
+        ..color = particle.color
+        ..strokeWidth = 10;
 
-    particles.forEach((particles) {
-      math.Random().nextDouble() * (2 * math.pi);
+      double radius = math.Random().nextDouble() * 200 + 20;
+      double theta = math.Random().nextDouble() * (2 * math.pi);
+
+      double dx = radius * math.cos(theta) + size.width / 2;
+      double dy = radius * math.sin(theta) + size.height / 2;
+
+      Offset position = Offset(dx, dy);
+
+      canvas.drawCircle(position, particle.size, paint);
     });
   }
 

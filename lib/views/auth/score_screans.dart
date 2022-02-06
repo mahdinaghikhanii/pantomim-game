@@ -14,16 +14,18 @@ class _ScoreScreansState extends State<ScoreScreans> {
   @override
   void initState() {
     super.initState();
+
     int numberOfParticles = 100;
 
-    for (var i = 0; i < numberOfParticles; i++) {
-      int randomSize = math.Random().nextInt(20);
+    for (int i = 0; i < numberOfParticles; i++) {
+      double randomSize = math.Random().nextDouble() * 20;
 
       int randomR = math.Random().nextInt(256);
       int randomG = math.Random().nextInt(256);
       int randomB = math.Random().nextInt(256);
 
-      Color randomColor = Color.fromARGB(256, randomR, randomG, randomB);
+      Color randomColor = Color.fromARGB(255, randomR, randomG, randomB);
+
       Particle particle = Particle(size: randomSize, color: randomColor);
       particles.add(particle);
     }

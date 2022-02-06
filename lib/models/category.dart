@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'dart:ui';
 
 class PantomimData {
   final String image, desc, name;
@@ -18,7 +19,7 @@ class TextFiledInputNameTeam {
 }
 
 class Particle {
-  int size;
+  double size;
   Color color;
 
   Particle({required this.size, required this.color});

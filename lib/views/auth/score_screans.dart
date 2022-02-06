@@ -5,6 +5,8 @@ import 'package:pantomim/generated/l10n.dart';
 import 'package:pantomim/models/category.dart';
 import 'package:pantomim/theme/constant.dart';
 import 'package:pantomim/util/view_models/canvas/mypainter.dart';
+import 'package:pantomim/views/auth/detail_game_screans_for_lunch.dart';
+import 'package:pantomim/views/widgets/double_floatingac_button.dart';
 
 class ScoreScreans extends StatefulWidget {
   @override
@@ -80,24 +82,28 @@ class _ScoreScreansState extends State<ScoreScreans>
   Widget build(BuildContext context) {
     final size = MediaQuery.of(context).size;
     var localApp = S.of(context);
-    return Container(
-      decoration: backgroundDefaultScafold,
-      child: Scaffold(
-        backgroundColor: Colors.transparent,
-        body: CustomPaint(
-          painter: MyPainter(particles: particles, theta: animation.value),
-          child: Center(
-            child: SafeArea(
-              child: Column(
-                mainAxisAlignment: MainAxisAlignment.center,
-                children: [
-                  Positioned(
-                    top: -size.height * 90,
-                    child: Container(
+
+    return WillPopScope(
+      onWillPop: () async {
+        ScaffoldMessenger.of(context);
+
+        return false;
+      },
+      child: Container(
+        decoration: backgroundDefaultScafold,
+        child: Scaffold(
+          backgroundColor: Colors.transparent,
+          body: CustomPaint(
+            painter: MyPainter(particles: particles, theta: animation.value),
+            child: Center(
+              child: SafeArea(
+                child: Column(
+                  mainAxisAlignment: MainAxisAlignment.center,
+                  children: [
+                    Container(
                       width: size.width * 0.70,
                       height: size.height * 0.08,
                       decoration: BoxDecoration(
-                          color: Colors.white24,
                           borderRadius: BorderRadius.circular(30)),
                       child: RichText(
                           textAlign: TextAlign.center,
@@ -110,13 +116,85 @@ class _ScoreScreansState extends State<ScoreScreans>
                                 style: Theme.of(context).textTheme.subtitle1)
                           ])),
                     ),
-                  ),
-                  Text('Word rating ')
-                ],
+                    Container(
+                      padding: const EdgeInsets.all(20),
+                      width: size.width * 0.85,
+                      height: size.height * 0.45,
+                      decoration: BoxDecoration(
+                          color: Colors.white24,
+                          borderRadius: BorderRadius.circular(50)),
+                      child: Column(
+                        crossAxisAlignment: CrossAxisAlignment.start,
+                        children: [
+                          Center(
+                              child: Text(
+                            'Group 1',
+                            style: Theme.of(context).textTheme.headline6,
+                          )),
+                          WidgetTitleAndScore(
+                            title: 'Word rating :',
+                            score: '4',
+                          ),
+                          WidgetTitleAndScore(
+                            title: 'Respond quickly :',
+                            score: '2',
+                          ),
+                          WidgetTitleAndScore(
+                            title: 'Error in the game  :',
+                            score: '0',
+                          ),
+                          Padding(
+                            padding: const EdgeInsets.only(top: 30),
+                            child: Center(
+                              child: DounleFloattingButton(
+                                colorBtn: kblue,
+                                ontap: () {
+                                  Navigator.push(
+                                      (context),
+                                      MaterialPageRoute(
+                                          builder: (context) =>
+                                              DetailGameScreans()));
+                                },
+                                textBtn: 'OK',
+                                highlightColor: kblue,
+                              ),
+                            ),
+                          )
+                        ],
+                      ),
+                    )
+                  ],
+                ),
               ),
             ),
           ),
         ),
+      ),
+    );
+  }
+}
+
+class WidgetTitleAndScore extends StatelessWidget {
+  final String title;
+  final String score;
+  const WidgetTitleAndScore({required this.score, required this.title});
+
+  @override
+  Widget build(BuildContext context) {
+    return Padding(
+      padding: const EdgeInsets.only(top: 35, right: 10, left: 10),
+      child: Row(
+        children: [
+          Text(
+            title,
+            style: Theme.of(context).textTheme.bodyText1,
+          ),
+          const Spacer(),
+          Text(
+            score,
+            style: Theme.of(context).textTheme.bodyText1,
+          )
+        ],
       ),
     );
   }

@@ -74,16 +74,12 @@ class HomeScreans extends StatelessWidget {
                   color: Colors.transparent,
                   text: localApp.textButtonHowToPlayHomeScreans,
                   ontap: () {
-                    Navigator.push(
-                        context,
-                        MaterialPageRoute(
-                            builder: (context) => ScoreScreans()));
-                    /* showDialog(
+                    showDialog(
                         context: context,
                         builder: (
                           context,
                         ) =>
-                            const DialogHowToPlay());*/
+                            const DialogHowToPlay());
                   },
                 )
               ],

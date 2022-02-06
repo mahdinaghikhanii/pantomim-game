@@ -16,123 +16,135 @@ class DetailGameScreans extends StatelessWidget {
     final size = MediaQuery.of(context).size;
     final modelProvider = Provider.of<AppProvider>(context);
 
-    return Container(
-      decoration: backgroundDefaultScafold,
-      child: Scaffold(
-        backgroundColor: Colors.transparent,
-        floatingActionButton:
-            Row(mainAxisAlignment: MainAxisAlignment.spaceEvenly, children: [
-          DounleFloattingButton(
-            ontap: () {
-              showDialog(
-                  context: context,
-                  builder: (
-                    context,
-                  ) =>
-                      const DialogQuit());
-            },
-            colorBtn: kblue,
-            textBtn: localApp.detailGameScreansForLunchBtnNameQuitGame,
-            highlightColor: Colors.transparent,
-          ),
-          DounleFloattingButton(
-            ontap: () {
-              showDialog(context: context, builder: (context) => DialogShow());
-            },
-            colorBtn: Colors.transparent,
-            textBtn: localApp.detailGameScreansForLunchBtnNameLetsGo,
-            highlightColor: Colors.transparent,
-          )
-        ]),
-        body: SafeArea(
-          child: Column(
-            mainAxisAlignment: MainAxisAlignment.start,
-            children: [
-              Center(
-                child: Padding(
-                  padding: const EdgeInsets.all(Constans.padding),
-                  child: RichText(
-                      text: TextSpan(children: [
-                    TextSpan(
-                        text: localApp.detailGameScreansForLunchTitleTextRounds,
-                        style: Theme.of(context).textTheme.bodyText1),
-                    TextSpan(
-                        text: modelProvider.getNumberOfRounds().toString(),
-                        style: Theme.of(context).textTheme.bodyText1),
-                    TextSpan(
-                        text: localApp.detailGameScreansForLunchTitleTextIn,
-                        style: Theme.of(context).textTheme.bodyText1),
-                    TextSpan(
-                        text: "1",
-                        style: Theme.of(context).textTheme.bodyText1),
-                  ])),
-                ),
-              ),
-              const Divider(
-                indent: 20,
-                endIndent: 20,
-                color: kwhite,
-              ),
-              Padding(
-                padding: const EdgeInsets.all(Constans.padding),
-                child: Column(
-                  mainAxisAlignment: MainAxisAlignment.center,
-                  crossAxisAlignment: CrossAxisAlignment.center,
-                  children: [
-                    Row(
+    return WillPopScope(
+        onWillPop: () async {
+          ScaffoldMessenger.of(context);
+
+          return false;
+        },
+        child: Container(
+          decoration: backgroundDefaultScafold,
+          child: Scaffold(
+            backgroundColor: Colors.transparent,
+            floatingActionButton: Row(
+                mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                children: [
+                  DounleFloattingButton(
+                    ontap: () {
+                      showDialog(
+                          context: context,
+                          builder: (
+                            context,
+                          ) =>
+                              const DialogQuit());
+                    },
+                    colorBtn: kblue,
+                    textBtn: localApp.detailGameScreansForLunchBtnNameQuitGame,
+                    highlightColor: Colors.transparent,
+                  ),
+                  DounleFloattingButton(
+                    ontap: () {
+                      showDialog(
+                          context: context, builder: (context) => DialogShow());
+                    },
+                    colorBtn: Colors.transparent,
+                    textBtn: localApp.detailGameScreansForLunchBtnNameLetsGo,
+                    highlightColor: Colors.transparent,
+                  )
+                ]),
+            body: SafeArea(
+              child: Column(
+                mainAxisAlignment: MainAxisAlignment.start,
+                children: [
+                  Center(
+                    child: Padding(
+                      padding: const EdgeInsets.all(Constans.padding),
+                      child: RichText(
+                          text: TextSpan(children: [
+                        TextSpan(
+                            text: localApp
+                                .detailGameScreansForLunchTitleTextRounds,
+                            style: Theme.of(context).textTheme.bodyText1),
+                        TextSpan(
+                            text: modelProvider.getNumberOfRounds().toString(),
+                            style: Theme.of(context).textTheme.bodyText1),
+                        TextSpan(
+                            text: localApp.detailGameScreansForLunchTitleTextIn,
+                            style: Theme.of(context).textTheme.bodyText1),
+                        TextSpan(
+                            text: "1",
+                            style: Theme.of(context).textTheme.bodyText1),
+                      ])),
+                    ),
+                  ),
+                  const Divider(
+                    indent: 20,
+                    endIndent: 20,
+                    color: kwhite,
+                  ),
+                  Padding(
+                    padding: const EdgeInsets.all(Constans.padding),
+                    child: Column(
+                      mainAxisAlignment: MainAxisAlignment.center,
+                      crossAxisAlignment: CrossAxisAlignment.center,
                       children: [
-                        Text(
-                          localApp.detailGameScreansForLunchNameTeam,
-                          style: Theme.of(context).textTheme.bodyText1,
+                        Row(
+                          children: [
+                            Text(
+                              localApp.detailGameScreansForLunchNameTeam,
+                              style: Theme.of(context).textTheme.bodyText1,
+                            ),
+                            const Spacer(),
+                            Text(
+                              localApp.detailGameScreansForLunchScore,
+                              style: Theme.of(context).textTheme.bodyText1,
+                            )
+                          ],
                         ),
-                        const Spacer(),
-                        Text(
-                          localApp.detailGameScreansForLunchScore,
-                          style: Theme.of(context).textTheme.bodyText1,
-                        )
+                        const SizedBox(
+                          height: 20,
+                        ),
+                        RowShowTeamAndScore(
+                          nameTeam: modelProvider.team1.value,
+                          scoreTeam:
+                              modelProvider.getCounterOfScoreTeam1().toString(),
+                          visiblity: true,
+                        ),
+                        const SizedBox(
+                          height: 20,
+                        ),
+                        RowShowTeamAndScore(
+                            nameTeam: modelProvider.team2.value,
+                            scoreTeam: modelProvider
+                                .getCounterOfScoreTeam2()
+                                .toString(),
+                            visiblity: true),
+                        const SizedBox(
+                          height: 20,
+                        ),
+                        RowShowTeamAndScore(
+                            nameTeam: modelProvider.team3.value,
+                            scoreTeam: modelProvider
+                                .getCounterOfScoreTeam3()
+                                .toString(),
+                            visiblity: modelProvider.visibilityTeam3),
+                        const SizedBox(
+                          height: 20,
+                        ),
+                        RowShowTeamAndScore(
+                            nameTeam: modelProvider.team4.value,
+                            scoreTeam: modelProvider
+                                .getCounterOfScoreTeam4()
+                                .toString(),
+                            visiblity: modelProvider.visibilityTeam4)
                       ],
                     ),
-                    const SizedBox(
-                      height: 20,
-                    ),
-                    RowShowTeamAndScore(
-                      nameTeam: modelProvider.team1.value,
-                      scoreTeam:
-                          modelProvider.getCounterOfScoreTeam1().toString(),
-                      visiblity: true,
-                    ),
-                    const SizedBox(
-                      height: 20,
-                    ),
-                    RowShowTeamAndScore(
-                        nameTeam: modelProvider.team2.value,
-                        scoreTeam:
-                            modelProvider.getCounterOfScoreTeam2().toString(),
-                        visiblity: true),
-                    const SizedBox(
-                      height: 20,
-                    ),
-                    RowShowTeamAndScore(
-                        nameTeam: modelProvider.team3.value,
-                        scoreTeam:
-                            modelProvider.getCounterOfScoreTeam3().toString(),
-                        visiblity: modelProvider.visibilityTeam3),
-                    const SizedBox(
-                      height: 20,
-                    ),
-                    RowShowTeamAndScore(
-                        nameTeam: modelProvider.team4.value,
-                        scoreTeam:
-                            modelProvider.getCounterOfScoreTeam4().toString(),
-                        visiblity: modelProvider.visibilityTeam4)
-                  ],
-                ),
+                  ),
+                ],
               ),
-            ],
+            ),
           ),
-        ),
-      ),
-    );
+        ));
   }
 }
 

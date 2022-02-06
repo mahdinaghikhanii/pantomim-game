@@ -206,4 +206,15 @@ class AppProvider extends ChangeNotifier {
     _nameBTn = btnName;
     notifyListeners();
   }
+
+  //this part for check team1 or team2 or... win ro lose and set Score and backgroid color in Score Screans
+
+  bool _winorlosebtn = false;
+
+  bool get checkbtnwinlose => _winorlosebtn;
+
+  void checkwinorlosegamebtn(bool check) {
+    _winorlosebtn = check;
+    notifyListeners();
+  }
 }

@@ -2,6 +2,7 @@ import 'dart:math' as math;
 
 import 'package:flutter/material.dart';
 import 'package:pantomim/models/category.dart';
+import 'package:pantomim/theme/constant.dart';
 import 'package:pantomim/util/view_models/canvas/mypainter.dart';
 
 class ScoreScreans extends StatefulWidget {
@@ -14,10 +15,9 @@ class _ScoreScreansState extends State<ScoreScreans>
   late Animation<double> animation;
   late AnimationController controller;
   List<Particle> particles = [];
-  Tween<double> _rotationTween = Tween(begin: 0, end: 2 * math.pi);
 
   genereteListOfParticles() {
-    int numberOfParticles = 100;
+    int numberOfParticles = 1000;
     for (int i = 0; i < numberOfParticles; i++) {
       double randomSize = math.Random().nextDouble() * 20;
 
@@ -28,7 +28,7 @@ class _ScoreScreansState extends State<ScoreScreans>
       Color randomColor = Color.fromARGB(255, randomR, randomG, randomB);
       double thetaRandom = math.Random().nextDouble() * (2 * math.pi);
 
-      double radiusRandom = math.Random().nextDouble() * 200 + 20;
+      double radiusRandom = math.Random().nextDouble() * 100 + 20;
 
       Particle particle = Particle(
           size: randomSize,
@@ -46,9 +46,9 @@ class _ScoreScreansState extends State<ScoreScreans>
 
     controller = AnimationController(
       vsync: this,
-      duration: Duration(seconds: 8),
+      duration: Duration(seconds: 3),
     );
-
+    Tween<double> _rotationTween = Tween(begin: 0, end: 2 * math.pi);
     animation = _rotationTween.animate(controller)
       ..addListener(() {
         setState(() {});
@@ -61,15 +61,30 @@ class _ScoreScreansState extends State<ScoreScreans>
         }
       });
 
+    controller.repeat(max: 1);
+
     controller.forward();
   }
 
   @override
+  void dispose() {
+    // TODO: implement dispose
+
+    controller.dispose();
+
+    super.dispose();
+  }
+
+  @override
   Widget build(BuildContext context) {
-    return Scaffold(
-      body: CustomPaint(
-        painter: MyPainter(particles: particles, theta: animation.value),
-        child: Container(),
+    return Container(
+      decoration: backgroundDefaultScafold,
+      child: Scaffold(
+        backgroundColor: Colors.transparent,
+        body: CustomPaint(
+          painter: MyPainter(particles: particles, theta: animation.value),
+          child: Container(),
+        ),
       ),
     );
   }

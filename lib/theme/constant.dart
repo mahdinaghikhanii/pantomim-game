@@ -29,6 +29,12 @@ const backgroundDefaultScafold = const BoxDecoration(
         colors: [Colors.white38, Colors.blue]));
 const styleTextInputTextField = TextStyle(color: kwhite, fontSize: 20);
 
+const backgroundDefaultScafoldfalseGameStyle = const BoxDecoration(
+    gradient: LinearGradient(
+        begin: Alignment.centerLeft,
+        end: Alignment.centerRight,
+        colors: [Colors.white38, Colors.red]));
+
 //this is style for dialogSetting drowpDown Text
 const dropwdownTextDialogSetting = TextStyle(color: kblack, fontSize: 20);
 

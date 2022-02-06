@@ -26,7 +26,8 @@ class ConfigTheme {
         fontSize: 35,
         color: kwhite,
       ),
-      headline1: TextStyle(fontSize: 45, color: kblue),
+      headline1:
+          TextStyle(fontSize: 45, color: kblue, fontWeight: FontWeight.bold),
       headline2: TextStyle(fontSize: 35, color: kblue),
       //heqeline 3 using for tine showing
       headline3: TextStyle(fontSize: 35, color: kwhite),

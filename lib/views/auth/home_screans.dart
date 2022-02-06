@@ -49,10 +49,10 @@ class HomeScreans extends StatelessWidget {
                             text: TextSpan(children: [
                           TextSpan(
                               text: localApp.titleHomeScreans1,
-                              style: Theme.of(context).textTheme.subtitle1),
+                              style: Theme.of(context).textTheme.headline1),
                           TextSpan(
                               text: localApp.titleHomeScreans2,
-                              style: Theme.of(context).textTheme.headline2)
+                              style: Theme.of(context).textTheme.subtitle1)
                         ])),
                       ),
                     )

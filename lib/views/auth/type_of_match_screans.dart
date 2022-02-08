@@ -101,6 +101,7 @@ class _ChoiceYourTopicState extends State<ChoiceYourTopic> {
             ),
             DounleFloattingButton(
               ontap: () {
+                modelProvider.setvisibilityIcon();
                 _nextPage();
               },
               colorBtn: Colors.transparent,

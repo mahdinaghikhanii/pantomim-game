@@ -212,6 +212,18 @@ class AppProvider extends ChangeNotifier {
 
   //this part for check team1 or team2 or... win ro lose and set Score and backgroid color in Score Screans
 
+  // this part for bool see icon or not visibility Icon
+
+  bool _visibilirtIconTeam1 = false;
+  bool _visibilirtIconTeam2 = false;
+  bool _visibilirtIconTeam3 = false;
+  bool _visibilirtIconTeam4 = false;
+
+  bool get visibilityTeam1Icon => _visibilirtIconTeam1;
+  bool get visibilityTeam2Icon => _visibilirtIconTeam2;
+  bool get visibilityTeam3Icon => _visibilirtIconTeam3;
+  bool get visibilityTeam4Icon => _visibilirtIconTeam4;
+
   bool _winorlosebtn = false;
 
   bool get checkbtnwinlose => _winorlosebtn;
@@ -221,21 +233,60 @@ class AppProvider extends ChangeNotifier {
 
     notifyListeners();
   }
-  //// here code for handel how playing game in innings and showing icon or not showing icon
 
-  void addScoreInTeam() {
-    switch (_counterOfScoreTeam1 & _counterOfScoreTeam2) {
+  //// here code for handel how playing game in innings and showing icon or not showing icon
+  int _innigns = 0;
+
+  int get getcheckforInnigns => _innigns;
+
+  void setaddcheckforInnigns() {
+    if (_winorlosebtn == true) {
+      _innigns++;
+    } else {
+      _innigns++;
+    }
+
+    if (_innigns == _counterOfMatch) {
+      _innigns = 0;
+    } else {
+      _innigns;
+    }
+    setvisibilityIcon();
+    print(_innigns);
+    notifyListeners();
+  }
+
+// this function for set visibility Icon in detailGame for Screans
+  void setvisibilityIcon() {
+    switch (_innigns) {
       case 0:
+        _visibilirtIconTeam1 = true;
+        _visibilirtIconTeam2 = false;
+        _visibilirtIconTeam3 = false;
+        _visibilirtIconTeam4 = false;
+        break;
+      case 1:
+        _visibilirtIconTeam1 = false;
+        _visibilirtIconTeam2 = true;
+        _visibilirtIconTeam3 = false;
+        _visibilirtIconTeam4 = false;
+        break;
+      case 3:
+        _visibilirtIconTeam1 = false;
+        _visibilirtIconTeam2 = false;
+        _visibilirtIconTeam3 = true;
+        _visibilirtIconTeam4 = false;
+        break;
+      case 4:
+        _visibilirtIconTeam1 = false;
+        _visibilirtIconTeam2 = false;
+        _visibilirtIconTeam3 = false;
+        _visibilirtIconTeam4 = true;
         break;
       default:
     }
   }
 
-  bool _visibilityIconinnings = false;
+  //this function for Score Team
 
-  bool get getcheckvisibilityIcon => _visibilityIconinnings;
-
-  void setVisibilityIconInnings(bool check) {
-    _visibilityIconinnings = check;
-  }
 }

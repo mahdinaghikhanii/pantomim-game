@@ -109,34 +109,38 @@ class DetailGameScreans extends StatelessWidget {
                           scoreTeam:
                               modelProvider.getCounterOfScoreTeam1().toString(),
                           visiblity: true,
+                          iconVisibility: modelProvider.visibilityTeam1Icon,
                         ),
                         const SizedBox(
                           height: 20,
                         ),
                         RowShowTeamAndScore(
-                            nameTeam: modelProvider.team2.value,
-                            scoreTeam: modelProvider
-                                .getCounterOfScoreTeam2()
-                                .toString(),
-                            visiblity: true),
+                          nameTeam: modelProvider.team2.value,
+                          scoreTeam:
+                              modelProvider.getCounterOfScoreTeam2().toString(),
+                          visiblity: true,
+                          iconVisibility: modelProvider.visibilityTeam2Icon,
+                        ),
                         const SizedBox(
                           height: 20,
                         ),
                         RowShowTeamAndScore(
-                            nameTeam: modelProvider.team3.value,
-                            scoreTeam: modelProvider
-                                .getCounterOfScoreTeam3()
-                                .toString(),
-                            visiblity: modelProvider.visibilityTeam3),
+                          nameTeam: modelProvider.team3.value,
+                          scoreTeam:
+                              modelProvider.getCounterOfScoreTeam3().toString(),
+                          visiblity: modelProvider.visibilityTeam3,
+                          iconVisibility: modelProvider.visibilityTeam3Icon,
+                        ),
                         const SizedBox(
                           height: 20,
                         ),
                         RowShowTeamAndScore(
-                            nameTeam: modelProvider.team4.value,
-                            scoreTeam: modelProvider
-                                .getCounterOfScoreTeam4()
-                                .toString(),
-                            visiblity: modelProvider.visibilityTeam4)
+                          nameTeam: modelProvider.team4.value,
+                          scoreTeam:
+                              modelProvider.getCounterOfScoreTeam4().toString(),
+                          visiblity: modelProvider.visibilityTeam4,
+                          iconVisibility: modelProvider.visibilityTeam4Icon,
+                        )
                       ],
                     ),
                   ),
@@ -153,11 +157,13 @@ class RowShowTeamAndScore extends StatelessWidget {
       {Key? key,
       required this.nameTeam,
       required this.scoreTeam,
-      required this.visiblity})
+      required this.visiblity,
+      required this.iconVisibility})
       : super(key: key);
   final String nameTeam;
   final String scoreTeam;
   final bool visiblity;
+  final bool iconVisibility;
 
   @override
   Widget build(BuildContext context) {
@@ -181,7 +187,7 @@ class RowShowTeamAndScore extends StatelessWidget {
                 width: 20,
               ),
               Visibility(
-                  visible: modelProvider.getcheckvisibilityIcon,
+                  visible: iconVisibility,
                   child: const Icon(Icons.play_arrow, color: kwhite)),
               const Spacer(),
               Text(

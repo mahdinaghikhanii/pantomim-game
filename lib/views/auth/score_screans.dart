@@ -153,10 +153,7 @@ class _ScoreScreansState extends State<ScoreScreans>
                                 colorBtn: kblue,
                                 ontap: () {
                                   if (modelProvier.checkbtnwinlose == true) {
-                                    print('ture is werk');
-                                  } else {
-                                    print('is not work');
-                                  }
+                                  } else {}
                                   Navigator.push(
                                       (context),
                                       MaterialPageRoute(

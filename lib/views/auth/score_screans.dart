@@ -136,7 +136,9 @@ class _ScoreScreansState extends State<ScoreScreans>
                           )),
                           WidgetTitleAndScore(
                             title: 'Word rating :',
-                            score: '4',
+                            score: modelProvier
+                                .getCounterOfScoreTeam1()
+                                .toString(),
                           ),
                           WidgetTitleAndScore(
                             title: 'Respond quickly :',

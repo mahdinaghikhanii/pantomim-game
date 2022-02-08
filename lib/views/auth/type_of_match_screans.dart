@@ -7,6 +7,8 @@ import 'package:pantomim/views/auth/detail_game_screans_for_lunch.dart';
 import 'package:pantomim/views/widgets/double_floatingac_button.dart';
 import 'package:provider/src/provider.dart';
 
+import 'finishidgame_screans.dart';
+
 class ChoiceYourTopic extends StatefulWidget {
   const ChoiceYourTopic({Key? key}) : super(key: key);
 

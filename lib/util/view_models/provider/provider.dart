@@ -1,8 +1,9 @@
 // ignore_for_file: unnecessary_null_comparison
 import 'dart:async';
-
 import 'package:flutter/material.dart';
+import 'package:flutter/scheduler.dart';
 import 'package:pantomim/models/category.dart';
+import 'package:pantomim/views/auth/finishidgame_screans.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 
 class AppProvider extends ChangeNotifier {
@@ -53,6 +54,8 @@ class AppProvider extends ChangeNotifier {
 
 //its for titte in detail_game_screans numberRounds in 25 in 1 or 2 or 3
   int _numberofroundsmatch = 1;
+
+  gettitleNumberOfRoundsMath() => _numberofroundsmatch;
 
   //this part and function
   int _numberofrounds = 3;
@@ -246,13 +249,13 @@ class AppProvider extends ChangeNotifier {
       _innigns++;
     }
 
-    if (_innigns == _counterOfMatch) {
+    if (_innigns == _numberofrounds) {
       _innigns = 0;
+      print('f');
     } else {
       _innigns;
     }
-    setvisibilityIcon();
-    print(_innigns);
+    setScoreForAllTeam();
     notifyListeners();
   }
 
@@ -283,10 +286,32 @@ class AppProvider extends ChangeNotifier {
         _visibilirtIconTeam3 = false;
         _visibilirtIconTeam4 = true;
         break;
-      default:
     }
+    notifyListeners();
   }
 
   //this function for Score Team
 
+  void setScoreForAllTeam() {
+    setvisibilityIcon();
+    if (_visibilirtIconTeam1 == true) {
+      if (checkbtnwinlose == true) {
+        _counterOfScoreTeam1++;
+        _counterOfScoreTeam1++;
+      } else {
+        _counterOfScoreTeam1;
+      }
+      notifyListeners();
+    }
+    if (_visibilirtIconTeam1 == true) {
+      if (checkbtnwinlose != true) {
+        _counterOfScoreTeam2++;
+      } else {
+        _counterOfScoreTeam2;
+      }
+    }
+    notifyListeners();
+  }
+
+  titleNumberOfRoundsMath() {}
 }

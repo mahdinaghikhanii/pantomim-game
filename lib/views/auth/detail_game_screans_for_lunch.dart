@@ -72,7 +72,9 @@ class DetailGameScreans extends StatelessWidget {
                             text: localApp.detailGameScreansForLunchTitleTextIn,
                             style: Theme.of(context).textTheme.bodyText1),
                         TextSpan(
-                            text: "1",
+                            text: modelProvider
+                                .gettitleNumberOfRoundsMath()
+                                .toString(),
                             style: Theme.of(context).textTheme.bodyText1),
                       ])),
                     ),

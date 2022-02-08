@@ -13,8 +13,6 @@ class MyPainter extends CustomPainter {
   MyPainter({required this.particles, required this.theta});
   @override
   void paint(Canvas canvas, Size size) {
-    backgroundDefaultScafold:
-    Colors.red;
     // paint brush
     var paint = Paint()..strokeWidth = 5;
 

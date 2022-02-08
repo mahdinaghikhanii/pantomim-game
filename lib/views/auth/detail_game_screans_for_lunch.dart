@@ -161,6 +161,7 @@ class RowShowTeamAndScore extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final modelProvider = Provider.of<AppProvider>(context);
     return Visibility(
       visible: visiblity,
       child: Container(
@@ -179,7 +180,9 @@ class RowShowTeamAndScore extends StatelessWidget {
               const SizedBox(
                 width: 20,
               ),
-              const Icon(Icons.play_arrow, color: kwhite),
+              Visibility(
+                  visible: modelProvider.getcheckvisibilityIcon,
+                  child: const Icon(Icons.play_arrow, color: kwhite)),
               const Spacer(),
               Text(
                 scoreTeam,

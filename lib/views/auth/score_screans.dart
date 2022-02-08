@@ -5,8 +5,10 @@ import 'package:pantomim/generated/l10n.dart';
 import 'package:pantomim/models/category.dart';
 import 'package:pantomim/theme/constant.dart';
 import 'package:pantomim/util/view_models/canvas/mypainter.dart';
+import 'package:pantomim/util/view_models/provider/provider.dart';
 import 'package:pantomim/views/auth/detail_game_screans_for_lunch.dart';
 import 'package:pantomim/views/widgets/double_floatingac_button.dart';
+import 'package:provider/provider.dart';
 
 class ScoreScreans extends StatefulWidget {
   @override
@@ -82,6 +84,7 @@ class _ScoreScreansState extends State<ScoreScreans>
   Widget build(BuildContext context) {
     final size = MediaQuery.of(context).size;
     var localApp = S.of(context);
+    final modelProvier = Provider.of<AppProvider>(context);
 
     return WillPopScope(
       onWillPop: () async {
@@ -149,6 +152,11 @@ class _ScoreScreansState extends State<ScoreScreans>
                               child: DounleFloattingButton(
                                 colorBtn: kblue,
                                 ontap: () {
+                                  if (modelProvier.checkbtnwinlose == true) {
+                                    print('ture is werk');
+                                  } else {
+                                    print('is not work');
+                                  }
                                   Navigator.push(
                                       (context),
                                       MaterialPageRoute(

@@ -51,6 +51,9 @@ class AppProvider extends ChangeNotifier {
     notifyListeners();
   }
 
+//its for titte in detail_game_screans numberRounds in 25 in 1 or 2 or 3
+  int _numberofroundsmatch = 1;
+
   //this part and function
   int _numberofrounds = 3;
 
@@ -215,6 +218,24 @@ class AppProvider extends ChangeNotifier {
 
   void checkwinorlosegamebtn(bool check) {
     _winorlosebtn = check;
+
     notifyListeners();
+  }
+  //// here code for handel how playing game in innings and showing icon or not showing icon
+
+  void addScoreInTeam() {
+    switch (_counterOfScoreTeam1 & _counterOfScoreTeam2) {
+      case 0:
+        break;
+      default:
+    }
+  }
+
+  bool _visibilityIconinnings = false;
+
+  bool get getcheckvisibilityIcon => _visibilityIconinnings;
+
+  void setVisibilityIconInnings(bool check) {
+    _visibilityIconinnings = check;
   }
 }

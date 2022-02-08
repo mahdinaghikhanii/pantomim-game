@@ -1,8 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:pantomim/generated/l10n.dart';
 import 'package:pantomim/theme/constant.dart';
+import 'package:pantomim/util/view_models/provider/provider.dart';
 import 'package:pantomim/views/auth/score_screans.dart';
 import 'package:pantomim/views/widgets/double_floatingac_button.dart';
+import 'package:provider/provider.dart';
 
 class DialogWinOrLose extends StatelessWidget {
   const DialogWinOrLose({Key? key}) : super(key: key);
@@ -11,6 +13,7 @@ class DialogWinOrLose extends StatelessWidget {
   Widget build(BuildContext context) {
     final size = MediaQuery.of(context).size;
     var localApp = S.of(context);
+    final modelProvider = Provider.of<AppProvider>(context);
 
     return Dialog(
         insetPadding:
@@ -65,6 +68,8 @@ class DialogWinOrLose extends StatelessWidget {
                                     DounleFloattingButton(
                                       colorBtn: Colors.blue,
                                       ontap: () {
+                                        modelProvider
+                                            .checkwinorlosegamebtn(true);
                                         Navigator.push(
                                             context,
                                             MaterialPageRoute(
@@ -81,6 +86,8 @@ class DialogWinOrLose extends StatelessWidget {
                                     DounleFloattingButton(
                                       colorBtn: Colors.transparent,
                                       ontap: () {
+                                        modelProvider
+                                            .checkwinorlosegamebtn(false);
                                         Navigator.push(
                                             context,
                                             MaterialPageRoute(

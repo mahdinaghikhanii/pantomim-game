@@ -68,9 +68,13 @@ class DialogWinOrLose extends StatelessWidget {
                                     DounleFloattingButton(
                                       colorBtn: Colors.blue,
                                       ontap: () {
-                                        modelProvider.setaddcheckforInnigns();
                                         modelProvider
                                             .checkwinorlosegamebtn(true);
+
+                                        if (modelProvider.checkbtnwinlose ==
+                                            true) {
+                                          modelProvider.setScoreForAllTeam();
+                                        }
                                         Navigator.push(
                                             context,
                                             MaterialPageRoute(

@@ -53,7 +53,7 @@ class _ScoreScreansState extends State<ScoreScreans>
 
     controller = AnimationController(
       vsync: this,
-      duration: Duration(seconds: 8),
+      duration: const Duration(seconds: 8),
     );
     Tween<double> _rotationTween = Tween(begin: 0, end: 2 * math.pi);
     animation = _rotationTween.animate(controller)
@@ -166,6 +166,7 @@ class _ScoreScreansState extends State<ScoreScreans>
                                                 const FinishidGameScreans()));
                                   } else {
                                     if (modelProvier.checkbtnwinlose == true) {
+                                      modelProvier.setaddcheckforInnigns();
                                     } else {}
                                     Navigator.push(
                                         (context),

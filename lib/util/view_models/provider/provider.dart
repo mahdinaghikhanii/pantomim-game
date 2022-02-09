@@ -56,6 +56,7 @@ class AppProvider extends ChangeNotifier {
   int _numberofroundsmatch = 1;
 
   gettitleNumberOfRoundsMath() => _numberofroundsmatch;
+  settitleNumberOfRoundsMath(int numberFortitle) => _numberofroundsmatch;
 
   //this part and function Rounds choice in detail and type of match
   int _numberofrounds = 3;
@@ -238,13 +239,14 @@ class AppProvider extends ChangeNotifier {
   }
 
   //// here code for handel how playing game in innings and showing icon or not showing icon
-  int _innigns = 0;
+  int _innigns = -1;
 
   int get getcheckforInnigns => _innigns;
 
   void setaddcheckforInnigns() {
     if (_winorlosebtn == true) {
       _innigns++;
+      print(_innigns);
     } else {
       _innigns++;
     }
@@ -255,7 +257,7 @@ class AppProvider extends ChangeNotifier {
     } else {
       _innigns;
     }
-    setScoreForAllTeam();
+
     setvisibilityIcon();
     notifyListeners();
   }
@@ -268,7 +270,6 @@ class AppProvider extends ChangeNotifier {
         _visibilirtIconTeam2 = false;
         _visibilirtIconTeam3 = false;
         _visibilirtIconTeam4 = false;
-
         break;
       case 1:
         _visibilirtIconTeam1 = false;
@@ -277,13 +278,13 @@ class AppProvider extends ChangeNotifier {
         _visibilirtIconTeam4 = false;
 
         break;
-      case 2:
+      case 3:
         _visibilirtIconTeam1 = false;
         _visibilirtIconTeam2 = false;
         _visibilirtIconTeam3 = true;
         _visibilirtIconTeam4 = false;
         break;
-      case 3:
+      case 4:
         _visibilirtIconTeam1 = false;
         _visibilirtIconTeam2 = false;
         _visibilirtIconTeam3 = false;
@@ -297,25 +298,22 @@ class AppProvider extends ChangeNotifier {
 
   void setScoreForAllTeam() {
     if (_visibilirtIconTeam1 == true) {
-      if (checkbtnwinlose == true) {
-        _counterOfScoreTeam1++;
+      if (_winorlosebtn == true) {
         _counterOfScoreTeam1++;
       } else {
+        print('fuck');
         _counterOfScoreTeam1;
       }
     }
+
     if (_visibilirtIconTeam2 == true) {
-      if (checkbtnwinlose == true) {
+      if (_winorlosebtn == true) {
         _counterOfScoreTeam2++;
         _counterOfScoreTeam2++;
       } else {
+        print('fuck');
         _counterOfScoreTeam2;
       }
     }
-    notifyListeners();
-  }
-
-  void showscrenaswhichteamwonandwichteamlose() {
-    if (_numberofroundsmatch == _numberofrounds) {}
   }
 }

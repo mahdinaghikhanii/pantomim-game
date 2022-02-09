@@ -103,7 +103,9 @@ class _ChoiceYourTopicState extends State<ChoiceYourTopic> {
             ),
             DounleFloattingButton(
               ontap: () {
-                modelProvider.setvisibilityIcon();
+                modelProvider.setaddcheckforInnigns();
+
+                print(modelProvider.getcheckforInnigns);
                 _nextPage();
               },
               colorBtn: Colors.transparent,

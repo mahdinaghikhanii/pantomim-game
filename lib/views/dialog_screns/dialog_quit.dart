@@ -64,7 +64,8 @@ class DialogQuit extends StatelessWidget {
                                 ontap: () {
                                   Navigator.of(context).pushAndRemoveUntil(
                                       MaterialPageRoute(
-                                          builder: (context) => HomeScreans()),
+                                          builder: (context) =>
+                                              const HomeScreans()),
                                       (Route<dynamic> route) => false);
                                 },
                                 colorBtn: Colors.transparent,

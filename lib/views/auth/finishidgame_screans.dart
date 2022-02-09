@@ -5,8 +5,11 @@ class FinishidGameScreans extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Column(
-      children: [],
-    );
+    return WillPopScope(
+        onWillPop: () async {
+          ScaffoldMessenger.of(context);
+          return false;
+        },
+        child: Scaffold());
   }
 }

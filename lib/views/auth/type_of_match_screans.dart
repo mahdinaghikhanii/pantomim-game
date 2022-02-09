@@ -193,8 +193,7 @@ class _ChoiceYourTopicState extends State<ChoiceYourTopic> {
                                         },
                                         decoration: InputDecoration(
                                           enabled:
-                                              modelProvider.getCounterMatch() >
-                                                      2
+                                              modelProvider.getCounterTeam() > 2
                                                   ? true
                                                   : false,
                                           floatingLabelStyle:
@@ -202,8 +201,7 @@ class _ChoiceYourTopicState extends State<ChoiceYourTopic> {
                                           hintText: localApp
                                               .typeOfMatchScreansTextFiledInputTeam3,
                                           hintStyle:
-                                              modelProvider.getCounterMatch() >
-                                                      2
+                                              modelProvider.getCounterTeam() > 2
                                                   ? Theme.of(context)
                                                       .textTheme
                                                       .bodyText1
@@ -220,7 +218,7 @@ class _ChoiceYourTopicState extends State<ChoiceYourTopic> {
                                     height: size.height * 0.10,
                                     child: TextField(
                                         enabled:
-                                            modelProvider.getCounterMatch() > 3
+                                            modelProvider.getCounterTeam() > 3
                                                 ? true
                                                 : false,
                                         onChanged: (String value) {
@@ -230,8 +228,7 @@ class _ChoiceYourTopicState extends State<ChoiceYourTopic> {
                                           hintText: localApp
                                               .typeOfMatchScreansTextFiledInputTeam4,
                                           hintStyle:
-                                              modelProvider.getCounterMatch() >
-                                                      3
+                                              modelProvider.getCounterTeam() > 3
                                                   ? Theme.of(context)
                                                       .textTheme
                                                       .bodyText1
@@ -274,7 +271,7 @@ class _ChoiceYourTopicState extends State<ChoiceYourTopic> {
                               height: size.height * 0.02,
                             ),
                             Text(
-                              modelProvider.getCounterMatch().toString(),
+                              modelProvider.getCounterTeam().toString(),
                               maxLines: 1,
                               style: Theme.of(context).textTheme.bodyText1,
                             ),

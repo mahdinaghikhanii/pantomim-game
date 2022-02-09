@@ -8,24 +8,24 @@ import 'package:shared_preferences/shared_preferences.dart';
 
 class AppProvider extends ChangeNotifier {
   //this part and function for number ofteam 1 2 3 or 4
-  int _counterOfMatch = 2;
-  getCounterMatch() => _counterOfMatch;
-  setConunterMatch(int counter) => _counterOfMatch;
+  int _counterOfTeam = 2;
+  getCounterTeam() => _counterOfTeam;
+  setCounterTeam(int counter) => _counterOfTeam;
 
   void increment() {
-    if (_counterOfMatch > 3) {
-      _counterOfMatch;
+    if (_counterOfTeam > 3) {
+      _counterOfTeam;
     } else {
-      _counterOfMatch++;
+      _counterOfTeam++;
     }
     notifyListeners();
   }
 
   void lowoff() {
-    if (_counterOfMatch == 2) {
-      _counterOfMatch;
+    if (_counterOfTeam == 2) {
+      _counterOfTeam;
     } else {
-      _counterOfMatch--;
+      _counterOfTeam--;
     }
     notifyListeners();
   }
@@ -57,7 +57,7 @@ class AppProvider extends ChangeNotifier {
 
   gettitleNumberOfRoundsMath() => _numberofroundsmatch;
 
-  //this part and function
+  //this part and function Rounds choice in detail and type of match
   int _numberofrounds = 3;
 
   getNumberOfRounds() => _numberofrounds;
@@ -249,13 +249,14 @@ class AppProvider extends ChangeNotifier {
       _innigns++;
     }
 
-    if (_innigns == _numberofrounds) {
+    if (_innigns == _counterOfTeam) {
       _innigns = 0;
-      print('f');
+      _numberofroundsmatch++;
     } else {
       _innigns;
     }
     setScoreForAllTeam();
+    setvisibilityIcon();
     notifyListeners();
   }
 
@@ -267,20 +268,22 @@ class AppProvider extends ChangeNotifier {
         _visibilirtIconTeam2 = false;
         _visibilirtIconTeam3 = false;
         _visibilirtIconTeam4 = false;
+
         break;
       case 1:
         _visibilirtIconTeam1 = false;
         _visibilirtIconTeam2 = true;
         _visibilirtIconTeam3 = false;
         _visibilirtIconTeam4 = false;
+
         break;
-      case 3:
+      case 2:
         _visibilirtIconTeam1 = false;
         _visibilirtIconTeam2 = false;
         _visibilirtIconTeam3 = true;
         _visibilirtIconTeam4 = false;
         break;
-      case 4:
+      case 3:
         _visibilirtIconTeam1 = false;
         _visibilirtIconTeam2 = false;
         _visibilirtIconTeam3 = false;
@@ -293,7 +296,6 @@ class AppProvider extends ChangeNotifier {
   //this function for Score Team
 
   void setScoreForAllTeam() {
-    setvisibilityIcon();
     if (_visibilirtIconTeam1 == true) {
       if (checkbtnwinlose == true) {
         _counterOfScoreTeam1++;
@@ -301,10 +303,10 @@ class AppProvider extends ChangeNotifier {
       } else {
         _counterOfScoreTeam1;
       }
-      notifyListeners();
     }
-    if (_visibilirtIconTeam1 == true) {
-      if (checkbtnwinlose != true) {
+    if (_visibilirtIconTeam2 == true) {
+      if (checkbtnwinlose == true) {
+        _counterOfScoreTeam2++;
         _counterOfScoreTeam2++;
       } else {
         _counterOfScoreTeam2;
@@ -313,5 +315,7 @@ class AppProvider extends ChangeNotifier {
     notifyListeners();
   }
 
-  titleNumberOfRoundsMath() {}
+  void showscrenaswhichteamwonandwichteamlose() {
+    if (_numberofroundsmatch == _numberofrounds) {}
+  }
 }

@@ -95,7 +95,9 @@ class _ScoreScreansState extends State<ScoreScreans>
         return false;
       },
       child: Container(
-        decoration: backgroundDefaultScafold,
+        decoration: modelProvier.checkbtnwinlose
+            ? backgroundDefaultScafold
+            : backgroundDefaultScafoldfalseGameStyle,
         child: Scaffold(
           backgroundColor: Colors.transparent,
           body: CustomPaint(

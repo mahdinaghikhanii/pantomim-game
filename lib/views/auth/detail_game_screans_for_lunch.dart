@@ -190,7 +190,7 @@ class RowShowTeamAndScore extends StatelessWidget {
               ),
               Visibility(
                   visible: iconVisibility,
-                  child: const Icon(Icons.play_arrow, color: kwhite)),
+                  child: const Icon(Icons.play_arrow, color: kwhite, size: 28)),
               const Spacer(),
               Text(
                 scoreTeam,

@@ -44,7 +44,6 @@ class DetailGameScreans extends StatelessWidget {
                   ),
                   DounleFloattingButton(
                     ontap: () {
-                      print(modelProvider.getcheckforInnigns);
                       showDialog(
                           context: context, builder: (context) => DialogShow());
                     },

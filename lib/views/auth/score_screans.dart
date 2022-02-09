@@ -7,7 +7,9 @@ import 'package:pantomim/theme/constant.dart';
 import 'package:pantomim/util/view_models/canvas/mypainter.dart';
 import 'package:pantomim/util/view_models/provider/provider.dart';
 import 'package:pantomim/views/auth/detail_game_screans_for_lunch.dart';
+import 'package:pantomim/views/auth/finishidgame_screans.dart';
 import 'package:pantomim/views/widgets/double_floatingac_button.dart';
+import 'package:pantomim/views/widgets/scoreshowtext_textdetail.dart';
 import 'package:provider/provider.dart';
 
 class ScoreScreans extends StatefulWidget {
@@ -134,17 +136,17 @@ class _ScoreScreansState extends State<ScoreScreans>
                             'Group 1',
                             style: Theme.of(context).textTheme.headline6,
                           )),
-                          WidgetTitleAndScore(
+                          WidgetShowTextWinOrLoseDetail(
                             title: 'Word rating :',
                             score: modelProvier
                                 .getCounterOfScoreTeam1()
                                 .toString(),
                           ),
-                          WidgetTitleAndScore(
+                          const WidgetShowTextWinOrLoseDetail(
                             title: 'Respond quickly :',
                             score: '2',
                           ),
-                          WidgetTitleAndScore(
+                          const WidgetShowTextWinOrLoseDetail(
                             title: 'Error in the game  :',
                             score: '0',
                           ),
@@ -154,13 +156,23 @@ class _ScoreScreansState extends State<ScoreScreans>
                               child: DounleFloattingButton(
                                 colorBtn: kblue,
                                 ontap: () {
-                                  if (modelProvier.checkbtnwinlose == true) {
-                                  } else {}
-                                  Navigator.push(
-                                      (context),
-                                      MaterialPageRoute(
-                                          builder: (context) =>
-                                              DetailGameScreans()));
+                                  if (modelProvier
+                                          .gettitleNumberOfRoundsMath() >
+                                      modelProvier.getNumberOfRounds()) {
+                                    Navigator.push(
+                                        context,
+                                        MaterialPageRoute(
+                                            builder: (context) =>
+                                                const FinishidGameScreans()));
+                                  } else {
+                                    if (modelProvier.checkbtnwinlose == true) {
+                                    } else {}
+                                    Navigator.push(
+                                        (context),
+                                        MaterialPageRoute(
+                                            builder: (context) =>
+                                                const DetailGameScreans()));
+                                  }
                                 },
                                 textBtn: 'OK',
                                 highlightColor: kblue,
@@ -176,32 +188,6 @@ class _ScoreScreansState extends State<ScoreScreans>
             ),
           ),
         ),
-      ),
-    );
-  }
-}
-
-class WidgetTitleAndScore extends StatelessWidget {
-  final String title;
-  final String score;
-  const WidgetTitleAndScore({required this.score, required this.title});
-
-  @override
-  Widget build(BuildContext context) {
-    return Padding(
-      padding: const EdgeInsets.only(top: 35, right: 10, left: 10),
-      child: Row(
-        children: [
-          Text(
-            title,
-            style: Theme.of(context).textTheme.bodyText1,
-          ),
-          const Spacer(),
-          Text(
-            score,
-            style: Theme.of(context).textTheme.bodyText1,
-          )
-        ],
       ),
     );
   }

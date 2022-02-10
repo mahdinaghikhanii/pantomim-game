@@ -62,7 +62,7 @@ flutter_native_splash:
 
   android: true
   ios: true
-  web: true
+  web: false
   color: "#42a5f5"
   image: assets/images/welcome.png
   #background_image: assets/images/welcome.png

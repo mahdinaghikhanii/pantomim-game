@@ -749,6 +749,46 @@ class S {
       args: [],
     );
   }
+
+  /// `YOU `
+  String get scoreScreansTitleTextTextSpanYou {
+    return Intl.message(
+      'YOU ',
+      name: 'scoreScreansTitleTextTextSpanYou',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `WON`
+  String get scoreScreansTitleTextTextSpanWon {
+    return Intl.message(
+      'WON',
+      name: 'scoreScreansTitleTextTextSpanWon',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `LOST`
+  String get scoreScreansTitleTextTextSpanLost {
+    return Intl.message(
+      'LOST',
+      name: 'scoreScreansTitleTextTextSpanLost',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `OK`
+  String get scoreScreansBtnText {
+    return Intl.message(
+      'OK',
+      name: 'scoreScreansBtnText',
+      desc: '',
+      args: [],
+    );
+  }
 }
 
 class AppLocalizationDelegate extends LocalizationsDelegate<S> {

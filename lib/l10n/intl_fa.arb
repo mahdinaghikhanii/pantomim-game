@@ -68,6 +68,10 @@
     "dialogwinorloseTextTextSpan1" : "چی ",
     "dialogwinorloseTextTextSpan2" : "شد ؟",
     "dialogwinorlosebtnNameTrue" : "درست",
-    "dialogwinorlosebtnNamefalse" : "غلط"
+    "dialogwinorlosebtnNamefalse" : "غلط" ,
+    "scoreScreansTitleTextTextSpanYou" : "شما ",
+    "scoreScreansTitleTextTextSpanWon" : "برنده شدید",
+    "scoreScreansTitleTextTextSpanLost" : "باختید",
+    "scoreScreansBtnText" : "باشه"
 
 }

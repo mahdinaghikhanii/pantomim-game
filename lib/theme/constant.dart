@@ -6,6 +6,7 @@ String faPrimaryFontFamily = 'IranYekan';
 const Color kpink = Color(0xFFDC9298);
 const Color kwhite = Colors.white;
 const Color kblack = Color(0xFF212121);
+const Color kred = Color(0xFFE53935);
 const Color kpurple = Color(0xFF6A1B9A);
 const Color kyellow = Color(0xFFFF9800);
 const Color klightgrean = Color(0xFFAFB42B);
@@ -21,6 +22,9 @@ const styleTextForDialogHowToPlay = TextStyle(
 );
 const styleTextDialogTypeOfMatch =
     TextStyle(color: kblack, fontSize: 17, fontWeight: FontWeight.bold);
+
+const styleTextForScoreTextLost =
+    TextStyle(fontSize: 45, color: kred, fontWeight: FontWeight.bold);
 
 const backgroundDefaultScafold = const BoxDecoration(
     gradient: LinearGradient(

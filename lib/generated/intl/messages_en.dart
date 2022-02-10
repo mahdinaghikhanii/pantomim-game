@@ -96,6 +96,13 @@ class MessageLookup extends MessageLookupByLibrary {
             MessageLookupByLibrary.simpleMessage("TRUE"),
         "dialogwinorlosebtnNamefalse":
             MessageLookupByLibrary.simpleMessage("FALSE"),
+        "scoreScreansBtnText": MessageLookupByLibrary.simpleMessage("OK"),
+        "scoreScreansTitleTextTextSpanLost":
+            MessageLookupByLibrary.simpleMessage("LOST"),
+        "scoreScreansTitleTextTextSpanWon":
+            MessageLookupByLibrary.simpleMessage("WON"),
+        "scoreScreansTitleTextTextSpanYou":
+            MessageLookupByLibrary.simpleMessage("YOU "),
         "textButtonHomeScrens":
             MessageLookupByLibrary.simpleMessage("START PLAY"),
         "textButtonHowToPlayHomeScreans":

@@ -68,7 +68,11 @@
     "dialogwinorloseTextTextSpan1" : "What ",
     "dialogwinorloseTextTextSpan2" : "happened ?",
     "dialogwinorlosebtnNameTrue" : "TRUE",
-    "dialogwinorlosebtnNamefalse" : "FALSE"
+    "dialogwinorlosebtnNamefalse" : "FALSE",
+    "scoreScreansTitleTextTextSpanYou" : "YOU ",
+    "scoreScreansTitleTextTextSpanWon" : "WON",
+    "scoreScreansTitleTextTextSpanLost" : "LOST",
+    "scoreScreansBtnText" : "OK"
 }
 
 

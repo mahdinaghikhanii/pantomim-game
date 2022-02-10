@@ -116,10 +116,15 @@ class _ScoreScreansState extends State<ScoreScreans>
                           textAlign: TextAlign.center,
                           text: TextSpan(children: [
                             TextSpan(
-                                text: 'YOU ',
-                                style: Theme.of(context).textTheme.headline1),
+                                text: localApp.scoreScreansTitleTextTextSpanYou,
+                                style: modelProvier.checkbtnwinlose
+                                    ? Theme.of(context).textTheme.headline1
+                                    : styleTextForScoreTextLost),
                             TextSpan(
-                                text: 'WON',
+                                text: modelProvier.checkbtnwinlose
+                                    ? localApp.scoreScreansTitleTextTextSpanWon
+                                    : localApp
+                                        .scoreScreansTitleTextTextSpanLost,
                                 style: Theme.of(context).textTheme.subtitle1)
                           ])),
                     ),
@@ -156,7 +161,8 @@ class _ScoreScreansState extends State<ScoreScreans>
                             padding: const EdgeInsets.only(top: 40),
                             child: Center(
                               child: DounleFloattingButton(
-                                colorBtn: kblue,
+                                colorBtn:
+                                    modelProvier.checkbtnwinlose ? kblue : kred,
                                 ontap: () {
                                   if (modelProvier
                                           .gettitleNumberOfRoundsMath() >
@@ -177,7 +183,7 @@ class _ScoreScreansState extends State<ScoreScreans>
                                                 const DetailGameScreans()));
                                   }
                                 },
-                                textBtn: 'OK',
+                                textBtn: localApp.scoreScreansBtnText,
                                 highlightColor: kblue,
                               ),
                             ),

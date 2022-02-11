@@ -22,10 +22,11 @@ class _ChoiceTopicState extends State<ChoiceTopic> {
   Widget build(BuildContext context) {
     final size = MediaQuery.of(context).size;
     return InkWell(
+      highlightColor: Colors.white70,
       borderRadius: BorderRadius.circular(12),
       onTap: widget.onTap,
       child: Container(
-        margin: EdgeInsets.only(top: 12),
+        margin: const EdgeInsets.only(top: 12),
         width: size.width * 0.32,
         height: size.height * 0.50,
         decoration: BoxDecoration(
@@ -49,10 +50,7 @@ class _ChoiceTopicState extends State<ChoiceTopic> {
           const SizedBox(
             height: 10,
           ),
-          Text(
-            widget.title,
-            style: styleTextForDialogHowToPlay,
-          )
+          Text(widget.title, style: Theme.of(context).textTheme.headline4)
         ]),
       ),
     );

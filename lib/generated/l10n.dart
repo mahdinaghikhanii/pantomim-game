@@ -789,6 +789,26 @@ class S {
       args: [],
     );
   }
+
+  /// `Choose `
+  String get dialogChoiceYourScreansTextTileChoose {
+    return Intl.message(
+      'Choose ',
+      name: 'dialogChoiceYourScreansTextTileChoose',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Topic`
+  String get dialogChoiceYourScreansTextTileTopic {
+    return Intl.message(
+      'Topic',
+      name: 'dialogChoiceYourScreansTextTileTopic',
+      desc: '',
+      args: [],
+    );
+  }
 }
 
 class AppLocalizationDelegate extends LocalizationsDelegate<S> {

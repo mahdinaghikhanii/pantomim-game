@@ -47,6 +47,10 @@ class MessageLookup extends MessageLookupByLibrary {
             MessageLookupByLibrary.simpleMessage(" از"),
         "detailGameScreansForLunchTitleTextRounds":
             MessageLookupByLibrary.simpleMessage("راند"),
+        "dialogChoiceYourScreansTextTileChoose":
+            MessageLookupByLibrary.simpleMessage("انتخاب "),
+        "dialogChoiceYourScreansTextTileTopic":
+            MessageLookupByLibrary.simpleMessage("موضوع"),
         "dialogSettingsMusick": MessageLookupByLibrary.simpleMessage("موسیقی"),
         "dialogSettingsSelectLanguage":
             MessageLookupByLibrary.simpleMessage("زبان را انتخاب کنید"),

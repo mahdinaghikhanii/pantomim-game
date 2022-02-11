@@ -72,6 +72,8 @@
     "scoreScreansTitleTextTextSpanYou" : "شما ",
     "scoreScreansTitleTextTextSpanWon" : "برنده شدید",
     "scoreScreansTitleTextTextSpanLost" : "باختید",
-    "scoreScreansBtnText" : "باشه"
+    "scoreScreansBtnText" : "باشه",
+    "dialogChoiceYourScreansTextTileChoose" : "انتخاب ",
+    "dialogChoiceYourScreansTextTileTopic" : "موضوع"
 
 }

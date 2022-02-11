@@ -47,6 +47,10 @@ class MessageLookup extends MessageLookupByLibrary {
             MessageLookupByLibrary.simpleMessage(" in "),
         "detailGameScreansForLunchTitleTextRounds":
             MessageLookupByLibrary.simpleMessage("Rounds "),
+        "dialogChoiceYourScreansTextTileChoose":
+            MessageLookupByLibrary.simpleMessage("Choose "),
+        "dialogChoiceYourScreansTextTileTopic":
+            MessageLookupByLibrary.simpleMessage("Topic"),
         "dialogSettingsMusick": MessageLookupByLibrary.simpleMessage("Music"),
         "dialogSettingsSelectLanguage":
             MessageLookupByLibrary.simpleMessage("Select Language"),

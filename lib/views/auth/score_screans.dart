@@ -130,8 +130,8 @@ class _ScoreScreansState extends State<ScoreScreans>
                     ),
                     Container(
                       padding: const EdgeInsets.all(20),
-                      width: size.width * 0.85,
-                      height: size.height * 0.48,
+                      width: size.width * 0.83,
+                      height: size.height * 0.52,
                       decoration: BoxDecoration(
                           color: Colors.white24,
                           borderRadius: BorderRadius.circular(50)),
@@ -158,7 +158,7 @@ class _ScoreScreansState extends State<ScoreScreans>
                             score: '0',
                           ),
                           Padding(
-                            padding: const EdgeInsets.only(top: 40),
+                            padding: const EdgeInsets.only(top: 40, bottom: 10),
                             child: Center(
                               child: DounleFloattingButton(
                                 colorBtn:

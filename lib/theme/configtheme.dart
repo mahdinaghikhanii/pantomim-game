@@ -36,7 +36,7 @@ class ConfigTheme {
       headline6:
           TextStyle(fontSize: 28, color: kwhite, fontWeight: FontWeight.bold),
       headline4: (TextStyle(
-        fontSize: 13,
+        fontSize: 14,
         color: kblack,
       )));
 

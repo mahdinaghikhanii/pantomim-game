@@ -2,8 +2,10 @@ import 'package:flutter/material.dart';
 import 'package:pantomim/generated/l10n.dart';
 import 'package:pantomim/models/category.dart';
 import 'package:pantomim/theme/constant.dart';
+import 'package:pantomim/util/view_models/provider/provider.dart';
 import 'package:pantomim/views/auth/time_screans.dart';
 import 'package:pantomim/views/widgets/choice_boximage_text_select.dart';
+import 'package:provider/provider.dart';
 
 class DialogShow extends StatelessWidget {
   // final PantomimData pantomimData;
@@ -11,7 +13,8 @@ class DialogShow extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    final size = MediaQuery.of(context);
+    final modelProvider = Provider.of<AppProvider>(context);
+    final size = MediaQuery.of(context).size;
 
     var localApp = S.of(context);
     List imageListTopic = [
@@ -29,18 +32,18 @@ class DialogShow extends StatelessWidget {
       'assets/images/topic/tecnology.png'
     ];
     List nameTopic = [
-      localApp.dialogTypeOfMatchbuttontextAnimal,
-      localApp.dialogTypeOfMatchbuttontextSport,
       localApp.dialogTypeOfMatchbuttontextFood,
-      localApp.dialogTypeOfMatchbuttontextCountry,
-      localApp.dialogTypeOfMatchbuttontextThing,
+      localApp.dialogTypeOfMatchbuttontextSport,
+      localApp.dialogTypeOfMatchbuttontextAnimal,
       localApp.dialogTypeOfMatchbuttontextMovie,
-      localApp.dialogTypeOfMatchbuttontextBook,
-      localApp.dialogTypeOfMatchbuttontextTourism,
+      localApp.dialogTypeOfMatchbuttontextThing,
+      localApp.dialogTypeOfMatchbuttontextCountry,
       localApp.dialogTypeOfMatchbuttontextGeneral,
-      localApp.dialogTypeOfMatchbuttontextTecnology,
+      localApp.dialogTypeOfMatchbuttontextTourism,
+      localApp.dialogTypeOfMatchbuttontextBook,
+      localApp.dialogTypeOfMatchbuttontextjob,
       localApp.dialogTypeOfMatchbuttontextMusic,
-      localApp.dialogTypeOfMatchbuttontextjob
+      localApp.dialogTypeOfMatchbuttontextTecnology,
     ];
     // ignore: non_constant_identifier_names
     final List<PantomimData> Fruitdata = List.generate(
@@ -50,68 +53,61 @@ class DialogShow extends StatelessWidget {
 
     return Dialog(
       insetPadding:
-          const EdgeInsets.only(left: 20, right: 20, top: 40, bottom: 40),
+          const EdgeInsets.only(left: 25, right: 25, top: 110, bottom: 110),
       shape: RoundedRectangleBorder(
-        borderRadius: BorderRadius.circular(Constans.padding),
+        borderRadius: BorderRadius.circular(45),
       ),
       elevation: 0,
-      backgroundColor: Colors.white,
-      child: Column(
-        crossAxisAlignment: CrossAxisAlignment.center,
-        children: [
-          Padding(
-            padding: const EdgeInsets.all(0.1),
-            child: Container(
-                height: 60,
-                width: double.infinity,
+      backgroundColor: const Color(0xFFEEEEEE),
+      child: Stack(
+        clipBehavior: Clip.none,
+        alignment: Alignment.center,
+        children: <Widget>[
+          Positioned(
+              top: -size.height * 0.04,
+              child: Container(
                 decoration: BoxDecoration(
-                    color: kblue,
-                    borderRadius: BorderRadius.only(
-                        topLeft: Radius.circular(Constans.padding),
-                        topRight: Radius.circular(Constans.padding),
-                        bottomLeft: Radius.circular(50),
-                        bottomRight: Radius.circular(50))),
-                child: Center(
-                  child: Text('Select a topic',
-                      style: Theme.of(context).textTheme.bodyText1),
-                )),
-          ),
+                    borderRadius: BorderRadius.circular(30),
+                    gradient: const LinearGradient(
+                        begin: Alignment.centerLeft,
+                        end: Alignment.centerRight,
+                        colors: [Colors.white, Colors.blue])),
+                child: RichText(
+                    textAlign: TextAlign.center,
+                    text: TextSpan(children: [
+                      TextSpan(
+                          text: localApp.dialogChoiceYourScreansTextTileChoose,
+                          style: Theme.of(context).textTheme.headline2),
+                      TextSpan(
+                          text: localApp.dialogChoiceYourScreansTextTileTopic,
+                          style: Theme.of(context).textTheme.headline3)
+                    ])),
+              ),
+              width: size.width * 0.64,
+              height: size.height * 0.07),
           Expanded(
-            child: GridView.builder(
-                padding: const EdgeInsets.all(4),
-                itemCount: Fruitdata.length,
-                gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
-                    crossAxisCount: 3,
-                    crossAxisSpacing: 1,
-                    mainAxisSpacing: 20),
-                itemBuilder: (BuildContext context, int index) {
-                  return ChoiceTopic(
-                    image: Fruitdata[index].image,
-                    title: Fruitdata[index].name,
-                    onTap: () {
-                      Navigator.push(
-                          context,
-                          MaterialPageRoute(
-                              builder: (context) => TimerScreans()));
-                    },
-                    /* onTap: () {
-                          switch (index) {
-                            case 1:
-                              print('object');
-                              break;
-                            default:
-                          }
-                          showDialog(
-                              context: context,
-                              builder: (
-                                context,
-                              ) =>
-                                  DialogShow(
-                                      //    pantomimData: Fruitdata[index],
-                                      ));
-                        },*/
-                  );
-                }),
+            child: Padding(
+              padding: const EdgeInsets.only(top: 20, right: 2, left: 2),
+              child: GridView.builder(
+                  padding: const EdgeInsets.all(3),
+                  itemCount: Fruitdata.length,
+                  gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
+                      crossAxisCount: 3,
+                      crossAxisSpacing: 1,
+                      mainAxisSpacing: 5),
+                  itemBuilder: (BuildContext context, int index) {
+                    return ChoiceTopic(
+                      image: Fruitdata[index].image,
+                      title: Fruitdata[index].name,
+                      onTap: () {
+                        Navigator.push(
+                            context,
+                            MaterialPageRoute(
+                                builder: (context) => TimerScreans()));
+                      },
+                    );
+                  }),
+            ),
           )
         ],
       ),

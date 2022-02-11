@@ -72,7 +72,10 @@
     "scoreScreansTitleTextTextSpanYou" : "YOU ",
     "scoreScreansTitleTextTextSpanWon" : "WON",
     "scoreScreansTitleTextTextSpanLost" : "LOST",
-    "scoreScreansBtnText" : "OK"
+    "scoreScreansBtnText" : "OK",
+    "dialogChoiceYourScreansTextTileChoose" : "Choose ",
+    "dialogChoiceYourScreansTextTileTopic" : "Topic"
+
 }
 
 

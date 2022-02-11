@@ -89,7 +89,7 @@ class DialogWinOrLose extends StatelessWidget {
                                       width: 10,
                                     ),
                                     DounleFloattingButton(
-                                      colorBtn: Colors.transparent,
+                                      colorBtn: kred,
                                       ontap: () {
                                         modelProvider.setaddcheckforInnigns();
                                         modelProvider

@@ -41,6 +41,8 @@ dependencies:
   animate_do: ^2.0.0
   shared_preferences: ^2.0.11
   rxdart: ^0.27.3
+  dependencies:
+  
 
 
 dev_dependencies:
@@ -62,9 +64,9 @@ flutter_native_splash:
 
   android: true
   ios: true
-  web: false
+  web: true
   color: "#42a5f5"
-  image: assets/images/welcome.png
+  image: assets/images/frinds1.png
   #background_image: assets/images/welcome.png
 
 # For information on the generic Dart part of this file, see the
@@ -85,6 +87,7 @@ flutter:
     - assets/images/
     - assets/images/topic/
     - assets/icons/
+    - assets/audio/
   #   - images/a_dot_ham.jpeg
   # An image asset can refer to one or more resolution-specific "variants", see
   # https://flutter.dev/assets-and-images/#resolution-aware.

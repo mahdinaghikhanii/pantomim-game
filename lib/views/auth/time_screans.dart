@@ -6,8 +6,6 @@ import 'package:pantomim/generated/l10n.dart';
 import 'package:pantomim/theme/constant.dart';
 import 'package:pantomim/util/view_models/provider/provider.dart';
 import 'package:pantomim/views/auth/score_screans.dart';
-import 'package:pantomim/views/dialog_screns/dialog_choice_your_topic.dart';
-import 'package:pantomim/views/dialog_screns/dialog_how_to_play.dart';
 import 'package:pantomim/views/dialog_screns/dialog_winorlose.dart';
 import 'package:provider/provider.dart';
 
@@ -17,7 +15,7 @@ class TimerScreans extends StatefulWidget {
 }
 
 class _TimerScreansState extends State<TimerScreans> {
-  Duration duration = Duration(seconds: 1);
+  Duration duration = Duration();
   Timer? timer;
   bool isCountdown = true;
   @override
@@ -95,16 +93,9 @@ class _TimerScreansState extends State<TimerScreans> {
       child: Scaffold(
         backgroundColor: Colors.transparent,
         appBar: AppBar(
+          automaticallyImplyLeading: false,
           backgroundColor: Colors.transparent,
           elevation: 0,
-          actions: [
-            Padding(
-              padding: const EdgeInsets.only(
-                  right: Constans.padding, top: 12, left: Constans.padding),
-              child:
-                  Text('4 Score', style: Theme.of(context).textTheme.bodyText1),
-            )
-          ],
         ),
         body: Container(
           padding: EdgeInsets.only(top: 80),
@@ -161,6 +152,7 @@ class _TimerScreansState extends State<TimerScreans> {
                                   switch (modelProvider.getTimeForMatch()) {
                                     case 0:
                                       duration = Duration(seconds: 50);
+
                                       break;
                                     case 1:
                                       duration =

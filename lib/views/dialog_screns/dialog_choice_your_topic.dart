@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:pantomim/generated/l10n.dart';
 import 'package:pantomim/models/category.dart';
-import 'package:pantomim/theme/constant.dart';
 import 'package:pantomim/util/view_models/provider/provider.dart';
 import 'package:pantomim/views/auth/time_screans.dart';
 import 'package:pantomim/views/widgets/choice_boximage_text_select.dart';
@@ -53,7 +52,7 @@ class DialogShow extends StatelessWidget {
 
     return Dialog(
       insetPadding:
-          const EdgeInsets.only(left: 25, right: 25, top: 110, bottom: 110),
+          const EdgeInsets.only(left: 25, right: 25, top: 70, bottom: 120),
       shape: RoundedRectangleBorder(
         borderRadius: BorderRadius.circular(45),
       ),
@@ -85,30 +84,29 @@ class DialogShow extends StatelessWidget {
               ),
               width: size.width * 0.64,
               height: size.height * 0.07),
-          Expanded(
-            child: Padding(
-              padding: const EdgeInsets.only(top: 20, right: 2, left: 2),
-              child: GridView.builder(
-                  padding: const EdgeInsets.all(3),
-                  itemCount: Fruitdata.length,
-                  gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
-                      crossAxisCount: 3,
-                      crossAxisSpacing: 1,
-                      mainAxisSpacing: 5),
-                  itemBuilder: (BuildContext context, int index) {
-                    return ChoiceTopic(
-                      image: Fruitdata[index].image,
-                      title: Fruitdata[index].name,
-                      onTap: () {
-                        Navigator.push(
-                            context,
-                            MaterialPageRoute(
-                                builder: (context) => TimerScreans()));
-                      },
-                    );
-                  }),
-            ),
-          )
+          Padding(
+            padding:
+                const EdgeInsets.only(left: 0, right: 10, top: 35, bottom: 0),
+            child: GridView.builder(
+                padding: const EdgeInsets.all(0),
+                itemCount: Fruitdata.length,
+                gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
+                    crossAxisCount: 3,
+                    crossAxisSpacing: 1,
+                    mainAxisSpacing: 15),
+                itemBuilder: (BuildContext context, int index) {
+                  return ChoiceTopic(
+                    image: Fruitdata[index].image,
+                    title: Fruitdata[index].name,
+                    onTap: () {
+                      Navigator.push(
+                          context,
+                          MaterialPageRoute(
+                              builder: (context) => TimerScreans()));
+                    },
+                  );
+                }),
+          ),
         ],
       ),
     );

@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:pantomim/theme/constant.dart';
 
 class ChoiceTopic extends StatefulWidget {
   final Function() onTap;

@@ -102,8 +102,8 @@ class Button_widget extends StatelessWidget {
   Widget build(BuildContext context) {
     final size = MediaQuery.of(context).size;
     return FadeInUp(
-      duration: Duration(milliseconds: 1200),
-      delay: Duration(microseconds: 1200),
+      duration: const Duration(milliseconds: 1200),
+      delay: const Duration(microseconds: 1200),
       child: Padding(
         padding:
             const EdgeInsets.only(left: 30, right: 30, top: 10, bottom: 10),

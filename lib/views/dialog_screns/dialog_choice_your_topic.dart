@@ -86,14 +86,14 @@ class DialogShow extends StatelessWidget {
               height: size.height * 0.07),
           Padding(
             padding:
-                const EdgeInsets.only(left: 0, right: 10, top: 35, bottom: 0),
+                const EdgeInsets.only(left: 0, right: 10, top: 34, bottom: 0),
             child: GridView.builder(
                 padding: const EdgeInsets.all(0),
                 itemCount: Fruitdata.length,
                 gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
                     crossAxisCount: 3,
-                    crossAxisSpacing: 1,
-                    mainAxisSpacing: 15),
+                    crossAxisSpacing: 0,
+                    mainAxisSpacing: 22),
                 itemBuilder: (BuildContext context, int index) {
                   return ChoiceTopic(
                     image: Fruitdata[index].image,

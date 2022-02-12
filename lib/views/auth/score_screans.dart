@@ -4,7 +4,7 @@ import 'package:flutter/material.dart';
 import 'package:pantomim/generated/l10n.dart';
 import 'package:pantomim/models/category.dart';
 import 'package:pantomim/theme/constant.dart';
-import 'package:pantomim/util/view_models/canvas/mypainter.dart';
+import 'package:pantomim/util/view_models/canvas/win_lose_painter.dart';
 import 'package:pantomim/util/view_models/provider/provider.dart';
 import 'package:pantomim/views/auth/detail_game_screans_for_lunch.dart';
 import 'package:pantomim/views/auth/finishidgame_screans.dart';

@@ -24,7 +24,7 @@ class _SettingDialogState extends State<SettingDialog> {
     {
       'id': '2',
       'image': 'assets/images/topic/country.png',
-      'name': 'Persian',
+      'name': 'فارسی',
       'ontap': 'fa'
     }
   ];
@@ -46,7 +46,7 @@ class _SettingDialogState extends State<SettingDialog> {
             children: <Widget>[
               Container(
                 width: double.infinity,
-                height: size.height * 0.40,
+                height: size.height * 0.30,
                 decoration: BoxDecoration(
                     borderRadius: BorderRadius.circular(15),
                     color: Colors.white),
@@ -123,22 +123,6 @@ class _SettingDialogState extends State<SettingDialog> {
                   child: Image.asset('assets/images/setting.png'),
                   width: size.width * 0.55,
                   height: size.height * 0.17),
-              Padding(
-                padding: const EdgeInsets.only(left: 30, right: 30, top: 50),
-                child: Row(
-                  crossAxisAlignment: CrossAxisAlignment.start,
-                  // ignore: prefer_const_literals_to_create_immutables
-                  children: [
-                    Text(localApp.dialogSettingsMusick,
-                        style: styleTextForSetting),
-                    const Spacer(),
-                    const Icon(
-                      Icons.music_note,
-                      size: 28,
-                    ),
-                  ],
-                ),
-              ),
             ]));
   }
 }

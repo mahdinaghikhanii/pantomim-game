@@ -13,6 +13,8 @@ import 'package:pantomim/views/widgets/scoreshowtext_textdetail.dart';
 import 'package:provider/provider.dart';
 
 class ScoreScreans extends StatefulWidget {
+  const ScoreScreans({Key? key}) : super(key: key);
+
   @override
   _ScoreScreansState createState() => _ScoreScreansState();
 }
@@ -75,10 +77,7 @@ class _ScoreScreansState extends State<ScoreScreans>
 
   @override
   void dispose() {
-    // TODO: implement dispose
-
     controller.dispose();
-
     super.dispose();
   }
 

@@ -10,6 +10,8 @@ import 'package:pantomim/views/dialog_screns/dialog_winorlose.dart';
 import 'package:provider/provider.dart';
 
 class TimerScreans extends StatefulWidget {
+  const TimerScreans({Key? key}) : super(key: key);
+
   @override
   State<TimerScreans> createState() => _TimerScreansState();
 }
@@ -20,7 +22,6 @@ class _TimerScreansState extends State<TimerScreans> {
   bool isCountdown = true;
   @override
   void initState() {
-    // TODO: implement initState
     super.initState();
     //startTimer();
 
@@ -82,6 +83,7 @@ class _TimerScreansState extends State<TimerScreans> {
     final minutes = twDigits(duration.inMinutes.remainder(60));
     final seconds = twDigits(duration.inSeconds.remainder(60));
 
+    // ignore: unused_local_variable
     final isCompelect = duration.inSeconds == 0;
     final isRounning = timer == null ? false : timer!.isActive;
     final modelProvider = Provider.of<AppProvider>(context);

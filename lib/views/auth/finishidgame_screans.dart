@@ -10,6 +10,6 @@ class FinishidGameScreans extends StatelessWidget {
           ScaffoldMessenger.of(context);
           return false;
         },
-        child: Scaffold());
+        child: const Scaffold());
   }
 }

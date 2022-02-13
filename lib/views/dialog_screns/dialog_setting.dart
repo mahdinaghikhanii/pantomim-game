@@ -2,8 +2,8 @@ import 'package:flutter/material.dart';
 import 'package:pantomim/generated/l10n.dart';
 import 'package:pantomim/util/view_models/provider/provider.dart';
 import 'package:pantomim/theme/constant.dart';
+// ignore: implementation_imports
 import 'package:provider/src/provider.dart';
-import 'package:shared_preferences/shared_preferences.dart';
 
 class SettingDialog extends StatefulWidget {
   const SettingDialog({Key? key}) : super(key: key);

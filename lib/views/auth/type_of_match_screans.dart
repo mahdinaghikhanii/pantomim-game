@@ -1,3 +1,5 @@
+// ignore_for_file: implementation_imports
+
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:pantomim/generated/l10n.dart';
@@ -6,8 +8,6 @@ import 'package:pantomim/theme/constant.dart';
 import 'package:pantomim/views/auth/detail_game_screans_for_lunch.dart';
 import 'package:pantomim/views/widgets/double_floatingac_button.dart';
 import 'package:provider/src/provider.dart';
-
-import 'finishidgame_screans.dart';
 
 class ChoiceYourTopic extends StatefulWidget {
   const ChoiceYourTopic({Key? key}) : super(key: key);
@@ -20,7 +20,6 @@ bool viewVisibleButton = false;
 int selectValue = 0;
 bool _viewAuto = true;
 bool _viewCustom = true;
-int _counter = 2;
 
 class _ChoiceYourTopicState extends State<ChoiceYourTopic> {
   //This state for plus numbe
@@ -40,8 +39,8 @@ class _ChoiceYourTopicState extends State<ChoiceYourTopic> {
   }
 
   _nextPage() {
-    Navigator.push(
-        context, MaterialPageRoute(builder: (context) => DetailGameScreans()));
+    Navigator.push(context,
+        MaterialPageRoute(builder: (context) => const DetailGameScreans()));
   }
 
   _toggleVisibility() {
@@ -104,8 +103,6 @@ class _ChoiceYourTopicState extends State<ChoiceYourTopic> {
             DounleFloattingButton(
               ontap: () {
                 modelProvider.setaddcheckforInnigns();
-
-                print(modelProvider.getcheckforInnigns);
                 _nextPage();
               },
               colorBtn: Colors.transparent,

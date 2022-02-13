@@ -7,11 +7,14 @@ import 'package:pantomim/views/widgets/choice_boximage_text_select.dart';
 import 'package:provider/provider.dart';
 
 class DialogShow extends StatelessWidget {
+  const DialogShow({Key? key}) : super(key: key);
+
   // final PantomimData pantomimData;
   //const DialogShow({Key? key, required this.pantomimData}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
+    // ignore: unused_local_variable
     final modelProvider = Provider.of<AppProvider>(context);
     final size = MediaQuery.of(context).size;
 
@@ -102,7 +105,7 @@ class DialogShow extends StatelessWidget {
                       Navigator.push(
                           context,
                           MaterialPageRoute(
-                              builder: (context) => TimerScreans()));
+                              builder: (context) => const TimerScreans()));
                     },
                   );
                 }),

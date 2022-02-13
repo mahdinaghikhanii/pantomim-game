@@ -4,7 +4,6 @@ import 'package:pantomim/generated/l10n.dart';
 import 'package:pantomim/theme/constant.dart';
 
 import 'package:pantomim/views/auth/meno_screans.dart';
-import 'package:pantomim/views/auth/score_screans.dart';
 
 import 'package:pantomim/views/dialog_screns/dialog_how_to_play.dart';
 
@@ -66,8 +65,10 @@ class HomeScreans extends StatelessWidget {
                   text: localApp.textButtonHomeScrens,
                   color: const Color(0xFF0D47A1),
                   ontap: () {
-                    Navigator.push(context,
-                        MaterialPageRoute(builder: (context) => MenoScreans()));
+                    Navigator.push(
+                        context,
+                        MaterialPageRoute(
+                            builder: (context) => const MenoScreans()));
                   },
                 ),
                 Button_widget(
@@ -91,6 +92,7 @@ class HomeScreans extends StatelessWidget {
   }
 }
 
+// ignore: camel_case_types
 class Button_widget extends StatelessWidget {
   final Color color;
   final Function()? ontap;

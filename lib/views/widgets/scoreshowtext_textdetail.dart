@@ -3,6 +3,7 @@ import 'package:flutter/material.dart';
 class WidgetShowTextWinOrLoseDetail extends StatelessWidget {
   final String title;
   final String score;
+  // ignore: use_key_in_widget_constructors
   const WidgetShowTextWinOrLoseDetail(
       {required this.score, required this.title});
 

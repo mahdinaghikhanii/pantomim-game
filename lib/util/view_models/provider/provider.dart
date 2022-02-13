@@ -180,11 +180,13 @@ class AppProvider extends ChangeNotifier {
   getCounterOfScoreTeam2() => _counterOfScoreTeam2;
   setCounterOfScoreTeam2(int score) => _counterOfScoreTeam2;
 
+  // ignore: prefer_final_fields
   int _counterOfScoreTeam3 = 0;
 
   getCounterOfScoreTeam3() => _counterOfScoreTeam3;
   setCounterOfScoreTeam3(int score) => _counterOfScoreTeam3;
 
+  // ignore: prefer_final_fields
   int _counterOfScoreTeam4 = 0;
 
   getCounterOfScoreTeam4() => _counterOfScoreTeam4;
@@ -243,7 +245,6 @@ class AppProvider extends ChangeNotifier {
   void setaddcheckforInnigns() {
     if (_winorlosebtn == true) {
       _innigns++;
-      print(_innigns);
     } else {
       _innigns++;
     }
@@ -298,7 +299,6 @@ class AppProvider extends ChangeNotifier {
       if (_winorlosebtn == true) {
         _counterOfScoreTeam1++;
       } else {
-        print('fuck');
         _counterOfScoreTeam1;
       }
     }
@@ -308,7 +308,6 @@ class AppProvider extends ChangeNotifier {
         _counterOfScoreTeam2++;
         _counterOfScoreTeam2++;
       } else {
-        print('fuck');
         _counterOfScoreTeam2;
       }
     }

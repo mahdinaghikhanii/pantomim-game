@@ -2,7 +2,6 @@ import 'package:flutter/material.dart';
 import 'package:pantomim/generated/l10n.dart';
 import 'package:pantomim/theme/constant.dart';
 import 'package:pantomim/views/auth/home_screans.dart';
-import 'package:pantomim/views/dialog_screns/dialog_choice_your_topic.dart';
 import 'package:pantomim/views/widgets/double_floatingac_button.dart';
 
 class DialogQuit extends StatelessWidget {

@@ -124,7 +124,7 @@ class _HomePageState extends State<HomePage> with TickerProviderStateMixin {
 
     thirdRippleController = AnimationController(
       vsync: this,
-      duration: Duration(
+      duration: const Duration(
         seconds: 2,
       ),
     );
@@ -223,7 +223,7 @@ class _HomePageState extends State<HomePage> with TickerProviderStateMixin {
     return InkWell(
       onTap: () {
         Navigator.push(context,
-            MaterialPageRoute(builder: (context) => ChoiceYourTopic()));
+            MaterialPageRoute(builder: (context) => const ChoiceYourTopic()));
       },
       child: Stack(
           clipBehavior: Clip.none,
@@ -253,8 +253,10 @@ class _HomePageState extends State<HomePage> with TickerProviderStateMixin {
             ),
             InkWell(
               onTap: () {
-                Navigator.push(context,
-                    MaterialPageRoute(builder: (context) => ChoiceYourTopic()));
+                Navigator.push(
+                    context,
+                    MaterialPageRoute(
+                        builder: (context) => const ChoiceYourTopic()));
               },
               child: Positioned(
                   top: -size.height * 0.08,

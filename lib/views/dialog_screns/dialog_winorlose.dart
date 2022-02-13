@@ -79,7 +79,7 @@ class DialogWinOrLose extends StatelessWidget {
                                             context,
                                             MaterialPageRoute(
                                                 builder: (context) =>
-                                                    ScoreScreans()));
+                                                    const ScoreScreans()));
                                       },
                                       textBtn:
                                           localApp.dialogwinorlosebtnNameTrue,
@@ -98,7 +98,7 @@ class DialogWinOrLose extends StatelessWidget {
                                             context,
                                             MaterialPageRoute(
                                                 builder: (context) =>
-                                                    ScoreScreans()));
+                                                    const ScoreScreans()));
                                       },
                                       textBtn:
                                           localApp.dialogwinorlosebtnNamefalse,

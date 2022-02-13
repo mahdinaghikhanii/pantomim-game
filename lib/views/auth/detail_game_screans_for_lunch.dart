@@ -13,6 +13,7 @@ class DetailGameScreans extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     var localApp = S.of(context);
+    // ignore: unused_local_variable
     final size = MediaQuery.of(context).size;
     final modelProvider = Provider.of<AppProvider>(context);
 
@@ -45,7 +46,8 @@ class DetailGameScreans extends StatelessWidget {
                   DounleFloattingButton(
                     ontap: () {
                       showDialog(
-                          context: context, builder: (context) => DialogShow());
+                          context: context,
+                          builder: (context) => const DialogShow());
                     },
                     colorBtn: Colors.transparent,
                     textBtn: localApp.detailGameScreansForLunchBtnNameLetsGo,
@@ -169,6 +171,7 @@ class RowShowTeamAndScore extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    // ignore: unused_local_variable
     final modelProvider = Provider.of<AppProvider>(context);
     return Visibility(
       visible: visiblity,

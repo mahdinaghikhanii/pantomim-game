@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:pantomim/theme/constant.dart';
 
 class BoxForMenoImage extends StatelessWidget {
   final String image;

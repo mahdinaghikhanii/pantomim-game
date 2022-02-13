@@ -10,11 +10,9 @@ class GetStartScreans extends StatefulWidget {
 }
 
 _storeOnboardInfo() async {
-  print("Shared pref called");
   int isViewed = 0;
   SharedPreferences prefs = await SharedPreferences.getInstance();
   await prefs.setInt('onBoard', isViewed);
-  print(prefs.getInt('onBoard'));
 }
 
 class _GetStartScreansState extends State<GetStartScreans> {
@@ -42,8 +40,10 @@ class _GetStartScreansState extends State<GetStartScreans> {
                 ),
                 onPressed: () async {
                   await _storeOnboardInfo();
-                  Navigator.pushReplacement(context,
-                      MaterialPageRoute(builder: (context) => HomeScreans()));
+                  Navigator.pushReplacement(
+                      context,
+                      MaterialPageRoute(
+                          builder: (context) => const HomeScreans()));
                 },
               )),
         ),

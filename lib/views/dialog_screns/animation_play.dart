@@ -1,6 +1,7 @@
 import 'dart:async';
 
 import 'package:flutter/material.dart';
+import 'package:pantomim/theme/constant.dart';
 import 'package:pantomim/util/view_models/canvas/menoscreans_painter.dart';
 
 class HomePage extends StatefulWidget {
@@ -30,7 +31,7 @@ class _HomePageState extends State<HomePage> with TickerProviderStateMixin {
   void initState() {
     firstRippleController = AnimationController(
       vsync: this,
-      duration: Duration(
+      duration: const Duration(
         seconds: 2,
       ),
     );
@@ -76,7 +77,7 @@ class _HomePageState extends State<HomePage> with TickerProviderStateMixin {
 
     secondRippleController = AnimationController(
       vsync: this,
-      duration: Duration(
+      duration: const Duration(
         seconds: 2,
       ),
     );
@@ -217,23 +218,42 @@ class _HomePageState extends State<HomePage> with TickerProviderStateMixin {
 
   @override
   Widget build(BuildContext context) {
-    return Column(
-      children: [
-        CustomPaint(
-          painter: MyPainter(
-            firstRippleRadiusAnimation.value,
-            firstRippleOpacityAnimation.value,
-            firstRippleWidthAnimation.value,
-            secondRippleRadiusAnimation.value,
-            secondRippleOpacityAnimation.value,
-            secondRippleWidthAnimation.value,
-            thirdRippleRadiusAnimation.value,
-            thirdRippleOpacityAnimation.value,
-            thirdRippleWidthAnimation.value,
-            centerCircleRadiusAnimation.value,
+    final size = MediaQuery.of(context).size;
+    return Stack(
+        clipBehavior: Clip.none,
+        alignment: Alignment.center,
+        children: <Widget>[
+          Center(
+            child: Column(
+              children: [
+                Center(
+                  child: CustomPaint(
+                    foregroundPainter: MyPainter(
+                      firstRippleRadiusAnimation.value,
+                      firstRippleOpacityAnimation.value,
+                      firstRippleWidthAnimation.value,
+                      secondRippleRadiusAnimation.value,
+                      secondRippleOpacityAnimation.value,
+                      secondRippleWidthAnimation.value,
+                      thirdRippleRadiusAnimation.value,
+                      thirdRippleOpacityAnimation.value,
+                      thirdRippleWidthAnimation.value,
+                      centerCircleRadiusAnimation.value,
+                    ),
+                  ),
+                ),
+              ],
+            ),
           ),
-        )
-      ],
-    );
+          Positioned(
+              top: -size.height * 0.08,
+              child: const Icon(
+                Icons.play_arrow,
+                color: kblue,
+                size: 40,
+              ),
+              width: size.width * 0.40,
+              height: size.height * 0.16),
+        ]);
   }
 }

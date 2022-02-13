@@ -2,7 +2,7 @@ import 'package:animate_do/animate_do.dart';
 import 'package:flutter/material.dart';
 import 'package:pantomim/generated/l10n.dart';
 import 'package:pantomim/theme/constant.dart';
-import 'package:pantomim/views/auth/test.dart';
+import 'package:pantomim/views/dialog_screns/animation_play.dart';
 import 'package:pantomim/views/auth/type_of_match_screans.dart';
 
 import 'package:pantomim/views/dialog_screns/dialog_setting.dart';

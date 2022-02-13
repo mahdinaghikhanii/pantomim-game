@@ -29,37 +29,33 @@ class MyPainter extends CustomPainter {
   @override
   void paint(Canvas canvas, Size size) {
     Color myColor = kwhite;
+    Color blue = kblue;
 
     Paint firstPaint = Paint();
     firstPaint.color = myColor.withOpacity(firstRippleOpacity);
     firstPaint.style = PaintingStyle.stroke;
     firstPaint.strokeWidth = firstRippleStrokeWidth;
-
     canvas.drawCircle(Offset.zero, firstRippleRadius, firstPaint);
 
     Paint secondPaint = Paint();
-    secondPaint.color = myColor.withOpacity(secondRippleOpacity);
+    secondPaint.color = blue.withOpacity(secondRippleOpacity);
     secondPaint.style = PaintingStyle.stroke;
     secondPaint.strokeWidth = secondRippleStrokeWidth;
-
     canvas.drawCircle(Offset.zero, secondRippleRadius, secondPaint);
 
     Paint thirdPaint = Paint();
-    thirdPaint.color = myColor.withOpacity(thirdRippleOpacity);
+    thirdPaint.color = blue.withOpacity(thirdRippleOpacity);
     thirdPaint.style = PaintingStyle.stroke;
     thirdPaint.strokeWidth = thirdRippleStrokeWidth;
-
     canvas.drawCircle(Offset.zero, thirdRippleRadius, thirdPaint);
 
     Paint fourthPaint = Paint();
+
     fourthPaint.color = myColor;
+
     fourthPaint.style = PaintingStyle.fill;
 
-    canvas.drawCircle(
-      Offset.zero,
-      centerCircleRadius,
-      fourthPaint,
-    );
+    canvas.drawCircle(Offset.zero, centerCircleRadius, fourthPaint);
   }
 
   @override

@@ -1,9 +1,6 @@
 // ignore_for_file: unnecessary_null_comparison
-import 'dart:async';
 import 'package:flutter/material.dart';
-import 'package:flutter/scheduler.dart';
 import 'package:pantomim/models/category.dart';
-import 'package:pantomim/views/auth/finishidgame_screans.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 
 class AppProvider extends ChangeNotifier {
@@ -83,13 +80,13 @@ class AppProvider extends ChangeNotifier {
   }
 
   // this part for multi language provider
-  Locale _currentLocale = new Locale("en");
+  Locale _currentLocale = const Locale("en");
   Locale get currentLocale => _currentLocale;
 
   void changeLocale(String _locale) async {
     SharedPreferences preferences = await SharedPreferences.getInstance();
     preferences.setString('save', _locale.toString());
-    this._currentLocale = new Locale(preferences.getString('save').toString());
+    _currentLocale = Locale(preferences.getString('save').toString());
     notifyListeners();
   }
 

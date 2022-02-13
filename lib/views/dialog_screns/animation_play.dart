@@ -3,6 +3,7 @@ import 'dart:async';
 import 'package:flutter/material.dart';
 import 'package:pantomim/theme/constant.dart';
 import 'package:pantomim/util/view_models/canvas/menoscreans_painter.dart';
+import 'package:pantomim/views/auth/type_of_match_screans.dart';
 
 class HomePage extends StatefulWidget {
   const HomePage({Key? key}) : super(key: key);
@@ -128,7 +129,7 @@ class _HomePageState extends State<HomePage> with TickerProviderStateMixin {
       ),
     );
 
-    thirdRippleRadiusAnimation = Tween<double>(begin: 0, end: 150).animate(
+    thirdRippleRadiusAnimation = Tween<double>(begin: 0, end: 180).animate(
       CurvedAnimation(
         parent: thirdRippleController,
         curve: Curves.ease,
@@ -168,9 +169,9 @@ class _HomePageState extends State<HomePage> with TickerProviderStateMixin {
       );
 
     centerCircleController =
-        AnimationController(vsync: this, duration: Duration(seconds: 1));
+        AnimationController(vsync: this, duration: const Duration(seconds: 1));
 
-    centerCircleRadiusAnimation = Tween<double>(begin: 35, end: 50).animate(
+    centerCircleRadiusAnimation = Tween<double>(begin: 45, end: 70).animate(
       CurvedAnimation(
         parent: centerCircleController,
         curve: Curves.fastOutSlowIn,
@@ -193,12 +194,12 @@ class _HomePageState extends State<HomePage> with TickerProviderStateMixin {
 
     firstRippleController.forward();
     Timer(
-      Duration(milliseconds: 765),
+      const Duration(milliseconds: 765),
       () => secondRippleController.forward(),
     );
 
     Timer(
-      Duration(milliseconds: 1050),
+      const Duration(milliseconds: 1050),
       () => thirdRippleController.forward(),
     );
 
@@ -219,41 +220,53 @@ class _HomePageState extends State<HomePage> with TickerProviderStateMixin {
   @override
   Widget build(BuildContext context) {
     final size = MediaQuery.of(context).size;
-    return Stack(
-        clipBehavior: Clip.none,
-        alignment: Alignment.center,
-        children: <Widget>[
-          Center(
-            child: Column(
-              children: [
-                Center(
-                  child: CustomPaint(
-                    foregroundPainter: MyPainter(
-                      firstRippleRadiusAnimation.value,
-                      firstRippleOpacityAnimation.value,
-                      firstRippleWidthAnimation.value,
-                      secondRippleRadiusAnimation.value,
-                      secondRippleOpacityAnimation.value,
-                      secondRippleWidthAnimation.value,
-                      thirdRippleRadiusAnimation.value,
-                      thirdRippleOpacityAnimation.value,
-                      thirdRippleWidthAnimation.value,
-                      centerCircleRadiusAnimation.value,
+    return InkWell(
+      onTap: () {
+        Navigator.push(context,
+            MaterialPageRoute(builder: (context) => ChoiceYourTopic()));
+      },
+      child: Stack(
+          clipBehavior: Clip.none,
+          alignment: Alignment.center,
+          children: <Widget>[
+            Center(
+              child: Column(
+                children: [
+                  Center(
+                    child: CustomPaint(
+                      foregroundPainter: MyPainter(
+                        firstRippleRadiusAnimation.value,
+                        firstRippleOpacityAnimation.value,
+                        firstRippleWidthAnimation.value,
+                        secondRippleRadiusAnimation.value,
+                        secondRippleOpacityAnimation.value,
+                        secondRippleWidthAnimation.value,
+                        thirdRippleRadiusAnimation.value,
+                        thirdRippleOpacityAnimation.value,
+                        thirdRippleWidthAnimation.value,
+                        centerCircleRadiusAnimation.value,
+                      ),
                     ),
                   ),
-                ),
-              ],
-            ),
-          ),
-          Positioned(
-              top: -size.height * 0.08,
-              child: const Icon(
-                Icons.play_arrow,
-                color: kblue,
-                size: 40,
+                ],
               ),
-              width: size.width * 0.40,
-              height: size.height * 0.16),
-        ]);
+            ),
+            InkWell(
+              onTap: () {
+                Navigator.push(context,
+                    MaterialPageRoute(builder: (context) => ChoiceYourTopic()));
+              },
+              child: Positioned(
+                  top: -size.height * 0.08,
+                  child: const Icon(
+                    Icons.play_arrow,
+                    color: kblue,
+                    size: 40,
+                  ),
+                  width: size.width * 0.40,
+                  height: size.height * 0.16),
+            ),
+          ]),
+    );
   }
 }

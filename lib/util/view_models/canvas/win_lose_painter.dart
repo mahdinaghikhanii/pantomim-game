@@ -3,12 +3,12 @@ import 'dart:ui';
 
 import 'package:flutter/material.dart';
 import 'package:pantomim/models/category.dart';
-import 'package:pantomim/theme/constant.dart';
 
 class MyPainter extends CustomPainter {
   final List<Particle> particles;
   final double theta;
-  Tween<double> _rotationTween = Tween(begin: 0, end: 2 * math.pi);
+  // ignore: unused_field
+  final Tween<double> _rotationTween = Tween(begin: 0, end: 2 * math.pi);
 
   MyPainter({required this.particles, required this.theta});
   @override

@@ -31,14 +31,14 @@ const backgroundDefaultScafold2 = BoxDecoration(
         end: Alignment.centerRight,
         colors: [Colors.white, Colors.blue]));
 
-const backgroundDefaultScafold = const BoxDecoration(
+const backgroundDefaultScafold = BoxDecoration(
     gradient: LinearGradient(
         begin: Alignment.centerLeft,
         end: Alignment.centerRight,
         colors: [Colors.white38, Colors.blue]));
 const styleTextInputTextField = TextStyle(color: kwhite, fontSize: 20);
 
-const backgroundDefaultScafoldfalseGameStyle = const BoxDecoration(
+const backgroundDefaultScafoldfalseGameStyle = BoxDecoration(
     gradient: LinearGradient(
         begin: Alignment.centerLeft,
         end: Alignment.centerRight,

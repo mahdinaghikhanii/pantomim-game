@@ -5,9 +5,6 @@ import 'package:pantomim/theme/constant.dart';
 import 'package:pantomim/views/dialog_screns/animation_play.dart';
 import 'package:pantomim/views/auth/type_of_match_screans.dart';
 
-import 'package:pantomim/views/dialog_screns/dialog_setting.dart';
-import 'package:pantomim/views/widgets/box_.meno_image.dart';
-
 class MenoScreans extends StatefulWidget {
   const MenoScreans({Key? key}) : super(key: key);
 
@@ -78,7 +75,7 @@ class _MenoScreansState extends State<MenoScreans> {
                   ),
                 ),
                 SizedBox(
-                  height: size.height * 0.20,
+                  height: size.height * 0.30,
                 ),
                 Center(
                   child: InkWell(
@@ -88,7 +85,7 @@ class _MenoScreansState extends State<MenoScreans> {
                         Navigator.push(
                             context,
                             MaterialPageRoute(
-                                builder: (context) => ChoiceYourTopic()));
+                                builder: (context) => const ChoiceYourTopic()));
                       },
                       child: const HomePage()),
                 )

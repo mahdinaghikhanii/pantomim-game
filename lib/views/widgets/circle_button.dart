@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:pantomim/theme/constant.dart';
 
 class CricleButton extends StatelessWidget {
   final Function()? onTap;
@@ -20,8 +21,8 @@ class CricleButton extends StatelessWidget {
         height: 80,
         decoration: const BoxDecoration(boxShadow: [
           BoxShadow(
-            color: Colors.white54,
-            spreadRadius: 01.0,
+            color: kwhite,
+            spreadRadius: 00.0,
           )
         ], color: Colors.transparent, shape: BoxShape.circle),
         child: Icon(

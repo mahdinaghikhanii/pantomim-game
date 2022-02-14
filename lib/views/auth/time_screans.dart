@@ -2,6 +2,7 @@
 import 'dart:async';
 import 'package:animate_do/animate_do.dart';
 import 'package:flutter/material.dart';
+import 'package:just_audio/just_audio.dart';
 import 'package:pantomim/generated/l10n.dart';
 import 'package:pantomim/theme/constant.dart';
 import 'package:pantomim/util/view_models/provider/provider.dart';
@@ -28,6 +29,15 @@ class _TimerScreansState extends State<TimerScreans> {
     reset();
   }
 
+// This section warns you that you have 10 seconds
+  void playSong() async {
+    final player = AudioPlayer();
+    // ignore: unused_local_variable
+    var alarm = await player.setAsset('assets/audio/s.mp3');
+    player.setVolume(0.9);
+    await player.play();
+  }
+
   void stopTimper({bool reseets = true}) {
     if (reseets) {
       reset();
@@ -48,6 +58,9 @@ class _TimerScreansState extends State<TimerScreans> {
     final addSeconds = isCountdown ? -1 : 1;
     setState(() {
       final seconds = duration.inSeconds + addSeconds;
+      if (seconds == 10) {
+        playSong();
+      }
       if (seconds < 0) {
         timer?.cancel();
         Navigator.push(

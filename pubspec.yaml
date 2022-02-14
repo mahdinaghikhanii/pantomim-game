@@ -41,6 +41,8 @@ dependencies:
   animate_do: ^2.0.0
   shared_preferences: ^2.0.11
   rxdart: ^0.27.3
+  just_audio: ^0.9.20
+  just_audio_libwinmedia: ^0.0.4
   dependencies:
   
 
@@ -88,7 +90,7 @@ flutter:
     - assets/images/topic/
     - assets/icons/
     - assets/audio/
-    - assets/readmy/
+  
   #   - images/a_dot_ham.jpeg
   # An image asset can refer to one or more resolution-specific "variants", see
   # https://flutter.dev/assets-and-images/#resolution-aware.

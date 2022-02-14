@@ -236,34 +236,35 @@ class _MenoScreans extends State<MenoScreans> with TickerProviderStateMixin {
       child: Container(
         decoration: backgroundDefaultScafold,
         child: Scaffold(
+          floatingActionButtonLocation:
+              FloatingActionButtonLocation.centerDocked,
           floatingActionButton: Padding(
             // ignore: prefer_const_constructors
-            padding: EdgeInsets.only(right: 0, bottom: 10, left: 20),
-            child: Row(
-                mainAxisSize: MainAxisSize.max,
-                mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-                children: [
-                  CricleButton(
-                    iconColor: kblue,
-                    iconData: Icons.settings,
-                    onTap: () {
-                      showDialog(
-                          context: context,
-                          builder: (
-                            context,
-                          ) =>
-                              const SettingDialog());
-                    },
-                  ),
-                  const SizedBox(
-                    width: 8,
-                  ),
-                  CricleButton(
-                    iconData: Icons.arrow_circle_up_rounded,
-                    iconColor: Colors.yellow,
-                    onTap: () {},
-                  ),
-                ]),
+            padding: EdgeInsets.only(
+              bottom: Constans.padding,
+            ),
+            child: Row(mainAxisAlignment: MainAxisAlignment.center, children: [
+              CricleButton(
+                iconColor: kblue,
+                iconData: Icons.settings,
+                onTap: () {
+                  showDialog(
+                      context: context,
+                      builder: (
+                        context,
+                      ) =>
+                          const SettingDialog());
+                },
+              ),
+              const SizedBox(
+                width: 80,
+              ),
+              CricleButton(
+                iconData: Icons.wine_bar,
+                iconColor: const Color(0xFFFFA000),
+                onTap: () {},
+              ),
+            ]),
           ),
           backgroundColor: Colors.transparent,
           body: SafeArea(

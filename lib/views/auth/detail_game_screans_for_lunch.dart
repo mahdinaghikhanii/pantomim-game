@@ -27,33 +27,39 @@ class DetailGameScreans extends StatelessWidget {
           decoration: backgroundDefaultScafold,
           child: Scaffold(
             backgroundColor: Colors.transparent,
-            floatingActionButton: Row(
-                mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-                children: [
-                  DounleFloattingButton(
-                    ontap: () {
-                      showDialog(
-                          context: context,
-                          builder: (
-                            context,
-                          ) =>
-                              const DialogQuit());
-                    },
-                    colorBtn: kblue,
-                    textBtn: localApp.detailGameScreansForLunchBtnNameQuitGame,
-                    highlightColor: Colors.transparent,
-                  ),
-                  DounleFloattingButton(
-                    ontap: () {
-                      showDialog(
-                          context: context,
-                          builder: (context) => const DialogShow());
-                    },
-                    colorBtn: Colors.transparent,
-                    textBtn: localApp.detailGameScreansForLunchBtnNameLetsGo,
-                    highlightColor: Colors.transparent,
-                  )
-                ]),
+            floatingActionButtonLocation:
+                FloatingActionButtonLocation.centerDocked,
+            floatingActionButton: Padding(
+              padding: const EdgeInsets.only(bottom: Constans.padding),
+              child: Row(
+                  mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                  children: [
+                    DounleFloattingButton(
+                      ontap: () {
+                        showDialog(
+                            context: context,
+                            builder: (
+                              context,
+                            ) =>
+                                const DialogQuit());
+                      },
+                      colorBtn: kblue,
+                      textBtn:
+                          localApp.detailGameScreansForLunchBtnNameQuitGame,
+                      highlightColor: Colors.transparent,
+                    ),
+                    DounleFloattingButton(
+                      ontap: () {
+                        showDialog(
+                            context: context,
+                            builder: (context) => const DialogShow());
+                      },
+                      colorBtn: Colors.transparent,
+                      textBtn: localApp.detailGameScreansForLunchBtnNameLetsGo,
+                      highlightColor: Colors.transparent,
+                    )
+                  ]),
+            ),
             body: SafeArea(
               child: Column(
                 mainAxisAlignment: MainAxisAlignment.start,

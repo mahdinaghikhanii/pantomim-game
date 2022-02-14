@@ -90,26 +90,32 @@ class _ChoiceYourTopicState extends State<ChoiceYourTopic> {
       decoration: backgroundDefaultScafold,
       child: Scaffold(
           resizeToAvoidBottomInset: false,
-          floatingActionButton:
-              Row(mainAxisAlignment: MainAxisAlignment.spaceEvenly, children: [
-            DounleFloattingButton(
-              ontap: () {
-                _backPage();
-              },
-              colorBtn: kblue,
-              textBtn: localApp.typeOfMatchScreansButtonBACKPAGE,
-              highlightColor: Colors.transparent,
-            ),
-            DounleFloattingButton(
-              ontap: () {
-                modelProvider.setaddcheckforInnigns();
-                _nextPage();
-              },
-              colorBtn: Colors.transparent,
-              textBtn: localApp.typeOfMatchScreansButtonNextPage,
-              highlightColor: Colors.transparent,
-            )
-          ]),
+          floatingActionButtonLocation:
+              FloatingActionButtonLocation.centerDocked,
+          floatingActionButton: Padding(
+            padding: const EdgeInsets.only(bottom: Constans.padding),
+            child: Row(
+                mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                children: [
+                  DounleFloattingButton(
+                    ontap: () {
+                      _backPage();
+                    },
+                    colorBtn: kblue,
+                    textBtn: localApp.typeOfMatchScreansButtonBACKPAGE,
+                    highlightColor: Colors.transparent,
+                  ),
+                  DounleFloattingButton(
+                    ontap: () {
+                      modelProvider.setaddcheckforInnigns();
+                      _nextPage();
+                    },
+                    colorBtn: Colors.transparent,
+                    textBtn: localApp.typeOfMatchScreansButtonNextPage,
+                    highlightColor: Colors.transparent,
+                  )
+                ]),
+          ),
           backgroundColor: Colors.transparent,
           body: Container(
             padding: const EdgeInsets.only(top: 20),

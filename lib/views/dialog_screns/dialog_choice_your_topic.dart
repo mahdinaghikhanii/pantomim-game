@@ -66,7 +66,7 @@ class DialogShow extends StatelessWidget {
         alignment: Alignment.center,
         children: <Widget>[
           Positioned(
-              top: -size.height * 0.04,
+              top: -size.height * 0.03,
               child: Container(
                 decoration: BoxDecoration(
                     borderRadius: BorderRadius.circular(30),
@@ -86,7 +86,7 @@ class DialogShow extends StatelessWidget {
                     ])),
               ),
               width: size.width * 0.64,
-              height: size.height * 0.07),
+              height: size.height * 0.06),
           Padding(
             padding:
                 const EdgeInsets.only(left: 0, right: 10, top: 34, bottom: 0),

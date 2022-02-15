@@ -94,8 +94,8 @@ class AppProvider extends ChangeNotifier {
 
   TextFiledInputNameTeam _nameTeam1 = TextFiledInputNameTeam('Team1');
   TextFiledInputNameTeam _nameTeam2 = TextFiledInputNameTeam('Team2');
-  TextFiledInputNameTeam _nameTeam3 = TextFiledInputNameTeam('');
-  TextFiledInputNameTeam _nameTeam4 = TextFiledInputNameTeam('');
+  TextFiledInputNameTeam _nameTeam3 = TextFiledInputNameTeam('Team3');
+  TextFiledInputNameTeam _nameTeam4 = TextFiledInputNameTeam('Team4');
   TextFiledInputNameTeam get team1 => _nameTeam1;
   TextFiledInputNameTeam get team2 => _nameTeam2;
   TextFiledInputNameTeam get team3 => _nameTeam3;
@@ -151,18 +151,18 @@ class AppProvider extends ChangeNotifier {
   }
 
   bool get visibilityTeam3 {
-    if (_nameTeam3.value == '') {
-      return false;
-    } else {
+    if (_counterOfTeam > 2) {
       return true;
+    } else {
+      return false;
     }
   }
 
   bool get visibilityTeam4 {
-    if (_nameTeam4.value == '') {
-      return false;
-    } else {
+    if (_counterOfTeam > 3) {
       return true;
+    } else {
+      return false;
     }
   }
 
@@ -276,13 +276,13 @@ class AppProvider extends ChangeNotifier {
         _visibilirtIconTeam4 = false;
 
         break;
-      case 3:
+      case 2:
         _visibilirtIconTeam1 = false;
         _visibilirtIconTeam2 = false;
         _visibilirtIconTeam3 = true;
         _visibilirtIconTeam4 = false;
         break;
-      case 4:
+      case 3:
         _visibilirtIconTeam1 = false;
         _visibilirtIconTeam2 = false;
         _visibilirtIconTeam3 = false;
@@ -311,5 +311,44 @@ class AppProvider extends ChangeNotifier {
         _counterOfScoreTeam2;
       }
     }
+
+    if (_visibilirtIconTeam3 == true) {
+      if (_winorlosebtn == true) {
+        _counterOfScoreTeam3++;
+      } else {
+        _counterOfScoreTeam3;
+      }
+    }
+    if (_visibilirtIconTeam4 == true) {
+      if (_winorlosebtn == true) {
+        _counterOfScoreTeam4++;
+      } else {
+        _counterOfScoreTeam4;
+      }
+    }
   }
+
+  seeGroupNameTeam() {
+    if (_visibilirtIconTeam1 == true) {
+      return _nameTeam1.value;
+    }
+    if (_visibilirtIconTeam2 == true) {
+      return _nameTeam2.value;
+    }
+    if (_visibilirtIconTeam3 == true) {
+      return _nameTeam3.value;
+    }
+    if (_visibilirtIconTeam4 == true) {
+      return _nameTeam4.value;
+    }
+  }
+
+  int _wrong = 1;
+  int get getwrongScore => _wrong;
+  void setwrontScore(int wrongScore) {
+    _wrong = wrongScore;
+  }
+
+//This section is for the total number of games for showing dialog
+  int allMatchCounter = 0;
 }

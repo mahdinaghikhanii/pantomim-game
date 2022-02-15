@@ -48,6 +48,13 @@ class _ScoreScreansState extends State<ScoreScreans>
     }
   }
 
+  void check() {
+    final modelProvier = Provider.of<AppProvider>(context);
+    if (modelProvier.visibilityTeam1Icon == true) {
+      modelProvier.getCounterOfScoreTeam1().toString();
+    }
+  }
+
   @override
   void initState() {
     super.initState();
@@ -139,7 +146,7 @@ class _ScoreScreansState extends State<ScoreScreans>
                         children: [
                           Center(
                               child: Text(
-                            'Group 1',
+                            modelProvier.seeGroupNameTeam().toString(),
                             style: Theme.of(context).textTheme.headline6,
                           )),
                           WidgetShowTextWinOrLoseDetail(

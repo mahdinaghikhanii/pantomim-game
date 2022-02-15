@@ -34,7 +34,7 @@ class _TimerScreansState extends State<TimerScreans> {
     final player = AudioPlayer();
     // ignore: unused_local_variable
     var alarm = await player.setAsset('assets/audio/s.mp3');
-    player.setVolume(0.9);
+
     await player.play();
   }
 
@@ -58,7 +58,7 @@ class _TimerScreansState extends State<TimerScreans> {
     final addSeconds = isCountdown ? -1 : 1;
     setState(() {
       final seconds = duration.inSeconds + addSeconds;
-      if (seconds == 10) {
+      if (seconds == 11) {
         playSong();
       }
       if (seconds < 0) {

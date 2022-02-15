@@ -39,10 +39,10 @@ class DialogQuit extends StatelessWidget {
                           text: TextSpan(children: [
                             TextSpan(
                                 text: localApp.dialogquitTitleTextquit1,
-                                style: Theme.of(context).textTheme.subtitle2),
+                                style: Theme.of(context).textTheme.headline2),
                             TextSpan(
                                 text: localApp.dialogquitTitleTextgame2,
-                                style: Theme.of(context).textTheme.headline2)
+                                style: Theme.of(context).textTheme.subtitle2)
                           ]),
                         ),
                       ),
@@ -67,7 +67,7 @@ class DialogQuit extends StatelessWidget {
                                               const HomeScreans()),
                                       (Route<dynamic> route) => false);
                                 },
-                                colorBtn: Colors.transparent,
+                                colorBtn: kblue,
                                 textBtn: localApp.dialogquitQuitgame,
                                 highlightColor: Colors.transparent,
                               ),
@@ -75,7 +75,7 @@ class DialogQuit extends StatelessWidget {
                                   ontap: () {
                                     Navigator.pop(context);
                                   },
-                                  colorBtn: kblue,
+                                  colorBtn: Colors.transparent,
                                   textBtn: localApp.dialogquitbtnTextNoPlaying,
                                   highlightColor: Colors.transparent)
                             ]),

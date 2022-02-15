@@ -1,14 +1,17 @@
 import 'package:flutter/material.dart';
-import 'package:pantomim/theme/constant.dart';
 
 class CricleButton extends StatelessWidget {
   final Function()? onTap;
   final IconData iconData;
   final Color iconColor;
+  final Color backgroundColor;
 
   // ignore: prefer_const_constructors_in_immutables, use_key_in_widget_constructors
   const CricleButton(
-      {required this.onTap, required this.iconData, required this.iconColor});
+      {required this.onTap,
+      required this.iconData,
+      required this.iconColor,
+      required this.backgroundColor});
 
   @override
   Widget build(BuildContext context) {
@@ -19,9 +22,9 @@ class CricleButton extends StatelessWidget {
       child: Container(
         width: 80,
         height: 80,
-        decoration: const BoxDecoration(boxShadow: [
+        decoration: BoxDecoration(boxShadow: [
           BoxShadow(
-            color: kwhite,
+            color: backgroundColor,
             spreadRadius: 00.0,
           )
         ], color: Colors.transparent, shape: BoxShape.circle),

@@ -245,7 +245,7 @@ class _MenoScreans extends State<MenoScreans> with TickerProviderStateMixin {
             ),
             child: Row(mainAxisAlignment: MainAxisAlignment.center, children: [
               CricleButton(
-                iconColor: kblue,
+                iconColor: kwhite,
                 iconData: Icons.settings,
                 onTap: () {
                   showDialog(
@@ -255,14 +255,16 @@ class _MenoScreans extends State<MenoScreans> with TickerProviderStateMixin {
                       ) =>
                           const SettingDialog());
                 },
+                backgroundColor: kblue,
               ),
               const SizedBox(
                 width: 80,
               ),
               CricleButton(
-                iconData: Icons.wine_bar,
-                iconColor: const Color(0xFFFFA000),
+                iconData: Icons.list_alt,
+                iconColor: Colors.grey.shade500,
                 onTap: () {},
+                backgroundColor: kwhite,
               ),
             ]),
           ),

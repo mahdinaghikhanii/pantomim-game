@@ -38,6 +38,15 @@ class _TimerScreansState extends State<TimerScreans> {
     await player.play();
   }
 
+  void playWrong() async {
+    final wrong = AudioPlayer();
+    var alarm = await wrong.setAsset('assets/audio/wrong.wav');
+    await wrong.seek(Duration(microseconds: 1));
+    await wrong.play();
+
+    await wrong.stop();
+  }
+
   void stopTimper({bool reseets = true}) {
     if (reseets) {
       reset();
@@ -239,7 +248,9 @@ class _TimerScreansState extends State<TimerScreans> {
                         child: InkWell(
                           highlightColor: Colors.red.withOpacity(0.8),
                           borderRadius: BorderRadius.circular(20),
-                          onTap: () {},
+                          onTap: () {
+                            playWrong();
+                          },
                           child: Container(
                             width: double.infinity,
                             height: size.height * 0.09,

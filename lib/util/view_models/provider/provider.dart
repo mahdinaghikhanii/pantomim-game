@@ -348,7 +348,4 @@ class AppProvider extends ChangeNotifier {
   void setwrontScore(int wrongScore) {
     _wrong = wrongScore;
   }
-
-//This section is for the total number of games for showing dialog
-  int allMatchCounter = 0;
 }

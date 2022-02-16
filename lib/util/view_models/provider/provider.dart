@@ -1,4 +1,4 @@
-// ignore_for_file: unnecessary_null_comparison
+// ignore_for_file: unnecessary_null_comparison, prefer_final_fields, duplicate_ignore
 import 'package:flutter/material.dart';
 import 'package:pantomim/models/category.dart';
 import 'package:shared_preferences/shared_preferences.dart';
@@ -377,4 +377,40 @@ class AppProvider extends ChangeNotifier {
     }
     notifyListeners();
   }
+
+  List<dynamic> _food = [];
+  List<dynamic> get getfood => _food;
+
+  List<dynamic> _sports = [];
+  List<dynamic> get getsports => _sports;
+
+  List<dynamic> _animal = [];
+  List<dynamic> get getanimal => _animal;
+
+  List<dynamic> _country = [];
+  List<dynamic> get getcountry => _country;
+
+  List<dynamic> _thing = [];
+  List<dynamic> get thing => _thing;
+
+  List<dynamic> _movie = [];
+  List<dynamic> get movie => _movie;
+
+  List<dynamic> _general = [];
+  List<dynamic> get general => _general;
+
+  List<dynamic> _tourism = [];
+  List<dynamic> get tourism => _tourism;
+
+  List<dynamic> _book = [];
+  List<dynamic> get book => _book;
+
+  List<dynamic> _job = [];
+  List<dynamic> get job => _job;
+
+  List<dynamic> _music = [];
+  List<dynamic> get music => _music;
+
+  List<dynamic> _tecnology = [];
+  List<dynamic> get tecnology => _tecnology;
 }

@@ -74,6 +74,7 @@ class DialogWinOrLose extends StatelessWidget {
                                         if (modelProvider.checkbtnwinlose ==
                                             true) {
                                           modelProvider.setScoreForAllTeam();
+                                          modelProvider.setwrontScore(0);
                                         }
                                         Navigator.push(
                                             context,
@@ -94,6 +95,8 @@ class DialogWinOrLose extends StatelessWidget {
                                         modelProvider.setaddcheckforInnigns();
                                         modelProvider
                                             .checkwinorlosegamebtn(false);
+                                        modelProvider.setwrontScore(0);
+
                                         Navigator.push(
                                             context,
                                             MaterialPageRoute(

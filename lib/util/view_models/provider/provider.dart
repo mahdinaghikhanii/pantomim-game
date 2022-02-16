@@ -298,6 +298,7 @@ class AppProvider extends ChangeNotifier {
     if (_visibilirtIconTeam1 == true) {
       if (_winorlosebtn == true) {
         _counterOfScoreTeam1++;
+        _counterOfScoreTeam1++;
       } else {
         _counterOfScoreTeam1;
       }
@@ -315,12 +316,14 @@ class AppProvider extends ChangeNotifier {
     if (_visibilirtIconTeam3 == true) {
       if (_winorlosebtn == true) {
         _counterOfScoreTeam3++;
+        _counterOfScoreTeam3++;
       } else {
         _counterOfScoreTeam3;
       }
     }
     if (_visibilirtIconTeam4 == true) {
       if (_winorlosebtn == true) {
+        _counterOfScoreTeam4++;
         _counterOfScoreTeam4++;
       } else {
         _counterOfScoreTeam4;
@@ -343,9 +346,35 @@ class AppProvider extends ChangeNotifier {
     }
   }
 
-  int _wrong = 1;
+  int _wrong = 0;
   int get getwrongScore => _wrong;
   void setwrontScore(int wrongScore) {
     _wrong = wrongScore;
+  }
+
+  void subtractioScore() {
+    if (_wrong > 2) {
+      _wrong = 0;
+    } else {
+      _wrong++;
+      notifyListeners();
+    }
+
+    if (_wrong == 2) {
+      if (_visibilirtIconTeam1 == true) {
+        _counterOfScoreTeam1--;
+      }
+      if (_visibilirtIconTeam2 == true) {
+        _counterOfScoreTeam2--;
+        notifyListeners();
+      }
+      if (_visibilirtIconTeam3 == true) {
+        _counterOfScoreTeam3--;
+      }
+      if (_visibilirtIconTeam4 == true) {
+        _counterOfScoreTeam4--;
+      }
+    }
+    notifyListeners();
   }
 }

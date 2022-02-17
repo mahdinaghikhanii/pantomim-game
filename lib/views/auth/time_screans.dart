@@ -19,9 +19,11 @@ class TimerScreans extends StatefulWidget {
 }
 
 class _TimerScreansState extends State<TimerScreans> {
+  final player = AudioPlayer();
   Duration duration = Duration();
   Timer? timer;
   bool isCountdown = true;
+
   @override
   void initState() {
     super.initState();
@@ -32,10 +34,8 @@ class _TimerScreansState extends State<TimerScreans> {
 
 // This section warns you that you have 10 seconds
   void playSong() async {
-    final player = AudioPlayer();
     // ignore: unused_local_variable
     var alarm = await player.setAsset('assets/audio/s.mp3');
-
     await player.play();
   }
 
@@ -52,6 +52,7 @@ class _TimerScreansState extends State<TimerScreans> {
       reset();
     }
     setState(() {
+      player.stop();
       timer?.cancel();
       showDialog(
           barrierDismissible: false,
@@ -105,7 +106,6 @@ class _TimerScreansState extends State<TimerScreans> {
     String twDigits(int n) => n.toString().padLeft(2, '0');
     final minutes = twDigits(duration.inMinutes.remainder(60));
     final seconds = twDigits(duration.inSeconds.remainder(60));
-
     // ignore: unused_local_variable
     final isCompelect = duration.inSeconds == 0;
     final isRounning = timer == null ? false : timer!.isActive;
@@ -117,6 +117,9 @@ class _TimerScreansState extends State<TimerScreans> {
     }
 
     void starttopicgame() {
+      if (duration.inSeconds == 0) {
+        modelProvider.checkwinorlosegamebtn(false);
+      }
       switch (modelProvider.getnumberindex) {
         case 0:
           List _food = [
@@ -221,7 +224,6 @@ class _TimerScreansState extends State<TimerScreans> {
                                   switch (modelProvider.getTimeForMatch()) {
                                     case 0:
                                       duration = Duration(seconds: 50);
-
                                       break;
                                     case 1:
                                       duration =

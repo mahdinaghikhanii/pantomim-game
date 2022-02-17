@@ -228,12 +228,10 @@ class AppProvider extends ChangeNotifier {
   bool get visibilityTeam4Icon => _visibilirtIconTeam4;
 
   bool _winorlosebtn = false;
-
   bool get checkbtnwinlose => _winorlosebtn;
 
   void checkwinorlosegamebtn(bool check) {
     _winorlosebtn = check;
-
     notifyListeners();
   }
 
@@ -381,6 +379,7 @@ class AppProvider extends ChangeNotifier {
   String _gametheme = "LETS GO !";
 
   void setStringenandFaGameTheme() {
+    // ignore: unrelated_type_equality_checks
     if (_currentLocale == "en") {
       _gametheme = "LETS GO !";
     } else {

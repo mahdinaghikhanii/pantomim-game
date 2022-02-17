@@ -378,39 +378,27 @@ class AppProvider extends ChangeNotifier {
     notifyListeners();
   }
 
-  List<dynamic> _food = [];
-  List<dynamic> get getfood => _food;
+  String _gametheme = "LETS GO !";
 
-  List<dynamic> _sports = [];
-  List<dynamic> get getsports => _sports;
+  void setStringenandFaGameTheme() {
+    if (_currentLocale == "en") {
+      _gametheme = "LETS GO !";
+    } else {
+      _gametheme = 'بزن بریم !';
+    }
+  }
 
-  List<dynamic> _animal = [];
-  List<dynamic> get getanimal => _animal;
+  String get gameTheme => _gametheme;
+  void topicgames(String game) {
+    _gametheme = game;
+    notifyListeners();
+  }
 
-  List<dynamic> _country = [];
-  List<dynamic> get getcountry => _country;
+  int _numberindexdialogtopic = 0;
+  int get getnumberindex => _numberindexdialogtopic;
 
-  List<dynamic> _thing = [];
-  List<dynamic> get thing => _thing;
-
-  List<dynamic> _movie = [];
-  List<dynamic> get movie => _movie;
-
-  List<dynamic> _general = [];
-  List<dynamic> get general => _general;
-
-  List<dynamic> _tourism = [];
-  List<dynamic> get tourism => _tourism;
-
-  List<dynamic> _book = [];
-  List<dynamic> get book => _book;
-
-  List<dynamic> _job = [];
-  List<dynamic> get job => _job;
-
-  List<dynamic> _music = [];
-  List<dynamic> get music => _music;
-
-  List<dynamic> _tecnology = [];
-  List<dynamic> get tecnology => _tecnology;
+  void setnumberindex(int number) {
+    _numberindexdialogtopic = number;
+    notifyListeners();
+  }
 }

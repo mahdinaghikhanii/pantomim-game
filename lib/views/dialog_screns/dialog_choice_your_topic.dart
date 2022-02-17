@@ -47,6 +47,7 @@ class DialogShow extends StatelessWidget {
       localApp.dialogTypeOfMatchbuttontextMusic,
       localApp.dialogTypeOfMatchbuttontextTecnology,
     ];
+
     // ignore: non_constant_identifier_names
     final List<PantomimData> Fruitdata = List.generate(
         imageListTopic.length,
@@ -102,6 +103,7 @@ class DialogShow extends StatelessWidget {
                     image: Fruitdata[index].image,
                     title: Fruitdata[index].name,
                     onTap: () {
+                      modelProvider.setnumberindex(index);
                       Navigator.push(
                           context,
                           MaterialPageRoute(

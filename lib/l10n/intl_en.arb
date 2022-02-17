@@ -74,8 +74,16 @@
     "scoreScreansTitleTextTextSpanLost" : "LOST",
     "scoreScreansBtnText" : "OK",
     "dialogChoiceYourScreansTextTileChoose" : "Choose ",
-    "dialogChoiceYourScreansTextTileTopic" : "Topic"
-
+    "dialogChoiceYourScreansTextTileTopic" : "Topic",
+    "timescreanstitletext" : "LET'S GO !",
+    "timescreansgamethemelistfoodtext0" : "Kashke bademjan",
+    "timescreansgamethemelistfoodtext1" : "Kufteh tabrizi",
+    "timescreansgamethemelistfoodtext2" : "Sholeh zard",
+    "timescreansgamethemelistfoodtext3" : "Kuku sabzi",
+    "timescreansgamethemelistfoodtext4" : "Kabab",
+    "timescreansgamethemelistfoodtext5" : "Apple Pie",
+    "timescreansgamethemelistfoodtext6" : "Hamburger",
+    "timescreansgamethemelistfoodtext7" : "Clam Chowder"
 }
 
 

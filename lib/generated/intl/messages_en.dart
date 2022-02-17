@@ -138,6 +138,24 @@ class MessageLookup extends MessageLookupByLibrary {
         "timeScreansbtnStop": MessageLookupByLibrary.simpleMessage("STOP"),
         "timeScreansbtnWrong": MessageLookupByLibrary.simpleMessage("WRONG"),
         "timeSreansTimeTextTitle": MessageLookupByLibrary.simpleMessage("Time"),
+        "timescreansgamethemelistfoodtext0":
+            MessageLookupByLibrary.simpleMessage("Kashke bademjan"),
+        "timescreansgamethemelistfoodtext1":
+            MessageLookupByLibrary.simpleMessage("Kufteh tabrizi"),
+        "timescreansgamethemelistfoodtext2":
+            MessageLookupByLibrary.simpleMessage("Sholeh zard"),
+        "timescreansgamethemelistfoodtext3":
+            MessageLookupByLibrary.simpleMessage("Kuku sabzi"),
+        "timescreansgamethemelistfoodtext4":
+            MessageLookupByLibrary.simpleMessage("Kabab"),
+        "timescreansgamethemelistfoodtext5":
+            MessageLookupByLibrary.simpleMessage("Apple Pie"),
+        "timescreansgamethemelistfoodtext6":
+            MessageLookupByLibrary.simpleMessage("Hamburger"),
+        "timescreansgamethemelistfoodtext7":
+            MessageLookupByLibrary.simpleMessage("Clam Chowder"),
+        "timescreanstitletext":
+            MessageLookupByLibrary.simpleMessage("LET\'S GO !"),
         "titleHomeScreans1": MessageLookupByLibrary.simpleMessage("Play"),
         "titleHomeScreans2":
             MessageLookupByLibrary.simpleMessage(" with\nFriends"),

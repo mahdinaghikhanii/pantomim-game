@@ -1,5 +1,6 @@
 // ignore_for_file: prefer_const_constructors
 import 'dart:async';
+import 'dart:math';
 import 'package:animate_do/animate_do.dart';
 import 'package:flutter/material.dart';
 import 'package:just_audio/just_audio.dart';
@@ -100,6 +101,7 @@ class _TimerScreansState extends State<TimerScreans> {
 
   @override
   Widget build(BuildContext context) {
+    final _random = Random();
     String twDigits(int n) => n.toString().padLeft(2, '0');
     final minutes = twDigits(duration.inMinutes.remainder(60));
     final seconds = twDigits(duration.inSeconds.remainder(60));
@@ -109,6 +111,42 @@ class _TimerScreansState extends State<TimerScreans> {
     final isRounning = timer == null ? false : timer!.isActive;
     final modelProvider = Provider.of<AppProvider>(context);
     var localApp = S.of(context);
+
+    void reasetgame() {
+      modelProvider.topicgames(localApp.timescreanstitletext);
+    }
+
+    void starttopicgame() {
+      switch (modelProvider.getnumberindex) {
+        case 0:
+          List _food = [
+            localApp.timescreansgamethemelistfoodtext0,
+            localApp.timescreansgamethemelistfoodtext1,
+            localApp.timescreansgamethemelistfoodtext2,
+            localApp.timescreansgamethemelistfoodtext3,
+            localApp.timescreansgamethemelistfoodtext4,
+            localApp.timescreansgamethemelistfoodtext5,
+            localApp.timescreansgamethemelistfoodtext6,
+            localApp.timescreansgamethemelistfoodtext7,
+          ];
+          modelProvider.topicgames(_food[_random.nextInt(_food.length)]);
+          break;
+
+        case 1:
+          List _sport = [
+            'fotbaldsjds  dsdaskjk dsj sdsdjk',
+          ];
+          modelProvider.topicgames(_sport[_random.nextInt(_sport.length)]);
+          break;
+
+        case 3:
+          List _animal = ['ss', 'bb', 'dasdsa', 'dmsakdas', 'adsads'];
+          modelProvider.topicgames(_animal[_random.nextInt(_animal.length)]);
+          break;
+
+        default:
+      }
+    }
 
     final size = MediaQuery.of(context).size;
     return Container(
@@ -125,13 +163,19 @@ class _TimerScreansState extends State<TimerScreans> {
           child: Column(
             mainAxisAlignment: MainAxisAlignment.spaceEvenly,
             children: [
-              Center(
-                child: Padding(
-                    padding: const EdgeInsets.all(Constans.padding),
+              Column(
+                mainAxisAlignment: MainAxisAlignment.center,
+                crossAxisAlignment: CrossAxisAlignment.center,
+                mainAxisSize: MainAxisSize.min,
+                children: [
+                  Padding(
+                    padding: const EdgeInsets.only(left: 20, right: 20),
                     child: Text(
-                      'apple',
+                      modelProvider.gameTheme.toString(),
                       style: Theme.of(context).textTheme.headline1,
-                    )),
+                    ),
+                  ),
+                ],
               ),
               const SizedBox(
                 height: 90,
@@ -167,8 +211,10 @@ class _TimerScreansState extends State<TimerScreans> {
                           borderRadius: BorderRadius.circular(20),
                           onTap: () {
                             if (isRounning) {
+                              reasetgame();
                               stopTimper();
                             } else {
+                              starttopicgame();
                               startTimer(resets: true);
                               setState(() {
                                 if (isCountdown) {

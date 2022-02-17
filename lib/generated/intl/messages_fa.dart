@@ -138,6 +138,24 @@ class MessageLookup extends MessageLookupByLibrary {
         "timeScreansbtnStop": MessageLookupByLibrary.simpleMessage("اتمام"),
         "timeScreansbtnWrong": MessageLookupByLibrary.simpleMessage("اخطار"),
         "timeSreansTimeTextTitle": MessageLookupByLibrary.simpleMessage("زمان"),
+        "timescreansgamethemelistfoodtext0":
+            MessageLookupByLibrary.simpleMessage("کشک بادمجون"),
+        "timescreansgamethemelistfoodtext1":
+            MessageLookupByLibrary.simpleMessage("کوفته تبریزی"),
+        "timescreansgamethemelistfoodtext2":
+            MessageLookupByLibrary.simpleMessage("شله زرد"),
+        "timescreansgamethemelistfoodtext3":
+            MessageLookupByLibrary.simpleMessage("کوکو سبزی"),
+        "timescreansgamethemelistfoodtext4":
+            MessageLookupByLibrary.simpleMessage("کباب"),
+        "timescreansgamethemelistfoodtext5":
+            MessageLookupByLibrary.simpleMessage("پای سیب"),
+        "timescreansgamethemelistfoodtext6":
+            MessageLookupByLibrary.simpleMessage("همبرگر"),
+        "timescreansgamethemelistfoodtext7":
+            MessageLookupByLibrary.simpleMessage("آبگوشت صدف"),
+        "timescreanstitletext":
+            MessageLookupByLibrary.simpleMessage("بزن بریم !"),
         "titleHomeScreans1": MessageLookupByLibrary.simpleMessage("بازی"),
         "titleHomeScreans2":
             MessageLookupByLibrary.simpleMessage(" همراه \nبا دوستان"),

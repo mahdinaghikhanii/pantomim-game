@@ -809,6 +809,96 @@ class S {
       args: [],
     );
   }
+
+  /// `LET'S GO !`
+  String get timescreanstitletext {
+    return Intl.message(
+      'LET\'S GO !',
+      name: 'timescreanstitletext',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Kashke bademjan`
+  String get timescreansgamethemelistfoodtext0 {
+    return Intl.message(
+      'Kashke bademjan',
+      name: 'timescreansgamethemelistfoodtext0',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Kufteh tabrizi`
+  String get timescreansgamethemelistfoodtext1 {
+    return Intl.message(
+      'Kufteh tabrizi',
+      name: 'timescreansgamethemelistfoodtext1',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Sholeh zard`
+  String get timescreansgamethemelistfoodtext2 {
+    return Intl.message(
+      'Sholeh zard',
+      name: 'timescreansgamethemelistfoodtext2',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Kuku sabzi`
+  String get timescreansgamethemelistfoodtext3 {
+    return Intl.message(
+      'Kuku sabzi',
+      name: 'timescreansgamethemelistfoodtext3',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Kabab`
+  String get timescreansgamethemelistfoodtext4 {
+    return Intl.message(
+      'Kabab',
+      name: 'timescreansgamethemelistfoodtext4',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Apple Pie`
+  String get timescreansgamethemelistfoodtext5 {
+    return Intl.message(
+      'Apple Pie',
+      name: 'timescreansgamethemelistfoodtext5',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Hamburger`
+  String get timescreansgamethemelistfoodtext6 {
+    return Intl.message(
+      'Hamburger',
+      name: 'timescreansgamethemelistfoodtext6',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Clam Chowder`
+  String get timescreansgamethemelistfoodtext7 {
+    return Intl.message(
+      'Clam Chowder',
+      name: 'timescreansgamethemelistfoodtext7',
+      desc: '',
+      args: [],
+    );
+  }
 }
 
 class AppLocalizationDelegate extends LocalizationsDelegate<S> {

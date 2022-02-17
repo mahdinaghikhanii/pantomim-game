@@ -74,6 +74,15 @@
     "scoreScreansTitleTextTextSpanLost" : "باختید",
     "scoreScreansBtnText" : "باشه",
     "dialogChoiceYourScreansTextTileChoose" : "انتخاب ",
-    "dialogChoiceYourScreansTextTileTopic" : "موضوع"
+    "dialogChoiceYourScreansTextTileTopic" : "موضوع",
+    "timescreanstitletext" : "بزن بریم !",
+    "timescreansgamethemelistfoodtext0" : "کشک بادمجون",
+    "timescreansgamethemelistfoodtext1" : "کوفته تبریزی",
+    "timescreansgamethemelistfoodtext2" : "شله زرد",
+    "timescreansgamethemelistfoodtext3" : "کوکو سبزی",
+    "timescreansgamethemelistfoodtext4" : "کباب",
+    "timescreansgamethemelistfoodtext5" : "پای سیب",
+    "timescreansgamethemelistfoodtext6" : "همبرگر",
+    "timescreansgamethemelistfoodtext7" : "آبگوشت صدف"
 
 }

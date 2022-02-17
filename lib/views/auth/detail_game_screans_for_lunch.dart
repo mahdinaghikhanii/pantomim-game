@@ -50,6 +50,7 @@ class DetailGameScreans extends StatelessWidget {
                     ),
                     DounleFloattingButton(
                       ontap: () {
+                        modelProvider.setStringenandFaGameTheme;
                         showDialog(
                             context: context,
                             builder: (context) => const DialogShow());

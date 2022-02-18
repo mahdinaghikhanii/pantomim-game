@@ -7,7 +7,6 @@ import 'package:just_audio/just_audio.dart';
 import 'package:pantomim/generated/l10n.dart';
 import 'package:pantomim/theme/constant.dart';
 import 'package:pantomim/util/view_models/provider/provider.dart';
-import 'package:pantomim/views/auth/score_screans.dart';
 import 'package:pantomim/views/dialog_screns/dialog_winorlose.dart';
 import 'package:provider/provider.dart';
 
@@ -73,8 +72,13 @@ class _TimerScreansState extends State<TimerScreans> {
       }
       if (seconds < 0) {
         timer?.cancel();
-        Navigator.push(
-            context, MaterialPageRoute(builder: (context) => ScoreScreans()));
+        showDialog(
+            barrierDismissible: false,
+            context: context,
+            builder: (
+              context,
+            ) =>
+                const DialogWinOrLose());
       } else {
         duration = Duration(seconds: seconds);
       }
@@ -117,9 +121,6 @@ class _TimerScreansState extends State<TimerScreans> {
     }
 
     void starttopicgame() {
-      if (duration.inSeconds == 0) {
-        modelProvider.checkwinorlosegamebtn(false);
-      }
       switch (modelProvider.getnumberindex) {
         case 0:
           List _food = [
@@ -215,6 +216,7 @@ class _TimerScreansState extends State<TimerScreans> {
                           onTap: () {
                             if (isRounning) {
                               reasetgame();
+
                               stopTimper();
                             } else {
                               starttopicgame();

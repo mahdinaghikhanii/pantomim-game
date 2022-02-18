@@ -235,6 +235,10 @@ class AppProvider extends ChangeNotifier {
     notifyListeners();
   }
 
+  int _test = 1;
+
+  getTest() => _test;
+
   //// here code for handel how playing game in innings and showing icon or not showing icon
   int _innigns = -1;
 
@@ -245,15 +249,17 @@ class AppProvider extends ChangeNotifier {
       _innigns++;
     } else {
       _innigns++;
+      notifyListeners();
     }
 
     if (_innigns == _counterOfTeam) {
       _innigns = 0;
-      _numberofroundsmatch++;
+      if (_innigns == 0) {
+        _numberofroundsmatch++;
+      }
     } else {
       _innigns;
     }
-
     setvisibilityIcon();
     notifyListeners();
   }
@@ -327,6 +333,7 @@ class AppProvider extends ChangeNotifier {
         _counterOfScoreTeam4;
       }
     }
+    notifyListeners();
   }
 
   seeGroupNameTeam() {
@@ -342,12 +349,14 @@ class AppProvider extends ChangeNotifier {
     if (_visibilirtIconTeam4 == true) {
       return _nameTeam4.value;
     }
+    notifyListeners();
   }
 
   int _wrong = 0;
   int get getwrongScore => _wrong;
   void setwrontScore(int wrongScore) {
     _wrong = wrongScore;
+    notifyListeners();
   }
 
   void subtractioScore() {
@@ -364,7 +373,6 @@ class AppProvider extends ChangeNotifier {
       }
       if (_visibilirtIconTeam2 == true) {
         _counterOfScoreTeam2--;
-        notifyListeners();
       }
       if (_visibilirtIconTeam3 == true) {
         _counterOfScoreTeam3--;
@@ -385,6 +393,7 @@ class AppProvider extends ChangeNotifier {
     } else {
       _gametheme = 'بزن بریم !';
     }
+    notifyListeners();
   }
 
   String get gameTheme => _gametheme;

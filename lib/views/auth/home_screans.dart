@@ -111,6 +111,7 @@ class Button_widget extends StatelessWidget {
         child: ClipRRect(
           borderRadius: BorderRadius.circular(20),
           child: InkWell(
+            borderRadius: BorderRadius.circular(18),
             onTap: ontap,
             child: Container(
               width: double.infinity,

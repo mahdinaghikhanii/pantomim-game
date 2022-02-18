@@ -170,8 +170,9 @@ class _ScoreScreansState extends State<ScoreScreans>
                                 colorBtn:
                                     modelProvier.checkbtnwinlose ? kblue : kred,
                                 ontap: () {
+                                  print(modelProvier.getTest());
                                   if (modelProvier
-                                          .gettitleNumberOfRoundsMath() >
+                                          .gettitleNumberOfRoundsMath() ==
                                       modelProvier.getNumberOfRounds()) {
                                     Navigator.push(
                                         context,

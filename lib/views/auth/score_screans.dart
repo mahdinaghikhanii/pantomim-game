@@ -170,10 +170,8 @@ class _ScoreScreansState extends State<ScoreScreans>
                                 colorBtn:
                                     modelProvier.checkbtnwinlose ? kblue : kred,
                                 ontap: () {
-                                  print(modelProvier.getTest());
-                                  if (modelProvier
-                                          .gettitleNumberOfRoundsMath() ==
-                                      modelProvier.getNumberOfRounds()) {
+                                  if (modelProvier.getcheckforInnigns >
+                                      modelProvier.getCounterTeam()) {
                                     Navigator.push(
                                         context,
                                         MaterialPageRoute(
@@ -183,11 +181,20 @@ class _ScoreScreansState extends State<ScoreScreans>
                                     if (modelProvier.checkbtnwinlose == true) {
                                       modelProvier.setaddcheckforInnigns();
                                     } else {}
+
                                     Navigator.push(
                                         (context),
                                         MaterialPageRoute(
                                             builder: (context) =>
                                                 const DetailGameScreans()));
+                                    if (modelProvier.getcheckforInnigns >
+                                        modelProvier.getCounterTeam()) {
+                                      Navigator.push(
+                                          context,
+                                          MaterialPageRoute(
+                                              builder: (context) =>
+                                                  const FinishidGameScreans()));
+                                    }
                                   }
                                 },
                                 textBtn: localApp.scoreScreansBtnText,

@@ -100,16 +100,16 @@ class DialogShow extends StatelessWidget {
                     mainAxisSpacing: 22),
                 itemBuilder: (BuildContext context, int index) {
                   return ChoiceTopic(
-                    image: Fruitdata[index].image,
-                    title: Fruitdata[index].name,
-                    onTap: () {
-                      modelProvider.setnumberindex(index);
-                      Navigator.push(
-                          context,
-                          MaterialPageRoute(
-                              builder: (context) => const TimerScreans()));
-                    },
-                  );
+                      image: Fruitdata[index].image,
+                      title: Fruitdata[index].name,
+                      onTap: () {
+                        modelProvider.setnumberindex(index);
+
+                        Navigator.push(
+                            context,
+                            MaterialPageRoute(
+                                builder: (context) => const TimerScreans()));
+                      });
                 }),
           ),
         ],

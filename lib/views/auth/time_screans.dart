@@ -216,7 +216,6 @@ class _TimerScreansState extends State<TimerScreans> {
                           onTap: () {
                             if (isRounning) {
                               reasetgame();
-
                               stopTimper();
                             } else {
                               starttopicgame();

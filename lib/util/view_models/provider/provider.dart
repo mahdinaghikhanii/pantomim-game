@@ -51,6 +51,11 @@ class AppProvider extends ChangeNotifier {
 
 //its for titte in detail_game_screans numberRounds in 25 in 1 or 2 or 3
   int _numberofroundsmatch = 1;
+  void incrementnumberofroundsmatch() {
+    _numberofroundsmatch++;
+
+    notifyListeners();
+  }
 
   gettitleNumberOfRoundsMath() => _numberofroundsmatch;
   settitleNumberOfRoundsMath(int numberFortitle) => _numberofroundsmatch;
@@ -235,12 +240,16 @@ class AppProvider extends ChangeNotifier {
     notifyListeners();
   }
 
-  int _test = 1;
+  int _test = 0;
 
   getTest() => _test;
 
   //// here code for handel how playing game in innings and showing icon or not showing icon
   int _innigns = -1;
+  void incrementinnigns() {
+    _innigns++;
+    notifyListeners();
+  }
 
   int get getcheckforInnigns => _innigns;
 
@@ -249,12 +258,19 @@ class AppProvider extends ChangeNotifier {
       _innigns++;
     } else {
       _innigns++;
-      notifyListeners();
     }
 
     if (_innigns == _counterOfTeam) {
-      _innigns = 0;
-      if (_innigns == 0) {
+      if (_numberofroundsmatch == _numberofrounds) {
+        _innigns++;
+        _innigns++;
+
+        notifyListeners();
+        if (_innigns == _counterOfTeam) {
+          _innigns++;
+        }
+      } else {
+        _innigns = 0;
         _numberofroundsmatch++;
       }
     } else {

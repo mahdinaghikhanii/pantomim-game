@@ -1,6 +1,7 @@
 import 'dart:math' as math;
 
 import 'package:flutter/material.dart';
+import 'package:just_audio/just_audio.dart';
 import 'package:pantomim/generated/l10n.dart';
 import 'package:pantomim/models/category.dart';
 import 'package:pantomim/theme/constant.dart';
@@ -53,6 +54,12 @@ class _ScoreScreansState extends State<ScoreScreans>
     if (modelProvier.visibilityTeam1Icon == true) {
       modelProvier.getCounterOfScoreTeam1().toString();
     }
+  }
+
+  void playclap() async {
+    final player = AudioPlayer();
+    var claps = await player.setAsset('assets/audio/clap.wav');
+    await player.play();
   }
 
   @override
@@ -189,6 +196,7 @@ class _ScoreScreansState extends State<ScoreScreans>
                                                 const DetailGameScreans()));
                                     if (modelProvier.getcheckforInnigns >
                                         modelProvier.getCounterTeam()) {
+                                      playclap();
                                       Navigator.push(
                                           context,
                                           MaterialPageRoute(

@@ -19,6 +19,7 @@ class TimerScreans extends StatefulWidget {
 
 class _TimerScreansState extends State<TimerScreans> {
   final player = AudioPlayer();
+
   Duration duration = Duration();
   Timer? timer;
   bool isCountdown = true;

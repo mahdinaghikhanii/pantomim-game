@@ -4,6 +4,7 @@ import 'package:pantomim/generated/l10n.dart';
 import 'package:pantomim/theme/constant.dart';
 import 'package:pantomim/views/auth/meno_screans.dart';
 import 'package:pantomim/views/dialog_screns/dialog_how_to_play.dart';
+import 'package:pantomim/views/dialog_screns/dialog_test.dart';
 
 class HomeScreans extends StatelessWidget {
   const HomeScreans({Key? key}) : super(key: key);
@@ -79,7 +80,8 @@ class HomeScreans extends StatelessWidget {
                         builder: (
                           context,
                         ) =>
-                            const DialogHowToPlay());
+                            const DialogFinishidGame());
+                    //    const DialogHowToPlay());
                   },
                 )
               ],

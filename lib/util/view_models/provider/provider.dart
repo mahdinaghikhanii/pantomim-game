@@ -311,6 +311,16 @@ class AppProvider extends ChangeNotifier {
     notifyListeners();
   }
 
+  void reasetvalue() {
+    _counterOfScoreTeam1 = 0;
+    _counterOfScoreTeam2 = 0;
+    _counterOfScoreTeam3 = 0;
+    _counterOfScoreTeam4 = 0;
+
+    _numberofroundsmatch = 1;
+    _innigns = -1;
+  }
+
 // this function for set visibility Icon in detailGame for Screans
   void setvisibilityIcon() {
     switch (_innigns) {

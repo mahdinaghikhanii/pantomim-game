@@ -1,8 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:pantomim/generated/l10n.dart';
 import 'package:pantomim/theme/constant.dart';
+import 'package:pantomim/util/view_models/provider/provider.dart';
 import 'package:pantomim/views/auth/home_screans.dart';
 import 'package:pantomim/views/widgets/double_floatingac_button.dart';
+import 'package:provider/provider.dart';
 
 class DialogQuit extends StatelessWidget {
   const DialogQuit({Key? key}) : super(key: key);
@@ -11,6 +13,7 @@ class DialogQuit extends StatelessWidget {
   Widget build(BuildContext context) {
     final size = MediaQuery.of(context).size;
     var localApp = S.of(context);
+    final appProvider = Provider.of<AppProvider>(context);
 
     return Dialog(
         insetPadding: const EdgeInsets.all(Constans.padding),
@@ -61,6 +64,10 @@ class DialogQuit extends StatelessWidget {
                             children: [
                               DounleFloattingButton(
                                 ontap: () {
+                                  appProvider.reasetvalue();
+
+                                  print('fucl');
+
                                   Navigator.of(context).pushAndRemoveUntil(
                                       MaterialPageRoute(
                                           builder: (context) =>

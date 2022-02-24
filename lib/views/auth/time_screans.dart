@@ -168,160 +168,168 @@ class _TimerScreansState extends State<TimerScreans> {
           child: Column(
             mainAxisAlignment: MainAxisAlignment.spaceEvenly,
             children: [
-              Column(
-                mainAxisAlignment: MainAxisAlignment.center,
-                crossAxisAlignment: CrossAxisAlignment.center,
-                mainAxisSize: MainAxisSize.min,
-                children: [
-                  Padding(
-                    padding: const EdgeInsets.only(left: 20, right: 20),
-                    child: Text(
-                      modelProvider.gameTheme.toString(),
-                      style: Theme.of(context).textTheme.headline1,
+              FadeInUp(
+                duration: Duration(milliseconds: 1200),
+                delay: Duration(microseconds: 1200),
+                child: Column(
+                  mainAxisAlignment: MainAxisAlignment.center,
+                  crossAxisAlignment: CrossAxisAlignment.center,
+                  mainAxisSize: MainAxisSize.min,
+                  children: [
+                    Padding(
+                      padding: const EdgeInsets.only(left: 20, right: 20),
+                      child: Text(
+                        modelProvider.gameTheme.toString(),
+                        style: Theme.of(context).textTheme.headline1,
+                      ),
                     ),
-                  ),
-                ],
+                  ],
+                ),
               ),
               const SizedBox(
                 height: 90,
               ),
-              Column(
-                children: [
-                  Text(
-                    '$minutes:$seconds',
-                    style: Theme.of(context).textTheme.headline3,
-                  ),
-                  const SizedBox(
-                    height: 5,
-                  ),
-                  Text(
-                    localApp.timeSreansTimeTextTitle,
-                    style: Theme.of(context).textTheme.bodyText1,
-                  ),
-                  const SizedBox(
-                    height: 50,
-                  ),
-                  FadeInUp(
-                    duration: Duration(milliseconds: 1200),
-                    delay: Duration(microseconds: 1200),
-                    child: Padding(
-                      padding: const EdgeInsets.only(
-                          left: 30, right: 30, top: 10, bottom: 10),
-                      child: Container(
-                        decoration: BoxDecoration(
+              FadeInUp(
+                duration: Duration(milliseconds: 1200),
+                delay: Duration(microseconds: 1200),
+                child: Column(
+                  children: [
+                    Text(
+                      '$minutes:$seconds',
+                      style: Theme.of(context).textTheme.headline3,
+                    ),
+                    const SizedBox(
+                      height: 5,
+                    ),
+                    Text(
+                      localApp.timeSreansTimeTextTitle,
+                      style: Theme.of(context).textTheme.bodyText1,
+                    ),
+                    const SizedBox(
+                      height: 50,
+                    ),
+                    FadeInUp(
+                      duration: Duration(milliseconds: 1200),
+                      delay: Duration(microseconds: 1200),
+                      child: Padding(
+                        padding: const EdgeInsets.only(
+                            left: 30, right: 30, top: 10, bottom: 10),
+                        child: Container(
+                          decoration: BoxDecoration(
+                              borderRadius: BorderRadius.circular(20),
+                              border: Border.all(
+                                  color: kblue.withOpacity(1), width: 3)),
+                          child: InkWell(
                             borderRadius: BorderRadius.circular(20),
-                            border: Border.all(
-                                color: kblue.withOpacity(1), width: 3)),
-                        child: InkWell(
-                          borderRadius: BorderRadius.circular(20),
-                          onTap: () {
-                            if (isRounning) {
-                              reasetgame();
-                              stopTimper();
-                            } else {
-                              starttopicgame();
-                              startTimer(resets: true);
-                              setState(() {
-                                if (isCountdown) {
-                                  switch (modelProvider.getTimeForMatch()) {
-                                    case 0:
-                                      duration = Duration(seconds: 50);
-                                      break;
-                                    case 1:
-                                      duration =
-                                          Duration(minutes: 1, seconds: 20);
-                                      break;
-                                    case 2:
-                                      duration =
-                                          Duration(minutes: 1, seconds: 50);
-                                      break;
-                                    case 3:
-                                      duration =
-                                          Duration(minutes: 2, seconds: 20);
-                                      break;
-                                    case 4:
-                                      duration =
-                                          Duration(minutes: 2, seconds: 50);
-                                      break;
-                                    case 5:
-                                      duration = Duration(
-                                        minutes: 3,
-                                        seconds: 20,
-                                      );
-                                      break;
+                            onTap: () {
+                              if (isRounning) {
+                                reasetgame();
+                                stopTimper();
+                              } else {
+                                starttopicgame();
+                                startTimer(resets: true);
+                                setState(() {
+                                  if (isCountdown) {
+                                    switch (modelProvider.getTimeForMatch()) {
+                                      case 0:
+                                        duration = Duration(seconds: 50);
+                                        break;
+                                      case 1:
+                                        duration =
+                                            Duration(minutes: 1, seconds: 20);
+                                        break;
+                                      case 2:
+                                        duration =
+                                            Duration(minutes: 1, seconds: 50);
+                                        break;
+                                      case 3:
+                                        duration =
+                                            Duration(minutes: 2, seconds: 20);
+                                        break;
+                                      case 4:
+                                        duration =
+                                            Duration(minutes: 2, seconds: 50);
+                                        break;
+                                      case 5:
+                                        duration = Duration(
+                                          minutes: 3,
+                                          seconds: 20,
+                                        );
+                                        break;
 
-                                    case 6:
-                                      duration =
-                                          Duration(minutes: 3, seconds: 50);
-                                      break;
-                                    case 7:
-                                      duration =
-                                          Duration(minutes: 4, seconds: 20);
-                                      break;
-                                    case 8:
-                                      duration =
-                                          Duration(minutes: 4, seconds: 50);
-                                      break;
+                                      case 6:
+                                        duration =
+                                            Duration(minutes: 3, seconds: 50);
+                                        break;
+                                      case 7:
+                                        duration =
+                                            Duration(minutes: 4, seconds: 20);
+                                        break;
+                                      case 8:
+                                        duration =
+                                            Duration(minutes: 4, seconds: 50);
+                                        break;
+                                    }
                                   }
-                                }
-                              });
-                            }
-                          },
-                          child: Container(
-                            width: double.infinity,
-                            height: size.height * 0.09,
-                            color: Colors.transparent.withOpacity(0.05),
-                            child: Center(
-                                child: Text(
-                              isRounning
-                                  ? localApp.timeScreansbtnStop
-                                  : localApp.timeScreansbtnStart,
-                              style: TextStyle(
-                                  color: kblue,
-                                  fontWeight: FontWeight.bold,
-                                  fontSize: 16),
-                            )),
+                                });
+                              }
+                            },
+                            child: Container(
+                              width: double.infinity,
+                              height: size.height * 0.09,
+                              color: Colors.transparent.withOpacity(0.05),
+                              child: Center(
+                                  child: Text(
+                                isRounning
+                                    ? localApp.timeScreansbtnStop
+                                    : localApp.timeScreansbtnStart,
+                                style: TextStyle(
+                                    color: kblue,
+                                    fontWeight: FontWeight.bold,
+                                    fontSize: 16),
+                              )),
+                            ),
                           ),
                         ),
                       ),
                     ),
-                  ),
-                  FadeInUp(
-                    duration: Duration(milliseconds: 1200),
-                    delay: Duration(microseconds: 1200),
-                    child: Padding(
-                      padding: const EdgeInsets.only(
-                          left: 30, right: 30, top: 10, bottom: 10),
-                      child: ClipRRect(
-                        borderRadius: BorderRadius.circular(20),
-                        child: InkWell(
-                          highlightColor: Colors.red.withOpacity(0.8),
+                    FadeInUp(
+                      duration: Duration(milliseconds: 1200),
+                      delay: Duration(microseconds: 1200),
+                      child: Padding(
+                        padding: const EdgeInsets.only(
+                            left: 30, right: 30, top: 10, bottom: 10),
+                        child: ClipRRect(
                           borderRadius: BorderRadius.circular(20),
-                          onTap: () {
-                            if (duration.inSeconds == 0) {
-                            } else {
-                              playWrong();
-                              modelProvider.subtractioScore();
-                            }
-                          },
-                          child: Container(
-                            width: double.infinity,
-                            height: size.height * 0.09,
-                            color: Colors.transparent,
-                            child: Center(
-                                child: Text(
-                              localApp.timeScreansbtnWrong,
-                              style: const TextStyle(
-                                  color: Colors.white,
-                                  fontWeight: FontWeight.bold,
-                                  fontSize: 16),
-                            )),
+                          child: InkWell(
+                            highlightColor: Colors.red.withOpacity(0.8),
+                            borderRadius: BorderRadius.circular(20),
+                            onTap: () {
+                              if (duration.inSeconds == 0) {
+                              } else {
+                                playWrong();
+                                modelProvider.subtractioScore();
+                              }
+                            },
+                            child: Container(
+                              width: double.infinity,
+                              height: size.height * 0.09,
+                              color: Colors.transparent,
+                              child: Center(
+                                  child: Text(
+                                localApp.timeScreansbtnWrong,
+                                style: const TextStyle(
+                                    color: Colors.white,
+                                    fontWeight: FontWeight.bold,
+                                    fontSize: 16),
+                              )),
+                            ),
                           ),
                         ),
                       ),
                     ),
-                  ),
-                ],
+                  ],
+                ),
               ),
             ],
           ),

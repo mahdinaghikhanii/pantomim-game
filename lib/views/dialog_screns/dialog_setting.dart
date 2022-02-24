@@ -86,7 +86,7 @@ class _SettingDialogState extends State<SettingDialog> {
                                               (bankIteam['ontap']);
                                               context
                                                   .read<AppProvider>()
-                                                  .changeLocale(
+                                                  .changeLanguage(
                                                       bankIteam['ontap']);
                                             },
                                             child: Row(

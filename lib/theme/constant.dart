@@ -1,6 +1,7 @@
 import 'dart:ui';
 
 import 'package:flutter/material.dart';
+import 'package:shared_preferences/shared_preferences.dart';
 
 String faPrimaryFontFamily = 'IranYekan';
 const Color kpink = Color(0xFFDC9298);
@@ -51,4 +52,8 @@ class Constans {
   static const double padding = 20;
   static const double avatarRadius = 45;
   static const double kborderRadios = 20;
+
+//language code
+  // ignore: non_constant_identifier_names
+  static String LANGUAGE_CODE = 'languagecode';
 }

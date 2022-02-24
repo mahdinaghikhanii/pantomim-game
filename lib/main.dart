@@ -10,50 +10,41 @@ import 'generated/l10n.dart';
 import 'util/view_models/provider/provider.dart';
 
 int? isviewed;
+AppProvider appProvider = AppProvider();
+// ignore: unused_element
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();
   SharedPreferences sharedPreferences = await SharedPreferences.getInstance();
+  await appProvider.fetchLocale();
   isviewed = sharedPreferences.getInt('onBoard');
-  runApp(const MyApp());
+
+  runApp(MyApp(
+    appProvider: appProvider,
+  ));
 }
 
 class MyApp extends StatefulWidget {
-  const MyApp({Key? key}) : super(key: key);
+  const MyApp({Key? key, required this.appProvider}) : super(key: key);
 
   @override
   State<MyApp> createState() => _MyAppState();
+  final AppProvider appProvider;
 }
 
+Locale mahdi = appProvider.fetchLocale();
+
 class _MyAppState extends State<MyApp> {
-  setData(String _local) async {
-    SharedPreferences preferences = await SharedPreferences.getInstance();
-
-    preferences.setString(
-        'language',
-        Provider.of<AppProvider>(context, listen: true)
-            .currentLocale
-            .toString());
-  }
-
-  SharedPreferences? sharedPreferences;
-
   @override
   Widget build(
     BuildContext context,
   ) {
-    return MultiProvider(
-        providers: [
-          ChangeNotifierProvider<AppProvider>(
-            create: (context) => AppProvider(),
-          ),
-          ChangeNotifierProvider<AppProvider>(
-            create: (context) => AppProvider(),
-          ),
-        ],
-        child: Builder(
-          builder: (context) => MaterialApp(
-              locale:
-                  Provider.of<AppProvider>(context, listen: true).currentLocale,
+    return ChangeNotifierProvider<AppProvider>(
+        create: (context) => appProvider,
+        child: Consumer<AppProvider>(builder: (context, model, child) {
+          appProvider;
+
+          return MaterialApp(
+
               // ignore: prefer_const_literals_to_create_immutables
               localizationsDelegates: [
                 S.delegate,
@@ -63,12 +54,13 @@ class _MyAppState extends State<MyApp> {
               ],
               supportedLocales: S.delegate.supportedLocales,
               debugShowCheckedModeBanner: false,
+              locale: model.currentLocale,
               home:
                   isviewed != 0 ? const GetStartScreans() : const HomeScreans(),
               theme: ConfigTheme.light().getTheme(
                   Provider.of<AppProvider>(context, listen: true)
                       .currentLocale
-                      .languageCode)),
-        ));
+                      .languageCode));
+        }));
   }
 }

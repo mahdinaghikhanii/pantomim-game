@@ -19,6 +19,10 @@ class ConfigTheme {
   }
 
   TextTheme get enPrimaryTextTheme => const TextTheme(
+      button: TextStyle(
+        fontSize: 14,
+        color: kblack,
+      ),
       bodyText1: TextStyle(fontSize: 20, color: kwhite),
       subtitle1: TextStyle(fontSize: 45, color: kwhite),
       bodyText2: TextStyle(fontSize: 18, color: kwhite),
@@ -36,11 +40,14 @@ class ConfigTheme {
       headline6:
           TextStyle(fontSize: 28, color: kwhite, fontWeight: FontWeight.bold),
       headline4: (TextStyle(
-        fontSize: 14,
-        color: kblack,
+        fontSize: 20,
+        fontWeight: FontWeight.bold,
+        color: kblue,
       )));
 
   TextTheme get faPrimaryTextTheme => TextTheme(
+      button: TextStyle(
+          fontSize: 14, color: kblack, fontFamily: faPrimaryFontFamily),
       headline5: TextStyle(
           fontSize: 28,
           color: kblue,
@@ -54,8 +61,8 @@ class ConfigTheme {
       headline3: TextStyle(
           fontSize: 30, color: kwhite, fontFamily: faPrimaryFontFamily),
       headline4: const TextStyle(
-        fontSize: 15,
-        color: kblack,
+        fontSize: 20,
+        color: kblue,
         fontFamily: 'IranYekan',
       ),
       bodyText1: TextStyle(

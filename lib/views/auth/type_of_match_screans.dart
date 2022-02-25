@@ -81,9 +81,9 @@ class _ChoiceYourTopicState extends State<ChoiceYourTopic> {
 
     final Map<int, Widget> mytab = <int, Widget>{
       0: Text(localApp.typeOfMatchScreansTextDetailNameButtonAUTO,
-          style: Theme.of(context).textTheme.headline4),
+          style: Theme.of(context).textTheme.button),
       1: Text(localApp.typeOfMatchScreansTextDetailNameButtonCUSTOM,
-          style: Theme.of(context).textTheme.headline4),
+          style: Theme.of(context).textTheme.button),
     };
 
     return Container(

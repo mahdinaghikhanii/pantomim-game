@@ -86,7 +86,7 @@ class AppProvider extends ChangeNotifier {
 
   // this part for multi language provider
 
-  Locale _currentLocale = Locale('en');
+  Locale _currentLocale = const Locale('en');
   Locale get currentLocale => _currentLocale;
 
   /* void setLocal(String _locale) async {

@@ -23,7 +23,7 @@ class _SettingDialogState extends State<SettingDialog> {
     },
     {
       'id': '2',
-      'image': 'assets/images/country/country.png',
+      'image': 'assets/images/country/iran.png',
       'name': 'فارسی',
       'ontap': 'fa'
     }

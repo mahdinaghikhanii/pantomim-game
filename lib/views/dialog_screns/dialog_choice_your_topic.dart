@@ -56,7 +56,7 @@ class DialogShow extends StatelessWidget {
 
     return Dialog(
       insetPadding:
-          const EdgeInsets.only(left: 25, right: 25, top: 80, bottom: 130),
+          const EdgeInsets.only(left: 25, right: 25, top: 50, bottom: 130),
       shape: RoundedRectangleBorder(
         borderRadius: BorderRadius.circular(45),
       ),

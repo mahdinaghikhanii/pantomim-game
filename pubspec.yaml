@@ -89,6 +89,7 @@ flutter:
   assets:
 
     - assets/images/
+    - assets/images/country/
     - assets/images/topic/
     - assets/icons/
     - assets/audio/

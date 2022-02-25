@@ -17,13 +17,13 @@ class _SettingDialogState extends State<SettingDialog> {
   List<Map> myJson = [
     {
       'id': '1',
-      'image': 'assets/images/usa.png',
+      'image': 'assets/images/country/usa.png',
       'name': 'English',
       'ontap': 'en',
     },
     {
       'id': '2',
-      'image': 'assets/images/topic/country.png',
+      'image': 'assets/images/country/country.png',
       'name': 'فارسی',
       'ontap': 'fa'
     }

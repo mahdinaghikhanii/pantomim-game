@@ -66,8 +66,6 @@ class DialogQuit extends StatelessWidget {
                                 ontap: () {
                                   appProvider.reasetvalue();
 
-                                  print('fucl');
-
                                   Navigator.of(context).pushAndRemoveUntil(
                                       MaterialPageRoute(
                                           builder: (context) =>

@@ -59,6 +59,7 @@ class _ScoreScreansState extends State<ScoreScreans>
 
   void playclap() async {
     final player = AudioPlayer();
+    // ignore: unused_local_variable
     var claps = await player.setAsset('assets/audio/clap.wav');
     await player.play();
   }

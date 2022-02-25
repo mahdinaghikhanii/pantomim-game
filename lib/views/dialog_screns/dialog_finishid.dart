@@ -2,8 +2,8 @@ import 'package:flutter/material.dart';
 import 'package:pantomim/generated/l10n.dart';
 import 'package:pantomim/theme/constant.dart';
 import 'package:pantomim/util/view_models/provider/provider.dart';
+import 'package:pantomim/views/auth/home_screans.dart';
 import 'package:pantomim/views/widgets/double_floatingac_button.dart';
-import 'package:pantomim/views/widgets/scoreshowtext_textdetail.dart';
 import 'package:provider/provider.dart';
 
 class DialogFinishidGame extends StatelessWidget {
@@ -78,29 +78,11 @@ class DialogFinishidGame extends StatelessWidget {
                         child: DounleFloattingButton(
                           colorBtn: kblue,
                           ontap: () {
-                            if (modelProvier.getcheckforInnigns >
-                                modelProvier.getCounterTeam()) {
-                              showDialog(
-                                  context: context,
-                                  builder: (
-                                    context,
-                                  ) =>
-                                      const DialogFinishidGame());
-                            } else {
-                              if (modelProvier.checkbtnwinlose == true) {
-                                modelProvier.setaddcheckforInnigns();
-                              } else {}
-
-                              if (modelProvier.getcheckforInnigns >
-                                  modelProvier.getCounterTeam()) {
-                                showDialog(
-                                    context: context,
-                                    builder: (
-                                      context,
-                                    ) =>
-                                        const DialogFinishidGame());
-                              }
-                            }
+                            modelProvier.reasetvalue();
+                            Navigator.push(
+                                context,
+                                MaterialPageRoute(
+                                    builder: (context) => const HomeScreans()));
                           },
                           textBtn: localApp.scoreScreansBtnText,
                           highlightColor: kblue,

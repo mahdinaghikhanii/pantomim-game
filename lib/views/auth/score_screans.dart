@@ -9,7 +9,7 @@ import 'package:pantomim/util/view_models/canvas/win_lose_painter.dart';
 import 'package:pantomim/util/view_models/provider/provider.dart';
 import 'package:pantomim/views/auth/detail_game_screans_for_lunch.dart';
 
-import 'package:pantomim/views/dialog_screns/dialog_test.dart';
+import 'package:pantomim/views/dialog_screns/dialog_finishid.dart';
 import 'package:pantomim/views/widgets/double_floatingac_button.dart';
 import 'package:pantomim/views/widgets/scoreshowtext_textdetail.dart';
 import 'package:provider/provider.dart';
@@ -200,6 +200,7 @@ class _ScoreScreansState extends State<ScoreScreans>
                                         modelProvier.getCounterTeam()) {
                                       playclap();
                                       showDialog(
+                                          barrierDismissible: false,
                                           context: context,
                                           builder: (
                                             context,

@@ -49,7 +49,7 @@ class _ChoiceTopicState extends State<ChoiceTopic> {
           const SizedBox(
             height: 10,
           ),
-          Text(widget.title, style: Theme.of(context).textTheme.headline4)
+          Text(widget.title, style: Theme.of(context).textTheme.button)
         ]),
       ),
     );

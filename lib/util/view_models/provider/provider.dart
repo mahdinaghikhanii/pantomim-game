@@ -1,6 +1,7 @@
 // ignore_for_file: unnecessary_null_comparison, prefer_final_fields, duplicate_ignore
 import 'package:flutter/material.dart';
 import 'package:pantomim/models/category.dart';
+import 'package:pantomim/theme/constant.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 
 class AppProvider extends ChangeNotifier {
@@ -98,11 +99,11 @@ class AppProvider extends ChangeNotifier {
 
   fetchLocale() async {
     var prefs = await SharedPreferences.getInstance();
-    if (prefs.getString('language_code') == null) {
+    if (prefs.getString(Constans.LANGUAGE_CODE) == null) {
       _currentLocale = const Locale('en');
       return Null;
     }
-    _currentLocale = Locale(prefs.getString('language_code').toString());
+    _currentLocale = Locale(prefs.getString(Constans.LANGUAGE_CODE).toString());
     return Null;
   }
 
@@ -113,12 +114,10 @@ class AppProvider extends ChangeNotifier {
     }
     if (Locale(type.toString()) == const Locale("fa")) {
       _currentLocale = const Locale("fa");
-      await prefs.setString('language_code', 'fa');
-      await prefs.setString('countryCode', '');
+      await prefs.setString(Constans.LANGUAGE_CODE, 'fa');
     } else {
       _currentLocale = const Locale("en");
-      await prefs.setString('language_code', 'en');
-      await prefs.setString('countryCode', 'US');
+      await prefs.setString(Constans.LANGUAGE_CODE, 'en');
     }
     notifyListeners();
   }

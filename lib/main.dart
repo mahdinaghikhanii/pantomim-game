@@ -31,8 +31,6 @@ class MyApp extends StatefulWidget {
   final AppProvider appProvider;
 }
 
-Locale mahdi = appProvider.fetchLocale();
-
 class _MyAppState extends State<MyApp> {
   @override
   Widget build(
@@ -41,8 +39,6 @@ class _MyAppState extends State<MyApp> {
     return ChangeNotifierProvider<AppProvider>(
         create: (context) => appProvider,
         child: Consumer<AppProvider>(builder: (context, model, child) {
-          appProvider;
-
           return MaterialApp(
 
               // ignore: prefer_const_literals_to_create_immutables

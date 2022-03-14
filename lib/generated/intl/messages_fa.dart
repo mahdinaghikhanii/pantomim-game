@@ -154,6 +154,48 @@ class MessageLookup extends MessageLookupByLibrary {
             MessageLookupByLibrary.simpleMessage("همبرگر"),
         "timescreansgamethemelistfoodtext7":
             MessageLookupByLibrary.simpleMessage("آبگوشت صدف"),
+        "timescreansgamethemelistjobs0":
+            MessageLookupByLibrary.simpleMessage("فروشگاه ماشین"),
+        "timescreansgamethemelistjobs1":
+            MessageLookupByLibrary.simpleMessage("کابینت سازی"),
+        "timescreansgamethemelistjobs10":
+            MessageLookupByLibrary.simpleMessage("کارخانه"),
+        "timescreansgamethemelistjobs11":
+            MessageLookupByLibrary.simpleMessage("کارگاه"),
+        "timescreansgamethemelistjobs12":
+            MessageLookupByLibrary.simpleMessage("کارگاه هنری"),
+        "timescreansgamethemelistjobs13":
+            MessageLookupByLibrary.simpleMessage("کارگر"),
+        "timescreansgamethemelistjobs14":
+            MessageLookupByLibrary.simpleMessage("کشاورزی"),
+        "timescreansgamethemelistjobs15":
+            MessageLookupByLibrary.simpleMessage("مکانیکی"),
+        "timescreansgamethemelistjobs16":
+            MessageLookupByLibrary.simpleMessage("کتاب دار"),
+        "timescreansgamethemelistjobs17":
+            MessageLookupByLibrary.simpleMessage("ناشرکتاب"),
+        "timescreansgamethemelistjobs18":
+            MessageLookupByLibrary.simpleMessage("دلال شرط بندی"),
+        "timescreansgamethemelistjobs19":
+            MessageLookupByLibrary.simpleMessage("موبایل فروشی"),
+        "timescreansgamethemelistjobs2":
+            MessageLookupByLibrary.simpleMessage("برج سازی"),
+        "timescreansgamethemelistjobs20":
+            MessageLookupByLibrary.simpleMessage("نانوایی"),
+        "timescreansgamethemelistjobs3":
+            MessageLookupByLibrary.simpleMessage("گل فروش"),
+        "timescreansgamethemelistjobs4":
+            MessageLookupByLibrary.simpleMessage("سوپر مارکت"),
+        "timescreansgamethemelistjobs5":
+            MessageLookupByLibrary.simpleMessage("اجاره خودرو"),
+        "timescreansgamethemelistjobs6":
+            MessageLookupByLibrary.simpleMessage("جواهر فروشی"),
+        "timescreansgamethemelistjobs7":
+            MessageLookupByLibrary.simpleMessage("فروشگاه سیگار"),
+        "timescreansgamethemelistjobs8":
+            MessageLookupByLibrary.simpleMessage("معلم"),
+        "timescreansgamethemelistjobs9":
+            MessageLookupByLibrary.simpleMessage("طراح سایت"),
         "timescreanstitletext":
             MessageLookupByLibrary.simpleMessage("بزن بریم !"),
         "titleHomeScreans1": MessageLookupByLibrary.simpleMessage("بازی"),

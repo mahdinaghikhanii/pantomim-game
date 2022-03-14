@@ -899,6 +899,216 @@ class S {
       args: [],
     );
   }
+
+  /// `Car shop`
+  String get timescreansgamethemelistjobs0 {
+    return Intl.message(
+      'Car shop',
+      name: 'timescreansgamethemelistjobs0',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Cabinet making `
+  String get timescreansgamethemelistjobs1 {
+    return Intl.message(
+      'Cabinet making ',
+      name: 'timescreansgamethemelistjobs1',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `tower construction`
+  String get timescreansgamethemelistjobs2 {
+    return Intl.message(
+      'tower construction',
+      name: 'timescreansgamethemelistjobs2',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Florist`
+  String get timescreansgamethemelistjobs3 {
+    return Intl.message(
+      'Florist',
+      name: 'timescreansgamethemelistjobs3',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `supermarket`
+  String get timescreansgamethemelistjobs4 {
+    return Intl.message(
+      'supermarket',
+      name: 'timescreansgamethemelistjobs4',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Car rental`
+  String get timescreansgamethemelistjobs5 {
+    return Intl.message(
+      'Car rental',
+      name: 'timescreansgamethemelistjobs5',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Jewelry`
+  String get timescreansgamethemelistjobs6 {
+    return Intl.message(
+      'Jewelry',
+      name: 'timescreansgamethemelistjobs6',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Cigarette shop`
+  String get timescreansgamethemelistjobs7 {
+    return Intl.message(
+      'Cigarette shop',
+      name: 'timescreansgamethemelistjobs7',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Teacher`
+  String get timescreansgamethemelistjobs8 {
+    return Intl.message(
+      'Teacher',
+      name: 'timescreansgamethemelistjobs8',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Site designer`
+  String get timescreansgamethemelistjobs9 {
+    return Intl.message(
+      'Site designer',
+      name: 'timescreansgamethemelistjobs9',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `ProGramer`
+  String get timescreansgamethemelistjobs10 {
+    return Intl.message(
+      'ProGramer',
+      name: 'timescreansgamethemelistjobs10',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Studio`
+  String get timescreansgamethemelistjobs11 {
+    return Intl.message(
+      'Studio',
+      name: 'timescreansgamethemelistjobs11',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Art workshop`
+  String get timescreansgamethemelistjobs12 {
+    return Intl.message(
+      'Art workshop',
+      name: 'timescreansgamethemelistjobs12',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Manual worker`
+  String get timescreansgamethemelistjobs13 {
+    return Intl.message(
+      'Manual worker',
+      name: 'timescreansgamethemelistjobs13',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Agriculture`
+  String get timescreansgamethemelistjobs14 {
+    return Intl.message(
+      'Agriculture',
+      name: 'timescreansgamethemelistjobs14',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Mechanical`
+  String get timescreansgamethemelistjobs15 {
+    return Intl.message(
+      'Mechanical',
+      name: 'timescreansgamethemelistjobs15',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Librarian`
+  String get timescreansgamethemelistjobs16 {
+    return Intl.message(
+      'Librarian',
+      name: 'timescreansgamethemelistjobs16',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Publisher `
+  String get timescreansgamethemelistjobs17 {
+    return Intl.message(
+      'Publisher ',
+      name: 'timescreansgamethemelistjobs17',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Betting broker `
+  String get timescreansgamethemelistjobs18 {
+    return Intl.message(
+      'Betting broker ',
+      name: 'timescreansgamethemelistjobs18',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Mobile store`
+  String get timescreansgamethemelistjobs19 {
+    return Intl.message(
+      'Mobile store',
+      name: 'timescreansgamethemelistjobs19',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Bakery`
+  String get timescreansgamethemelistjobs20 {
+    return Intl.message(
+      'Bakery',
+      name: 'timescreansgamethemelistjobs20',
+      desc: '',
+      args: [],
+    );
+  }
 }
 
 class AppLocalizationDelegate extends LocalizationsDelegate<S> {

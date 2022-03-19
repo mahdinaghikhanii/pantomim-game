@@ -146,11 +146,7 @@ class _TimerScreansState extends State<TimerScreans> {
           break;
 
         case 2:
-          List _animal = ['ss', 'bb', 'dasdsa', 'dmsakdas', 'adsads'];
-          modelProvider.topicgames(_animal[_random.nextInt(_animal.length)]);
-          break;
-        case 9:
-          List _jobs = [
+          List _animal = [
             localApp.timescreansgamethemelistanimal0,
             localApp.timescreansgamethemelistanimal1,
             localApp.timescreansgamethemelistanimal2,
@@ -173,6 +169,32 @@ class _TimerScreansState extends State<TimerScreans> {
             localApp.timescreansgamethemelistanimal18,
             localApp.timescreansgamethemelistanimal19,
             localApp.timescreansgamethemelistanimal20,
+          ];
+          modelProvider.topicgames(_animal[_random.nextInt(_animal.length)]);
+          break;
+        case 9:
+          List _jobs = [
+            localApp.timescreansgamethemelistjobs0,
+            localApp.timescreansgamethemelistjobs1,
+            localApp.timescreansgamethemelistjobs2,
+            localApp.timescreansgamethemelistjobs3,
+            localApp.timescreansgamethemelistjobs4,
+            localApp.timescreansgamethemelistjobs5,
+            localApp.timescreansgamethemelistjobs6,
+            localApp.timescreansgamethemelistjobs7,
+            localApp.timescreansgamethemelistjobs8,
+            localApp.timescreansgamethemelistjobs9,
+            localApp.timescreansgamethemelistjobs10,
+            localApp.timescreansgamethemelistjobs11,
+            localApp.timescreansgamethemelistjobs12,
+            localApp.timescreansgamethemelistjobs13,
+            localApp.timescreansgamethemelistjobs14,
+            localApp.timescreansgamethemelistjobs15,
+            localApp.timescreansgamethemelistjobs16,
+            localApp.timescreansgamethemelistjobs17,
+            localApp.timescreansgamethemelistjobs18,
+            localApp.timescreansgamethemelistjobs19,
+            localApp.timescreansgamethemelistjobs20
           ];
           modelProvider.topicgames(_jobs[_random.nextInt(_jobs.length)]);
           break;

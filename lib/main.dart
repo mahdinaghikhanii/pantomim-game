@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter/services.dart';
 import 'package:flutter_localizations/flutter_localizations.dart';
 import 'package:pantomim/generated/l10n.dart';
 import 'package:pantomim/theme/configtheme.dart';
@@ -14,6 +15,8 @@ AppProvider appProvider = AppProvider();
 // ignore: unused_element
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();
+  SystemChrome.setPreferredOrientations(
+      [DeviceOrientation.portraitUp, DeviceOrientation.portraitDown]);
   SharedPreferences sharedPreferences = await SharedPreferences.getInstance();
   await appProvider.fetchLocale();
   isviewed = sharedPreferences.getInt('onBoard');

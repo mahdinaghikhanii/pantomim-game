@@ -1109,6 +1109,216 @@ class S {
       args: [],
     );
   }
+
+  /// `Leopard`
+  String get timescreansgamethemelistanimal0 {
+    return Intl.message(
+      'Leopard',
+      name: 'timescreansgamethemelistanimal0',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Snake`
+  String get timescreansgamethemelistanimal1 {
+    return Intl.message(
+      'Snake',
+      name: 'timescreansgamethemelistanimal1',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Ant`
+  String get timescreansgamethemelistanimal2 {
+    return Intl.message(
+      'Ant',
+      name: 'timescreansgamethemelistanimal2',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `cow`
+  String get timescreansgamethemelistanimal3 {
+    return Intl.message(
+      'cow',
+      name: 'timescreansgamethemelistanimal3',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Chicken`
+  String get timescreansgamethemelistanimal4 {
+    return Intl.message(
+      'Chicken',
+      name: 'timescreansgamethemelistanimal4',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Lion`
+  String get timescreansgamethemelistanimal5 {
+    return Intl.message(
+      'Lion',
+      name: 'timescreansgamethemelistanimal5',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Leopard`
+  String get timescreansgamethemelistanimal6 {
+    return Intl.message(
+      'Leopard',
+      name: 'timescreansgamethemelistanimal6',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Beetle`
+  String get timescreansgamethemelistanimal7 {
+    return Intl.message(
+      'Beetle',
+      name: 'timescreansgamethemelistanimal7',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Crab`
+  String get timescreansgamethemelistanimal8 {
+    return Intl.message(
+      'Crab',
+      name: 'timescreansgamethemelistanimal8',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Octopus`
+  String get timescreansgamethemelistanimal9 {
+    return Intl.message(
+      'Octopus',
+      name: 'timescreansgamethemelistanimal9',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Eagle`
+  String get timescreansgamethemelistanimal10 {
+    return Intl.message(
+      'Eagle',
+      name: 'timescreansgamethemelistanimal10',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `vulture`
+  String get timescreansgamethemelistanimal11 {
+    return Intl.message(
+      'vulture',
+      name: 'timescreansgamethemelistanimal11',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Rhino`
+  String get timescreansgamethemelistanimal12 {
+    return Intl.message(
+      'Rhino',
+      name: 'timescreansgamethemelistanimal12',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Spider`
+  String get timescreansgamethemelistanimal13 {
+    return Intl.message(
+      'Spider',
+      name: 'timescreansgamethemelistanimal13',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Giraffe`
+  String get timescreansgamethemelistanimal14 {
+    return Intl.message(
+      'Giraffe',
+      name: 'timescreansgamethemelistanimal14',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Camel`
+  String get timescreansgamethemelistanimal15 {
+    return Intl.message(
+      'Camel',
+      name: 'timescreansgamethemelistanimal15',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Donkey`
+  String get timescreansgamethemelistanimal16 {
+    return Intl.message(
+      'Donkey',
+      name: 'timescreansgamethemelistanimal16',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Ostrich`
+  String get timescreansgamethemelistanimal17 {
+    return Intl.message(
+      'Ostrich',
+      name: 'timescreansgamethemelistanimal17',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Ant Eater`
+  String get timescreansgamethemelistanimal18 {
+    return Intl.message(
+      'Ant Eater',
+      name: 'timescreansgamethemelistanimal18',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Duck`
+  String get timescreansgamethemelistanimal19 {
+    return Intl.message(
+      'Duck',
+      name: 'timescreansgamethemelistanimal19',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `earthworm`
+  String get timescreansgamethemelistanimal20 {
+    return Intl.message(
+      'earthworm',
+      name: 'timescreansgamethemelistanimal20',
+      desc: '',
+      args: [],
+    );
+  }
 }
 
 class AppLocalizationDelegate extends LocalizationsDelegate<S> {

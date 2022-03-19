@@ -138,6 +138,48 @@ class MessageLookup extends MessageLookupByLibrary {
         "timeScreansbtnStop": MessageLookupByLibrary.simpleMessage("اتمام"),
         "timeScreansbtnWrong": MessageLookupByLibrary.simpleMessage("اخطار"),
         "timeSreansTimeTextTitle": MessageLookupByLibrary.simpleMessage("زمان"),
+        "timescreansgamethemelistanimal0":
+            MessageLookupByLibrary.simpleMessage("پلنگ"),
+        "timescreansgamethemelistanimal1":
+            MessageLookupByLibrary.simpleMessage("مار"),
+        "timescreansgamethemelistanimal10":
+            MessageLookupByLibrary.simpleMessage("عقاب"),
+        "timescreansgamethemelistanimal11":
+            MessageLookupByLibrary.simpleMessage("کرکس"),
+        "timescreansgamethemelistanimal12":
+            MessageLookupByLibrary.simpleMessage("کرگدن"),
+        "timescreansgamethemelistanimal13":
+            MessageLookupByLibrary.simpleMessage("عنکبوت"),
+        "timescreansgamethemelistanimal14":
+            MessageLookupByLibrary.simpleMessage("زرافه"),
+        "timescreansgamethemelistanimal15":
+            MessageLookupByLibrary.simpleMessage("شتر"),
+        "timescreansgamethemelistanimal16":
+            MessageLookupByLibrary.simpleMessage("خر"),
+        "timescreansgamethemelistanimal17":
+            MessageLookupByLibrary.simpleMessage("شتر مرغ"),
+        "timescreansgamethemelistanimal18":
+            MessageLookupByLibrary.simpleMessage("مورچه خوار"),
+        "timescreansgamethemelistanimal19":
+            MessageLookupByLibrary.simpleMessage("اردک"),
+        "timescreansgamethemelistanimal2":
+            MessageLookupByLibrary.simpleMessage("مورچه"),
+        "timescreansgamethemelistanimal20":
+            MessageLookupByLibrary.simpleMessage("کرم خاکی"),
+        "timescreansgamethemelistanimal3":
+            MessageLookupByLibrary.simpleMessage("گاو"),
+        "timescreansgamethemelistanimal4":
+            MessageLookupByLibrary.simpleMessage("مرغ"),
+        "timescreansgamethemelistanimal5":
+            MessageLookupByLibrary.simpleMessage("شیر"),
+        "timescreansgamethemelistanimal6":
+            MessageLookupByLibrary.simpleMessage("پلنگ"),
+        "timescreansgamethemelistanimal7":
+            MessageLookupByLibrary.simpleMessage("سوسک"),
+        "timescreansgamethemelistanimal8":
+            MessageLookupByLibrary.simpleMessage("خرچنگ"),
+        "timescreansgamethemelistanimal9":
+            MessageLookupByLibrary.simpleMessage("هشت پا"),
         "timescreansgamethemelistfoodtext0":
             MessageLookupByLibrary.simpleMessage("کشک بادمجون"),
         "timescreansgamethemelistfoodtext1":

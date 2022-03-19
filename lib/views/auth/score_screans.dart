@@ -171,7 +171,7 @@ class _ScoreScreansState extends State<ScoreScreans>
                             score: '0',
                           ),
                           Padding(
-                            padding: const EdgeInsets.only(top: 40, bottom: 10),
+                            padding: const EdgeInsets.only(top: 30, bottom: 10),
                             child: Center(
                               child: DounleFloattingButton(
                                 colorBtn:

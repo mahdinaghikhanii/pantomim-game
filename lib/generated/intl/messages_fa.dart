@@ -86,7 +86,7 @@ class MessageLookup extends MessageLookupByLibrary {
         "dialogquitTitleTextgame2":
             MessageLookupByLibrary.simpleMessage("بازی"),
         "dialogquitTitleTextquit1":
-            MessageLookupByLibrary.simpleMessage(" خروج"),
+            MessageLookupByLibrary.simpleMessage(" خروج "),
         "dialogquitbtnTextNoPlaying":
             MessageLookupByLibrary.simpleMessage("بازی میکنم"),
         "dialogquittextTitleAreYourSureQuitgame":

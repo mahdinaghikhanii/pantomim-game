@@ -54,6 +54,7 @@ class _MyAppState extends State<MyApp> {
               supportedLocales: S.delegate.supportedLocales,
               debugShowCheckedModeBanner: false,
               locale: model.currentLocale,
+              title: "Pantomim",
               home:
                   isviewed != 0 ? const GetStartScreans() : const HomeScreans(),
               theme: ConfigTheme.light().getTheme(

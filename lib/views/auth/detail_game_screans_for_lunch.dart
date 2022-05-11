@@ -21,7 +21,7 @@ class DetailGameScreans extends StatelessWidget {
         onWillPop: () async {
           ScaffoldMessenger.of(context);
 
-          return false;
+          return true;
         },
         child: Container(
           decoration: backgroundDefaultScafold,

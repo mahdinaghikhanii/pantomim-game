@@ -43,9 +43,7 @@ class _MyAppState extends State<MyApp> {
         create: (context) => appProvider,
         child: Consumer<AppProvider>(builder: (context, model, child) {
           return MaterialApp(
-
-              // ignore: prefer_const_literals_to_create_immutables
-              localizationsDelegates: [
+              localizationsDelegates: const [
                 S.delegate,
                 GlobalMaterialLocalizations.delegate,
                 GlobalWidgetsLocalizations.delegate,

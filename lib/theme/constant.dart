@@ -53,4 +53,10 @@ class Constans {
 //language code
   // ignore: non_constant_identifier_names
   static String LANGUAGE_CODE = 'languagecode';
+
+  //borderRadius
+  static const double kBigBorderRadius = 25;
+  static const kMediumBorderRadius = 20;
+  static const kSmallBorderRadius = 15;
+  static const kVerySmallBorderRadius = 10;
 }

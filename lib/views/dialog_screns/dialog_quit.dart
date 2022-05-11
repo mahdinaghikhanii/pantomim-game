@@ -66,7 +66,6 @@ class DialogQuit extends StatelessWidget {
                               DounleFloattingButton(
                                 ontap: () {
                                   appProvider.reasetvalue();
-
                                   Navigator.of(context).pushAndRemoveUntil(
                                       MaterialPageRoute(
                                           builder: (context) =>

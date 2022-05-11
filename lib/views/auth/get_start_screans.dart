@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
-import 'package:pantomim/views/auth/home_screans.dart';
 import 'package:shared_preferences/shared_preferences.dart';
+
+import 'home_screans.dart';
 
 class GetStartScreans extends StatefulWidget {
   const GetStartScreans({Key? key}) : super(key: key);

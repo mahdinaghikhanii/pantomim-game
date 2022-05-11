@@ -1,12 +1,12 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'package:pantomim/generated/l10n.dart';
-import 'package:pantomim/util/view_models/provider/provider.dart';
-import 'package:pantomim/theme/constant.dart';
-import 'package:pantomim/views/auth/detail_game_screans_for_lunch.dart';
 import 'package:provider/provider.dart';
 
+import '../../generated/l10n.dart';
+import '../../theme/constant.dart';
+import '../../util/view_models/provider/provider.dart';
 import '../module/widgets/double_floatingac_button.dart';
+import 'detail_game_screans_for_lunch.dart';
 
 class ChoiceYourTopic extends StatefulWidget {
   const ChoiceYourTopic({Key? key}) : super(key: key);
@@ -56,7 +56,6 @@ class _ChoiceYourTopicState extends State<ChoiceYourTopic> {
       _viewCustom = false;
     }
   }
-  // ignore: non_constant_identifier_names
 
   @override
   Widget build(BuildContext context) {
@@ -75,8 +74,6 @@ class _ChoiceYourTopicState extends State<ChoiceYourTopic> {
       localApp.timeFOrStartGame4Min20Seconds,
       localApp.timeFOrStartGame4Min50Seconds,
     ];
-    // modelProvider
-    //   .timeScrans(nameTeamTextFiledInput[modelProvider.getTimeForMatch()]);
 
     final Map<int, Widget> mytab = <int, Widget>{
       0: Text(localApp.typeOfMatchScreansTextDetailNameButtonAUTO,
@@ -436,6 +433,9 @@ class _ChoiceYourTopicState extends State<ChoiceYourTopic> {
                                       ])),
                                       const Spacer(),
                                       InkWell(
+                                        borderRadius: BorderRadius.circular(
+                                          Constans.kBigBorderRadius,
+                                        ),
                                         onTap: () => modelProvider
                                             .incermentnumberofrounds(),
                                         child: Container(
@@ -452,6 +452,9 @@ class _ChoiceYourTopicState extends State<ChoiceYourTopic> {
                                         width: 20,
                                       ),
                                       InkWell(
+                                        borderRadius: BorderRadius.circular(
+                                          Constans.kBigBorderRadius,
+                                        ),
                                         onTap: () => modelProvider
                                             .lowoffnumberofrounds(),
                                         child: Container(

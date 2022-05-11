@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import '../module/extension/extension.dart';
 import 'package:provider/provider.dart';
 
 import '../../generated/l10n.dart';
@@ -37,12 +38,7 @@ class DetailGameScreans extends StatelessWidget {
                   children: [
                     DounleFloattingButton(
                       ontap: () {
-                        showDialog(
-                            context: context,
-                            builder: (
-                              context,
-                            ) =>
-                                const DialogQuit());
+                        context.showDialogs(const DialogQuit());
                       },
                       colorBtn: kblue,
                       textBtn:
@@ -52,9 +48,7 @@ class DetailGameScreans extends StatelessWidget {
                     DounleFloattingButton(
                       ontap: () {
                         modelProvider.setStringenandFaGameTheme;
-                        showDialog(
-                            context: context,
-                            builder: (context) => const DialogShow());
+                        context.showDialogs(const DialogShow());
                       },
                       colorBtn: Colors.transparent,
                       textBtn: localApp.detailGameScreansForLunchBtnNameLetsGo,
@@ -179,8 +173,6 @@ class RowShowTeamAndScore extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    // ignore: unused_local_variable
-    final modelProvider = Provider.of<AppProvider>(context);
     return Visibility(
       visible: visiblity,
       child: Container(

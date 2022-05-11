@@ -1,16 +1,18 @@
 import 'dart:math' as math;
+
 import 'package:flutter/material.dart';
 import 'package:just_audio/just_audio.dart';
-import 'package:pantomim/generated/l10n.dart';
-import 'package:pantomim/models/category.dart';
-import 'package:pantomim/theme/constant.dart';
-import 'package:pantomim/util/view_models/canvas/win_lose_painter.dart';
-import 'package:pantomim/util/view_models/provider/provider.dart';
-import 'package:pantomim/views/auth/detail_game_screans_for_lunch.dart';
-import 'package:pantomim/views/dialog_screns/dialog_finishid.dart';
-import 'package:pantomim/views/widgets/double_floatingac_button.dart';
-import 'package:pantomim/views/widgets/scoreshowtext_textdetail.dart';
 import 'package:provider/provider.dart';
+
+import '../../generated/l10n.dart';
+import '../../models/category.dart';
+import '../../theme/constant.dart';
+import '../../util/view_models/canvas/win_lose_painter.dart';
+import '../../util/view_models/provider/provider.dart';
+import '../dialog_screns/dialog_finishid.dart';
+import '../module/widgets/double_floatingac_button.dart';
+import '../module/widgets/scoreshowtext_textdetail.dart';
+import 'detail_game_screans_for_lunch.dart';
 
 class ScoreScreans extends StatefulWidget {
   const ScoreScreans({Key? key}) : super(key: key);

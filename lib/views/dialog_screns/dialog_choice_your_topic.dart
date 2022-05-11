@@ -1,10 +1,11 @@
 import 'package:flutter/material.dart';
-import 'package:pantomim/generated/l10n.dart';
-import 'package:pantomim/models/category.dart';
-import 'package:pantomim/util/view_models/provider/provider.dart';
-import 'package:pantomim/views/auth/time_screans.dart';
-import 'package:pantomim/views/widgets/choice_boximage_text_select.dart';
 import 'package:provider/provider.dart';
+
+import '../../generated/l10n.dart';
+import '../../models/category.dart';
+import '../../util/view_models/provider/provider.dart';
+import '../auth/time_screans.dart';
+import '../module/widgets/choice_boximage_text_select.dart';
 
 class DialogShow extends StatelessWidget {
   const DialogShow({Key? key}) : super(key: key);

@@ -1,14 +1,16 @@
 import 'dart:async';
+
 import 'package:animate_do/animate_do.dart';
 import 'package:flutter/material.dart';
-import 'package:pantomim/generated/l10n.dart';
-import 'package:pantomim/theme/constant.dart';
-import 'package:pantomim/util/view_models/canvas/menoscreans_painter.dart';
-import 'package:pantomim/util/view_models/provider/provider.dart';
-import 'package:pantomim/views/auth/type_of_match_screans.dart';
-import 'package:pantomim/views/dialog_screns/dialog_setting.dart';
-import 'package:pantomim/views/widgets/circle_button.dart';
 import 'package:provider/provider.dart';
+
+import '../../generated/l10n.dart';
+import '../../theme/constant.dart';
+import '../../util/view_models/canvas/menoscreans_painter.dart';
+import '../../util/view_models/provider/provider.dart';
+import '../dialog_screns/dialog_setting.dart';
+import '../module/widgets/circle_button.dart';
+import 'type_of_match_screans.dart';
 
 class MenoScreans extends StatefulWidget {
   const MenoScreans({Key? key}) : super(key: key);

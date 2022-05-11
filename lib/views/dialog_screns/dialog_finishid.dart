@@ -1,10 +1,11 @@
 import 'package:flutter/material.dart';
-import 'package:pantomim/generated/l10n.dart';
-import 'package:pantomim/theme/constant.dart';
-import 'package:pantomim/util/view_models/provider/provider.dart';
-import 'package:pantomim/views/auth/home_screans.dart';
-import 'package:pantomim/views/widgets/double_floatingac_button.dart';
 import 'package:provider/provider.dart';
+
+import '../../generated/l10n.dart';
+import '../../theme/constant.dart';
+import '../../util/view_models/provider/provider.dart';
+import '../auth/home_screans.dart';
+import '../module/widgets/double_floatingac_button.dart';
 
 class DialogFinishidGame extends StatelessWidget {
   const DialogFinishidGame({Key? key}) : super(key: key);

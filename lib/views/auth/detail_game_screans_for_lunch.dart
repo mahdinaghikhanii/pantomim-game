@@ -1,11 +1,12 @@
 import 'package:flutter/material.dart';
-import 'package:pantomim/generated/l10n.dart';
-import 'package:pantomim/util/view_models/provider/provider.dart';
-import 'package:pantomim/theme/constant.dart';
-import 'package:pantomim/views/dialog_screns/dialog_choice_your_topic.dart';
-import 'package:pantomim/views/dialog_screns/dialog_quit.dart';
-import 'package:pantomim/views/widgets/double_floatingac_button.dart';
 import 'package:provider/provider.dart';
+
+import '../../generated/l10n.dart';
+import '../../theme/constant.dart';
+import '../../util/view_models/provider/provider.dart';
+import '../dialog_screns/dialog_choice_your_topic.dart';
+import '../dialog_screns/dialog_quit.dart';
+import '../module/widgets/double_floatingac_button.dart';
 
 class DetailGameScreans extends StatelessWidget {
   const DetailGameScreans({Key? key}) : super(key: key);

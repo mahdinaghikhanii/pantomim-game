@@ -1,5 +1,6 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:pantomim/views/module/widgets/button_add_remove.dart';
 import 'package:provider/provider.dart';
 
 import '../../generated/l10n.dart';
@@ -257,17 +258,12 @@ class _ChoiceYourTopicState extends State<ChoiceYourTopic> {
                             const SizedBox(
                               height: 10,
                             ),
-                            InkWell(
-                              onTap: context.read<AppProvider>().increment,
-                              borderRadius: BorderRadius.circular(50),
-                              child: Container(
-                                  height: size.height * 0.06,
-                                  width: size.width * 0.18,
-                                  decoration: BoxDecoration(
-                                      shape: BoxShape.circle,
-                                      border: Border.all(color: kwhite)),
-                                  child: const Icon(Icons.add, color: kwhite)),
-                            ),
+                            ButtonAddRemove(
+                                iconData: Icons.add,
+                                height: size.height * 0.06,
+                                width: size.width * 0.18,
+                                onTap: () =>
+                                    context.read<AppProvider>().increment),
                             SizedBox(
                               height: size.height * 0.02,
                             ),
@@ -279,18 +275,11 @@ class _ChoiceYourTopicState extends State<ChoiceYourTopic> {
                             SizedBox(
                               height: size.height * 0.02,
                             ),
-                            InkWell(
-                              onTap: () => modelProvider.lowoff(),
-                              borderRadius: BorderRadius.circular(50),
-                              child: Container(
-                                  height: size.height * 0.06,
-                                  width: size.width * 0.18,
-                                  decoration: BoxDecoration(
-                                      shape: BoxShape.circle,
-                                      border: Border.all(color: kwhite)),
-                                  child:
-                                      const Icon(Icons.remove, color: kwhite)),
-                            ),
+                            ButtonAddRemove(
+                                iconData: Icons.remove,
+                                height: size.height * 0.06,
+                                width: size.width * 0.18,
+                                onTap: () => modelProvider.lowoff()),
                             const SizedBox(
                               height: 10,
                             ),
@@ -338,7 +327,6 @@ class _ChoiceYourTopicState extends State<ChoiceYourTopic> {
                                             if (value == 0) {
                                               _unsetVisibility();
                                             } else {
-                                              // _unsetVisibility();
                                               _toggleVisibility();
                                             }
                                           });
@@ -370,33 +358,19 @@ class _ChoiceYourTopicState extends State<ChoiceYourTopic> {
                                               .textTheme
                                               .bodyText2),
                                       const Spacer(),
-                                      InkWell(
-                                        onTap: () =>
-                                            modelProvider.incermentstring(),
-                                        child: Container(
-                                            height: size.height * 0.06,
-                                            width: size.width * 0.12,
-                                            decoration: BoxDecoration(
-                                                shape: BoxShape.circle,
-                                                border:
-                                                    Border.all(color: kwhite)),
-                                            child: const Icon(Icons.add,
-                                                color: kwhite)),
-                                      ),
+                                      ButtonAddRemove(
+                                          iconData: Icons.add,
+                                          height: size.height * 0.06,
+                                          width: size.width * 0.12,
+                                          onTap: () =>
+                                              modelProvider.incermentstring()),
                                       const SizedBox(width: 20),
-                                      InkWell(
-                                        onTap: () =>
-                                            modelProvider.lowoffstring(),
-                                        child: Container(
-                                            height: size.height * 0.06,
-                                            width: size.width * 0.12,
-                                            decoration: BoxDecoration(
-                                                shape: BoxShape.circle,
-                                                border:
-                                                    Border.all(color: kwhite)),
-                                            child: const Icon(Icons.remove,
-                                                color: kwhite)),
-                                      ),
+                                      ButtonAddRemove(
+                                          iconData: Icons.remove,
+                                          height: size.height * 0.06,
+                                          width: size.width * 0.12,
+                                          onTap: () =>
+                                              modelProvider.lowoffstring())
                                     ],
                                   )),
                               const SizedBox(
@@ -432,41 +406,21 @@ class _ChoiceYourTopicState extends State<ChoiceYourTopic> {
                                         )),
                                       ])),
                                       const Spacer(),
-                                      InkWell(
-                                        borderRadius: BorderRadius.circular(
-                                          Constans.kBigBorderRadius,
-                                        ),
-                                        onTap: () => modelProvider
-                                            .incermentnumberofrounds(),
-                                        child: Container(
-                                            height: size.height * 0.06,
-                                            width: size.width * 0.12,
-                                            decoration: BoxDecoration(
-                                                shape: BoxShape.circle,
-                                                border:
-                                                    Border.all(color: kwhite)),
-                                            child: const Icon(Icons.add,
-                                                color: kwhite)),
-                                      ),
+                                      ButtonAddRemove(
+                                          iconData: Icons.add,
+                                          height: size.height * 0.06,
+                                          width: size.width * 0.12,
+                                          onTap: () => modelProvider
+                                              .incermentnumberofrounds()),
                                       const SizedBox(
                                         width: 20,
                                       ),
-                                      InkWell(
-                                        borderRadius: BorderRadius.circular(
-                                          Constans.kBigBorderRadius,
-                                        ),
-                                        onTap: () => modelProvider
-                                            .lowoffnumberofrounds(),
-                                        child: Container(
-                                            height: size.height * 0.06,
-                                            width: size.width * 0.12,
-                                            decoration: BoxDecoration(
-                                                shape: BoxShape.circle,
-                                                border:
-                                                    Border.all(color: kwhite)),
-                                            child: const Icon(Icons.remove,
-                                                color: kwhite)),
-                                      ),
+                                      ButtonAddRemove(
+                                          iconData: Icons.remove,
+                                          height: size.height * 0.06,
+                                          width: size.width * 0.12,
+                                          onTap: () => modelProvider
+                                              .lowoffnumberofrounds())
                                     ],
                                   )),
                               const Divider(),

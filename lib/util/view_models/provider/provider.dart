@@ -1,7 +1,7 @@
 // ignore_for_file: unnecessary_null_comparison, prefer_final_fields, duplicate_ignore
 import 'package:flutter/material.dart';
 import 'package:pantomim/models/category.dart';
-import 'package:pantomim/theme/constant.dart';
+import 'package:pantomim/views/module/constans/constant.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 
 class AppProvider extends ChangeNotifier {

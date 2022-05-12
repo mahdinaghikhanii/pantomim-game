@@ -3,7 +3,7 @@ import '../module/extension/extension.dart';
 import 'package:provider/provider.dart';
 
 import '../../generated/l10n.dart';
-import '../../theme/constant.dart';
+import '../module/constans/constant.dart';
 import '../../util/view_models/provider/provider.dart';
 import '../dialog_screns/dialog_choice_your_topic.dart';
 import '../dialog_screns/dialog_quit.dart';

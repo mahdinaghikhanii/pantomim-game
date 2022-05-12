@@ -3,7 +3,7 @@ import 'package:flutter/services.dart';
 import 'package:flutter_localizations/flutter_localizations.dart';
 import 'package:pantomim/generated/l10n.dart';
 import 'package:pantomim/theme/configtheme.dart';
-import 'package:pantomim/views/auth/get_start_screans.dart';
+import 'package:pantomim/views/auth/obboard_screans.dart';
 import 'package:pantomim/views/auth/home_screans.dart';
 import 'package:provider/provider.dart';
 import 'package:shared_preferences/shared_preferences.dart';
@@ -54,7 +54,7 @@ class _MyAppState extends State<MyApp> {
               locale: model.currentLocale,
               title: "Pantomim",
               home:
-                  isviewed != 0 ? const GetStartScreans() : const HomeScreans(),
+                  isviewed != 0 ? const OnBoardScreans() : const HomeScreans(),
               theme: ConfigTheme.light().getTheme(
                   Provider.of<AppProvider>(context, listen: true)
                       .currentLocale

@@ -1,11 +1,12 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'package:pantomim/views/module/widgets/button_add_remove.dart';
 import 'package:provider/provider.dart';
 
 import '../../generated/l10n.dart';
-import '../../theme/constant.dart';
 import '../../util/view_models/provider/provider.dart';
+import '../module/constans/constant.dart';
+import '../module/extension/extension.dart';
+import '../module/widgets/button_add_remove.dart';
 import '../module/widgets/double_floatingac_button.dart';
 import 'detail_game_screans_for_lunch.dart';
 
@@ -61,7 +62,7 @@ class _ChoiceYourTopicState extends State<ChoiceYourTopic> {
   @override
   Widget build(BuildContext context) {
     var localApp = S.of(context);
-    final size = MediaQuery.of(context).size;
+
     final modelProvider = Provider.of<AppProvider>(context);
 
     List<String> nameTeamTextFiledInput = [
@@ -133,15 +134,15 @@ class _ChoiceYourTopicState extends State<ChoiceYourTopic> {
                       ]),
                     ),
                     SizedBox(
-                      height: size.height * 0.04,
+                      height: context.height * 0.04,
                     ),
                     Row(children: [
                       Container(
                           decoration: BoxDecoration(
                               border: Border.all(color: kwhite),
                               borderRadius: BorderRadius.circular(15)),
-                          width: size.width * 0.62,
-                          height: size.height * 0.23,
+                          width: context.width * 0.62,
+                          height: context.height * 0.23,
                           child: Center(
                             child: Wrap(
                               crossAxisAlignment: WrapCrossAlignment.end,
@@ -149,8 +150,8 @@ class _ChoiceYourTopicState extends State<ChoiceYourTopic> {
                                 Container(
                                     padding: const EdgeInsets.all(10),
                                     color: Colors.transparent,
-                                    width: size.width * 0.30,
-                                    height: size.height * 0.10,
+                                    width: context.width * 0.30,
+                                    height: context.height * 0.10,
                                     child: TextField(
                                         onChanged: (String value) {
                                           modelProvider.changeNameTeams1(value);
@@ -168,8 +169,8 @@ class _ChoiceYourTopicState extends State<ChoiceYourTopic> {
                                 Container(
                                     padding: const EdgeInsets.all(10),
                                     color: Colors.transparent,
-                                    width: size.width * 0.30,
-                                    height: size.height * 0.10,
+                                    width: context.width * 0.30,
+                                    height: context.height * 0.10,
                                     child: TextField(
                                         onChanged: (String value) {
                                           modelProvider.changeNameTeams2(value);
@@ -187,8 +188,8 @@ class _ChoiceYourTopicState extends State<ChoiceYourTopic> {
                                 Container(
                                     padding: const EdgeInsets.all(10),
                                     color: Colors.transparent,
-                                    width: size.width * 0.30,
-                                    height: size.height * 0.10,
+                                    width: context.width * 0.30,
+                                    height: context.height * 0.10,
                                     child: TextField(
                                         onChanged: (String value) {
                                           modelProvider.changeNameTeams3(value);
@@ -216,8 +217,8 @@ class _ChoiceYourTopicState extends State<ChoiceYourTopic> {
                                 Container(
                                     padding: const EdgeInsets.all(10),
                                     color: Colors.transparent,
-                                    width: size.width * 0.30,
-                                    height: size.height * 0.10,
+                                    width: context.width * 0.30,
+                                    height: context.height * 0.10,
                                     child: TextField(
                                         enabled:
                                             modelProvider.getCounterTeam() > 3
@@ -247,8 +248,8 @@ class _ChoiceYourTopicState extends State<ChoiceYourTopic> {
                         width: 10,
                       ),
                       Container(
-                          width: size.width * 0.24,
-                          height: size.height * 0.23,
+                          width: context.width * 0.24,
+                          height: context.height * 0.23,
                           decoration: BoxDecoration(
                               borderRadius: BorderRadius.circular(15),
                               border: Border.all(
@@ -260,12 +261,12 @@ class _ChoiceYourTopicState extends State<ChoiceYourTopic> {
                             ),
                             ButtonAddRemove(
                                 iconData: Icons.add,
-                                height: size.height * 0.06,
-                                width: size.width * 0.18,
+                                height: context.height * 0.06,
+                                width: context.width * 0.18,
                                 onTap: () =>
                                     context.read<AppProvider>().increment),
                             SizedBox(
-                              height: size.height * 0.02,
+                              height: context.height * 0.02,
                             ),
                             Text(
                               modelProvider.getCounterTeam().toString(),
@@ -273,12 +274,12 @@ class _ChoiceYourTopicState extends State<ChoiceYourTopic> {
                               style: Theme.of(context).textTheme.bodyText1,
                             ),
                             SizedBox(
-                              height: size.height * 0.02,
+                              height: context.height * 0.02,
                             ),
                             ButtonAddRemove(
                                 iconData: Icons.remove,
-                                height: size.height * 0.06,
-                                width: size.width * 0.18,
+                                height: context.height * 0.06,
+                                width: context.width * 0.18,
                                 onTap: () => modelProvider.lowoff()),
                             const SizedBox(
                               height: 10,
@@ -360,15 +361,15 @@ class _ChoiceYourTopicState extends State<ChoiceYourTopic> {
                                       const Spacer(),
                                       ButtonAddRemove(
                                           iconData: Icons.add,
-                                          height: size.height * 0.06,
-                                          width: size.width * 0.12,
+                                          height: context.height * 0.06,
+                                          width: context.width * 0.12,
                                           onTap: () =>
                                               modelProvider.incermentstring()),
                                       const SizedBox(width: 20),
                                       ButtonAddRemove(
                                           iconData: Icons.remove,
-                                          height: size.height * 0.06,
-                                          width: size.width * 0.12,
+                                          height: context.height * 0.06,
+                                          width: context.width * 0.12,
                                           onTap: () =>
                                               modelProvider.lowoffstring())
                                     ],
@@ -408,8 +409,8 @@ class _ChoiceYourTopicState extends State<ChoiceYourTopic> {
                                       const Spacer(),
                                       ButtonAddRemove(
                                           iconData: Icons.add,
-                                          height: size.height * 0.06,
-                                          width: size.width * 0.12,
+                                          height: context.height * 0.06,
+                                          width: context.width * 0.12,
                                           onTap: () => modelProvider
                                               .incermentnumberofrounds()),
                                       const SizedBox(
@@ -417,8 +418,8 @@ class _ChoiceYourTopicState extends State<ChoiceYourTopic> {
                                       ),
                                       ButtonAddRemove(
                                           iconData: Icons.remove,
-                                          height: size.height * 0.06,
-                                          width: size.width * 0.12,
+                                          height: context.height * 0.06,
+                                          width: context.width * 0.12,
                                           onTap: () => modelProvider
                                               .lowoffnumberofrounds())
                                     ],

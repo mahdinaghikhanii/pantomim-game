@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 
-import '../../../theme/constant.dart';
+import '../constans/constant.dart';
 
 class ButtonAddRemove extends StatelessWidget {
   final Function()? onTap;

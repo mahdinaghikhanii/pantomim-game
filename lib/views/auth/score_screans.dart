@@ -6,7 +6,7 @@ import 'package:provider/provider.dart';
 
 import '../../generated/l10n.dart';
 import '../../models/category.dart';
-import '../../theme/constant.dart';
+import '../module/constans/constant.dart';
 import '../../util/view_models/canvas/win_lose_painter.dart';
 import '../../util/view_models/provider/provider.dart';
 import '../dialog_screns/dialog_finishid.dart';

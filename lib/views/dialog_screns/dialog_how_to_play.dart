@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:pantomim/theme/constant.dart';
+import 'package:pantomim/views/module/constans/constant.dart';
 
 class DialogHowToPlay extends StatelessWidget {
   const DialogHowToPlay({Key? key}) : super(key: key);

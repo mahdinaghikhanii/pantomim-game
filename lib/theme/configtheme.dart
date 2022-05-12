@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:pantomim/theme/constant.dart';
+import 'package:pantomim/views/module/constans/constant.dart';
 
 class ConfigTheme {
   String faPrimaryFontFamily = 'IranYekan';

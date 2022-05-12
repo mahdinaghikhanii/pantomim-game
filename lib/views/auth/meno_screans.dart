@@ -5,7 +5,7 @@ import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 
 import '../../generated/l10n.dart';
-import '../../theme/constant.dart';
+import '../module/constans/constant.dart';
 import '../../util/view_models/canvas/menoscreans_painter.dart';
 import '../../util/view_models/provider/provider.dart';
 import '../dialog_screns/dialog_setting.dart';

@@ -3,20 +3,15 @@ import 'package:shared_preferences/shared_preferences.dart';
 
 import 'home_screans.dart';
 
-class GetStartScreans extends StatefulWidget {
-  const GetStartScreans({Key? key}) : super(key: key);
+class OnBoardScreans extends StatelessWidget {
+  const OnBoardScreans({Key? key}) : super(key: key);
 
-  @override
-  State<GetStartScreans> createState() => _GetStartScreansState();
-}
+  _storeInBoardScreansInfo() async {
+    int isViewed = 0;
+    SharedPreferences prefs = await SharedPreferences.getInstance();
+    await prefs.setInt('InBoardScreans', isViewed);
+  }
 
-_storeOnboardInfo() async {
-  int isViewed = 0;
-  SharedPreferences prefs = await SharedPreferences.getInstance();
-  await prefs.setInt('onBoard', isViewed);
-}
-
-class _GetStartScreansState extends State<GetStartScreans> {
   @override
   Widget build(BuildContext context) {
     final size = MediaQuery.of(context).size;
@@ -40,7 +35,7 @@ class _GetStartScreansState extends State<GetStartScreans> {
                   style: Theme.of(context).primaryTextTheme.bodyText1,
                 ),
                 onPressed: () async {
-                  await _storeOnboardInfo();
+                  await _storeInBoardScreansInfo();
                   Navigator.pushReplacement(
                       context,
                       MaterialPageRoute(
@@ -88,3 +83,5 @@ class _GetStartScreansState extends State<GetStartScreans> {
   }
 }
  //'😍 خوش اومدید \n شما می تونید بازی پانتومیم یا ادا بازی کنید \nکلی لذت ببرید ',
+
+

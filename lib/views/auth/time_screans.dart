@@ -5,7 +5,7 @@ import 'package:animate_do/animate_do.dart';
 import 'package:flutter/material.dart';
 import 'package:just_audio/just_audio.dart';
 import 'package:pantomim/generated/l10n.dart';
-import 'package:pantomim/theme/constant.dart';
+import 'package:pantomim/views/module/constans/constant.dart';
 import 'package:pantomim/util/view_models/provider/provider.dart';
 import 'package:pantomim/views/dialog_screns/dialog_winorlose.dart';
 import 'package:provider/provider.dart';

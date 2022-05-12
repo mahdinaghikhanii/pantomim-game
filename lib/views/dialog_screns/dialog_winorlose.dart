@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:pantomim/generated/l10n.dart';
-import 'package:pantomim/theme/constant.dart';
+import 'package:pantomim/views/module/constans/constant.dart';
 import 'package:pantomim/util/view_models/provider/provider.dart';
 import 'package:pantomim/views/auth/score_screans.dart';
 import 'package:provider/provider.dart';

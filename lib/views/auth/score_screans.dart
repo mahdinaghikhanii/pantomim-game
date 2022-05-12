@@ -1,15 +1,15 @@
 import 'dart:math' as math;
 
 import 'package:flutter/material.dart';
-import 'package:just_audio/just_audio.dart';
 import 'package:provider/provider.dart';
 
 import '../../generated/l10n.dart';
 import '../../models/category.dart';
-import '../module/constans/constant.dart';
 import '../../util/view_models/canvas/win_lose_painter.dart';
 import '../../util/view_models/provider/provider.dart';
 import '../dialog_screns/dialog_finishid.dart';
+import '../module/constans/constant.dart';
+import '../module/extension/extension.dart';
 import '../module/widgets/double_floatingac_button.dart';
 import '../module/widgets/scoreshowtext_textdetail.dart';
 import 'detail_game_screans_for_lunch.dart';
@@ -27,11 +27,13 @@ class _ScoreScreansState extends State<ScoreScreans>
   late AnimationController controller;
   List<Particle> particles = [];
 
+  //this items for animations  createa random size
+  //and color Randoms
+
   genereteListOfParticles() {
     int numberOfParticles = 200;
     for (int i = 0; i < numberOfParticles; i++) {
       double randomSize = math.Random().nextDouble() * 20;
-
       int randomR = math.Random().nextInt(256);
       int randomG = math.Random().nextInt(256);
       int randomB = math.Random().nextInt(256);
@@ -55,13 +57,6 @@ class _ScoreScreansState extends State<ScoreScreans>
     if (modelProvier.visibilityTeam1Icon == true) {
       modelProvier.getCounterOfScoreTeam1().toString();
     }
-  }
-
-  void playclap() async {
-    final player = AudioPlayer();
-    // ignore: unused_local_variable
-    var claps = await player.setAsset('assets/audio/clap.wav');
-    await player.play();
   }
 
   @override
@@ -199,7 +194,9 @@ class _ScoreScreansState extends State<ScoreScreans>
                                                 const DetailGameScreans()));
                                     if (modelProvier.getcheckforInnigns >
                                         modelProvier.getCounterTeam()) {
-                                      playclap();
+                                      context
+                                          .playAudio('assets/audio/clap.wav');
+
                                       showDialog(
                                           barrierDismissible: false,
                                           context: context,

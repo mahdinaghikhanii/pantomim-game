@@ -263,8 +263,7 @@ class _ChoiceYourTopicState extends State<ChoiceYourTopic> {
                                 iconData: Icons.add,
                                 height: context.height * 0.06,
                                 width: context.width * 0.18,
-                                onTap: () =>
-                                    context.read<AppProvider>().increment),
+                                onTap: () => modelProvider.increment()),
                             SizedBox(
                               height: context.height * 0.02,
                             ),

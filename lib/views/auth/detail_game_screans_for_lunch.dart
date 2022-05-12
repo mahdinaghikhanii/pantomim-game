@@ -38,7 +38,7 @@ class DetailGameScreans extends StatelessWidget {
                   children: [
                     DounleFloattingButton(
                       ontap: () {
-                        context.showDialogs(const DialogQuit());
+                        context.showDialogs(const DialogQuit(), true);
                       },
                       colorBtn: kblue,
                       textBtn:
@@ -48,7 +48,7 @@ class DetailGameScreans extends StatelessWidget {
                     DounleFloattingButton(
                       ontap: () {
                         modelProvider.setStringenandFaGameTheme;
-                        context.showDialogs(const DialogShow());
+                        context.showDialogs(const DialogShow(), true);
                       },
                       colorBtn: Colors.transparent,
                       textBtn: localApp.detailGameScreansForLunchBtnNameLetsGo,

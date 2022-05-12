@@ -1,4 +1,3 @@
-// ignore_for_file: prefer_const_constructors
 import 'dart:async';
 import 'dart:math';
 import 'package:animate_do/animate_do.dart';
@@ -8,6 +7,7 @@ import 'package:pantomim/generated/l10n.dart';
 import 'package:pantomim/views/module/constans/constant.dart';
 import 'package:pantomim/util/view_models/provider/provider.dart';
 import 'package:pantomim/views/dialog_screns/dialog_winorlose.dart';
+import 'package:pantomim/views/module/extension/extension.dart';
 import 'package:provider/provider.dart';
 
 class TimerScreans extends StatefulWidget {
@@ -20,31 +20,15 @@ class TimerScreans extends StatefulWidget {
 class _TimerScreansState extends State<TimerScreans> {
   final player = AudioPlayer();
 
-  Duration duration = Duration();
+  Duration duration = const Duration();
   Timer? timer;
   bool isCountdown = true;
 
   @override
   void initState() {
     super.initState();
-    //startTimer();
-
+    //Stop and reset Audio and navigator Show Dialogs
     reset();
-  }
-
-// This section warns you that you have 10 seconds
-  void playSong() async {
-    // ignore: unused_local_variable
-    var alarm = await player.setAsset('assets/audio/s.mp3');
-    await player.play();
-  }
-
-  void playWrong() async {
-    final wrong = AudioPlayer();
-    // ignore: unused_local_variable
-    var alarm = await wrong.setAsset('assets/audio/wrong.wav');
-    await wrong.play();
-    await wrong.setVolume(0.1);
   }
 
   void stopTimper({bool reseets = true}) {
@@ -54,13 +38,8 @@ class _TimerScreansState extends State<TimerScreans> {
     setState(() {
       player.stop();
       timer?.cancel();
-      showDialog(
-          barrierDismissible: false,
-          context: context,
-          builder: (
-            context,
-          ) =>
-              const DialogWinOrLose());
+
+      context.showDialogs(const DialogWinOrLose(), false);
     });
   }
 
@@ -69,7 +48,8 @@ class _TimerScreansState extends State<TimerScreans> {
     setState(() {
       final seconds = duration.inSeconds + addSeconds;
       if (seconds == 11) {
-        playSong();
+        //This section warns you that you have 10 seconds
+        context.playAudio('assets/audio/wrong.wav');
       }
       if (seconds < 0) {
         timer?.cancel();
@@ -89,11 +69,11 @@ class _TimerScreansState extends State<TimerScreans> {
   void reset() {
     if (isCountdown) {
       setState(() {
-        duration = Duration(minutes: 0);
+        duration = const Duration(minutes: 0);
       });
     } else {
       setState(() {
-        duration = Duration();
+        duration = const Duration();
       });
     }
   }
@@ -102,7 +82,7 @@ class _TimerScreansState extends State<TimerScreans> {
     if (resets) {
       reset();
     }
-    timer = Timer.periodic(Duration(seconds: 1), (_) => addTime());
+    timer = Timer.periodic(const Duration(seconds: 1), (_) => addTime());
   }
 
   @override
@@ -214,13 +194,13 @@ class _TimerScreansState extends State<TimerScreans> {
           elevation: 0,
         ),
         body: Container(
-          padding: EdgeInsets.only(top: 80),
+          padding: const EdgeInsets.only(top: 80),
           child: Column(
             mainAxisAlignment: MainAxisAlignment.spaceEvenly,
             children: [
               FadeInUp(
-                duration: Duration(milliseconds: 1200),
-                delay: Duration(microseconds: 1200),
+                duration: const Duration(milliseconds: 1200),
+                delay: const Duration(microseconds: 1200),
                 child: Column(
                   mainAxisAlignment: MainAxisAlignment.center,
                   crossAxisAlignment: CrossAxisAlignment.center,
@@ -240,8 +220,8 @@ class _TimerScreansState extends State<TimerScreans> {
                 height: 90,
               ),
               FadeInUp(
-                duration: Duration(milliseconds: 1200),
-                delay: Duration(microseconds: 1200),
+                duration: const Duration(milliseconds: 1200),
+                delay: const Duration(microseconds: 1200),
                 child: Column(
                   children: [
                     Text(
@@ -259,8 +239,8 @@ class _TimerScreansState extends State<TimerScreans> {
                       height: 50,
                     ),
                     FadeInUp(
-                      duration: Duration(milliseconds: 1200),
-                      delay: Duration(microseconds: 1200),
+                      duration: const Duration(milliseconds: 1200),
+                      delay: const Duration(microseconds: 1200),
                       child: Padding(
                         padding: const EdgeInsets.only(
                             left: 30, right: 30, top: 10, bottom: 10),
@@ -282,42 +262,42 @@ class _TimerScreansState extends State<TimerScreans> {
                                   if (isCountdown) {
                                     switch (modelProvider.getTimeForMatch()) {
                                       case 0:
-                                        duration = Duration(seconds: 50);
+                                        duration = const Duration(seconds: 50);
                                         break;
                                       case 1:
-                                        duration =
-                                            Duration(minutes: 1, seconds: 20);
+                                        duration = const Duration(
+                                            minutes: 1, seconds: 20);
                                         break;
                                       case 2:
-                                        duration =
-                                            Duration(minutes: 1, seconds: 50);
+                                        duration = const Duration(
+                                            minutes: 1, seconds: 50);
                                         break;
                                       case 3:
-                                        duration =
-                                            Duration(minutes: 2, seconds: 20);
+                                        duration = const Duration(
+                                            minutes: 2, seconds: 20);
                                         break;
                                       case 4:
-                                        duration =
-                                            Duration(minutes: 2, seconds: 50);
+                                        duration = const Duration(
+                                            minutes: 2, seconds: 50);
                                         break;
                                       case 5:
-                                        duration = Duration(
+                                        duration = const Duration(
                                           minutes: 3,
                                           seconds: 20,
                                         );
                                         break;
 
                                       case 6:
-                                        duration =
-                                            Duration(minutes: 3, seconds: 50);
+                                        duration = const Duration(
+                                            minutes: 3, seconds: 50);
                                         break;
                                       case 7:
-                                        duration =
-                                            Duration(minutes: 4, seconds: 20);
+                                        duration = const Duration(
+                                            minutes: 4, seconds: 20);
                                         break;
                                       case 8:
-                                        duration =
-                                            Duration(minutes: 4, seconds: 50);
+                                        duration = const Duration(
+                                            minutes: 4, seconds: 50);
                                         break;
                                     }
                                   }
@@ -333,7 +313,7 @@ class _TimerScreansState extends State<TimerScreans> {
                                 isRounning
                                     ? localApp.timeScreansbtnStop
                                     : localApp.timeScreansbtnStart,
-                                style: TextStyle(
+                                style: const TextStyle(
                                     color: kblue,
                                     fontWeight: FontWeight.bold,
                                     fontSize: 16),
@@ -344,8 +324,8 @@ class _TimerScreansState extends State<TimerScreans> {
                       ),
                     ),
                     FadeInUp(
-                      duration: Duration(milliseconds: 1200),
-                      delay: Duration(microseconds: 1200),
+                      duration: const Duration(milliseconds: 1200),
+                      delay: const Duration(microseconds: 1200),
                       child: Padding(
                         padding: const EdgeInsets.only(
                             left: 30, right: 30, top: 10, bottom: 10),
@@ -357,7 +337,7 @@ class _TimerScreansState extends State<TimerScreans> {
                             onTap: () {
                               if (duration.inSeconds == 0) {
                               } else {
-                                playWrong();
+                                context.playAudio('assets/audio/wrong.wav');
                                 modelProvider.subtractioScore();
                               }
                             },

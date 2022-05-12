@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:just_audio/just_audio.dart';
 
 extension ExtensionContext on BuildContext {
   double get width => MediaQuery.of(this).size.width;
@@ -8,7 +9,18 @@ extension ExtensionContext on BuildContext {
     await Navigator.push(this, MaterialPageRoute(builder: (context) => child));
   }
 
-  void showDialogs(Widget child) async {
-    await showDialog(context: this, builder: (context) => child);
+  void showDialogs(Widget child, bool barrierDismissible) async {
+    await showDialog(
+        context: this,
+        barrierDismissible: barrierDismissible,
+        builder: (context) => child);
+  }
+}
+
+extension Audio on BuildContext {
+  void playAudio(String path) async {
+    final player = AudioPlayer();
+    await player.setAsset(path);
+    await player.play();
   }
 }

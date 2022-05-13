@@ -1,9 +1,10 @@
 import 'package:flutter/material.dart';
+import 'package:pantomim/provider/provider.dart';
 import 'package:provider/provider.dart';
 
 import '../../generated/l10n.dart';
 import '../module/constans/constant.dart';
-import '../../util/view_models/provider/provider.dart';
+
 import '../auth/home_screans.dart';
 import '../module/widgets/double_floatingac_button.dart';
 

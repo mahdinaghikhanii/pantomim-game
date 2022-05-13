@@ -1,10 +1,10 @@
 import 'package:flutter/material.dart';
+import '../../provider/provider.dart';
 import '../module/extension/extension.dart';
 import 'package:provider/provider.dart';
 
 import '../../generated/l10n.dart';
 import '../module/constans/constant.dart';
-import '../../util/view_models/provider/provider.dart';
 import '../dialog_screns/dialog_choice_your_topic.dart';
 import '../dialog_screns/dialog_quit.dart';
 import '../module/widgets/double_floatingac_button.dart';

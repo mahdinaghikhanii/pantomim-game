@@ -1,4 +1,5 @@
 // ignore_for_file: unnecessary_null_comparison, prefer_final_fields, duplicate_ignore
+
 import 'package:flutter/material.dart';
 import 'package:pantomim/models/category.dart';
 import 'package:pantomim/views/module/constans/constant.dart';
@@ -86,24 +87,18 @@ class AppProvider extends ChangeNotifier {
   }
 
   // this part for multi language provider
-
   Locale _currentLocale = const Locale('en');
   Locale get currentLocale => _currentLocale;
-
-  /* void setLocal(String _locale) async {
-    SharedPreferences preferences = await SharedPreferences.getInstance();
-    await preferences.setString('ss', _locale);
-    _currentLocale = Locale(_locale.toString());
-    notifyListeners();
-  }*/
 
   fetchLocale() async {
     var prefs = await SharedPreferences.getInstance();
     if (prefs.getString(Constans.LANGUAGE_CODE) == null) {
       _currentLocale = const Locale('en');
+
       return Null;
     }
     _currentLocale = Locale(prefs.getString(Constans.LANGUAGE_CODE).toString());
+
     return Null;
   }
 

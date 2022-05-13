@@ -2,13 +2,13 @@ import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:flutter_localizations/flutter_localizations.dart';
 import 'package:pantomim/generated/l10n.dart';
+import 'package:pantomim/provider/provider.dart';
 import 'package:pantomim/theme/configtheme.dart';
 import 'package:pantomim/views/auth/obboard_screans.dart';
 import 'package:pantomim/views/auth/home_screans.dart';
 import 'package:provider/provider.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 import 'generated/l10n.dart';
-import 'util/view_models/provider/provider.dart';
 
 int? isviewed;
 AppProvider appProvider = AppProvider();

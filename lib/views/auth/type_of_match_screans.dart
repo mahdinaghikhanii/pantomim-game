@@ -3,7 +3,7 @@ import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 
 import '../../generated/l10n.dart';
-import '../../util/view_models/provider/provider.dart';
+import '../../provider/provider.dart';
 import '../module/constans/constant.dart';
 import '../module/extension/extension.dart';
 import '../module/widgets/button_add_remove.dart';

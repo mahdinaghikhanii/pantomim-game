@@ -2,13 +2,14 @@ import 'dart:async';
 
 import 'package:animate_do/animate_do.dart';
 import 'package:flutter/material.dart';
+import 'package:pantomim/provider/provider.dart';
 import 'package:provider/provider.dart';
 
+import '../../canvas/menoscreans_painter.dart';
 import '../../generated/l10n.dart';
-import '../module/constans/constant.dart';
-import '../../util/view_models/canvas/menoscreans_painter.dart';
-import '../../util/view_models/provider/provider.dart';
+
 import '../dialog_screns/dialog_setting.dart';
+import '../module/constans/constant.dart';
 import '../module/widgets/circle_button.dart';
 import 'type_of_match_screans.dart';
 

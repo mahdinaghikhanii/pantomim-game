@@ -3,7 +3,7 @@ import 'package:provider/provider.dart';
 
 import '../../generated/l10n.dart';
 import '../../models/category.dart';
-import '../../util/view_models/provider/provider.dart';
+import '../../provider/provider.dart';
 import '../auth/time_screans.dart';
 import '../module/widgets/choice_boximage_text_select.dart';
 

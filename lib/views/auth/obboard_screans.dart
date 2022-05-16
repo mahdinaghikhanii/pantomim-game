@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:pantomim/views/module/constans/constant.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 
 import 'home_screans.dart';
@@ -56,8 +57,8 @@ class OnBoardScreans extends StatelessWidget {
               Padding(
                 padding: const EdgeInsets.all(10),
                 child: Image.asset(
-                  'assets/images/new-years-eve.png',
-                  width: size.width * 1.0,
+                  'assets/images/wel.png',
+                  width: size.width * 1.2,
                   height: size.height * 0.40,
                 ),
               ),
@@ -66,15 +67,14 @@ class OnBoardScreans extends StatelessWidget {
               ),
               // ignore: prefer_const_constructors
               Padding(
-                padding: const EdgeInsets.all(10),
-                child: Text(
-                    'Welcome😍\n Your Playing game Pantomim\nHere Enjoy Kelly',
-                    textAlign: TextAlign.center,
-                    style: TextStyle(
-                        fontSize: 22,
-                        color: Colors.blue.shade200,
-                        fontWeight: FontWeight.bold)),
-              ),
+                  padding: const EdgeInsets.all(10),
+                  child: Text(
+                      'Welcome😍\n Your Playing game Pantomim\nHere Enjoy Kelly',
+                      textAlign: TextAlign.center,
+                      style: Theme.of(context).textTheme.subtitle1!.copyWith(
+                          color: kblack,
+                          fontWeight: FontWeight.bold,
+                          fontSize: 30))),
             ],
           ),
         ),
@@ -82,6 +82,3 @@ class OnBoardScreans extends StatelessWidget {
     );
   }
 }
- //'😍 خوش اومدید \n شما می تونید بازی پانتومیم یا ادا بازی کنید \nکلی لذت ببرید ',
-
-

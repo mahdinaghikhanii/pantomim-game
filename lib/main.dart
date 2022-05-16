@@ -1,18 +1,16 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:flutter_localizations/flutter_localizations.dart';
-import 'package:pantomim/generated/l10n.dart';
-import 'package:pantomim/provider/provider.dart';
-import 'package:pantomim/theme/configtheme.dart';
-import 'package:pantomim/views/auth/obboard_screans.dart';
-import 'package:pantomim/views/auth/home_screans.dart';
 import 'package:provider/provider.dart';
 import 'package:shared_preferences/shared_preferences.dart';
+
 import 'generated/l10n.dart';
+import 'provider/provider.dart';
+import 'theme/configtheme.dart';
+import 'views/auth/obboard_screans.dart';
 
 int? isviewed;
 AppProvider appProvider = AppProvider();
-// ignore: unused_element
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();
   SystemChrome.setPreferredOrientations(
@@ -53,8 +51,8 @@ class _MyAppState extends State<MyApp> {
               debugShowCheckedModeBanner: false,
               locale: model.currentLocale,
               title: "Pantomim",
-              home:
-                  isviewed != 0 ? const OnBoardScreans() : const HomeScreans(),
+              home: const OnBoardScreans(),
+              //isviewed != 0 ? const OnBoardScreans() : const HomeScreans(),
               theme: ConfigTheme.light().getTheme(
                   Provider.of<AppProvider>(context, listen: true)
                       .currentLocale

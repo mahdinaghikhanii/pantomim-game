@@ -69,12 +69,12 @@ class OnBoardScreans extends StatelessWidget {
               Padding(
                   padding: const EdgeInsets.all(10),
                   child: Text(
-                      'Welcome😍\n Your Playing game Pantomim\nHere Enjoy Kelly',
+                      'Welcome 😍\n Your Playing game Pantomim\nHere Enjoy Kelly',
                       textAlign: TextAlign.center,
                       style: Theme.of(context).textTheme.subtitle1!.copyWith(
                           color: kblack,
                           fontWeight: FontWeight.bold,
-                          fontSize: 30))),
+                          fontSize: 28))),
             ],
           ),
         ),

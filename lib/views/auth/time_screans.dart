@@ -174,7 +174,12 @@ class _TimerScreansState extends State<TimerScreans> {
             localApp.timescreansgamethemelistjobs19,
             localApp.timescreansgamethemelistjobs20
           ];
+
           modelProvider.topicgames(_jobs[_random.nextInt(_jobs.length)]);
+          break;
+        case 6:
+          List _country = [];
+          modelProvider.topicgames(_country[_random.nextInt(_country.length)]);
           break;
 
         default:

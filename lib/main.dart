@@ -7,6 +7,7 @@ import 'package:shared_preferences/shared_preferences.dart';
 import 'generated/l10n.dart';
 import 'provider/provider.dart';
 import 'theme/configtheme.dart';
+import 'views/auth/home_screans.dart';
 import 'views/auth/obboard_screans.dart';
 
 int? isviewed;
@@ -17,7 +18,7 @@ void main() async {
       [DeviceOrientation.portraitUp, DeviceOrientation.portraitDown]);
   SharedPreferences sharedPreferences = await SharedPreferences.getInstance();
   await appProvider.fetchLocale();
-  isviewed = sharedPreferences.getInt('onBoard');
+  isviewed = sharedPreferences.getInt('InBoardScreans');
 
   runApp(MyApp(
     appProvider: appProvider,
@@ -51,8 +52,8 @@ class _MyAppState extends State<MyApp> {
               debugShowCheckedModeBanner: false,
               locale: model.currentLocale,
               title: "Pantomim",
-              home: const OnBoardScreans(),
-              //isviewed != 0 ? const OnBoardScreans() : const HomeScreans(),
+              home:
+                  isviewed != 0 ? const OnBoardScreans() : const HomeScreans(),
               theme: ConfigTheme.light().getTheme(
                   Provider.of<AppProvider>(context, listen: true)
                       .currentLocale

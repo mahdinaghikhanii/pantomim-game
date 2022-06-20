@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:pantomim/main.dart';
 import '../../provider/provider.dart';
 import '../module/extension/extension.dart';
 import 'package:provider/provider.dart';
@@ -181,7 +182,9 @@ class RowShowTeamAndScore extends StatelessWidget {
             border: Border.all(color: Colors.transparent),
             borderRadius: BorderRadius.circular(20)),
         child: Padding(
-          padding: const EdgeInsets.only(left: 0, right: 15),
+          padding: appProvider.currentLocale == const Locale('en')
+              ? const EdgeInsets.only(right: 15)
+              : const EdgeInsets.only(left: 15),
           child: Row(
             children: [
               Text(

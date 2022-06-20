@@ -14,6 +14,7 @@ class _SettingDialogState extends State<SettingDialog> {
   @override
   Widget build(BuildContext context) {
     final size = MediaQuery.of(context).size;
+
     return Dialog(
         insetPadding: const EdgeInsets.all(20),
         shape: RoundedRectangleBorder(

@@ -1319,6 +1319,46 @@ class S {
       args: [],
     );
   }
+
+  /// `Iran`
+  String get timescreansgamethemelistCountry1 {
+    return Intl.message(
+      'Iran',
+      name: 'timescreansgamethemelistCountry1',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `USA`
+  String get timescreansgamethemelistCountry2 {
+    return Intl.message(
+      'USA',
+      name: 'timescreansgamethemelistCountry2',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Germeny`
+  String get timescreansgamethemelistCountry3 {
+    return Intl.message(
+      'Germeny',
+      name: 'timescreansgamethemelistCountry3',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `English`
+  String get timescreansgamethemelistCountry4 {
+    return Intl.message(
+      'English',
+      name: 'timescreansgamethemelistCountry4',
+      desc: '',
+      args: [],
+    );
+  }
 }
 
 class AppLocalizationDelegate extends LocalizationsDelegate<S> {

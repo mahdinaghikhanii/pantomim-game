@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
-import 'package:pantomim/views/module/constans/constant.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 
+import '../module/constans/constant.dart';
 import 'home_screans.dart';
 
 class OnBoardScreans extends StatelessWidget {

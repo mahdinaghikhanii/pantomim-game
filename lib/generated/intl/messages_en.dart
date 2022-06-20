@@ -138,6 +138,14 @@ class MessageLookup extends MessageLookupByLibrary {
         "timeScreansbtnStop": MessageLookupByLibrary.simpleMessage("STOP"),
         "timeScreansbtnWrong": MessageLookupByLibrary.simpleMessage("WRONG"),
         "timeSreansTimeTextTitle": MessageLookupByLibrary.simpleMessage("Time"),
+        "timescreansgamethemelistCountry1":
+            MessageLookupByLibrary.simpleMessage("Iran"),
+        "timescreansgamethemelistCountry2":
+            MessageLookupByLibrary.simpleMessage("USA"),
+        "timescreansgamethemelistCountry3":
+            MessageLookupByLibrary.simpleMessage("Germeny"),
+        "timescreansgamethemelistCountry4":
+            MessageLookupByLibrary.simpleMessage("English"),
         "timescreansgamethemelistanimal0":
             MessageLookupByLibrary.simpleMessage("Leopard"),
         "timescreansgamethemelistanimal1":

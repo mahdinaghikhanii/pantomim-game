@@ -146,6 +146,26 @@ class MessageLookup extends MessageLookupByLibrary {
             MessageLookupByLibrary.simpleMessage("المان"),
         "timescreansgamethemelistCountry4":
             MessageLookupByLibrary.simpleMessage("اینگلیس"),
+        "timescreansgamethemelistJobs1":
+            MessageLookupByLibrary.simpleMessage("برنامه نویس"),
+        "timescreansgamethemelistJobs2":
+            MessageLookupByLibrary.simpleMessage("معلم"),
+        "timescreansgamethemelistMousic1":
+            MessageLookupByLibrary.simpleMessage("محمد رضا شجریان"),
+        "timescreansgamethemelistMousic2":
+            MessageLookupByLibrary.simpleMessage("لینکین پارک"),
+        "timescreansgamethemelistSport1":
+            MessageLookupByLibrary.simpleMessage("فوتبال"),
+        "timescreansgamethemelistSport2":
+            MessageLookupByLibrary.simpleMessage("بسکتبال"),
+        "timescreansgamethemelistTecnology1":
+            MessageLookupByLibrary.simpleMessage("ساعت هوشمند"),
+        "timescreansgamethemelistTecnology2":
+            MessageLookupByLibrary.simpleMessage("مک بوک"),
+        "timescreansgamethemelistTourism1":
+            MessageLookupByLibrary.simpleMessage("ماسوله"),
+        "timescreansgamethemelistTourism2":
+            MessageLookupByLibrary.simpleMessage("برج ایفل"),
         "timescreansgamethemelistanimal0":
             MessageLookupByLibrary.simpleMessage("پلنگ"),
         "timescreansgamethemelistanimal1":
@@ -204,6 +224,10 @@ class MessageLookup extends MessageLookupByLibrary {
             MessageLookupByLibrary.simpleMessage("همبرگر"),
         "timescreansgamethemelistfoodtext7":
             MessageLookupByLibrary.simpleMessage("آبگوشت صدف"),
+        "timescreansgamethemelistgeneral1":
+            MessageLookupByLibrary.simpleMessage("زمین"),
+        "timescreansgamethemelistgeneral2":
+            MessageLookupByLibrary.simpleMessage("خشک"),
         "timescreansgamethemelistjobs0":
             MessageLookupByLibrary.simpleMessage("فروشگاه ماشین"),
         "timescreansgamethemelistjobs1":
@@ -246,6 +270,14 @@ class MessageLookup extends MessageLookupByLibrary {
             MessageLookupByLibrary.simpleMessage("معلم"),
         "timescreansgamethemelistjobs9":
             MessageLookupByLibrary.simpleMessage("طراح سایت"),
+        "timescreansgamethemelistmovi1":
+            MessageLookupByLibrary.simpleMessage("جنون سرعت"),
+        "timescreansgamethemelistmovi2":
+            MessageLookupByLibrary.simpleMessage("شاه"),
+        "timescreansgamethemelistthing1":
+            MessageLookupByLibrary.simpleMessage("موبایل"),
+        "timescreansgamethemelistthing2":
+            MessageLookupByLibrary.simpleMessage("تلویزیون"),
         "timescreanstitletext":
             MessageLookupByLibrary.simpleMessage("بزن بریم !"),
         "titleHomeScreans1": MessageLookupByLibrary.simpleMessage("بازی"),

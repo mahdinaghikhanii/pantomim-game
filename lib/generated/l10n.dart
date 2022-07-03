@@ -1359,6 +1359,166 @@ class S {
       args: [],
     );
   }
+
+  /// `Fotbal`
+  String get timescreansgamethemelistSport1 {
+    return Intl.message(
+      'Fotbal',
+      name: 'timescreansgamethemelistSport1',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Basketball`
+  String get timescreansgamethemelistSport2 {
+    return Intl.message(
+      'Basketball',
+      name: 'timescreansgamethemelistSport2',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `need for speed`
+  String get timescreansgamethemelistmovi1 {
+    return Intl.message(
+      'need for speed',
+      name: 'timescreansgamethemelistmovi1',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `King`
+  String get timescreansgamethemelistmovi2 {
+    return Intl.message(
+      'King',
+      name: 'timescreansgamethemelistmovi2',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Phone`
+  String get timescreansgamethemelistthing1 {
+    return Intl.message(
+      'Phone',
+      name: 'timescreansgamethemelistthing1',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `TV`
+  String get timescreansgamethemelistthing2 {
+    return Intl.message(
+      'TV',
+      name: 'timescreansgamethemelistthing2',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `land`
+  String get timescreansgamethemelistgeneral1 {
+    return Intl.message(
+      'land',
+      name: 'timescreansgamethemelistgeneral1',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `dry`
+  String get timescreansgamethemelistgeneral2 {
+    return Intl.message(
+      'dry',
+      name: 'timescreansgamethemelistgeneral2',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Masuleh`
+  String get timescreansgamethemelistTourism1 {
+    return Intl.message(
+      'Masuleh',
+      name: 'timescreansgamethemelistTourism1',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Eiffel tower`
+  String get timescreansgamethemelistTourism2 {
+    return Intl.message(
+      'Eiffel tower',
+      name: 'timescreansgamethemelistTourism2',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `developer`
+  String get timescreansgamethemelistJobs1 {
+    return Intl.message(
+      'developer',
+      name: 'timescreansgamethemelistJobs1',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Teacher`
+  String get timescreansgamethemelistJobs2 {
+    return Intl.message(
+      'Teacher',
+      name: 'timescreansgamethemelistJobs2',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Mohammad-Reza Shajarian`
+  String get timescreansgamethemelistMousic1 {
+    return Intl.message(
+      'Mohammad-Reza Shajarian',
+      name: 'timescreansgamethemelistMousic1',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `linkin park`
+  String get timescreansgamethemelistMousic2 {
+    return Intl.message(
+      'linkin park',
+      name: 'timescreansgamethemelistMousic2',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `smart watch`
+  String get timescreansgamethemelistTecnology1 {
+    return Intl.message(
+      'smart watch',
+      name: 'timescreansgamethemelistTecnology1',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `MacBook`
+  String get timescreansgamethemelistTecnology2 {
+    return Intl.message(
+      'MacBook',
+      name: 'timescreansgamethemelistTecnology2',
+      desc: '',
+      args: [],
+    );
+  }
 }
 
 class AppLocalizationDelegate extends LocalizationsDelegate<S> {

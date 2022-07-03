@@ -118,7 +118,8 @@ class _TimerScreansState extends State<TimerScreans> {
 
         case 1:
           List _sport = [
-            'fotbaldsjds  dsdaskjk dsj sdsdjk',
+            localApp.timescreansgamethemelistSport1,
+            localApp.timescreansgamethemelistSport2
           ];
           modelProvider.topicgames(_sport[_random.nextInt(_sport.length)]);
           break;
@@ -150,6 +151,50 @@ class _TimerScreansState extends State<TimerScreans> {
           ];
           modelProvider.topicgames(_animal[_random.nextInt(_animal.length)]);
           break;
+        case 3:
+          List _movie = [
+            localApp.timescreansgamethemelistmovi1,
+            localApp.timescreansgamethemelistmovi2
+          ];
+          modelProvider.topicgames(_movie[_random.nextInt(_movie.length)]);
+          break;
+        case 4:
+          List _thing = [
+            localApp.timescreansgamethemelistthing1,
+            localApp.timescreansgamethemelistthing2
+          ];
+          modelProvider.topicgames(_thing[_random.nextInt(_thing.length)]);
+          break;
+        case 5:
+          List _thing = [
+            localApp.timescreansgamethemelistthing1,
+            localApp.timescreansgamethemelistthing2
+          ];
+          modelProvider.topicgames(_thing[_random.nextInt(_thing.length)]);
+          break;
+
+        case 6:
+          List _general = [
+            localApp.timescreansgamethemelistgeneral1,
+            localApp.timescreansgamethemelistgeneral2
+          ];
+          modelProvider.topicgames(_general[_random.nextInt(_general.length)]);
+          break;
+
+        case 7:
+          List _tourism = [
+            localApp.timescreansgamethemelistTourism1,
+            localApp.timescreansgamethemelistTourism2
+          ];
+          modelProvider.topicgames(_tourism[_random.nextInt(_tourism.length)]);
+          break;
+        case 8:
+          List _jobs = [
+            localApp.timescreansgamethemelistJobs1,
+            localApp.timescreansgamethemelistJobs2
+          ];
+          modelProvider.topicgames(_jobs[_random.nextInt(_jobs.length)]);
+          break;
         case 9:
           List _jobs = [
             localApp.timescreansgamethemelistjobs0,
@@ -174,12 +219,22 @@ class _TimerScreansState extends State<TimerScreans> {
             localApp.timescreansgamethemelistjobs19,
             localApp.timescreansgamethemelistjobs20
           ];
-
           modelProvider.topicgames(_jobs[_random.nextInt(_jobs.length)]);
           break;
-        case 6:
-          List _country = [];
-          modelProvider.topicgames(_country[_random.nextInt(_country.length)]);
+        case 10:
+          List _music = [
+            localApp.timescreansgamethemelistMousic1,
+            localApp.timescreansgamethemelistMousic2
+          ];
+          modelProvider.topicgames(_music[_random.nextInt(_music.length)]);
+          break;
+        case 11:
+          List _tecnology = [
+            localApp.timescreansgamethemelistTecnology1,
+            localApp.timescreansgamethemelistTecnology2
+          ];
+          modelProvider
+              .topicgames(_tecnology[_random.nextInt(_tecnology.length)]);
           break;
 
         default:

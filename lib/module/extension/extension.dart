@@ -1,6 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:just_audio/just_audio.dart';
 
+import 'package:pantomim/provider/provider.dart';
+import 'package:provider/provider.dart';
+
 import '../../../generated/l10n.dart';
 
 extension ExtensionContext on BuildContext {
@@ -10,6 +13,8 @@ extension ExtensionContext on BuildContext {
   S get localApp => S.of(this);
 
   TextTheme get textTheme => Theme.of(this).textTheme;
+
+  AppProvider get appProvider => Provider.of<AppProvider>(this);
 
   void backScreans() {
     Navigator.pop(this);

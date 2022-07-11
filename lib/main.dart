@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:flutter_localizations/flutter_localizations.dart';
+import 'package:pantomim/provider/onboard_provider.dart';
 import 'package:provider/provider.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 
@@ -13,7 +14,7 @@ import 'views/screan/home_screans.dart';
 import 'views/screan/obboard_screans.dart';
 
 int? isviewed;
-AppProvider appProvider = AppProvider();
+
 LanguageProvider languageProvider = LanguageProvider();
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();
@@ -39,6 +40,7 @@ class MyApp extends StatelessWidget {
     return MultiProvider(
         providers: [
           ChangeNotifierProvider(create: (context) => AppProvider()),
+          ChangeNotifierProvider(create: ((context) => OnBoardProvdier())),
           ChangeNotifierProvider<LanguageProvider>(
               create: (context) => languageProvider)
         ],
@@ -54,9 +56,8 @@ class MyApp extends StatelessWidget {
               debugShowCheckedModeBanner: false,
               locale: model.currentLocale,
               title: "پانتومیم",
-              home: isviewed != 0
-                  ? const OnBoardScreans()
-                  : const OnBoardScreans(),
+              home:
+                  isviewed != 0 ? const OnBoardScreans() : const HomeScreans(),
               theme: ConfigTheme.light().getTheme(
                   Provider.of<LanguageProvider>(context, listen: true)
                       .currentLocale

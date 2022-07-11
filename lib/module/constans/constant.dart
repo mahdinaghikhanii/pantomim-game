@@ -29,6 +29,12 @@ const backgroundDefaultScafold2 = BoxDecoration(
         end: Alignment.centerRight,
         colors: [Colors.white, Colors.blue]));
 
+const backgroundDefaultScafoldForOnBoard = BoxDecoration(
+    gradient: LinearGradient(
+        begin: Alignment.centerLeft,
+        end: Alignment.centerRight,
+        colors: [Colors.white70, Colors.blue]));
+
 const backgroundDefaultScafold = BoxDecoration(
     gradient: LinearGradient(
         begin: Alignment.centerLeft,

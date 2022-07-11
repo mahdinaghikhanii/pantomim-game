@@ -1,17 +1,17 @@
 import 'dart:math' as math;
 
 import 'package:flutter/material.dart';
+import 'package:pantomim/module/constans/constant.dart';
+import 'package:pantomim/module/extension/extension.dart';
+import 'package:pantomim/module/widgets/double_floatingac_button.dart';
+import 'package:pantomim/module/widgets/scoreshowtext_textdetail.dart';
 import 'package:pantomim/provider/provider.dart';
 import 'package:provider/provider.dart';
 
-import '../../canvas/win_lose_painter.dart';
 import '../../generated/l10n.dart';
 import '../../models/category.dart';
+import '../../module/canvas/win_lose_painter.dart';
 import '../dialog_screns/dialog_finishid.dart';
-import '../module/constans/constant.dart';
-import '../module/extension/extension.dart';
-import '../module/widgets/double_floatingac_button.dart';
-import '../module/widgets/scoreshowtext_textdetail.dart';
 import 'detail_game_screans_for_lunch.dart';
 
 class ScoreScreans extends StatefulWidget {

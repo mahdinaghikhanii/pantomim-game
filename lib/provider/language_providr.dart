@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 
-import '../views/module/constans/constant.dart';
+import '../module/constans/constant.dart';
 
 class LanguageProvider extends ChangeNotifier {
   Locale _currentLocale = const Locale('fa');

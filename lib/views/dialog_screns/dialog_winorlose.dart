@@ -2,10 +2,10 @@ import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 
 import '../../generated/l10n.dart';
+import '../../module/constans/constant.dart';
+import '../../module/widgets/double_floatingac_button.dart';
 import '../../provider/provider.dart';
-import '../auth/score_screans.dart';
-import '../module/constans/constant.dart';
-import '../module/widgets/double_floatingac_button.dart';
+import '../screan/score_screans.dart';
 
 class DialogWinOrLose extends StatelessWidget {
   const DialogWinOrLose({Key? key}) : super(key: key);

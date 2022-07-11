@@ -1,11 +1,11 @@
 import 'package:flutter/material.dart';
-import 'package:pantomim/provider/provider.dart';
 import 'package:provider/provider.dart';
 
 import '../../generated/l10n.dart';
-import '../module/constans/constant.dart';
-import '../auth/home_screans.dart';
-import '../module/widgets/double_floatingac_button.dart';
+import '../../module/constans/constant.dart';
+import '../../module/widgets/double_floatingac_button.dart';
+import '../../provider/provider.dart';
+import '../screan/home_screans.dart';
 
 class DialogQuit extends StatelessWidget {
   const DialogQuit({Key? key}) : super(key: key);

@@ -1,15 +1,16 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:flutter_localizations/flutter_localizations.dart';
-import 'package:pantomim/provider/language_providr.dart';
-import 'package:pantomim/views/module/theme/configtheme.dart';
 import 'package:provider/provider.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 
 import 'generated/l10n.dart';
+import 'module/theme/configtheme.dart';
+import 'provider/language_providr.dart';
 import 'provider/provider.dart';
-import 'views/auth/home_screans.dart';
-import 'views/auth/obboard_screans.dart';
+
+import 'views/screan/home_screans.dart';
+import 'views/screan/obboard_screans.dart';
 
 int? isviewed;
 AppProvider appProvider = AppProvider();

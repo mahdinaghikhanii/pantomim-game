@@ -1,14 +1,16 @@
 import 'package:flutter/material.dart';
 import 'package:pantomim/main.dart';
+import 'package:pantomim/module/constans/constant.dart';
+import 'package:pantomim/module/extension/extension.dart';
+import 'package:pantomim/module/widgets/double_floatingac_button.dart';
 import '../../provider/provider.dart';
-import '../module/extension/extension.dart';
+
 import 'package:provider/provider.dart';
 
 import '../../generated/l10n.dart';
-import '../module/constans/constant.dart';
+
 import '../dialog_screns/dialog_choice_your_topic.dart';
 import '../dialog_screns/dialog_quit.dart';
-import '../module/widgets/double_floatingac_button.dart';
 
 class DetailGameScreans extends StatelessWidget {
   const DetailGameScreans({Key? key}) : super(key: key);
@@ -48,7 +50,6 @@ class DetailGameScreans extends StatelessWidget {
                     ),
                     DounleFloattingButton(
                       ontap: () {
-                        modelProvider.setStringenandFaGameTheme;
                         context.showDialogs(const DialogShow(), true);
                       },
                       colorBtn: Colors.transparent,
@@ -182,7 +183,7 @@ class RowShowTeamAndScore extends StatelessWidget {
             border: Border.all(color: Colors.transparent),
             borderRadius: BorderRadius.circular(20)),
         child: Padding(
-          padding: appProvider.currentLocale == const Locale('en')
+          padding: languageProvider.currentLocale == const Locale('en')
               ? const EdgeInsets.only(right: 15)
               : const EdgeInsets.only(left: 15),
           child: Row(

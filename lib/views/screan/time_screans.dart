@@ -1,14 +1,16 @@
 import 'dart:async';
 import 'dart:math';
+
 import 'package:animate_do/animate_do.dart';
 import 'package:flutter/material.dart';
 import 'package:just_audio/just_audio.dart';
-import 'package:pantomim/generated/l10n.dart';
-import 'package:pantomim/provider/provider.dart';
-import 'package:pantomim/views/module/constans/constant.dart';
-import 'package:pantomim/views/dialog_screns/dialog_winorlose.dart';
-import 'package:pantomim/views/module/extension/extension.dart';
+import 'package:pantomim/module/constans/constant.dart';
 import 'package:provider/provider.dart';
+
+import '../../generated/l10n.dart';
+import '../../module/extension/extension.dart';
+import '../../provider/provider.dart';
+import '../dialog_screns/dialog_winorlose.dart';
 
 class TimerScreans extends StatefulWidget {
   const TimerScreans({Key? key}) : super(key: key);

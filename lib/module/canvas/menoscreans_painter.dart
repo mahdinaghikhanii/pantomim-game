@@ -1,6 +1,6 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'package:pantomim/views/module/constans/constant.dart';
+import 'package:pantomim/module/constans/constant.dart';
 
 class MyPainter extends CustomPainter {
   final double firstRippleRadius;

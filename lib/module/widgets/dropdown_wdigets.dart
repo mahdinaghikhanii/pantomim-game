@@ -1,8 +1,10 @@
 import 'package:flutter/material.dart';
-import 'package:pantomim/provider/provider.dart';
-import 'package:pantomim/views/module/constans/constant.dart';
-import 'package:pantomim/views/module/extension/extension.dart';
+import 'package:pantomim/module/extension/extension.dart';
+import 'package:pantomim/provider/language_providr.dart';
+
 import 'package:provider/provider.dart';
+
+import '../constans/constant.dart';
 
 class DropDownWidgets extends StatelessWidget {
   const DropDownWidgets({Key? key}) : super(key: key);
@@ -33,7 +35,9 @@ class DropDownWidgets extends StatelessWidget {
               value: bankIteam['id'].toString(),
               onTap: () {
                 (bankIteam['ontap']);
-                context.read<AppProvider>().changeLanguage(bankIteam['ontap']);
+                context
+                    .read<LanguageProvider>()
+                    .changeLanguage(bankIteam['ontap']);
               },
               child: Row(
                 mainAxisAlignment: MainAxisAlignment.spaceBetween,

@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
-import 'package:pantomim/views/module/widgets/listTile_settings.dart';
 import 'package:url_launcher/url_launcher_string.dart';
 
-import '../module/constans/constant.dart';
+import '../../module/constans/constant.dart';
+import '../../module/widgets/listTile_settings.dart';
 
 class SettingDialog extends StatelessWidget {
   const SettingDialog({Key? key}) : super(key: key);

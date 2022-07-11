@@ -24,7 +24,7 @@ class SettingDialog extends StatelessWidget {
             children: <Widget>[
               Container(
                 width: double.infinity,
-                height: size.height * 0.40,
+                height: size.height * 0.35,
                 decoration: BoxDecoration(
                     borderRadius: BorderRadius.circular(15),
                     color: Colors.white),

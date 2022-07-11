@@ -42,7 +42,7 @@ class _MenoScreans extends State<MenoScreans> with TickerProviderStateMixin {
     firstRippleController = AnimationController(
       vsync: this,
       duration: const Duration(
-        seconds: 2,
+        seconds: 4,
       ),
     );
 
@@ -359,8 +359,8 @@ class _MenoScreans extends State<MenoScreans> with TickerProviderStateMixin {
                         color: kblue,
                       ),
                     ),
-                    width: size.width * 0.55,
-                    height: size.height * 0.17),
+                    width: size.width * 0.45,
+                    height: size.height * 0.20),
               ])),
         ),
       ),

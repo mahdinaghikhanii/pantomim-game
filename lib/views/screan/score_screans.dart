@@ -175,7 +175,7 @@ class _ScoreScreansState extends State<ScoreScreans>
                                     modelProvier.checkbtnwinlose ? kblue : kred,
                                 ontap: () {
                                   if (modelProvier.getcheckforInnigns >
-                                      modelProvier.getCounterTeam()) {
+                                      modelProvier.getNumberOfTeams()) {
                                     showDialog(
                                         context: context,
                                         builder: (
@@ -193,7 +193,7 @@ class _ScoreScreansState extends State<ScoreScreans>
                                             builder: (context) =>
                                                 const DetailGameScreans()));
                                     if (modelProvier.getcheckforInnigns >
-                                        modelProvier.getCounterTeam()) {
+                                        modelProvier.getNumberOfTeams()) {
                                       context
                                           .playAudio('assets/audio/clap.wav');
 

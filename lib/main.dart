@@ -54,8 +54,9 @@ class MyApp extends StatelessWidget {
               debugShowCheckedModeBanner: false,
               locale: model.currentLocale,
               title: "پانتومیم",
-              home:
-                  isviewed != 0 ? const OnBoardScreans() : const HomeScreans(),
+              home: isviewed != 0
+                  ? const OnBoardScreans()
+                  : const OnBoardScreans(),
               theme: ConfigTheme.light().getTheme(
                   Provider.of<LanguageProvider>(context, listen: true)
                       .currentLocale

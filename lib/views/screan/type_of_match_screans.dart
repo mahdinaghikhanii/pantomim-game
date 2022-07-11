@@ -197,7 +197,8 @@ class _ChoiceYourTopicState extends State<ChoiceYourTopic> {
                                         },
                                         decoration: InputDecoration(
                                           enabled:
-                                              modelProvider.getCounterTeam() > 2
+                                              modelProvider.getNumberOfTeams() >
+                                                      2
                                                   ? true
                                                   : false,
                                           floatingLabelStyle:
@@ -205,7 +206,8 @@ class _ChoiceYourTopicState extends State<ChoiceYourTopic> {
                                           hintText: localApp
                                               .typeOfMatchScreansTextFiledInputTeam3,
                                           hintStyle:
-                                              modelProvider.getCounterTeam() > 2
+                                              modelProvider.getNumberOfTeams() >
+                                                      2
                                                   ? Theme.of(context)
                                                       .textTheme
                                                       .bodyText1
@@ -222,7 +224,7 @@ class _ChoiceYourTopicState extends State<ChoiceYourTopic> {
                                     height: context.height * 0.10,
                                     child: TextField(
                                         enabled:
-                                            modelProvider.getCounterTeam() > 3
+                                            modelProvider.getNumberOfTeams() > 3
                                                 ? true
                                                 : false,
                                         onChanged: (String value) {
@@ -232,7 +234,8 @@ class _ChoiceYourTopicState extends State<ChoiceYourTopic> {
                                           hintText: localApp
                                               .typeOfMatchScreansTextFiledInputTeam4,
                                           hintStyle:
-                                              modelProvider.getCounterTeam() > 3
+                                              modelProvider.getNumberOfTeams() >
+                                                      3
                                                   ? Theme.of(context)
                                                       .textTheme
                                                       .bodyText1
@@ -264,12 +267,13 @@ class _ChoiceYourTopicState extends State<ChoiceYourTopic> {
                                 iconData: Icons.add,
                                 height: context.height * 0.06,
                                 width: context.width * 0.18,
-                                onTap: () => modelProvider.increment()),
+                                onTap: () =>
+                                    modelProvider.incrementNumberOfTeams()),
                             SizedBox(
                               height: context.height * 0.02,
                             ),
                             Text(
-                              modelProvider.getCounterTeam().toString(),
+                              modelProvider.getNumberOfTeams().toString(),
                               maxLines: 1,
                               style: Theme.of(context).textTheme.bodyText1,
                             ),
@@ -280,7 +284,8 @@ class _ChoiceYourTopicState extends State<ChoiceYourTopic> {
                                 iconData: Icons.remove,
                                 height: context.height * 0.06,
                                 width: context.width * 0.18,
-                                onTap: () => modelProvider.lowoff()),
+                                onTap: () =>
+                                    modelProvider.lowoffNumberOfTeams()),
                             const SizedBox(
                               height: 10,
                             ),
@@ -363,15 +368,15 @@ class _ChoiceYourTopicState extends State<ChoiceYourTopic> {
                                           iconData: Icons.add,
                                           height: context.height * 0.06,
                                           width: context.width * 0.12,
-                                          onTap: () =>
-                                              modelProvider.incermentstring()),
+                                          onTap: () => modelProvider
+                                              .incermentGameTime()),
                                       const SizedBox(width: 20),
                                       ButtonAddRemove(
                                           iconData: Icons.remove,
                                           height: context.height * 0.06,
                                           width: context.width * 0.12,
                                           onTap: () =>
-                                              modelProvider.lowoffstring())
+                                              modelProvider.lowoffGameTime())
                                     ],
                                   )),
                               const SizedBox(

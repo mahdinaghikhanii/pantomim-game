@@ -7,116 +7,87 @@ import 'package:pantomim/module/constans/constant.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 
 class AppProvider extends ChangeNotifier {
-  //this part and function for number ofteam 1 2 3 or 4
-  int _counterOfTeam = 2;
-  getCounterTeam() => _counterOfTeam;
-  setCounterTeam(int counter) => _counterOfTeam;
+  // set numberof Thms
+  int _numberOfTeams = 2;
+  getNumberOfTeams() => _numberOfTeams;
+  setNumberOfTeams(int counter) => _numberOfTeams;
 
-  void increment() {
-    if (_counterOfTeam > 3) {
-      _counterOfTeam;
+  void incrementNumberOfTeams() {
+    if (_numberOfTeams > 3) {
+      _numberOfTeams;
     } else {
-      _counterOfTeam++;
+      _numberOfTeams++;
     }
     notifyListeners();
   }
 
-  void lowoff() {
-    if (_counterOfTeam == 2) {
-      _counterOfTeam;
+  void lowoffNumberOfTeams() {
+    if (_numberOfTeams == 2) {
+      _numberOfTeams;
     } else {
-      _counterOfTeam--;
+      _numberOfTeams--;
     }
     notifyListeners();
   }
 
 //this part and function for time game
-  int _timeCounter = 0;
-  getTimeForMatch() => _timeCounter;
-  setTimeForMatch(int time) => _timeCounter;
-  void incermentstring() {
-    if (_timeCounter == 8) {
-      _timeCounter;
+  int _gametime = 0;
+  getTimeForMatch() => _gametime;
+  setTimeForMatch(int time) => _gametime;
+  void incermentGameTime() {
+    if (_gametime == 8) {
+      _gametime;
     } else {
-      _timeCounter++;
+      _gametime++;
     }
     notifyListeners();
   }
 
-  void lowoffstring() {
-    if (_timeCounter == 0) {
-      _timeCounter;
+  void lowoffGameTime() {
+    if (_gametime == 0) {
+      _gametime;
     } else {
-      _timeCounter--;
+      _gametime--;
     }
     notifyListeners();
   }
 
 //its for titte in detail_game_screans numberRounds in 25 in 1 or 2 or 3
-  int _numberofroundsmatch = 1;
-  void incrementnumberofroundsmatch() {
-    _numberofroundsmatch++;
-
+  int _numberOfRoundsOfGameTitle = 1;
+  void incrementNumberOfRoundsOfGame() {
+    _numberOfRoundsOfGameTitle++;
     notifyListeners();
   }
 
-  gettitleNumberOfRoundsMath() => _numberofroundsmatch;
-  settitleNumberOfRoundsMath(int numberFortitle) => _numberofroundsmatch;
+  gettitleNumberOfRoundsOfGame() => _numberOfRoundsOfGameTitle;
+  settitleNumberOfRoundsOfGame(int numberFortitle) =>
+      _numberOfRoundsOfGameTitle;
 
   //this part and function Rounds choice in detail and type of match
-  int _numberofrounds = 3;
+  int _numberofRoundsOfGame = 3;
 
-  getNumberOfRounds() => _numberofrounds;
-  setNumberOfRounds(int numberRounds) => _numberofrounds;
+  getNumberOfRounds() => _numberofRoundsOfGame;
+  setNumberOfRounds(int numberRounds) => _numberofRoundsOfGame;
 
   void incermentnumberofrounds() {
-    if (_numberofrounds == 25) {
-      _numberofrounds;
+    if (_numberofRoundsOfGame == 25) {
+      _numberofRoundsOfGame;
     } else {
-      _numberofrounds++;
+      _numberofRoundsOfGame++;
     }
     notifyListeners();
   }
 
   void lowoffnumberofrounds() {
-    if (_numberofrounds == 3) {
-      _numberofrounds;
+    if (_numberofRoundsOfGame == 3) {
+      _numberofRoundsOfGame;
     } else {
-      _numberofrounds--;
+      _numberofRoundsOfGame--;
     }
     notifyListeners();
   }
 
   // this part for multi language provider
-  Locale _currentLocale = const Locale('en');
-  Locale get currentLocale => _currentLocale;
-
-  fetchLocale() async {
-    var prefs = await SharedPreferences.getInstance();
-    if (prefs.getString(Constans.LANGUAGE_CODE) == null) {
-      _currentLocale = const Locale('en');
-
-      return Null;
-    }
-    _currentLocale = Locale(prefs.getString(Constans.LANGUAGE_CODE).toString());
-
-    return Null;
-  }
-
-  void changeLanguage(String type) async {
-    var prefs = await SharedPreferences.getInstance();
-    if (_currentLocale == Locale(type.toString())) {
-      return;
-    }
-    if (Locale(type.toString()) == const Locale("fa")) {
-      _currentLocale = const Locale("fa");
-      await prefs.setString(Constans.LANGUAGE_CODE, 'fa');
-    } else {
-      _currentLocale = const Locale("en");
-      await prefs.setString(Constans.LANGUAGE_CODE, 'en');
-    }
-    notifyListeners();
-  }
 
   //this part for typeofMatchScreans Input Name Screans
 
@@ -179,7 +150,7 @@ class AppProvider extends ChangeNotifier {
   }
 
   bool get visibilityTeam3 {
-    if (_counterOfTeam > 2) {
+    if (_numberOfTeams > 2) {
       return true;
     } else {
       return false;
@@ -187,7 +158,7 @@ class AppProvider extends ChangeNotifier {
   }
 
   bool get visibilityTeam4 {
-    if (_counterOfTeam > 3) {
+    if (_numberOfTeams > 3) {
       return true;
     } else {
       return false;
@@ -283,18 +254,18 @@ class AppProvider extends ChangeNotifier {
       _innigns++;
     }
 
-    if (_innigns == _counterOfTeam) {
-      if (_numberofroundsmatch == _numberofrounds) {
+    if (_innigns == _numberOfTeams) {
+      if (_numberOfRoundsOfGameTitle == _numberofRoundsOfGame) {
         _innigns++;
         _innigns++;
 
         notifyListeners();
-        if (_innigns == _counterOfTeam) {
+        if (_innigns == _numberOfTeams) {
           _innigns++;
         }
       } else {
         _innigns = 0;
-        _numberofroundsmatch++;
+        _numberOfRoundsOfGameTitle++;
       }
     } else {
       _innigns;
@@ -309,7 +280,7 @@ class AppProvider extends ChangeNotifier {
     _counterOfScoreTeam3 = 0;
     _counterOfScoreTeam4 = 0;
 
-    _numberofroundsmatch = 1;
+    _numberOfRoundsOfGameTitle = 1;
     _innigns = -1;
   }
 
@@ -433,17 +404,8 @@ class AppProvider extends ChangeNotifier {
     notifyListeners();
   }
 
-  String _gametheme = "LETS GO !";
-
-  void setStringenandFaGameTheme() {
-    // ignore: unrelated_type_equality_checks
-    if (_currentLocale == "en") {
-      _gametheme = "LETS GO !";
-    } else {
-      _gametheme = 'بزن بریم !';
-    }
-    notifyListeners();
-  }
+  // set DetailGame value
+  String _gametheme = "! بزن یریم";
 
   String get gameTheme => _gametheme;
   void topicgames(String game) {

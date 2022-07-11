@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
+import 'package:pantomim/mudole/extension.dart';
 
 import '../module/constans/constant.dart';
-import '../module/widgets/dropdown_wdigets.dart';
 
 class SettingDialog extends StatefulWidget {
   const SettingDialog({Key? key}) : super(key: key);
@@ -37,24 +37,31 @@ class _SettingDialogState extends State<SettingDialog> {
                   children: [
                     Padding(
                       padding: const EdgeInsets.only(top: 40),
-                      child: Center(
-                        child: Container(
-                          decoration: BoxDecoration(
-                              borderRadius: BorderRadius.circular(20),
-                              gradient: const LinearGradient(
-                                  begin: Alignment.centerLeft,
-                                  end: Alignment.centerRight,
-                                  colors: [Colors.white38, Colors.blue])),
-                          child: Row(
-                            children: [
-                              Expanded(
-                                  child: DropdownButtonHideUnderline(
-                                child: ButtonTheme(
-                                    alignedDropdown: true,
-                                    child: const DropDownWidgets()),
-                              ))
-                            ],
-                          ),
+                      child: Container(
+                        width: double.infinity,
+                        height: 50,
+                        decoration: BoxDecoration(
+                            borderRadius: BorderRadius.circular(20),
+                            gradient: const LinearGradient(
+                                begin: Alignment.centerLeft,
+                                end: Alignment.centerRight,
+                                colors: [Colors.white38, Colors.blue])),
+                        child: Row(
+                          children: [
+                            // this part for change language application
+                            /* Expanded(
+                                child: DropdownButtonHideUnderline(
+                              child: ButtonTheme(
+                                  alignedDropdown: true,
+                                  child: const DropDownWidgets()),
+                            ))*/
+
+                            Text("در مورد توسعه دهنده",
+                                style: context.textTheme.subtitle2!.copyWith(
+                                    color: kblack,
+                                    fontSize: 24,
+                                    fontWeight: FontWeight.bold))
+                          ],
                         ),
                       ),
                     )

@@ -6,7 +6,14 @@ import '../../../generated/l10n.dart';
 extension ExtensionContext on BuildContext {
   double get width => MediaQuery.of(this).size.width;
   double get height => MediaQuery.of(this).size.height;
+
   S get localApp => S.of(this);
+
+  TextTheme get textTheme => Theme.of(this).textTheme;
+
+  void backScreans() {
+    Navigator.pop(this);
+  }
 
   void nextScreans(Widget child) async {
     await Navigator.push(this, MaterialPageRoute(builder: (context) => child));

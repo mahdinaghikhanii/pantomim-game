@@ -50,6 +50,9 @@ class Constans {
   static const double avatarRadius = 45;
   static const double kborderRadios = 20;
 
+  static const String myWebSiteAddres =
+      "https://main--nostalgic-jennings-63dd2f.netlify.app/";
+
 //language code
   // ignore: non_constant_identifier_names
   static String LANGUAGE_CODE = 'languagecode';

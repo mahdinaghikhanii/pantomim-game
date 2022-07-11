@@ -40,8 +40,8 @@ dependencies:
   cupertino_icons: ^1.0.2
   animate_do: ^2.0.0
   shared_preferences: ^2.0.11
-  rxdart: ^0.27.3
   just_audio: ^0.9.20
+  url_launcher: ^6.1.4
   dependencies:
 
 

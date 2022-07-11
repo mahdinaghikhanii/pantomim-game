@@ -1,16 +1,12 @@
 import 'package:flutter/material.dart';
-import 'package:pantomim/mudole/extension.dart';
+import 'package:pantomim/views/module/widgets/listTile_settings.dart';
+import 'package:url_launcher/url_launcher_string.dart';
 
 import '../module/constans/constant.dart';
 
-class SettingDialog extends StatefulWidget {
+class SettingDialog extends StatelessWidget {
   const SettingDialog({Key? key}) : super(key: key);
 
-  @override
-  State<SettingDialog> createState() => _SettingDialogState();
-}
-
-class _SettingDialogState extends State<SettingDialog> {
   @override
   Widget build(BuildContext context) {
     final size = MediaQuery.of(context).size;
@@ -28,44 +24,32 @@ class _SettingDialogState extends State<SettingDialog> {
             children: <Widget>[
               Container(
                 width: double.infinity,
-                height: size.height * 0.30,
+                height: size.height * 0.40,
                 decoration: BoxDecoration(
                     borderRadius: BorderRadius.circular(15),
                     color: Colors.white),
                 padding: const EdgeInsets.fromLTRB(20, 50, 20, 20),
-                child: Column(
-                  children: [
-                    Padding(
-                      padding: const EdgeInsets.only(top: 40),
-                      child: Container(
-                        width: double.infinity,
-                        height: 50,
-                        decoration: BoxDecoration(
-                            borderRadius: BorderRadius.circular(20),
-                            gradient: const LinearGradient(
-                                begin: Alignment.centerLeft,
-                                end: Alignment.centerRight,
-                                colors: [Colors.white38, Colors.blue])),
-                        child: Row(
-                          children: [
-                            // this part for change language application
-                            /* Expanded(
-                                child: DropdownButtonHideUnderline(
-                              child: ButtonTheme(
-                                  alignedDropdown: true,
-                                  child: const DropDownWidgets()),
-                            ))*/
+                child: Padding(
+                  padding: const EdgeInsets.only(top: 30),
+                  child: Column(
+                    children: [
+                      // this part for change language application
+                      /* Expanded(
+                                  child: DropdownButtonHideUnderline(
+                                child: ButtonTheme(
+                                    alignedDropdown: true,
+                                    child: const DropDownWidgets()),
+                              ))*/
+                      ListTileSettings(
+                          text: "در مورد توسعه دهنده",
+                          ontap: () async {
+                            await launchUrlString(Constans.myWebSiteAddres);
+                          }),
+                      const SizedBox(height: 15),
 
-                            Text("در مورد توسعه دهنده",
-                                style: context.textTheme.subtitle2!.copyWith(
-                                    color: kblack,
-                                    fontSize: 24,
-                                    fontWeight: FontWeight.bold))
-                          ],
-                        ),
-                      ),
-                    )
-                  ],
+                      const ListTileSettings(text: "پاک کردن سابقه بازی")
+                    ],
+                  ),
                 ),
               ),
               Positioned(

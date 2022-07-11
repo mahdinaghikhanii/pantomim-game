@@ -15,7 +15,7 @@ void main() {
     // Build our app and trigger a frame.
     // ignore: prefer_const_constructors
     await tester.pumpWidget(MyApp(
-      appProvider: appProvider,
+      languageProvider: languageProvider,
     ));
 
     // Verify that our counter starts at 0.

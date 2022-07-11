@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:flutter_localizations/flutter_localizations.dart';
+import 'package:pantomim/provider/language_providr.dart';
 import 'package:pantomim/views/module/theme/configtheme.dart';
 import 'package:provider/provider.dart';
 import 'package:shared_preferences/shared_preferences.dart';
@@ -12,30 +13,35 @@ import 'views/auth/obboard_screans.dart';
 
 int? isviewed;
 AppProvider appProvider = AppProvider();
+LanguageProvider languageProvider = LanguageProvider();
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();
   SystemChrome.setPreferredOrientations(
       [DeviceOrientation.portraitUp, DeviceOrientation.portraitDown]);
   SharedPreferences sharedPreferences = await SharedPreferences.getInstance();
-  await appProvider.fetchLocale();
+  await languageProvider.fetchLocale();
   isviewed = sharedPreferences.getInt('InBoardScreans');
 
   runApp(MyApp(
-    appProvider: appProvider,
+    languageProvider: languageProvider,
   ));
 }
 
 class MyApp extends StatelessWidget {
-  final AppProvider appProvider;
-  const MyApp({Key? key, required this.appProvider}) : super(key: key);
+  final LanguageProvider languageProvider;
+  const MyApp({Key? key, required this.languageProvider}) : super(key: key);
 
   @override
   Widget build(
     BuildContext context,
   ) {
-    return ChangeNotifierProvider<AppProvider>(
-        create: (context) => appProvider,
-        child: Consumer<AppProvider>(builder: (context, model, child) {
+    return MultiProvider(
+        providers: [
+          ChangeNotifierProvider(create: (context) => AppProvider()),
+          ChangeNotifierProvider<LanguageProvider>(
+              create: (context) => languageProvider)
+        ],
+        child: Consumer<LanguageProvider>(builder: (context, model, child) {
           return MaterialApp(
               localizationsDelegates: const [
                 S.delegate,
@@ -50,7 +56,7 @@ class MyApp extends StatelessWidget {
               home:
                   isviewed != 0 ? const OnBoardScreans() : const HomeScreans(),
               theme: ConfigTheme.light().getTheme(
-                  Provider.of<AppProvider>(context, listen: true)
+                  Provider.of<LanguageProvider>(context, listen: true)
                       .currentLocale
                       .languageCode));
         }));

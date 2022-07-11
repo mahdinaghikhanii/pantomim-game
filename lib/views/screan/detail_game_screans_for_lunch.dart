@@ -1,15 +1,13 @@
 import 'package:flutter/material.dart';
-import 'package:pantomim/main.dart';
-import 'package:pantomim/module/constans/constant.dart';
-import 'package:pantomim/module/extension/extension.dart';
-import 'package:pantomim/module/widgets/double_floatingac_button.dart';
-import 'package:pantomim/module/widgets/rowshowteam_andscore.dart';
-import '../../provider/provider.dart';
 
 import 'package:provider/provider.dart';
 
 import '../../generated/l10n.dart';
-
+import '../../module/constans/constant.dart';
+import '../../module/extension/extension.dart';
+import '../../module/widgets/double_floatingac_button.dart';
+import '../../module/widgets/rowshowteam_andscore.dart';
+import '../../provider/provider.dart';
 import '../dialog_screns/dialog_choice_your_topic.dart';
 import '../dialog_screns/dialog_quit.dart';
 

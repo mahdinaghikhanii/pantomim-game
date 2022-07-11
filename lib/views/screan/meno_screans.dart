@@ -268,7 +268,7 @@ class _MenoScreans extends State<MenoScreans> with TickerProviderStateMixin {
                 iconData: Icons.restart_alt,
                 iconColor: Colors.grey.shade500,
                 onTap: () {},
-                backgroundColor: kwhite,
+                backgroundColor: kwhite.withOpacity(0.1),
               ),
             ]),
           ),

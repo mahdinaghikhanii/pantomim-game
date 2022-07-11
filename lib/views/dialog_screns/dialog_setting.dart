@@ -1,15 +1,21 @@
 import 'package:flutter/material.dart';
+import 'package:provider/provider.dart';
 import 'package:url_launcher/url_launcher_string.dart';
 
 import '../../module/constans/constant.dart';
+import '../../module/extension/extension.dart';
 import '../../module/widgets/listTile_settings.dart';
+import '../../perfs/history.dart';
 
 class SettingDialog extends StatelessWidget {
   const SettingDialog({Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
+    final pro = Provider.of<History>(context);
     final size = MediaQuery.of(context).size;
+
+    int my = pro.getNumberAllRoundsGmae();
 
     return Dialog(
         insetPadding: const EdgeInsets.all(20),
@@ -24,13 +30,13 @@ class SettingDialog extends StatelessWidget {
             children: <Widget>[
               Container(
                 width: double.infinity,
-                height: size.height * 0.35,
+                height: size.height * 0.45,
                 decoration: BoxDecoration(
                     borderRadius: BorderRadius.circular(15),
                     color: Colors.white),
                 padding: const EdgeInsets.fromLTRB(20, 50, 20, 20),
                 child: Padding(
-                  padding: const EdgeInsets.only(top: 30),
+                  padding: const EdgeInsets.only(top: 40),
                   child: Column(
                     children: [
                       // this part for change language application
@@ -40,14 +46,32 @@ class SettingDialog extends StatelessWidget {
                                     alignedDropdown: true,
                                     child: const DropDownWidgets()),
                               ))*/
+
+                      const ListTileSettings(firstText: "ثبت پیشنهاد و نظر"),
+                      const SizedBox(height: 15),
                       ListTileSettings(
-                          text: "در مورد توسعه دهنده",
+                          firstText: "در مورد توسعه دهنده",
                           ontap: () async {
                             await launchUrlString(Constans.myWebSiteAddres);
                           }),
                       const SizedBox(height: 15),
 
-                      const ListTileSettings(text: "پاک کردن سابقه بازی")
+                      const ListTileSettings(firstText: "پاک کردن سابقه بازی"),
+                      const SizedBox(height: 15),
+                      ListTileSettings(
+                        firstTextStyle: context.textTheme.subtitle2!.copyWith(
+                            color: kblue,
+                            fontSize: 18,
+                            fontWeight: FontWeight.bold),
+                        firstText: "سابقه همه بازی ها",
+                        secondText: my.toString(),
+                        secondTextStyle: context.textTheme.subtitle2!.copyWith(
+                            color: kblue,
+                            fontSize: 18,
+                            fontWeight: FontWeight.bold),
+                        backGroundColor: Colors.white,
+                        // lastText: ,
+                      ),
                     ],
                   ),
                 ),

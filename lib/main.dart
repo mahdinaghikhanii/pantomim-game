@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:flutter_localizations/flutter_localizations.dart';
+import 'package:pantomim/perfs/history.dart';
 import 'package:pantomim/provider/onboard_provider.dart';
 import 'package:provider/provider.dart';
 import 'package:shared_preferences/shared_preferences.dart';
@@ -16,12 +17,15 @@ import 'views/screan/obboard_screans.dart';
 int? isviewed;
 
 LanguageProvider languageProvider = LanguageProvider();
+History history = History();
+
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();
   SystemChrome.setPreferredOrientations(
       [DeviceOrientation.portraitUp, DeviceOrientation.portraitDown]);
   SharedPreferences sharedPreferences = await SharedPreferences.getInstance();
   await languageProvider.fetchLocale();
+
   isviewed = sharedPreferences.getInt('InBoardScreans');
 
   runApp(MyApp(
@@ -39,6 +43,7 @@ class MyApp extends StatelessWidget {
   ) {
     return MultiProvider(
         providers: [
+          ChangeNotifierProvider(create: (context) => History()),
           ChangeNotifierProvider(create: (context) => AppProvider()),
           ChangeNotifierProvider(create: ((context) => OnBoardProvdier())),
           ChangeNotifierProvider<LanguageProvider>(

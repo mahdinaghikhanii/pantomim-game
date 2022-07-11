@@ -88,10 +88,10 @@ class AppProvider extends ChangeNotifier {
 
   //this part for typeofMatchScreans Input Name Screans
 
-  TextFiledInputNameTeam _nameTeam1 = TextFiledInputNameTeam('Team1');
-  TextFiledInputNameTeam _nameTeam2 = TextFiledInputNameTeam('Team2');
-  TextFiledInputNameTeam _nameTeam3 = TextFiledInputNameTeam('Team3');
-  TextFiledInputNameTeam _nameTeam4 = TextFiledInputNameTeam('Team4');
+  TextFiledInputNameTeam _nameTeam1 = TextFiledInputNameTeam('تیم ۱');
+  TextFiledInputNameTeam _nameTeam2 = TextFiledInputNameTeam('تیم ۲');
+  TextFiledInputNameTeam _nameTeam3 = TextFiledInputNameTeam('تیم ۳');
+  TextFiledInputNameTeam _nameTeam4 = TextFiledInputNameTeam('تیم ۴');
   TextFiledInputNameTeam get team1 => _nameTeam1;
   TextFiledInputNameTeam get team2 => _nameTeam2;
   TextFiledInputNameTeam get team3 => _nameTeam3;

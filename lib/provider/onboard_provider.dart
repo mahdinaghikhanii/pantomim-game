@@ -8,6 +8,4 @@ class OnBoardProvdier extends ChangeNotifier {
     await prefs.setInt('InBoardScreans', isViewed);
     notifyListeners();
   }
-
-  void getstoreInBoardScreansInfo() {}
 }

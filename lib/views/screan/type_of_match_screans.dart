@@ -4,6 +4,7 @@ import 'package:pantomim/module/constans/constant.dart';
 import 'package:pantomim/module/extension/extension.dart';
 import 'package:pantomim/module/widgets/button_add_remove.dart';
 import 'package:pantomim/module/widgets/double_floatingac_button.dart';
+import 'package:pantomim/perfs/history.dart';
 import 'package:provider/provider.dart';
 
 import '../../generated/l10n.dart';
@@ -106,6 +107,8 @@ class _ChoiceYourTopicState extends State<ChoiceYourTopic> {
                   ),
                   DounleFloattingButton(
                     ontap: () {
+                      Provider.of<History>(context, listen: false)
+                          .incermnetNumberOfRounds();
                       modelProvider.setaddcheckforInnigns();
                       _nextPage();
                     },

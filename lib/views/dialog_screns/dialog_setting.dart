@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+
 import 'package:provider/provider.dart';
 import 'package:url_launcher/url_launcher_string.dart';
 
@@ -12,10 +13,10 @@ class SettingDialog extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    final pro = Provider.of<History>(context);
+    final historyProvider = Provider.of<History>(context);
     final size = MediaQuery.of(context).size;
 
-    int my = pro.getNumberAllRoundsGmae();
+    int numberAllOfGame = historyProvider.getNumberAllRoundsGmae();
 
     return Dialog(
         insetPadding: const EdgeInsets.all(20),
@@ -56,7 +57,10 @@ class SettingDialog extends StatelessWidget {
                           }),
                       const SizedBox(height: 15),
 
-                      const ListTileSettings(firstText: "پاک کردن سابقه بازی"),
+                      ListTileSettings(
+                        firstText: "پاک کردن سابقه بازی",
+                        ontap: () => historyProvider.cleanNumberOfAllGame(),
+                      ),
                       const SizedBox(height: 15),
                       ListTileSettings(
                         firstTextStyle: context.textTheme.subtitle2!.copyWith(
@@ -64,7 +68,7 @@ class SettingDialog extends StatelessWidget {
                             fontSize: 18,
                             fontWeight: FontWeight.bold),
                         firstText: "سابقه همه بازی ها",
-                        secondText: my.toString(),
+                        secondText: numberAllOfGame.toString(),
                         secondTextStyle: context.textTheme.subtitle2!.copyWith(
                             color: kblue,
                             fontSize: 18,

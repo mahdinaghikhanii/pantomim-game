@@ -18,6 +18,13 @@ class History with ChangeNotifier {
     notifyListeners();
   }
 
+  void cleanNumberOfAllGame() async {
+    final perfs = await SharedPreferences.getInstance();
+
+    perfs.setInt('"ALL-Game-KEY"', 0);
+    notifyListeners();
+  }
+
   int getNumberAllRoundsGmae() {
     getAllMatchPlayingGame();
     return _index;

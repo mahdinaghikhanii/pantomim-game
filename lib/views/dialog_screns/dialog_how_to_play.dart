@@ -1,12 +1,16 @@
 import 'package:flutter/material.dart';
 import 'package:pantomim/models/howtoplay_dialog.dart';
 import 'package:pantomim/module/constans/constant.dart';
+import 'package:pantomim/provider/pagecontoroler_provider.dart';
+import 'package:provider/provider.dart';
 
 class DialogHowToPlay extends StatelessWidget {
   const DialogHowToPlay({Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
+    final _pageContorolerProvider =
+        Provider.of<PageContorolerProvider>(context);
     PageController _pageController = PageController(initialPage: 0);
     List<HowToPlayDialogModel> model = <HowToPlayDialogModel>[
       HowToPlayDialogModel(Constans.howtoplayDialogText1),
@@ -31,16 +35,52 @@ class DialogHowToPlay extends StatelessWidget {
               child: PageView.builder(
                   controller: _pageController,
                   itemCount: model.length,
+                  onPageChanged: (int index) async {
+                    _pageContorolerProvider.setCurentIndexGetStart(index);
+                  },
                   itemBuilder: ((context, index) {
-                    return Row(
-                      mainAxisAlignment: MainAxisAlignment.center,
+                    return Column(
+                      mainAxisAlignment: MainAxisAlignment.spaceAround,
                       children: [
-                        Text(
-                          model[index].text.toString(),
-                          style: styleTextForDialogHowToPlay,
-                          textAlign: TextAlign.center,
-                          overflow: TextOverflow.ellipsis,
-                        )
+                        Row(
+                          mainAxisAlignment: MainAxisAlignment.center,
+                          children: [
+                            Text(
+                              model[index].text.toString(),
+                              style: styleTextForDialogHowToPlay,
+                              textAlign: TextAlign.center,
+                              overflow: TextOverflow.ellipsis,
+                            )
+                          ],
+                        ),
+                        SizedBox(
+                          height: 10.0,
+                          child: ListView.builder(
+                            itemCount: model.length,
+                            shrinkWrap: true,
+                            scrollDirection: Axis.horizontal,
+                            itemBuilder: (context, index) {
+                              return Container(
+                                margin:
+                                    const EdgeInsets.symmetric(horizontal: 3.0),
+                                width: _pageContorolerProvider
+                                            .getCurentIndexOnBoard ==
+                                        index
+                                    ? 40
+                                    : 8,
+                                height: 20,
+                                decoration: BoxDecoration(
+                                  color: _pageContorolerProvider
+                                              .getCurentIndexOnBoard ==
+                                          index
+                                      ? kblue
+                                      : Colors.grey,
+                                  borderRadius: BorderRadius.circular(10.0),
+                                ),
+                              );
+                            },
+                          ),
+                        ),
                       ],
                     );
                   })),

@@ -13,6 +13,7 @@ class SettingDialog extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    PageController pageController = PageController(initialPage: 0);
     final historyProvider = Provider.of<History>(context);
     final size = MediaQuery.of(context).size;
 

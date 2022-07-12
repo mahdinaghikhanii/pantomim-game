@@ -56,6 +56,9 @@ class Constans {
   static const double avatarRadius = 45;
   static const double kborderRadios = 20;
 
+  static const String howtoplayDialogText1 = "بزودی";
+  static const String howtoplayDialogText2 = "الیه قشنگم";
+  static const String howtoplayDialogText3 = " این بخش درست میکنه :)";
   static const String myWebSiteAddres =
       "https://main--nostalgic-jennings-63dd2f.netlify.app/";
 

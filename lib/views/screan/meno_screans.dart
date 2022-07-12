@@ -2,17 +2,14 @@ import 'dart:async';
 
 import 'package:animate_do/animate_do.dart';
 import 'package:flutter/material.dart';
-import 'package:pantomim/module/constans/constant.dart';
-import 'package:pantomim/module/widgets/circle_button.dart';
-import 'package:pantomim/provider/gametheme_provider.dart';
-import 'package:pantomim/provider/team_provider.dart';
 import 'package:provider/provider.dart';
 
 import '../../generated/l10n.dart';
-
 import '../../module/canvas/menoscreans_painter.dart';
+import '../../module/constans/constant.dart';
+import '../../module/widgets/circle_button.dart';
+import '../../provider/team_provider.dart';
 import '../dialog_screns/dialog_setting.dart';
-
 import 'type_of_match_screans.dart';
 
 class MenoScreans extends StatefulWidget {

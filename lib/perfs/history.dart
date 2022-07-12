@@ -21,7 +21,8 @@ class History with ChangeNotifier {
   void cleanNumberOfAllGame() async {
     final perfs = await SharedPreferences.getInstance();
 
-    perfs.setInt('"ALL-Game-KEY"', 0);
+    await perfs.setInt('"ALL-Game-KEY"', 0);
+    _index = 0;
     notifyListeners();
   }
 

@@ -58,9 +58,10 @@ class SettingDialog extends StatelessWidget {
                       const SizedBox(height: 15),
 
                       ListTileSettings(
-                        firstText: "پاک کردن سابقه بازی",
-                        ontap: () => historyProvider.cleanNumberOfAllGame(),
-                      ),
+                          firstText: "پاک کردن سابقه بازی",
+                          ontap: () {
+                            historyProvider.cleanNumberOfAllGame();
+                          }),
                       const SizedBox(height: 15),
                       ListTileSettings(
                         firstTextStyle: context.textTheme.subtitle2!.copyWith(

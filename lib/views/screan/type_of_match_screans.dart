@@ -1,16 +1,14 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'package:pantomim/module/constans/constant.dart';
-import 'package:pantomim/module/extension/extension.dart';
-import 'package:pantomim/module/widgets/button_add_remove.dart';
-import 'package:pantomim/module/widgets/double_floatingac_button.dart';
-import 'package:pantomim/perfs/history.dart';
-import 'package:pantomim/provider/team_provider.dart';
 import 'package:provider/provider.dart';
 
 import '../../generated/l10n.dart';
-import '../../provider/gametheme_provider.dart';
-
+import '../../module/constans/constant.dart';
+import '../../module/extension/extension.dart';
+import '../../module/widgets/button_add_remove.dart';
+import '../../module/widgets/double_floatingac_button.dart';
+import '../../perfs/history.dart';
+import '../../provider/team_provider.dart';
 import 'detail_game_screans_for_lunch.dart';
 
 class ChoiceYourTopic extends StatefulWidget {

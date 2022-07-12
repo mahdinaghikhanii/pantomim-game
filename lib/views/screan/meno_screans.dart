@@ -4,7 +4,8 @@ import 'package:animate_do/animate_do.dart';
 import 'package:flutter/material.dart';
 import 'package:pantomim/module/constans/constant.dart';
 import 'package:pantomim/module/widgets/circle_button.dart';
-import 'package:pantomim/provider/provider.dart';
+import 'package:pantomim/provider/gametheme_provider.dart';
+import 'package:pantomim/provider/team_provider.dart';
 import 'package:provider/provider.dart';
 
 import '../../generated/l10n.dart';
@@ -229,7 +230,7 @@ class _MenoScreans extends State<MenoScreans> with TickerProviderStateMixin {
   @override
   Widget build(BuildContext context) {
     // ignore: unused_local_variable
-    final modelProvider = Provider.of<AppProvider>(context);
+    final modelProvider = Provider.of<TeamProvider>(context);
 
     final size = MediaQuery.of(context).size;
     var localApp = S.of(context);

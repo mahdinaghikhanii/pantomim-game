@@ -3,13 +3,14 @@ import 'package:flutter/services.dart';
 import 'package:flutter_localizations/flutter_localizations.dart';
 import 'package:pantomim/perfs/history.dart';
 import 'package:pantomim/provider/onboard_provider.dart';
+import 'package:pantomim/provider/team_provider.dart';
 import 'package:provider/provider.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 
 import 'generated/l10n.dart';
 import 'module/theme/configtheme.dart';
 import 'provider/language_providr.dart';
-import 'provider/provider.dart';
+import 'provider/gametheme_provider.dart';
 
 import 'views/screan/home_screans.dart';
 import 'views/screan/obboard_screans.dart';
@@ -44,7 +45,8 @@ class MyApp extends StatelessWidget {
     return MultiProvider(
         providers: [
           ChangeNotifierProvider(create: (context) => History()),
-          ChangeNotifierProvider(create: (context) => AppProvider()),
+          ChangeNotifierProvider(create: ((context) => TeamProvider())),
+          ChangeNotifierProvider(create: (context) => TheThemeOfTheGame()),
           ChangeNotifierProvider(create: ((context) => OnBoardProvdier())),
           ChangeNotifierProvider<LanguageProvider>(
               create: (context) => languageProvider)

@@ -4,7 +4,7 @@ import 'package:provider/provider.dart';
 import '../../generated/l10n.dart';
 import '../../module/constans/constant.dart';
 import '../../module/widgets/double_floatingac_button.dart';
-import '../../provider/provider.dart';
+import '../../provider/team_provider.dart';
 import '../screan/home_screans.dart';
 
 class DialogQuit extends StatelessWidget {
@@ -14,7 +14,7 @@ class DialogQuit extends StatelessWidget {
   Widget build(BuildContext context) {
     final size = MediaQuery.of(context).size;
     var localApp = S.of(context);
-    final appProvider = Provider.of<AppProvider>(context);
+    final appProvider = Provider.of<TeamProvider>(context);
 
     return Dialog(
         insetPadding: const EdgeInsets.all(Constans.padding),

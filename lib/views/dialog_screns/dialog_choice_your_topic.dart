@@ -4,7 +4,7 @@ import 'package:provider/provider.dart';
 import '../../generated/l10n.dart';
 import '../../models/category.dart';
 import '../../module/widgets/choice_boximage_text_select.dart';
-import '../../provider/provider.dart';
+import '../../provider/gametheme_provider.dart';
 import '../screan/time_screans.dart';
 
 class DialogShow extends StatelessWidget {
@@ -16,7 +16,7 @@ class DialogShow extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     // ignore: unused_local_variable
-    final modelProvider = Provider.of<AppProvider>(context);
+    final modelProvider = Provider.of<TheThemeOfTheGame>(context);
     final size = MediaQuery.of(context).size;
 
     var localApp = S.of(context);

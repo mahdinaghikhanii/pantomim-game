@@ -5,10 +5,11 @@ import 'package:pantomim/module/extension/extension.dart';
 import 'package:pantomim/module/widgets/button_add_remove.dart';
 import 'package:pantomim/module/widgets/double_floatingac_button.dart';
 import 'package:pantomim/perfs/history.dart';
+import 'package:pantomim/provider/team_provider.dart';
 import 'package:provider/provider.dart';
 
 import '../../generated/l10n.dart';
-import '../../provider/provider.dart';
+import '../../provider/gametheme_provider.dart';
 
 import 'detail_game_screans_for_lunch.dart';
 
@@ -65,7 +66,7 @@ class _ChoiceYourTopicState extends State<ChoiceYourTopic> {
   Widget build(BuildContext context) {
     var localApp = S.of(context);
 
-    final modelProvider = Provider.of<AppProvider>(context);
+    final modelProvider = Provider.of<TeamProvider>(context);
 
     List<String> nameTeamTextFiledInput = [
       localApp.timeForStartGame50Seconds,

@@ -5,11 +5,12 @@ import 'package:animate_do/animate_do.dart';
 import 'package:flutter/material.dart';
 import 'package:just_audio/just_audio.dart';
 import 'package:pantomim/module/constans/constant.dart';
+import 'package:pantomim/provider/team_provider.dart';
 import 'package:provider/provider.dart';
 
 import '../../generated/l10n.dart';
 import '../../module/extension/extension.dart';
-import '../../provider/provider.dart';
+import '../../provider/gametheme_provider.dart';
 import '../dialog_screns/dialog_winorlose.dart';
 
 class TimerScreans extends StatefulWidget {
@@ -94,7 +95,8 @@ class _TimerScreansState extends State<TimerScreans> {
     // ignore: unused_local_variable
     final isCompelect = duration.inSeconds == 0;
     final isRounning = timer == null ? false : timer!.isActive;
-    final modelProvider = Provider.of<AppProvider>(context);
+    final modelProvider = Provider.of<TheThemeOfTheGame>(context);
+    final teamProvider = Provider.of<TeamProvider>(context);
     var localApp = S.of(context);
 
     void reasetgame() {
@@ -320,7 +322,7 @@ class _TimerScreansState extends State<TimerScreans> {
                                 startTimer(resets: true);
                                 setState(() {
                                   if (isCountdown) {
-                                    switch (modelProvider.getTimeForMatch()) {
+                                    switch (teamProvider.getTimeForMatch()) {
                                       case 0:
                                         duration = const Duration(seconds: 50);
                                         break;
@@ -398,7 +400,7 @@ class _TimerScreansState extends State<TimerScreans> {
                               if (duration.inSeconds == 0) {
                               } else {
                                 context.playAudio('assets/audio/wrong.wav');
-                                modelProvider.subtractioScore();
+                                teamProvider.subtractioScore();
                               }
                             },
                             child: Container(

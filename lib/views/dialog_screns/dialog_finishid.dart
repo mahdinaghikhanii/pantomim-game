@@ -1,11 +1,11 @@
 import 'package:flutter/material.dart';
-import 'package:pantomim/module/constans/constant.dart';
-import 'package:pantomim/module/widgets/double_floatingac_button.dart';
-import 'package:pantomim/provider/provider.dart';
-import 'package:pantomim/views/screan/home_screans.dart';
 import 'package:provider/provider.dart';
 
 import '../../generated/l10n.dart';
+import '../../module/constans/constant.dart';
+import '../../module/widgets/double_floatingac_button.dart';
+import '../../provider/team_provider.dart';
+import '../screan/home_screans.dart';
 
 class DialogFinishidGame extends StatelessWidget {
   const DialogFinishidGame({Key? key}) : super(key: key);
@@ -14,7 +14,7 @@ class DialogFinishidGame extends StatelessWidget {
   Widget build(BuildContext context) {
     final size = MediaQuery.of(context).size;
     var localApp = S.of(context);
-    final modelProvier = Provider.of<AppProvider>(context);
+    final modelProvier = Provider.of<TeamProvider>(context);
     return Dialog(
         insetPadding:
             const EdgeInsets.only(left: 25, right: 25, top: 120, bottom: 130),
@@ -110,7 +110,7 @@ class FinishidScreansTextDetail extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     // ignore: unused_local_variable
-    final modelProvier = Provider.of<AppProvider>(context);
+    final modelProvier = Provider.of<TeamProvider>(context);
     return Visibility(
       visible: visibility,
       child: Padding(

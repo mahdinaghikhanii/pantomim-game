@@ -1,10 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:just_audio/just_audio.dart';
-
-import 'package:pantomim/provider/provider.dart';
 import 'package:provider/provider.dart';
 
 import '../../../generated/l10n.dart';
+import '../../provider/team_provider.dart';
 
 extension ExtensionContext on BuildContext {
   double get width => MediaQuery.of(this).size.width;
@@ -14,7 +13,7 @@ extension ExtensionContext on BuildContext {
 
   TextTheme get textTheme => Theme.of(this).textTheme;
 
-  AppProvider get appProvider => Provider.of<AppProvider>(this);
+  get appProvider => Provider.of<TeamProvider>(this);
 
   void backScreans() {
     Navigator.pop(this);

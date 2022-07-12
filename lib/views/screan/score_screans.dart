@@ -5,7 +5,8 @@ import 'package:pantomim/module/constans/constant.dart';
 import 'package:pantomim/module/extension/extension.dart';
 import 'package:pantomim/module/widgets/double_floatingac_button.dart';
 import 'package:pantomim/module/widgets/scoreshowtext_textdetail.dart';
-import 'package:pantomim/provider/provider.dart';
+import 'package:pantomim/provider/gametheme_provider.dart';
+import 'package:pantomim/provider/team_provider.dart';
 import 'package:provider/provider.dart';
 
 import '../../generated/l10n.dart';
@@ -53,7 +54,7 @@ class _ScoreScreansState extends State<ScoreScreans>
   }
 
   void check() {
-    final modelProvier = Provider.of<AppProvider>(context);
+    final modelProvier = Provider.of<TeamProvider>(context);
     if (modelProvier.visibilityTeam1Icon == true) {
       modelProvier.getCounterOfScoreTeam1().toString();
     }
@@ -96,7 +97,7 @@ class _ScoreScreansState extends State<ScoreScreans>
   Widget build(BuildContext context) {
     final size = MediaQuery.of(context).size;
     var localApp = S.of(context);
-    final modelProvier = Provider.of<AppProvider>(context);
+    final modelProvier = Provider.of<TeamProvider>(context);
 
     return WillPopScope(
       onWillPop: () async {

@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:pantomim/provider/team_provider.dart';
 
 import 'package:provider/provider.dart';
 
@@ -7,7 +8,7 @@ import '../../module/constans/constant.dart';
 import '../../module/extension/extension.dart';
 import '../../module/widgets/double_floatingac_button.dart';
 import '../../module/widgets/rowshowteam_andscore.dart';
-import '../../provider/provider.dart';
+import '../../provider/gametheme_provider.dart';
 import '../dialog_screns/dialog_choice_your_topic.dart';
 import '../dialog_screns/dialog_quit.dart';
 
@@ -19,7 +20,7 @@ class DetailGameScreans extends StatelessWidget {
     var localApp = S.of(context);
     // ignore: unused_local_variable
     final size = MediaQuery.of(context).size;
-    final modelProvider = Provider.of<AppProvider>(context);
+    final modelProvider = Provider.of<TeamProvider>(context);
 
     return WillPopScope(
         onWillPop: () async {

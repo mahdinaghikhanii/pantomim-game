@@ -1,10 +1,10 @@
 import 'package:flutter/material.dart';
+import 'package:pantomim/provider/team_provider.dart';
 import 'package:provider/provider.dart';
 
 import '../../generated/l10n.dart';
 import '../../module/constans/constant.dart';
 import '../../module/widgets/double_floatingac_button.dart';
-import '../../provider/provider.dart';
 import '../screan/score_screans.dart';
 
 class DialogWinOrLose extends StatelessWidget {
@@ -14,7 +14,7 @@ class DialogWinOrLose extends StatelessWidget {
   Widget build(BuildContext context) {
     final size = MediaQuery.of(context).size;
     var localApp = S.of(context);
-    final modelProvider = Provider.of<AppProvider>(context);
+    final modelProvider = Provider.of<TeamProvider>(context);
 
     return Dialog(
         insetPadding:

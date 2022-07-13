@@ -10,12 +10,8 @@ import '../screan/time_screans.dart';
 class DialogShow extends StatelessWidget {
   const DialogShow({Key? key}) : super(key: key);
 
-  // final PantomimData pantomimData;
-  //const DialogShow({Key? key, required this.pantomimData}) : super(key: key);
-
   @override
   Widget build(BuildContext context) {
-    // ignore: unused_local_variable
     final modelProvider = Provider.of<TheThemeOfTheGame>(context);
     final size = MediaQuery.of(context).size;
 

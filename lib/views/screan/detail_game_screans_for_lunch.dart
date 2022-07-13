@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:pantomim/views/screan/choictopic_screans.dart';
 import 'package:provider/provider.dart';
 
 import '../../generated/l10n.dart';
@@ -48,7 +49,8 @@ class DetailGameScreans extends StatelessWidget {
                     ),
                     DounleFloattingButton(
                       ontap: () {
-                        context.showDialogs(const DialogShow(), true);
+                        context.nextScreans(const ChoiceTopicScreans());
+                        //   context.showDialogs(const DialogShow(), true);
                       },
                       colorBtn: kblue,
                       textBtn: localApp.detailGameScreansForLunchBtnNameLetsGo,

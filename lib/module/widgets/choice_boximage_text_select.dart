@@ -1,8 +1,7 @@
 import 'package:animate_do/animate_do.dart';
 import 'package:flutter/material.dart';
-import 'package:pantomim/module/constans/constant.dart';
 
-class ChoiceTopic extends StatefulWidget {
+class ChoiceTopic extends StatelessWidget {
   final Function() onTap;
   final String title;
   final String image;
@@ -15,23 +14,19 @@ class ChoiceTopic extends StatefulWidget {
   }) : super(key: key);
 
   @override
-  State<ChoiceTopic> createState() => _ChoiceTopicState();
-}
-
-class _ChoiceTopicState extends State<ChoiceTopic> {
   @override
   Widget build(BuildContext context) {
     final size = MediaQuery.of(context).size;
     return FadeInLeftBig(
       duration: const Duration(seconds: 1),
       child: InkWell(
-        borderRadius: BorderRadius.circular(Constans.kBigBorderRadius),
-        onTap: widget.onTap,
+        borderRadius: BorderRadius.circular(12),
+        onTap: onTap,
         child: Column(
           children: [
             Container(
-              width: size.width * 0.32,
-              height: size.height * 0.11,
+              width: size.width * 0.30,
+              height: size.height * 0.12,
               decoration: BoxDecoration(
                 color: Colors.black38.withOpacity(0.2),
                 borderRadius: BorderRadius.circular(12),
@@ -40,8 +35,8 @@ class _ChoiceTopicState extends State<ChoiceTopic> {
                   mainAxisAlignment: MainAxisAlignment.center,
                   children: [
                     Image.asset(
-                      widget.image,
-                      width: size.width * 0.17,
+                      image,
+                      width: size.width * 0.16,
                       height: size.height * 0.08,
                       fit: BoxFit.fill,
                     ),
@@ -49,7 +44,7 @@ class _ChoiceTopicState extends State<ChoiceTopic> {
                   ]),
             ),
             const SizedBox(height: 15),
-            Text(widget.title,
+            Text(title,
                 style: Theme.of(context).textTheme.button!.copyWith(
                     color: Colors.white,
                     fontWeight: FontWeight.bold,

@@ -81,7 +81,7 @@ class ChoiceTopicScreans extends StatelessWidget {
               padding: const EdgeInsets.only(
                   left: Constans.padding, right: Constans.padding),
               child: Column(children: [
-                const SizedBox(height: 20),
+                const SizedBox(height: 10),
                 Expanded(
                   child: GridView.builder(
                       padding: const EdgeInsets.all(0),
@@ -89,9 +89,9 @@ class ChoiceTopicScreans extends StatelessWidget {
                       gridDelegate:
                           const SliverGridDelegateWithFixedCrossAxisCount(
                               crossAxisCount: 3,
-                              crossAxisSpacing: 12,
+                              crossAxisSpacing: Constans.smallPading,
                               mainAxisExtent: 150,
-                              mainAxisSpacing: 10),
+                              mainAxisSpacing: 5),
                       itemBuilder: (BuildContext context, int index) {
                         return ChoiceTopic(
                             image: Fruitdata[index].image,

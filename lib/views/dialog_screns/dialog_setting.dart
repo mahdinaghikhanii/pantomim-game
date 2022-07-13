@@ -31,13 +31,13 @@ class SettingDialog extends StatelessWidget {
             children: <Widget>[
               Container(
                 width: double.infinity,
-                height: size.height * 0.45,
+                height: size.height * 0.50,
                 decoration: BoxDecoration(
                     borderRadius: BorderRadius.circular(15),
                     color: Colors.white),
                 padding: const EdgeInsets.fromLTRB(20, 50, 20, 20),
                 child: Padding(
-                  padding: const EdgeInsets.only(top: 40),
+                  padding: const EdgeInsets.only(top: 20),
                   child: Column(
                     children: [
                       // this part for change language application

@@ -16,8 +16,6 @@ class DetailGameScreans extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     var localApp = S.of(context);
-    // ignore: unused_local_variable
-    final size = MediaQuery.of(context).size;
     final modelProvider = Provider.of<TeamProvider>(context);
 
     return WillPopScope(

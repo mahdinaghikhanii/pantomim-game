@@ -1,19 +1,17 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:flutter_localizations/flutter_localizations.dart';
-import 'package:pantomim/perfs/history.dart';
-import 'package:pantomim/provider/onboard_provider.dart';
-import 'package:pantomim/provider/pagecontoroler_provider.dart';
-import 'package:pantomim/provider/team_provider.dart';
-import 'package:pantomim/views/screan/choictopic_screans.dart';
 import 'package:provider/provider.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 
 import 'generated/l10n.dart';
 import 'module/theme/configtheme.dart';
-import 'provider/language_providr.dart';
+import 'perfs/history.dart';
 import 'provider/gametheme_provider.dart';
-
+import 'provider/language_providr.dart';
+import 'provider/onboard_provider.dart';
+import 'provider/pagecontoroler_provider.dart';
+import 'provider/team_provider.dart';
 import 'views/screan/home_screans.dart';
 import 'views/screan/obboard_screans.dart';
 

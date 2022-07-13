@@ -41,7 +41,7 @@ class DetailGameScreans extends StatelessWidget {
                       ontap: () {
                         context.showDialogs(const DialogQuit(), true);
                       },
-                      colorBtn: kblue,
+                      colorBtn: Colors.transparent,
                       textBtn:
                           localApp.detailGameScreansForLunchBtnNameQuitGame,
                       highlightColor: Colors.transparent,
@@ -50,7 +50,7 @@ class DetailGameScreans extends StatelessWidget {
                       ontap: () {
                         context.showDialogs(const DialogShow(), true);
                       },
-                      colorBtn: Colors.transparent,
+                      colorBtn: kblue,
                       textBtn: localApp.detailGameScreansForLunchBtnNameLetsGo,
                       highlightColor: Colors.transparent,
                     )

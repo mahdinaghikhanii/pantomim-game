@@ -5,6 +5,7 @@ import 'package:pantomim/perfs/history.dart';
 import 'package:pantomim/provider/onboard_provider.dart';
 import 'package:pantomim/provider/pagecontoroler_provider.dart';
 import 'package:pantomim/provider/team_provider.dart';
+import 'package:pantomim/views/screan/choictopic_screans.dart';
 import 'package:provider/provider.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 
@@ -65,8 +66,9 @@ class MyApp extends StatelessWidget {
               debugShowCheckedModeBanner: false,
               locale: model.currentLocale,
               title: "پانتومیم",
-              home:
-                  isviewed != 0 ? const OnBoardScreans() : const HomeScreans(),
+              home: isviewed != 0
+                  ? const OnBoardScreans()
+                  : const ChoiceTopicScreans(),
               theme: ConfigTheme.light().getTheme(
                   Provider.of<LanguageProvider>(context, listen: true)
                       .currentLocale

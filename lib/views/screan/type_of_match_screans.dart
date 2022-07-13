@@ -100,7 +100,7 @@ class _ChoiceYourTopicState extends State<ChoiceYourTopic> {
                     ontap: () {
                       _backPage();
                     },
-                    colorBtn: kblue,
+                    colorBtn: Colors.transparent,
                     textBtn: localApp.typeOfMatchScreansButtonBACKPAGE,
                     highlightColor: Colors.transparent,
                   ),
@@ -111,7 +111,7 @@ class _ChoiceYourTopicState extends State<ChoiceYourTopic> {
                       modelProvider.setaddcheckforInnigns();
                       _nextPage();
                     },
-                    colorBtn: Colors.transparent,
+                    colorBtn: kblue,
                     textBtn: localApp.typeOfMatchScreansButtonNextPage,
                     highlightColor: Colors.transparent,
                   )

@@ -1,3 +1,4 @@
+import 'package:animate_do/animate_do.dart';
 import 'package:flutter/material.dart';
 import 'package:pantomim/generated/l10n.dart';
 import 'package:pantomim/models/category.dart';
@@ -55,16 +56,22 @@ class ChoiceTopicScreans extends StatelessWidget {
       decoration: backgroundDefaultScafoldForOnBoard,
       child: Scaffold(
           appBar: AppBar(
-            title: Text('موضوع بازی را انتخاب کنید',
-                style: context.textTheme.subtitle2!.copyWith(fontSize: 24)),
+            title: FadeInRightBig(
+              duration: const Duration(seconds: 1),
+              child: Text('موضوع بازی را انتخاب کنید',
+                  style: context.textTheme.subtitle2!.copyWith(fontSize: 24)),
+            ),
             elevation: 0,
             automaticallyImplyLeading: false,
-            leading: Padding(
-              padding: const EdgeInsets.only(
-                  left: Constans.smallPading, right: Constans.smallPading),
-              child: IconButton(
-                  onPressed: () => context.backScreans(),
-                  icon: const Icon(Icons.arrow_back)),
+            leading: FadeInRightBig(
+              duration: const Duration(microseconds: 1),
+              child: Padding(
+                padding: const EdgeInsets.only(
+                    left: Constans.smallPading, right: Constans.smallPading),
+                child: IconButton(
+                    onPressed: () => context.backScreans(),
+                    icon: const Icon(Icons.arrow_back)),
+              ),
             ),
             backgroundColor: Colors.transparent,
           ),

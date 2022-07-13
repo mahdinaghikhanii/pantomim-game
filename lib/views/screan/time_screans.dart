@@ -49,8 +49,7 @@ class _TimerScreansState extends State<TimerScreans> {
     setState(() {
       final seconds = duration.inSeconds + addSeconds;
       if (seconds == 11) {
-        //This section warns you that you have 10 seconds
-        context.playAudio('assets/audio/wrong.wav');
+        context.playAudio('assets/audio/s.mp3');
       }
       if (seconds < 0) {
         timer?.cancel();
@@ -121,10 +120,7 @@ class _TimerScreansState extends State<TimerScreans> {
           break;
 
         case 1:
-          List _sport = [
-            localApp.timescreansgamethemelistSport1,
-            localApp.timescreansgamethemelistSport2
-          ];
+          List _sport = ["ddjasdsa id isdsaidj ifjisud fudfu ishf"];
           modelProvider.topicgames(_sport[_random.nextInt(_sport.length)]);
           break;
 
@@ -272,6 +268,7 @@ class _TimerScreansState extends State<TimerScreans> {
                       padding: const EdgeInsets.only(left: 20, right: 20),
                       child: Text(
                         modelProvider.gameTheme.toString(),
+                        textAlign: TextAlign.center,
                         style: Theme.of(context).textTheme.headline1,
                       ),
                     ),

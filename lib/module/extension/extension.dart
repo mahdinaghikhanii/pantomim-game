@@ -1,3 +1,5 @@
+import 'dart:developer';
+
 import 'package:flutter/material.dart';
 import 'package:just_audio/just_audio.dart';
 import 'package:provider/provider.dart';
@@ -33,8 +35,13 @@ extension ExtensionContext on BuildContext {
 
 extension Audio on BuildContext {
   void playAudio(String path) async {
-    final player = AudioPlayer();
-    await player.setAsset(path);
-    await player.play();
+    try {
+      final player = AudioPlayer();
+      await player.setAsset(path);
+      await player.play();
+      player.setLoopMode(LoopMode.one);
+    } catch (e) {
+      log(e.toString());
+    }
   }
 }

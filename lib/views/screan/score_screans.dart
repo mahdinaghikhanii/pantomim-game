@@ -146,7 +146,7 @@ class _ScoreScreansState extends State<ScoreScreans>
                           color: Colors.white24,
                           borderRadius: BorderRadius.circular(50)),
                       child: Column(
-                        crossAxisAlignment: CrossAxisAlignment.start,
+                        mainAxisAlignment: MainAxisAlignment.center,
                         children: [
                           Center(
                               child: Text(

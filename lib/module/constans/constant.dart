@@ -63,6 +63,8 @@ class Constans {
   static const String myWebSiteAddres =
       "https://main--nostalgic-jennings-63dd2f.netlify.app/";
 
+  static const String howtoPlayText =
+      "بازی پانتومیم ،بازی جذاب برای جمع خانواده و دوستان در این بازی باید بدون صحبت کردن و بدون اشاره به چیزی با حرکت دست و بدن و انواع ژست های خاص کلمات یا جملاتی را برای هم تیمی هاتون نمایش بدین. هر تیمی که در زمان کمتری کلمه یا عبارت رو حدس بزنه،امتیاز بیشتری رو به دست میاره! بهتره که تعداد دور های بازی جوری باشه که هر کدام از اعضای تیم ها بتوانند در بازی شرکت کنن و حداقل یک‌عبارت رو اجرا کنن.هر تیمی که کلمات درست تر در زمان کمتری داشته اون برنده ی بازیه :)";
 //language code
   // ignore: non_constant_identifier_names
   static String LANGUAGE_CODE = 'languagecode';

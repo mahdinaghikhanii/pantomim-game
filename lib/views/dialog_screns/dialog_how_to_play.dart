@@ -13,7 +13,7 @@ class DialogHowToPlay extends StatelessWidget {
         Provider.of<PageContorolerProvider>(context);
     PageController _pageController = PageController(initialPage: 0);
     List<HowToPlayDialogModel> model = <HowToPlayDialogModel>[
-      HowToPlayDialogModel(Constans.howtoplayDialogText1),
+      HowToPlayDialogModel(Constans.howtoPlayText),
       HowToPlayDialogModel(Constans.howtoplayDialogText2),
       HowToPlayDialogModel(Constans.howtoplayDialogText3),
     ];
@@ -29,9 +29,10 @@ class DialogHowToPlay extends StatelessWidget {
           clipBehavior: Clip.none,
           alignment: Alignment.center,
           children: [
+            const SizedBox(height: 20),
             SizedBox(
               width: 400,
-              height: 450,
+              height: 300,
               child: PageView.builder(
                   controller: _pageController,
                   itemCount: model.length,
@@ -44,16 +45,23 @@ class DialogHowToPlay extends StatelessWidget {
                       children: [
                         Row(
                           mainAxisAlignment: MainAxisAlignment.center,
+                          crossAxisAlignment: CrossAxisAlignment.center,
                           children: [
-                            Text(
-                              model[index].text.toString(),
-                              style: styleTextForDialogHowToPlay,
-                              textAlign: TextAlign.center,
-                              overflow: TextOverflow.ellipsis,
+                            Expanded(
+                              child: Padding(
+                                padding: const EdgeInsets.all(Constans.padding),
+                                child: Text(
+                                  model[index].text.toString(),
+                                  style: styleTextForDialogHowToPlay,
+                                  textAlign: TextAlign.center,
+                                  maxLines: 20,
+                                  overflow: TextOverflow.ellipsis,
+                                ),
+                              ),
                             )
                           ],
                         ),
-                        SizedBox(
+                        /*       SizedBox(
                           height: 10.0,
                           child: ListView.builder(
                             itemCount: model.length,
@@ -80,7 +88,7 @@ class DialogHowToPlay extends StatelessWidget {
                               );
                             },
                           ),
-                        ),
+                        ),*/
                       ],
                     );
                   })),

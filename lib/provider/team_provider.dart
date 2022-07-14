@@ -397,4 +397,6 @@ class TeamProvider extends ChangeNotifier {
     }
     notifyListeners();
   }
+
+  void setDefualtTimeScreans() {}
 }

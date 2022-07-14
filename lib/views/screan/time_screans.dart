@@ -321,7 +321,50 @@ class _TimerScreansState extends State<TimerScreans> {
                                   if (isCountdown) {
                                     switch (teamProvider.getTimeForMatch()) {
                                       case 0:
-                                        duration = const Duration(seconds: 50);
+                                        modelProvider.gameTheme.toString().length ==
+                                                1
+                                            ? duration =
+                                                const Duration(seconds: 50)
+                                            : modelProvider.gameTheme
+                                                        .toString()
+                                                        .length ==
+                                                    2
+                                                ? duration =
+                                                    const Duration(seconds: 50)
+                                                : modelProvider.gameTheme
+                                                            .toString()
+                                                            .length ==
+                                                        3
+                                                    ? duration = const Duration(
+                                                        seconds: 50)
+                                                    : modelProvider.gameTheme
+                                                                .toString()
+                                                                .length ==
+                                                            4
+                                                        ? duration =
+                                                            const Duration(
+                                                                seconds: 50)
+                                                        : modelProvider.gameTheme
+                                                                    .toString()
+                                                                    .length ==
+                                                                5
+                                                            ? duration =
+                                                                const Duration(
+                                                                    seconds: 70)
+                                                            : modelProvider.gameTheme
+                                                                        .toString()
+                                                                        .length ==
+                                                                    6
+                                                                ? duration =
+                                                                    const Duration(seconds: 70)
+                                                                : modelProvider.gameTheme.toString().length == 7
+                                                                    ? duration = const Duration(seconds: 70)
+                                                                    : modelProvider.gameTheme.toString().length == 8
+                                                                        ? duration = const Duration(seconds: 90)
+                                                                        : modelProvider.gameTheme.toString().length > 10
+                                                                            ? const Duration(seconds: 110)
+                                                                            : const Duration(seconds: 150);
+
                                         break;
                                       case 1:
                                         duration = const Duration(

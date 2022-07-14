@@ -35,7 +35,7 @@ class DialogHowToPlay extends StatelessWidget {
               height: 300,
               child: PageView.builder(
                   controller: _pageController,
-                  itemCount: model.length,
+                  itemCount: 1,
                   onPageChanged: (int index) async {
                     _pageContorolerProvider.setCurentIndexGetStart(index);
                   },

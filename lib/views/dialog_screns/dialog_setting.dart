@@ -31,14 +31,15 @@ class SettingDialog extends StatelessWidget {
             children: <Widget>[
               Container(
                 width: double.infinity,
-                height: size.height * 0.50,
+                height: size.height * 0.48,
                 decoration: BoxDecoration(
                     borderRadius: BorderRadius.circular(15),
                     color: Colors.white),
                 padding: const EdgeInsets.fromLTRB(20, 50, 20, 20),
                 child: Padding(
-                  padding: const EdgeInsets.only(top: 20),
+                  padding: const EdgeInsets.only(top: 10),
                   child: Column(
+                    mainAxisAlignment: MainAxisAlignment.spaceAround,
                     children: [
                       // this part for change language application
                       /* Expanded(
@@ -49,20 +50,19 @@ class SettingDialog extends StatelessWidget {
                               ))*/
 
                       const ListTileSettings(firstText: "ثبت پیشنهاد و نظر"),
-                      const SizedBox(height: 15),
+                      const SizedBox(height: 10),
                       ListTileSettings(
                           firstText: "در مورد توسعه دهنده",
                           ontap: () async {
                             await launchUrlString(Constans.myWebSiteAddres);
                           }),
-                      const SizedBox(height: 15),
-
+                      const SizedBox(height: 10),
                       ListTileSettings(
                           firstText: "پاک کردن سابقه بازی",
                           ontap: () {
                             historyProvider.cleanNumberOfAllGame();
                           }),
-                      const SizedBox(height: 15),
+                      const SizedBox(height: 10),
                       ListTileSettings(
                         firstTextStyle: context.textTheme.subtitle2!.copyWith(
                             color: kblue,

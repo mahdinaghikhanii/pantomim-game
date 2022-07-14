@@ -2,6 +2,7 @@ import 'package:animate_do/animate_do.dart';
 import 'package:flutter/material.dart';
 import 'package:pantomim/generated/l10n.dart';
 import 'package:pantomim/module/widgets/small_button.dart';
+import 'package:pantomim/views/dialog_screns/dialog_finishid.dart';
 
 import 'package:pantomim/views/dialog_screns/dialog_how_to_play.dart';
 import 'package:pantomim/views/screan/meno_screans.dart';
@@ -79,10 +80,7 @@ class HomeScreans extends StatelessWidget {
                   ontap: () {
                     showDialog(
                         context: context,
-                        builder: (
-                          context,
-                        ) =>
-                            const DialogHowToPlay());
+                        builder: (context) => const DialogHowToPlay());
                   },
                 )
               ],

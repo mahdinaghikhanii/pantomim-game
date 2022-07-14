@@ -119,7 +119,7 @@ class _ScoreScreansState extends State<ScoreScreans>
                   children: [
                     Container(
                       width: size.width * 0.70,
-                      height: size.height * 0.08,
+                      height: size.height * 0.10,
                       decoration: BoxDecoration(
                           borderRadius: BorderRadius.circular(30)),
                       child: RichText(

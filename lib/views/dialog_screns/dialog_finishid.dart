@@ -17,7 +17,7 @@ class DialogFinishidGame extends StatelessWidget {
     final modelProvier = Provider.of<TeamProvider>(context);
     return Dialog(
         insetPadding:
-            const EdgeInsets.only(left: 25, right: 25, top: 120, bottom: 130),
+            const EdgeInsets.only(left: 25, right: 25, top: 110, bottom: 130),
         shape: RoundedRectangleBorder(
           borderRadius: BorderRadius.circular(45),
         ),
@@ -28,7 +28,7 @@ class DialogFinishidGame extends StatelessWidget {
             alignment: Alignment.center,
             children: <Widget>[
               Positioned(
-                  top: -size.height * 0.11,
+                  top: -size.height * 0.10,
                   child: Container(
                     decoration: BoxDecoration(
                         borderRadius: BorderRadius.circular(30),
@@ -39,7 +39,13 @@ class DialogFinishidGame extends StatelessWidget {
               Container(
                 padding: const EdgeInsets.all(20),
                 width: size.width * 0.83,
-                height: size.height * 0.62,
+                height: modelProvier.getNumberOfTeams() == 2
+                    ? size.height * 0.50
+                    : modelProvier.getNumberOfTeams() == 3
+                        ? size.height * 0.56
+                        : modelProvier.getNumberOfTeams() == 4
+                            ? size.height * 0.70
+                            : 0,
                 decoration: BoxDecoration(
                     color: Colors.white24,
                     borderRadius: BorderRadius.circular(50)),
@@ -74,7 +80,7 @@ class DialogFinishidGame extends StatelessWidget {
                       visibility: modelProvier.visibilityTeam4,
                     ),
                     Padding(
-                      padding: const EdgeInsets.only(top: 60, bottom: 10),
+                      padding: const EdgeInsets.only(top: 35, bottom: 10),
                       child: Center(
                         child: DounleFloattingButton(
                           colorBtn: kblue,

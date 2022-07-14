@@ -272,6 +272,7 @@ class TeamProvider extends ChangeNotifier {
     _counterOfScoreTeam2 = 0;
     _counterOfScoreTeam3 = 0;
     _counterOfScoreTeam4 = 0;
+    _numberOfTeams = 2;
 
     _numberOfRoundsOfGameTitle = 1;
     _innigns = -1;

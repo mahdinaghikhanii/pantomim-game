@@ -1,5 +1,6 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:pantomim/module/widgets/team_textfield.dart';
 import 'package:provider/provider.dart';
 
 import '../../generated/l10n.dart';
@@ -150,109 +151,30 @@ class _ChoiceYourTopicState extends State<ChoiceYourTopic> {
                             child: Wrap(
                               crossAxisAlignment: WrapCrossAlignment.end,
                               children: [
-                                Container(
-                                    padding: const EdgeInsets.all(10),
-                                    color: Colors.transparent,
-                                    width: context.width * 0.30,
-                                    height: context.height * 0.10,
-                                    child: TextField(
-                                        onChanged: (String value) {
-                                          modelProvider.changeNameTeams1(value);
-                                        },
-                                        decoration: InputDecoration(
-                                          border: InputBorder.none,
-                                          hintText: localApp
-                                              .typeOfMatchScreansTextFiledInputTeam1,
-                                          hintStyle: Theme.of(context)
-                                              .textTheme
-                                              .bodyText1,
-                                        ),
-                                        textAlign: TextAlign.center,
-                                        style: styleTextInputTextField)),
-                                Container(
-                                    padding: const EdgeInsets.all(10),
-                                    color: Colors.transparent,
-                                    width: context.width * 0.30,
-                                    height: context.height * 0.10,
-                                    child: TextField(
-                                        onChanged: (String value) {
-                                          modelProvider.changeNameTeams2(value);
-                                        },
-                                        decoration: InputDecoration(
-                                          hintText: localApp
-                                              .typeOfMatchScreansTextFiledInputTeam2,
-                                          hintStyle: Theme.of(context)
-                                              .textTheme
-                                              .bodyText1,
-                                          border: InputBorder.none,
-                                        ),
-                                        textAlign: TextAlign.center,
-                                        style: styleTextInputTextField)),
-                                Container(
-                                    padding: const EdgeInsets.all(10),
-                                    color: Colors.transparent,
-                                    width: context.width * 0.30,
-                                    height: context.height * 0.10,
-                                    child: TextField(
-                                        onChanged: (String value) {
-                                          modelProvider.changeNameTeams3(value);
-                                        },
-                                        decoration: InputDecoration(
-                                          enabled:
-                                              modelProvider.getNumberOfTeams() >
-                                                      2
-                                                  ? true
-                                                  : false,
-                                          floatingLabelStyle:
-                                              styleTextInputTextField,
-                                          hintText: localApp
-                                              .typeOfMatchScreansTextFiledInputTeam3,
-                                          hintStyle:
-                                              modelProvider.getNumberOfTeams() >
-                                                      2
-                                                  ? Theme.of(context)
-                                                      .textTheme
-                                                      .bodyText1
-                                                  : const TextStyle(
-                                                      color: Colors.grey),
-                                          border: InputBorder.none,
-                                        ),
-                                        textAlign: TextAlign.center,
-                                        style: styleTextInputTextField)),
-                                Container(
-                                    padding: const EdgeInsets.all(10),
-                                    color: Colors.transparent,
-                                    width: context.width * 0.30,
-                                    height: context.height * 0.10,
-                                    child: TextField(
-                                        enabled:
-                                            modelProvider.getNumberOfTeams() > 3
-                                                ? true
-                                                : false,
-                                        onChanged: (String value) {
-                                          modelProvider.changeNameTeams4(value);
-                                        },
-                                        decoration: InputDecoration(
-                                          hintText: localApp
-                                              .typeOfMatchScreansTextFiledInputTeam4,
-                                          hintStyle:
-                                              modelProvider.getNumberOfTeams() >
-                                                      3
-                                                  ? Theme.of(context)
-                                                      .textTheme
-                                                      .bodyText1
-                                                  : const TextStyle(
-                                                      color: Colors.grey),
-                                          border: InputBorder.none,
-                                        ),
-                                        textAlign: TextAlign.center,
-                                        style: styleTextInputTextField)),
+                                TeamTextField(
+                                    onchange: (String value) =>
+                                        modelProvider.changeNameTeams1(value),
+                                    hintText: localApp
+                                        .typeOfMatchScreansTextFiledInputTeam1),
+                                TeamTextField(
+                                    hintText: localApp
+                                        .typeOfMatchScreansTextFiledInputTeam2,
+                                    onchange: (String value) =>
+                                        modelProvider.changeNameTeams2(value)),
+                                TeamTextField(
+                                    hintText: localApp
+                                        .typeOfMatchScreansTextFiledInputTeam3,
+                                    onchange: (String value) =>
+                                        modelProvider.changeNameTeams3(value)),
+                                TeamTextField(
+                                    hintText: localApp
+                                        .typeOfMatchScreansTextFiledInputTeam4,
+                                    onchange: (String value) =>
+                                        modelProvider.changeNameTeams4(value)),
                               ],
                             ),
                           )),
-                      const SizedBox(
-                        width: 10,
-                      ),
+                      const SizedBox(width: 10),
                       Container(
                           width: context.width * 0.24,
                           height: context.height * 0.23,
@@ -261,41 +183,42 @@ class _ChoiceYourTopicState extends State<ChoiceYourTopic> {
                               border: Border.all(
                                 color: kwhite,
                               )),
-                          child: Column(children: [
-                            const SizedBox(
-                              height: 10,
-                            ),
-                            ButtonAddRemove(
-                                iconData: Icons.add,
-                                height: context.height * 0.06,
-                                width: context.width * 0.18,
-                                onTap: () =>
-                                    modelProvider.incrementNumberOfTeams()),
-                            SizedBox(
-                              height: context.height * 0.02,
-                            ),
-                            Text(
-                              modelProvider.getNumberOfTeams().toString(),
-                              maxLines: 1,
-                              style: Theme.of(context).textTheme.bodyText1,
-                            ),
-                            SizedBox(
-                              height: context.height * 0.02,
-                            ),
-                            ButtonAddRemove(
-                                iconData: Icons.remove,
-                                height: context.height * 0.06,
-                                width: context.width * 0.18,
-                                onTap: () =>
-                                    modelProvider.lowoffNumberOfTeams()),
-                            const SizedBox(
-                              height: 10,
-                            ),
-                          ])),
+                          child: Column(
+                              crossAxisAlignment: CrossAxisAlignment.center,
+                              mainAxisAlignment: MainAxisAlignment.center,
+                              children: [
+                                const SizedBox(
+                                  height: 10,
+                                ),
+                                ButtonAddRemove(
+                                    iconData: Icons.add,
+                                    height: context.height * 0.06,
+                                    width: context.width * 0.11,
+                                    onTap: () =>
+                                        modelProvider.incrementNumberOfTeams()),
+                                SizedBox(
+                                  height: context.height * 0.02,
+                                ),
+                                Text(
+                                  modelProvider.getNumberOfTeams().toString(),
+                                  maxLines: 1,
+                                  style: Theme.of(context).textTheme.bodyText1,
+                                ),
+                                SizedBox(
+                                  height: context.height * 0.02,
+                                ),
+                                ButtonAddRemove(
+                                    iconData: Icons.remove,
+                                    height: context.height * 0.06,
+                                    width: context.width * 0.11,
+                                    onTap: () =>
+                                        modelProvider.lowoffNumberOfTeams()),
+                                const SizedBox(
+                                  height: 10,
+                                ),
+                              ])),
                     ]),
-                    const SizedBox(
-                      height: 20,
-                    ),
+                    const SizedBox(height: 20),
                     const Divider(),
                     Padding(
                         padding: const EdgeInsets.only(
@@ -356,8 +279,8 @@ class _ChoiceYourTopicState extends State<ChoiceYourTopic> {
                               Visibility(
                                   visible: _viewCustom,
                                   child: Row(
-                                    mainAxisAlignment:
-                                        MainAxisAlignment.spaceBetween,
+                                    crossAxisAlignment:
+                                        CrossAxisAlignment.center,
                                     children: [
                                       Text(
                                           nameTeamTextFiledInput[
@@ -369,55 +292,48 @@ class _ChoiceYourTopicState extends State<ChoiceYourTopic> {
                                       ButtonAddRemove(
                                           iconData: Icons.add,
                                           height: context.height * 0.06,
-                                          width: context.width * 0.12,
+                                          width: context.width * 0.11,
                                           onTap: () => modelProvider
                                               .incermentGameTime()),
                                       const SizedBox(width: 20),
                                       ButtonAddRemove(
                                           iconData: Icons.remove,
                                           height: context.height * 0.06,
-                                          width: context.width * 0.12,
+                                          width: context.width * 0.11,
                                           onTap: () =>
                                               modelProvider.lowoffGameTime())
                                     ],
                                   )),
-                              const SizedBox(
-                                height: 20,
-                              ),
+                              const SizedBox(height: 20),
                               const Divider(),
                               Padding(
                                   padding: const EdgeInsets.only(
                                       top: 10, bottom: 30),
                                   child: Row(
-                                    mainAxisAlignment:
-                                        MainAxisAlignment.spaceBetween,
                                     children: [
                                       RichText(
+                                          textAlign: TextAlign.center,
                                           text: TextSpan(children: [
-                                        TextSpan(
-                                            text: localApp
-                                                .typeOfMatchScreansTextDetailForNumberofRounds,
-                                            style: Theme.of(context)
-                                                .textTheme
-                                                .bodyText2),
-                                        WidgetSpan(
-                                            child: Container(
-                                          padding:
-                                              const EdgeInsets.only(right: 10),
-                                          child: Text(
-                                              modelProvider
-                                                  .getNumberOfRounds()
-                                                  .toString(),
-                                              style: Theme.of(context)
-                                                  .textTheme
-                                                  .bodyText2),
-                                        )),
-                                      ])),
+                                            TextSpan(
+                                                text: localApp
+                                                    .typeOfMatchScreansTextDetailForNumberofRounds,
+                                                style: Theme.of(context)
+                                                    .textTheme
+                                                    .bodyText2),
+                                            TextSpan(
+                                                text: "  " +
+                                                    modelProvider
+                                                        .getNumberOfRounds()
+                                                        .toString(),
+                                                style: Theme.of(context)
+                                                    .textTheme
+                                                    .bodyText2),
+                                          ])),
                                       const Spacer(),
                                       ButtonAddRemove(
                                           iconData: Icons.add,
                                           height: context.height * 0.06,
-                                          width: context.width * 0.12,
+                                          width: context.width * 0.11,
                                           onTap: () => modelProvider
                                               .incermentnumberofrounds()),
                                       const SizedBox(
@@ -426,7 +342,7 @@ class _ChoiceYourTopicState extends State<ChoiceYourTopic> {
                                       ButtonAddRemove(
                                           iconData: Icons.remove,
                                           height: context.height * 0.06,
-                                          width: context.width * 0.12,
+                                          width: context.width * 0.11,
                                           onTap: () => modelProvider
                                               .lowoffnumberofrounds())
                                     ],

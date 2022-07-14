@@ -20,9 +20,7 @@ class ButtonAddRemove extends StatelessWidget {
   Widget build(BuildContext context) {
     return InkWell(
       onTap: onTap,
-      borderRadius: BorderRadius.circular(
-        Constans.kBigBorderRadius,
-      ),
+      borderRadius: BorderRadius.circular(Constans.kBigBorderRadius),
       child: Container(
           height: height,
           width: width,

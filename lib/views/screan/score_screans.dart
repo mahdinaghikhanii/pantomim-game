@@ -153,18 +153,18 @@ class _ScoreScreansState extends State<ScoreScreans>
                             modelProvier.seeGroupNameTeam().toString(),
                             style: Theme.of(context).textTheme.headline6,
                           )),
+                          const WidgetShowTextWinOrLoseDetail(
+                            title: 'امتیاز این دست :',
+                            score: '2',
+                          ),
                           WidgetShowTextWinOrLoseDetail(
-                            title: 'Word rating :',
+                            title: 'امتیاز کل تیم :',
                             score: modelProvier
                                 .getCounterOfScoreTeam1()
                                 .toString(),
                           ),
                           const WidgetShowTextWinOrLoseDetail(
-                            title: 'Respond quickly :',
-                            score: '2',
-                          ),
-                          const WidgetShowTextWinOrLoseDetail(
-                            title: 'Error in the game  :',
+                            title: 'گزارش خطا‌ :',
                             score: '0',
                           ),
                           Padding(

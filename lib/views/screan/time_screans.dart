@@ -48,7 +48,7 @@ class _TimerScreansState extends State<TimerScreans> {
     final addSeconds = isCountdown ? -1 : 1;
     setState(() {
       final seconds = duration.inSeconds + addSeconds;
-      if (seconds == 11) {
+      if (seconds == 12) {
         context.playAudio('assets/audio/s.mp3');
       }
       if (seconds < 0) {

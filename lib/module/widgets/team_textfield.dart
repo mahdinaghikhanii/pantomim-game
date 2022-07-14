@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 
-import '../../generated/l10n.dart';
 import '../constans/constant.dart';
 import '../extension/extension.dart';
 

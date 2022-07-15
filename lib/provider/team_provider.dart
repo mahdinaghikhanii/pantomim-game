@@ -403,7 +403,10 @@ class TeamProvider extends ChangeNotifier {
     final perfs = await SharedPreferences.getInstance();
     perfs.setStringList('my-list', [
       _numberOfRoundsOfGameTitle.toString(),
+      _numberOfTeams.toString(),
+      _numberofRoundsOfGame.toString(),
       _nameTeam1.value,
+      _nameTeam2.value,
     ]);
   }
 }

@@ -2,6 +2,7 @@
 
 import 'package:flutter/material.dart';
 import 'package:pantomim/models/category.dart';
+import 'package:shared_preferences/shared_preferences.dart';
 
 class TeamProvider extends ChangeNotifier {
   // set numberof Thms
@@ -398,5 +399,11 @@ class TeamProvider extends ChangeNotifier {
     notifyListeners();
   }
 
-  void setDefualtTimeScreans() {}
+  void saveAllTeamInformation() async {
+    final perfs = await SharedPreferences.getInstance();
+    perfs.setStringList('my-list', [
+      _numberOfRoundsOfGameTitle.toString(),
+      _nameTeam1.value,
+    ]);
+  }
 }

@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:pantomim/provider/team_provider.dart';
 
 import '../constans/constant.dart';
 import '../extension/extension.dart';
@@ -6,8 +7,17 @@ import '../extension/extension.dart';
 class TeamTextField extends StatelessWidget {
   final Function(String value) onchange;
   final String hintText;
+  final bool enable;
+  final int? number;
+  final TeamProvider teamProvider;
+
   const TeamTextField(
-      {Key? key, required this.onchange, required this.hintText})
+      {Key? key,
+      required this.onchange,
+      this.number,
+      required this.hintText,
+      required this.teamProvider,
+      required this.enable})
       : super(key: key);
 
   @override
@@ -20,9 +30,17 @@ class TeamTextField extends StatelessWidget {
         child: TextField(
             onChanged: onchange,
             decoration: InputDecoration(
-              border: InputBorder.none,
+              enabled: enable,
+              floatingLabelStyle: styleTextInputTextField,
               hintText: hintText,
-              hintStyle: Theme.of(context).textTheme.bodyText1,
+              hintStyle: teamProvider.getNumberOfTeams() == 2
+                  ? Theme.of(context).textTheme.bodyText1
+                  : teamProvider.getNumberOfTeams() > 2
+                      ? Theme.of(context).textTheme.bodyText1
+                      : teamProvider.getNumberOfTeams() > 3
+                          ? Theme.of(context).textTheme.bodyText1
+                          : const TextStyle(color: Colors.grey),
+              border: InputBorder.none,
             ),
             textAlign: TextAlign.center,
             style: styleTextInputTextField));

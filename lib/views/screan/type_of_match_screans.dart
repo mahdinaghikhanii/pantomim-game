@@ -151,26 +151,103 @@ class _ChoiceYourTopicState extends State<ChoiceYourTopic> {
                             child: Wrap(
                               crossAxisAlignment: WrapCrossAlignment.end,
                               children: [
-                                TeamTextField(
-                                    onchange: (String value) =>
-                                        modelProvider.changeNameTeams1(value),
-                                    hintText: localApp
-                                        .typeOfMatchScreansTextFiledInputTeam1),
-                                TeamTextField(
-                                    hintText: localApp
-                                        .typeOfMatchScreansTextFiledInputTeam2,
-                                    onchange: (String value) =>
-                                        modelProvider.changeNameTeams2(value)),
-                                TeamTextField(
-                                    hintText: localApp
-                                        .typeOfMatchScreansTextFiledInputTeam3,
-                                    onchange: (String value) =>
-                                        modelProvider.changeNameTeams3(value)),
-                                TeamTextField(
-                                    hintText: localApp
-                                        .typeOfMatchScreansTextFiledInputTeam4,
-                                    onchange: (String value) =>
-                                        modelProvider.changeNameTeams4(value)),
+                                Container(
+                                    padding: const EdgeInsets.all(10),
+                                    color: Colors.transparent,
+                                    width: context.width * 0.30,
+                                    height: context.height * 0.10,
+                                    child: TextField(
+                                        onChanged: (String value) {
+                                          modelProvider.changeNameTeams1(value);
+                                        },
+                                        decoration: InputDecoration(
+                                          border: InputBorder.none,
+                                          hintText: localApp
+                                              .typeOfMatchScreansTextFiledInputTeam1,
+                                          hintStyle: Theme.of(context)
+                                              .textTheme
+                                              .bodyText1,
+                                        ),
+                                        textAlign: TextAlign.center,
+                                        style: styleTextInputTextField)),
+                                Container(
+                                    padding: const EdgeInsets.all(10),
+                                    color: Colors.transparent,
+                                    width: context.width * 0.30,
+                                    height: context.height * 0.10,
+                                    child: TextField(
+                                        onChanged: (String value) {
+                                          modelProvider.changeNameTeams2(value);
+                                        },
+                                        decoration: InputDecoration(
+                                          hintText: localApp
+                                              .typeOfMatchScreansTextFiledInputTeam2,
+                                          hintStyle: Theme.of(context)
+                                              .textTheme
+                                              .bodyText1,
+                                          border: InputBorder.none,
+                                        ),
+                                        textAlign: TextAlign.center,
+                                        style: styleTextInputTextField)),
+                                Container(
+                                    padding: const EdgeInsets.all(10),
+                                    color: Colors.transparent,
+                                    width: context.width * 0.30,
+                                    height: context.height * 0.10,
+                                    child: TextField(
+                                        onChanged: (String value) {
+                                          modelProvider.changeNameTeams3(value);
+                                        },
+                                        decoration: InputDecoration(
+                                          enabled:
+                                              modelProvider.getNumberOfTeams() >
+                                                      2
+                                                  ? true
+                                                  : false,
+                                          floatingLabelStyle:
+                                              styleTextInputTextField,
+                                          hintText: localApp
+                                              .typeOfMatchScreansTextFiledInputTeam3,
+                                          hintStyle:
+                                              modelProvider.getNumberOfTeams() >
+                                                      2
+                                                  ? Theme.of(context)
+                                                      .textTheme
+                                                      .bodyText1
+                                                  : const TextStyle(
+                                                      color: Colors.grey),
+                                          border: InputBorder.none,
+                                        ),
+                                        textAlign: TextAlign.center,
+                                        style: styleTextInputTextField)),
+                                Container(
+                                    padding: const EdgeInsets.all(10),
+                                    color: Colors.transparent,
+                                    width: context.width * 0.30,
+                                    height: context.height * 0.10,
+                                    child: TextField(
+                                        enabled:
+                                            modelProvider.getNumberOfTeams() > 3
+                                                ? true
+                                                : false,
+                                        onChanged: (String value) {
+                                          modelProvider.changeNameTeams4(value);
+                                        },
+                                        decoration: InputDecoration(
+                                          hintText: localApp
+                                              .typeOfMatchScreansTextFiledInputTeam4,
+                                          hintStyle:
+                                              modelProvider.getNumberOfTeams() >
+                                                      3
+                                                  ? Theme.of(context)
+                                                      .textTheme
+                                                      .bodyText1
+                                                  : const TextStyle(
+                                                      color: Colors.grey),
+                                          border: InputBorder.none,
+                                        ),
+                                        textAlign: TextAlign.center,
+                                        style: styleTextInputTextField)),
                               ],
                             ),
                           )),

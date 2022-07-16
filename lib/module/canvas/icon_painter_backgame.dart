@@ -2,7 +2,7 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:pantomim/module/constans/constant.dart';
 
-class IconPainter extends CustomPainter {
+class IconPainterBackGame extends CustomPainter {
   final double firstRippleRadius;
   final double firstRippleOpacity;
   final double firstRippleStrokeWidth;
@@ -14,7 +14,7 @@ class IconPainter extends CustomPainter {
   final double thirdRippleStrokeWidth;
   final double centerCircleRadius;
 
-  IconPainter(
+  IconPainterBackGame(
       this.firstRippleRadius,
       this.firstRippleOpacity,
       this.firstRippleStrokeWidth,
@@ -29,7 +29,7 @@ class IconPainter extends CustomPainter {
   @override
   void paint(Canvas canvas, Size size) {
     Color myColor = kwhite;
-    Color blue = kblue;
+    Color blue = kred;
 
     Paint firstPaint = Paint();
     firstPaint.color = myColor.withOpacity(firstRippleOpacity);
@@ -51,7 +51,7 @@ class IconPainter extends CustomPainter {
 
     Paint fourthPaint = Paint();
 
-    fourthPaint.color = myColor;
+    fourthPaint.color = kred;
 
     fourthPaint.style = PaintingStyle.fill;
 

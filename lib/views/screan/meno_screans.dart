@@ -1,5 +1,6 @@
 import 'package:animate_do/animate_do.dart';
 import 'package:flutter/material.dart';
+import 'package:pantomim/module/widgets/icon_animation_backgame.dart';
 
 import '../../generated/l10n.dart';
 import '../../module/constans/constant.dart';
@@ -25,36 +26,52 @@ class MenoScreans extends StatelessWidget {
           floatingActionButtonLocation:
               FloatingActionButtonLocation.centerDocked,
           floatingActionButton: Padding(
-            // ignore: prefer_const_constructors
-            padding: EdgeInsets.only(
-              bottom: Constans.padding,
-            ),
-            child: Row(mainAxisAlignment: MainAxisAlignment.center, children: [
-              CricleButton(
-                iconColor: kwhite,
-                iconData: Icons.settings,
-                onTap: () {
-                  showDialog(
-                      context: context,
-                      builder: (
-                        context,
-                      ) =>
-                          const SettingDialog());
-                },
-                backgroundColor: kblue,
+              padding: const EdgeInsets.only(
+                bottom: Constans.padding,
               ),
-              const SizedBox(
-                width: 80,
-              ),
-
-              /*  CricleButton(
-            iconData: Icons.restart_alt,
-            iconColor: Colors.grey.shade500,
-            onTap: () {},
-            backgroundColor: kwhite.withOpacity(0.1),
-                ),*/
-            ]),
-          ),
+              child: Stack(
+                  clipBehavior: Clip.none,
+                  alignment: Alignment.centerLeft,
+                  children: [
+                    Row(mainAxisAlignment: MainAxisAlignment.center, children: [
+                      CricleButton(
+                        iconColor: kwhite,
+                        iconData: Icons.settings,
+                        onTap: () {
+                          showDialog(
+                              context: context,
+                              builder: (
+                                context,
+                              ) =>
+                                  const SettingDialog());
+                        },
+                        backgroundColor: kblue,
+                      ),
+                      SizedBox(
+                          width: 80,
+                          height: 80,
+                          child: const IconAnimationBackGame()),
+                    ]),
+                    Positioned(
+                        left: 50,
+                        child: InkWell(
+                          borderRadius: BorderRadius.circular(100),
+                          onTap: () {
+                            Navigator.push(
+                                context,
+                                MaterialPageRoute(
+                                    builder: (context) =>
+                                        const ChoiceYourTopic()));
+                          },
+                          child: const Icon(
+                            Icons.refresh_sharp,
+                            size: 50,
+                            color: kwhite,
+                          ),
+                        ),
+                        width: 80,
+                        height: 80),
+                  ])),
           backgroundColor: Colors.transparent,
           body: SafeArea(
               child: Stack(

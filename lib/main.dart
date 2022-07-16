@@ -40,7 +40,7 @@ class MyApp extends StatelessWidget {
 
   @override
   Widget build(
-    BuildContext context,
+    BuildContext context
   ) {
     return MultiProvider(
         providers: [

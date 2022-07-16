@@ -3,8 +3,6 @@ import 'dart:async';
 import 'package:flutter/material.dart';
 import 'package:pantomim/module/canvas/icon_painter_backgame.dart';
 
-import '../canvas/menoscreans_painter.dart';
-
 class IconAnimationBackGame extends StatefulWidget {
   const IconAnimationBackGame({Key? key}) : super(key: key);
 
@@ -171,7 +169,7 @@ class _IconAnimationBackGameState extends State<IconAnimationBackGame>
     centerCircleController =
         AnimationController(vsync: this, duration: const Duration(seconds: 1));
 
-    centerCircleRadiusAnimation = Tween<double>(begin: 45, end: 30).animate(
+    centerCircleRadiusAnimation = Tween<double>(begin: 41, end: 15).animate(
       CurvedAnimation(
         parent: centerCircleController,
         curve: Curves.fastOutSlowIn,

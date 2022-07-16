@@ -29,11 +29,10 @@ class MenoScreans extends StatelessWidget {
               padding: const EdgeInsets.only(
                 bottom: Constans.padding,
               ),
-              child: Stack(
-                  clipBehavior: Clip.none,
-                  alignment: Alignment.centerLeft,
-                  children: [
-                    Row(mainAxisAlignment: MainAxisAlignment.center, children: [
+              child: Stack(alignment: Alignment.center, children: [
+                Row(
+                    mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                    children: [
                       CricleButton(
                         iconColor: kwhite,
                         iconData: Icons.settings,
@@ -47,31 +46,28 @@ class MenoScreans extends StatelessWidget {
                         },
                         backgroundColor: kblue,
                       ),
-                      SizedBox(
-                          width: 80,
-                          height: 80,
-                          child: const IconAnimationBackGame()),
+                      const IconAnimationBackGame(),
                     ]),
-                    Positioned(
-                        left: 50,
-                        child: InkWell(
-                          borderRadius: BorderRadius.circular(100),
-                          onTap: () {
-                            Navigator.push(
-                                context,
-                                MaterialPageRoute(
-                                    builder: (context) =>
-                                        const ChoiceYourTopic()));
-                          },
-                          child: const Icon(
-                            Icons.refresh_sharp,
-                            size: 50,
-                            color: kwhite,
-                          ),
-                        ),
-                        width: 80,
-                        height: 80),
-                  ])),
+                const Positioned(
+                    right: 260,
+                    bottom: 0,
+                    top: 60,
+                    width: 160,
+                    child: Text("برگشتن به بازی ")),
+                Positioned(
+                    left: 76,
+                    child: InkWell(
+                      borderRadius: BorderRadius.circular(100),
+                      onTap: () {},
+                      child: const Icon(
+                        Icons.refresh_sharp,
+                        size: 50,
+                        color: kwhite,
+                      ),
+                    ),
+                    width: 80,
+                    height: 80),
+              ])),
           backgroundColor: Colors.transparent,
           body: SafeArea(
               child: Stack(

@@ -47,6 +47,7 @@ class DetailGameScreans extends StatelessWidget {
                     DounleFloattingButton(
                       ontap: () {
                         context.nextScreans(const ChoiceTopicScreans());
+
                         //   context.showDialogs(const DialogShow(), true);
                       },
                       colorBtn: kblue,

@@ -276,6 +276,7 @@ class TeamProvider extends ChangeNotifier {
     _numberOfTeams = 2;
 
     _numberOfRoundsOfGameTitle = 1;
+
     _innigns = -1;
   }
 
@@ -399,14 +400,27 @@ class TeamProvider extends ChangeNotifier {
     notifyListeners();
   }
 
-  void saveAllTeamInformation() async {
+  bool _showIconbackGame = false;
+  bool get backLastGame => _showIconbackGame;
+
+  void saveAllTeamInformation(bool backGame) async {
     final perfs = await SharedPreferences.getInstance();
-    perfs.setStringList('my-list', [
+    _showIconbackGame = backGame;
+    await perfs.setBool("ShowIconBackGame", backGame);
+    perfs.setStringList('information-team', [
       _numberOfRoundsOfGameTitle.toString(),
       _numberOfTeams.toString(),
       _numberofRoundsOfGame.toString(),
       _nameTeam1.value,
       _nameTeam2.value,
     ]);
+    notifyListeners();
+  }
+
+  getShowIconbackGame() async {
+    final perfs = await SharedPreferences.getInstance();
+    perfs.getStringList("information-team");
+    _showIconbackGame = perfs.getBool('ShowIconBackGame') ?? false;
+    notifyListeners();
   }
 }

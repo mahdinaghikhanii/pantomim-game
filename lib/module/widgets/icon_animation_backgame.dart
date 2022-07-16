@@ -217,6 +217,8 @@ class _IconAnimationBackGameState extends State<IconAnimationBackGame>
   @override
   Widget build(BuildContext context) {
     return CustomPaint(
+      isComplex: true,
+      willChange: true,
       foregroundPainter: IconPainterBackGame(
         firstRippleRadiusAnimation.value,
         firstRippleOpacityAnimation.value,

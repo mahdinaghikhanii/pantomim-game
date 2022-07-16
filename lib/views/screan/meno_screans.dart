@@ -1,6 +1,6 @@
 import 'package:animate_do/animate_do.dart';
 import 'package:flutter/material.dart';
-import 'package:pantomim/module/widgets/icon_animation_backgame.dart';
+import 'package:pantomim/main.dart';
 
 import '../../generated/l10n.dart';
 import '../../module/constans/constant.dart';
@@ -29,11 +29,10 @@ class MenoScreans extends StatelessWidget {
               padding: const EdgeInsets.only(
                 bottom: Constans.padding,
               ),
-              child: Stack(alignment: Alignment.center, children: [
-                Row(
-                    mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-                    children: [
-                      CricleButton(
+              child: Row(
+                  mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                  children: [
+                    CricleButton(
                         iconColor: kwhite,
                         iconData: Icons.settings,
                         onTap: () {
@@ -44,30 +43,22 @@ class MenoScreans extends StatelessWidget {
                               ) =>
                                   const SettingDialog());
                         },
-                        backgroundColor: kblue,
-                      ),
-                      const IconAnimationBackGame(),
-                    ]),
-                const Positioned(
-                    right: 260,
-                    bottom: 0,
-                    top: 60,
-                    width: 160,
-                    child: Text("برگشتن به بازی ")),
-                Positioned(
-                    left: 76,
-                    child: InkWell(
-                      borderRadius: BorderRadius.circular(100),
-                      onTap: () {},
-                      child: const Icon(
-                        Icons.refresh_sharp,
-                        size: 50,
-                        color: kwhite,
-                      ),
-                    ),
-                    width: 80,
-                    height: 80),
-              ])),
+                        backgroundColor: kblue),
+                    teamProvider.backLastGame
+                        ? SizedBox(
+                            width: 70,
+                            height: 70,
+                            child: Padding(
+                                padding: const EdgeInsets.only(top: 0),
+                                child: Center(
+                                    child: Image.asset(
+                                        'assets/icons/backgame.png'))))
+                        : CricleButton(
+                            iconColor: kwhite.withOpacity(0.2),
+                            iconData: Icons.restart_alt,
+                            onTap: () {},
+                            backgroundColor: kwhite.withOpacity(0.1))
+                  ])),
           backgroundColor: Colors.transparent,
           body: SafeArea(
               child: Stack(
@@ -131,6 +122,7 @@ class MenoScreans extends StatelessWidget {
                     child: InkWell(
                       borderRadius: BorderRadius.circular(100),
                       onTap: () {
+                        teamProvider.saveAllTeamInformation(false);
                         Navigator.push(
                             context,
                             MaterialPageRoute(

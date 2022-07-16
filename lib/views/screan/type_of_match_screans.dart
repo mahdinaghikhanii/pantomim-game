@@ -106,6 +106,7 @@ class _ChoiceYourTopicState extends State<ChoiceYourTopic> {
                   ),
                   DounleFloattingButton(
                     ontap: () {
+                      modelProvider.saveAllTeamInformation(true);
                       Provider.of<History>(context, listen: false)
                           .incermnetNumberOfRounds();
                       modelProvider.setaddcheckforInnigns();

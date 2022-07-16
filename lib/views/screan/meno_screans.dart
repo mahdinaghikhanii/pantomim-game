@@ -1,19 +1,17 @@
-import 'dart:async';
-
 import 'package:animate_do/animate_do.dart';
 import 'package:flutter/material.dart';
-import 'package:pantomim/module/widgets/icon_animation_play.dart';
 
 import '../../generated/l10n.dart';
-import '../../module/canvas/menoscreans_painter.dart';
 import '../../module/constans/constant.dart';
 import '../../module/widgets/circle_button.dart';
+import '../../module/widgets/icon_animation_play.dart';
 import '../dialog_screns/dialog_setting.dart';
 import 'type_of_match_screans.dart';
 
 class MenoScreans extends StatelessWidget {
   const MenoScreans({Key? key}) : super(key: key);
 
+  @override
   Widget build(BuildContext context) {
     final size = MediaQuery.of(context).size;
     var localApp = S.of(context);

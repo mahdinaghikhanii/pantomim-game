@@ -1,10 +1,8 @@
 import 'dart:async';
 
 import 'package:flutter/material.dart';
-import 'package:pantomim/module/canvas/menoscreans_painter.dart';
-import 'package:pantomim/module/constans/constant.dart';
 
-import '../../views/screan/type_of_match_screans.dart';
+import '../canvas/menoscreans_painter.dart';
 
 class IconAnimation extends StatefulWidget {
   final double? sizeBegin;

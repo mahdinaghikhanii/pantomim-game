@@ -122,7 +122,7 @@ class MenoScreans extends StatelessWidget {
                     child: InkWell(
                       borderRadius: BorderRadius.circular(100),
                       onTap: () {
-                        teamProvider.saveAllTeamInformation(false);
+                        teamProvider.backGameIconShow(false);
                         Navigator.push(
                             context,
                             MaterialPageRoute(

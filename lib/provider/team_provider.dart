@@ -403,23 +403,37 @@ class TeamProvider extends ChangeNotifier {
   bool _showIconbackGame = false;
   bool get backLastGame => _showIconbackGame;
 
-  void saveAllTeamInformation(bool backGame) async {
+  List<String> _items = [];
+  List get seeAllItems => _items;
+
+  void backGameIconShow(bool backGame) async {
     final perfs = await SharedPreferences.getInstance();
     _showIconbackGame = backGame;
     await perfs.setBool("ShowIconBackGame", backGame);
-    perfs.setStringList('information-team', [
-      _numberOfRoundsOfGameTitle.toString(),
-      _numberOfTeams.toString(),
-      _numberofRoundsOfGame.toString(),
-      _nameTeam1.value,
-      _nameTeam2.value,
-    ]);
+    notifyListeners();
+  }
+
+  void saveAllTeamInformationTeam(
+      String? nameTeam1,
+      String? nameTeam2,
+      String? nameTeam3,
+      String? nameTeam4,
+      int? numberRounds,
+      int? numberofTeam) async {
+    final perfs = await SharedPreferences.getInstance();
+    await perfs.setString("name-team1", nameTeam1 ?? "");
+    await perfs.setString("name-team2", nameTeam2 ?? "");
+    await perfs.setString("name-team3", nameTeam3 ?? "");
+    await perfs.setString("name-team4", nameTeam4 ?? "");
+    await perfs.setInt('number-ofTeam', numberofTeam ?? 0);
+    await perfs.setInt('number-Rounds', numberRounds ?? 0);
+
     notifyListeners();
   }
 
   getShowIconbackGame() async {
     final perfs = await SharedPreferences.getInstance();
-    perfs.getStringList("information-team");
+    _items = perfs.getStringList("information-team")!;
     _showIconbackGame = perfs.getBool('ShowIconBackGame') ?? false;
     notifyListeners();
   }

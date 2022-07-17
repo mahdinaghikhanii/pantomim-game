@@ -32,16 +32,11 @@ class IconPainterBackGame extends CustomPainter {
     fourthPaint.color = kred.withOpacity(0.3);
 
     fourthPaint.style = PaintingStyle.fill;
-
     titleStyle = const TextStyle(
       color: Colors.white,
       fontSize: 14,
       fontWeight: FontWeight.w900,
     );
-    //drawText(canvas, Offset.zero, centerCircleRadius, titleStyle, "بازی قبل");
-
-    // drawIcon(canvas, Offset.zero, centerCircleRadius);
-
     canvas.drawCircle(Offset.zero, centerCircleRadius, fourthPaint);
   }
 
@@ -67,9 +62,7 @@ class IconPainterBackGame extends CustomPainter {
     textPainter.paint(canvas, position);
   }
 
-  drawImage(Canvas canvas, Offset position, double width) {
-    //const String imgAddres = "assets/icons/backgame.png";
-  }
+  drawImage(Canvas canvas, Offset position, double width) {}
 
   drawText(Canvas canvas, Offset position, double width, TextStyle style,
       String text) {

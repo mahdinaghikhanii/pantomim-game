@@ -65,7 +65,7 @@ class DialogQuit extends StatelessWidget {
                             children: [
                               DounleFloattingButton(
                                 ontap: () {
-                                  appProvider.saveAllTeamInformation(false);
+                                  appProvider.backGameIconShow(false);
                                   appProvider.reasetvalue();
                                   Navigator.of(context).pushAndRemoveUntil(
                                       MaterialPageRoute(
@@ -73,7 +73,7 @@ class DialogQuit extends StatelessWidget {
                                               const HomeScreans()),
                                       (Route<dynamic> route) => false);
                                 },
-                                colorBtn: Colors.transparent,
+                                colorBtn: kblue,
                                 textBtn: localApp.dialogquitQuitgame,
                                 highlightColor: Colors.transparent,
                               ),

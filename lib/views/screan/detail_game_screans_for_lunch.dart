@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:pantomim/main.dart';
 import 'package:provider/provider.dart';
 
 import '../../generated/l10n.dart';
@@ -110,7 +109,7 @@ class DetailGameScreans extends StatelessWidget {
                           height: 20,
                         ),
                         RowShowTeamAndScore(
-                          nameTeam: modelProvider.team1.value,
+                          nameTeam: modelProvider.getNameTeam1,
                           scoreTeam:
                               modelProvider.getCounterOfScoreTeam1().toString(),
                           visiblity: true,
@@ -120,7 +119,7 @@ class DetailGameScreans extends StatelessWidget {
                           height: 20,
                         ),
                         RowShowTeamAndScore(
-                          nameTeam: modelProvider.team2.value,
+                          nameTeam: modelProvider.getNameTeam2,
                           scoreTeam:
                               modelProvider.getCounterOfScoreTeam2().toString(),
                           visiblity: true,
@@ -130,7 +129,7 @@ class DetailGameScreans extends StatelessWidget {
                           height: 20,
                         ),
                         RowShowTeamAndScore(
-                          nameTeam: modelProvider.team3.value,
+                          nameTeam: modelProvider.getNameTeam3,
                           scoreTeam:
                               modelProvider.getCounterOfScoreTeam3().toString(),
                           visiblity: modelProvider.visibilityTeam3,
@@ -140,7 +139,7 @@ class DetailGameScreans extends StatelessWidget {
                           height: 20,
                         ),
                         RowShowTeamAndScore(
-                          nameTeam: modelProvider.team4.value,
+                          nameTeam: modelProvider.getNameTeam4,
                           scoreTeam:
                               modelProvider.getCounterOfScoreTeam4().toString(),
                           visiblity: modelProvider.visibilityTeam4,

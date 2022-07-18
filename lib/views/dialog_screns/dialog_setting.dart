@@ -41,14 +41,6 @@ class SettingDialog extends StatelessWidget {
                   child: Column(
                     mainAxisAlignment: MainAxisAlignment.spaceAround,
                     children: [
-                      // this part for change language application
-                      /* Expanded(
-                                  child: DropdownButtonHideUnderline(
-                                child: ButtonTheme(
-                                    alignedDropdown: true,
-                                    child: const DropDownWidgets()),
-                              ))*/
-
                       const ListTileSettings(firstText: "ثبت پیشنهاد و نظر"),
                       const SizedBox(height: 10),
                       ListTileSettings(
@@ -75,8 +67,8 @@ class SettingDialog extends StatelessWidget {
                             fontSize: 18,
                             fontWeight: FontWeight.bold),
                         backGroundColor: Colors.white,
-                        // lastText: ,
                       ),
+                      //    SizedBox(height: 20)
                     ],
                   ),
                 ),

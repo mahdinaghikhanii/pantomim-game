@@ -58,25 +58,29 @@ class DialogFinishidGame extends StatelessWidget {
                     FinishidScreansTextDetail(
                       scoreTeam:
                           modelProvier.getCounterOfScoreTeam1().toString(),
-                      nameTeam: modelProvier.team1.value.toString(),
+                      nameTeam: modelProvier.gettextFiledInputNameTeam1.value
+                          .toString(),
                       visibility: true,
                     ),
                     FinishidScreansTextDetail(
                       scoreTeam:
                           modelProvier.getCounterOfScoreTeam2().toString(),
-                      nameTeam: modelProvier.team2.value.toString(),
+                      nameTeam: modelProvier.gettextFiledInputNameTeam2.value
+                          .toString(),
                       visibility: true,
                     ),
                     FinishidScreansTextDetail(
                       scoreTeam:
                           modelProvier.getCounterOfScoreTeam3().toString(),
-                      nameTeam: modelProvier.team3.value.toString(),
+                      nameTeam: modelProvier.gettextFiledInputNameTeam3.value
+                          .toString(),
                       visibility: modelProvier.visibilityTeam3,
                     ),
                     FinishidScreansTextDetail(
                       scoreTeam:
                           modelProvier.getCounterOfScoreTeam4().toString(),
-                      nameTeam: modelProvier.team4.value.toString(),
+                      nameTeam: modelProvier.gettextFiledInputNameTeam4.value
+                          .toString(),
                       visibility: modelProvier.visibilityTeam4,
                     ),
                     Padding(

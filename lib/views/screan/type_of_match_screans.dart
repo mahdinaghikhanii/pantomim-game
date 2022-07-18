@@ -110,6 +110,7 @@ class _ChoiceYourTopicState extends State<ChoiceYourTopic> {
                       Provider.of<History>(context, listen: false)
                           .incermnetNumberOfRounds();
                       modelProvider.setaddcheckforInnigns();
+                      modelProvider.saveAllTeamInformationTeam2();
                       _nextPage();
                     },
                     colorBtn: kblue,

@@ -1,5 +1,3 @@
-// ignore_for_file: unnecessary_null_comparison
-
 import 'package:flutter/material.dart';
 import 'package:pantomim/models/category.dart';
 import 'package:shared_preferences/shared_preferences.dart';
@@ -89,60 +87,63 @@ class TeamProvider extends ChangeNotifier {
 
   //this part for typeofMatchScreans Input Name Screans
 
-  TextFiledInputNameTeam _nameTeam1 = TextFiledInputNameTeam('تیم ۱');
-  TextFiledInputNameTeam _nameTeam2 = TextFiledInputNameTeam('تیم ۲');
-  TextFiledInputNameTeam _nameTeam3 = TextFiledInputNameTeam('تیم ۳');
-  TextFiledInputNameTeam _nameTeam4 = TextFiledInputNameTeam('تیم ۴');
-  TextFiledInputNameTeam get team1 => _nameTeam1;
-  TextFiledInputNameTeam get team2 => _nameTeam2;
-  TextFiledInputNameTeam get team3 => _nameTeam3;
-  TextFiledInputNameTeam get team4 => _nameTeam4;
+  TextFiledInputNameTeam _textFiledInputNameTeam1 =
+      TextFiledInputNameTeam("تیم ۱");
+  TextFiledInputNameTeam _textFiledInputNameTeam2 =
+      TextFiledInputNameTeam('تیم ۲');
+  TextFiledInputNameTeam _textFiledInputNameTeam3 =
+      TextFiledInputNameTeam('تیم ۳');
+  TextFiledInputNameTeam _textFiledInputNameTeam4 =
+      TextFiledInputNameTeam('تیم ۴');
 
-  bool get isValid {
-    if (_nameTeam1.value != null && _nameTeam2.value != null) {
-      return true;
-    } else {
-      //injam ye dialog neshon bede bede bege lotfan name haro vared konid
-      return false;
-    }
-  }
+  TextFiledInputNameTeam get gettextFiledInputNameTeam1 =>
+      _textFiledInputNameTeam1;
+  TextFiledInputNameTeam get gettextFiledInputNameTeam2 =>
+      _textFiledInputNameTeam2;
+  TextFiledInputNameTeam get gettextFiledInputNameTeam3 =>
+      _textFiledInputNameTeam3;
+  TextFiledInputNameTeam get gettextFiledInputNameTeam4 =>
+      _textFiledInputNameTeam4;
 
   void changeNameTeams1(String value) {
     if (value.length >= 2) {
-      //ye dialog neshon bede bege nahayat 7 tast
-      _nameTeam1 = TextFiledInputNameTeam(value);
+      _textFiledInputNameTeam1 = TextFiledInputNameTeam(value);
+      _nameTeam1 = value;
     } else {
-      _nameTeam1 = TextFiledInputNameTeam('');
+      _textFiledInputNameTeam1 = TextFiledInputNameTeam('');
+      _nameTeam1 = TextFiledInputNameTeam("").toString();
     }
     notifyListeners();
   }
 
   void changeNameTeams2(String value) {
     if (value.length > 2) {
-      _nameTeam2 = TextFiledInputNameTeam(value);
-      //ye dialog neshon bede bege nahayat 7 tast
+      _nameTeam2 = value;
     } else {
-      _nameTeam2 = TextFiledInputNameTeam("");
+      _textFiledInputNameTeam2 = TextFiledInputNameTeam("");
+      _nameTeam2 = TextFiledInputNameTeam("").toString();
     }
     notifyListeners();
   }
 
   void changeNameTeams3(String value) {
     if (value.length > 2) {
-      _nameTeam3 = TextFiledInputNameTeam(value);
-      //ye dialog neshon bede bege nahayat 7 tast
+      _nameTeam3 = TextFiledInputNameTeam(value).toString();
+      _nameTeam3 = value;
     } else {
-      _nameTeam3 = TextFiledInputNameTeam('');
+      _textFiledInputNameTeam3 = TextFiledInputNameTeam('');
+      _nameTeam3 = TextFiledInputNameTeam("").toString();
     }
     notifyListeners();
   }
 
   void changeNameTeams4(String value) {
     if (value.length > 2) {
-      _nameTeam4 = TextFiledInputNameTeam(value);
-      //ye dialog neshon bede bege nahayat 7 tast
+      _textFiledInputNameTeam4 = TextFiledInputNameTeam(value);
+      _nameTeam4 = value;
     } else {
-      _nameTeam4 = TextFiledInputNameTeam('');
+      _textFiledInputNameTeam4 = TextFiledInputNameTeam('');
+      _nameTeam4 = TextFiledInputNameTeam("").toString();
     }
     notifyListeners();
   }
@@ -354,16 +355,16 @@ class TeamProvider extends ChangeNotifier {
 
   seeGroupNameTeam() {
     if (_visibilirtIconTeam1 == true) {
-      return _nameTeam1.value;
+      return _textFiledInputNameTeam1.value;
     }
     if (_visibilirtIconTeam2 == true) {
-      return _nameTeam2.value;
+      return _textFiledInputNameTeam2.value;
     }
     if (_visibilirtIconTeam3 == true) {
-      return _nameTeam3.value;
+      return _textFiledInputNameTeam3.value;
     }
     if (_visibilirtIconTeam4 == true) {
-      return _nameTeam4.value;
+      return _textFiledInputNameTeam4.value;
     }
     notifyListeners();
   }
@@ -431,10 +432,43 @@ class TeamProvider extends ChangeNotifier {
     notifyListeners();
   }
 
+  String _nameTeam1 = "تیم 1";
+  String _nameTeam2 = "تیم 2";
+  String _nameTeam3 = "تیم 3";
+  String _nameTeam4 = "تیم 4";
+
+  String get getNameTeam1 => _nameTeam1;
+  String get getNameTeam2 => _nameTeam2;
+  String get getNameTeam3 => _nameTeam3;
+  String get getNameTeam4 => _nameTeam4;
+
+  void saveAllTeamInformationTeam2() async {
+    final perfs = await SharedPreferences.getInstance();
+    await perfs.setString("name-team1", _nameTeam1);
+    await perfs.setString("name-team2", _nameTeam2);
+    await perfs.setString("name-team3", _nameTeam3);
+    await perfs.setString("name-team4", _nameTeam4);
+
+    await perfs.setInt('number-of-team', _numberOfTeams);
+    await perfs.setInt("numberofRoundsOfGame", _numberofRoundsOfGame);
+    await perfs.setInt('numberOfRoundsGameTitle', _numberOfRoundsOfGameTitle);
+
+    notifyListeners();
+  }
+
   getShowIconbackGame() async {
     final perfs = await SharedPreferences.getInstance();
     _items = perfs.getStringList("information-team")!;
     _showIconbackGame = perfs.getBool('ShowIconBackGame') ?? false;
+
+    _nameTeam1 = perfs.getString("name-team1") ?? "";
+    _nameTeam2 = perfs.getString("name-team2") ?? "";
+    _nameTeam3 = perfs.getString("name-team3") ?? "";
+    _nameTeam4 = perfs.getString("name-team4") ?? "";
+
+    _numberOfTeams = perfs.getInt("number-of-team") ?? 2;
+    _numberofRoundsOfGame = perfs.getInt("numberofRoundsOfGame") ?? 3;
+    _numberOfRoundsOfGameTitle = perfs.getInt("numberOfRoundsGameTitle") ?? 3;
     notifyListeners();
   }
 }

@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:pantomim/models/category.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 
 class TeamProvider extends ChangeNotifier {
@@ -87,63 +86,38 @@ class TeamProvider extends ChangeNotifier {
 
   //this part for typeofMatchScreans Input Name Screans
 
-  TextFiledInputNameTeam _textFiledInputNameTeam1 =
-      TextFiledInputNameTeam("تیم ۱");
-  TextFiledInputNameTeam _textFiledInputNameTeam2 =
-      TextFiledInputNameTeam('تیم ۲');
-  TextFiledInputNameTeam _textFiledInputNameTeam3 =
-      TextFiledInputNameTeam('تیم ۳');
-  TextFiledInputNameTeam _textFiledInputNameTeam4 =
-      TextFiledInputNameTeam('تیم ۴');
-
-  TextFiledInputNameTeam get gettextFiledInputNameTeam1 =>
-      _textFiledInputNameTeam1;
-  TextFiledInputNameTeam get gettextFiledInputNameTeam2 =>
-      _textFiledInputNameTeam2;
-  TextFiledInputNameTeam get gettextFiledInputNameTeam3 =>
-      _textFiledInputNameTeam3;
-  TextFiledInputNameTeam get gettextFiledInputNameTeam4 =>
-      _textFiledInputNameTeam4;
-
-  void changeNameTeams1(String value) {
+  changeNameTeams1(String value) async {
+    final perfs = await SharedPreferences.getInstance();
     if (value.length >= 2) {
-      _textFiledInputNameTeam1 = TextFiledInputNameTeam(value);
       _nameTeam1 = value;
-    } else {
-      _textFiledInputNameTeam1 = TextFiledInputNameTeam('');
-      _nameTeam1 = TextFiledInputNameTeam("").toString();
+      await perfs.setString("name-team-1", value);
     }
     notifyListeners();
   }
 
-  void changeNameTeams2(String value) {
-    if (value.length > 2) {
+  changeNameTeams2(String value) async {
+    final perfs = await SharedPreferences.getInstance();
+    if (value.length >= 2) {
       _nameTeam2 = value;
-    } else {
-      _textFiledInputNameTeam2 = TextFiledInputNameTeam("");
-      _nameTeam2 = TextFiledInputNameTeam("").toString();
+      await perfs.setString("name-team-2", value);
     }
     notifyListeners();
   }
 
-  void changeNameTeams3(String value) {
-    if (value.length > 2) {
-      _nameTeam3 = TextFiledInputNameTeam(value).toString();
+  void changeNameTeams3(String value) async {
+    final perfs = await SharedPreferences.getInstance();
+    if (value.length >= 2) {
       _nameTeam3 = value;
-    } else {
-      _textFiledInputNameTeam3 = TextFiledInputNameTeam('');
-      _nameTeam3 = TextFiledInputNameTeam("").toString();
+      await perfs.setString("name-team-3", value);
     }
     notifyListeners();
   }
 
-  void changeNameTeams4(String value) {
-    if (value.length > 2) {
-      _textFiledInputNameTeam4 = TextFiledInputNameTeam(value);
+  void changeNameTeams4(String value) async {
+    final perfs = await SharedPreferences.getInstance();
+    if (value.length >= 2) {
       _nameTeam4 = value;
-    } else {
-      _textFiledInputNameTeam4 = TextFiledInputNameTeam('');
-      _nameTeam4 = TextFiledInputNameTeam("").toString();
+      await perfs.setString("name-team-4", value);
     }
     notifyListeners();
   }
@@ -234,36 +208,36 @@ class TeamProvider extends ChangeNotifier {
   }
 
   //// here code for handel how playing game in innings and showing icon or not showing icon
-  int _innigns = -1;
+  int _numberOfTeamShowIconPlay = -1;
   void incrementinnigns() {
-    _innigns++;
+    _numberOfTeamShowIconPlay++;
     notifyListeners();
   }
 
-  int get getcheckforInnigns => _innigns;
+  int get getcheckforInnigns => _numberOfTeamShowIconPlay;
 
   void setaddcheckforInnigns() {
     if (_winorlosebtn == true) {
-      _innigns++;
+      _numberOfTeamShowIconPlay++;
     } else {
-      _innigns++;
+      _numberOfTeamShowIconPlay++;
     }
 
-    if (_innigns == _numberOfTeams) {
+    if (_numberOfTeamShowIconPlay == _numberOfTeams) {
       if (_numberOfRoundsOfGameTitle == _numberofRoundsOfGame) {
-        _innigns++;
-        _innigns++;
+        _numberOfTeamShowIconPlay++;
+        _numberOfTeamShowIconPlay++;
 
         notifyListeners();
-        if (_innigns == _numberOfTeams) {
-          _innigns++;
+        if (_numberOfTeamShowIconPlay == _numberOfTeams) {
+          _numberOfTeamShowIconPlay++;
         }
       } else {
-        _innigns = 0;
+        _numberOfTeamShowIconPlay = 0;
         _numberOfRoundsOfGameTitle++;
       }
     } else {
-      _innigns;
+      _numberOfTeamShowIconPlay;
     }
     setvisibilityIcon();
     notifyListeners();
@@ -278,12 +252,12 @@ class TeamProvider extends ChangeNotifier {
 
     _numberOfRoundsOfGameTitle = 1;
 
-    _innigns = -1;
+    _numberOfTeamShowIconPlay = -1;
   }
 
 // this function for set visibility Icon in detailGame for Screans
   void setvisibilityIcon() {
-    switch (_innigns) {
+    switch (_numberOfTeamShowIconPlay) {
       case 0:
         _visibilirtIconTeam1 = true;
         _visibilirtIconTeam2 = false;
@@ -355,16 +329,16 @@ class TeamProvider extends ChangeNotifier {
 
   seeGroupNameTeam() {
     if (_visibilirtIconTeam1 == true) {
-      return _textFiledInputNameTeam1.value;
+      return _nameTeam1;
     }
     if (_visibilirtIconTeam2 == true) {
-      return _textFiledInputNameTeam2.value;
+      return _nameTeam2;
     }
     if (_visibilirtIconTeam3 == true) {
-      return _textFiledInputNameTeam3.value;
+      return _nameTeam3;
     }
     if (_visibilirtIconTeam4 == true) {
-      return _textFiledInputNameTeam4.value;
+      return _nameTeam4;
     }
     notifyListeners();
   }
@@ -404,9 +378,6 @@ class TeamProvider extends ChangeNotifier {
   bool _showIconbackGame = false;
   bool get backLastGame => _showIconbackGame;
 
-  List<String> _items = [];
-  List get seeAllItems => _items;
-
   void backGameIconShow(bool backGame) async {
     final perfs = await SharedPreferences.getInstance();
     _showIconbackGame = backGame;
@@ -414,61 +385,39 @@ class TeamProvider extends ChangeNotifier {
     notifyListeners();
   }
 
-  void saveAllTeamInformationTeam(
-      String? nameTeam1,
-      String? nameTeam2,
-      String? nameTeam3,
-      String? nameTeam4,
-      int? numberRounds,
-      int? numberofTeam) async {
-    final perfs = await SharedPreferences.getInstance();
-    await perfs.setString("name-team1", nameTeam1 ?? "");
-    await perfs.setString("name-team2", nameTeam2 ?? "");
-    await perfs.setString("name-team3", nameTeam3 ?? "");
-    await perfs.setString("name-team4", nameTeam4 ?? "");
-    await perfs.setInt('number-ofTeam', numberofTeam ?? 0);
-    await perfs.setInt('number-Rounds', numberRounds ?? 0);
-
-    notifyListeners();
-  }
-
-  String _nameTeam1 = "تیم 1";
-  String _nameTeam2 = "تیم 2";
-  String _nameTeam3 = "تیم 3";
-  String _nameTeam4 = "تیم 4";
+  String _nameTeam1 = "";
+  String _nameTeam2 = "";
+  String _nameTeam3 = "";
+  String _nameTeam4 = "";
 
   String get getNameTeam1 => _nameTeam1;
   String get getNameTeam2 => _nameTeam2;
   String get getNameTeam3 => _nameTeam3;
   String get getNameTeam4 => _nameTeam4;
 
-  void saveAllTeamInformationTeam2() async {
+  getResetInformation() async {
     final perfs = await SharedPreferences.getInstance();
-    await perfs.setString("name-team1", _nameTeam1);
-    await perfs.setString("name-team2", _nameTeam2);
-    await perfs.setString("name-team3", _nameTeam3);
-    await perfs.setString("name-team4", _nameTeam4);
-
-    await perfs.setInt('number-of-team', _numberOfTeams);
-    await perfs.setInt("numberofRoundsOfGame", _numberofRoundsOfGame);
-    await perfs.setInt('numberOfRoundsGameTitle', _numberOfRoundsOfGameTitle);
-
+    await perfs.setString("name-team-1", "تیم ۱");
+    _nameTeam1 = "تیم ۱";
+    await perfs.setString("name-team-2", "تیم ۱");
+    _nameTeam2 = "تیم 2";
+    await perfs.setString("name-team-3", "تیم ۱");
+    await perfs.setString("name-team-4", "تیم ۱");
     notifyListeners();
   }
 
   getShowIconbackGame() async {
     final perfs = await SharedPreferences.getInstance();
-    _items = perfs.getStringList("information-team")!;
+    _nameTeam1 = perfs.getString("name-team-1") ?? "تیم 1";
+    _nameTeam2 = perfs.getString("name-team-2") ?? "تیم 2";
+    _nameTeam3 = perfs.getString("name-team-3") ?? "تیم 3";
+    _nameTeam4 = perfs.getString("name-team-4") ?? "تیم 4";
     _showIconbackGame = perfs.getBool('ShowIconBackGame') ?? false;
 
-    _nameTeam1 = perfs.getString("name-team1") ?? "";
-    _nameTeam2 = perfs.getString("name-team2") ?? "";
-    _nameTeam3 = perfs.getString("name-team3") ?? "";
-    _nameTeam4 = perfs.getString("name-team4") ?? "";
-
-    _numberOfTeams = perfs.getInt("number-of-team") ?? 2;
+    /*_numberOfTeams = perfs.getInt("number-of-team") ?? 2;
     _numberofRoundsOfGame = perfs.getInt("numberofRoundsOfGame") ?? 3;
-    _numberOfRoundsOfGameTitle = perfs.getInt("numberOfRoundsGameTitle") ?? 3;
+    _numberOfRoundsOfGameTitle = perfs.getInt("numberOfRoundsGameTitle") ?? 1;*/
+
     notifyListeners();
   }
 }

@@ -57,11 +57,8 @@ class HomeScreans extends StatelessWidget {
                       ),
                     )
                   ])
-                  // ignore: prefer_const_literals_to_create_immutables
                 ]),
-                SizedBox(
-                  height: size.height * 0.11,
-                ),
+                SizedBox(height: size.height * 0.11),
                 SmallButton(
                   text: localApp.textButtonHomeScrens,
                   color: const Color(0xFF0D47A1),

@@ -27,9 +27,7 @@ void main() async {
       [DeviceOrientation.portraitUp, DeviceOrientation.portraitDown]);
   SharedPreferences sharedPreferences = await SharedPreferences.getInstance();
   await languageProvider.fetchLocale();
-
   await teamProvider.getShowIconbackGame();
-
   isviewed = sharedPreferences.getInt('InBoardScreans');
 
   runApp(MyApp(

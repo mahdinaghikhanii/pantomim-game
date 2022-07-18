@@ -1,12 +1,13 @@
 import 'package:flutter/material.dart';
+import 'package:pantomim/provider/team_provider.dart';
 import 'package:provider/provider.dart';
 
 import '../../generated/l10n.dart';
+import '../../main.dart';
 import '../../module/constans/constant.dart';
 import '../../module/extension/extension.dart';
 import '../../module/widgets/double_floatingac_button.dart';
 import '../../module/widgets/rowshowteam_andscore.dart';
-import '../../provider/team_provider.dart';
 import '../dialog_screns/dialog_quit.dart';
 import 'choictopic_screans.dart';
 
@@ -16,7 +17,7 @@ class DetailGameScreans extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     var localApp = S.of(context);
-    final modelProvider = Provider.of<TeamProvider>(context);
+    final teas = Provider.of<TeamProvider>(context);
 
     return WillPopScope(
         onWillPop: () async {
@@ -68,15 +69,14 @@ class DetailGameScreans extends StatelessWidget {
                                 .detailGameScreansForLunchTitleTextRounds,
                             style: Theme.of(context).textTheme.bodyText1),
                         TextSpan(
-                            text: modelProvider.getNumberOfRounds().toString(),
+                            text: teas.getNumberOfRounds().toString(),
                             style: Theme.of(context).textTheme.bodyText1),
                         TextSpan(
                             text: localApp.detailGameScreansForLunchTitleTextIn,
                             style: Theme.of(context).textTheme.bodyText1),
                         TextSpan(
-                            text: modelProvider
-                                .gettitleNumberOfRoundsOfGame()
-                                .toString(),
+                            text:
+                                teas.gettitleNumberOfRoundsOfGame().toString(),
                             style: Theme.of(context).textTheme.bodyText1),
                       ])),
                     ),
@@ -105,45 +105,41 @@ class DetailGameScreans extends StatelessWidget {
                             )
                           ],
                         ),
-                        const SizedBox(
-                          height: 20,
-                        ),
+                        const SizedBox(height: 20),
                         RowShowTeamAndScore(
-                          nameTeam: modelProvider.getNameTeam1,
+                          nameTeam: teamProvider.getNameTeam1,
                           scoreTeam:
-                              modelProvider.getCounterOfScoreTeam1().toString(),
+                              teamProvider.getCounterOfScoreTeam1().toString(),
                           visiblity: true,
-                          iconVisibility: modelProvider.visibilityTeam1Icon,
+                          iconVisibility: teas.visibilityTeam1Icon,
                         ),
                         const SizedBox(
                           height: 20,
                         ),
                         RowShowTeamAndScore(
-                          nameTeam: modelProvider.getNameTeam2,
+                          nameTeam: teamProvider.getNameTeam2,
                           scoreTeam:
-                              modelProvider.getCounterOfScoreTeam2().toString(),
+                              teamProvider.getCounterOfScoreTeam2().toString(),
                           visiblity: true,
-                          iconVisibility: modelProvider.visibilityTeam2Icon,
+                          iconVisibility: teas.visibilityTeam2Icon,
                         ),
                         const SizedBox(
                           height: 20,
                         ),
                         RowShowTeamAndScore(
-                          nameTeam: modelProvider.getNameTeam3,
+                          nameTeam: teamProvider.getNameTeam3,
                           scoreTeam:
-                              modelProvider.getCounterOfScoreTeam3().toString(),
-                          visiblity: modelProvider.visibilityTeam3,
-                          iconVisibility: modelProvider.visibilityTeam3Icon,
+                              teamProvider.getCounterOfScoreTeam3().toString(),
+                          visiblity: teas.visibilityTeam3,
+                          iconVisibility: teas.visibilityTeam3Icon,
                         ),
-                        const SizedBox(
-                          height: 20,
-                        ),
+                        const SizedBox(height: 20),
                         RowShowTeamAndScore(
-                          nameTeam: modelProvider.getNameTeam4,
+                          nameTeam: teamProvider.getNameTeam4,
                           scoreTeam:
-                              modelProvider.getCounterOfScoreTeam4().toString(),
-                          visiblity: modelProvider.visibilityTeam4,
-                          iconVisibility: modelProvider.visibilityTeam4Icon,
+                              teamProvider.getCounterOfScoreTeam4().toString(),
+                          visiblity: teas.visibilityTeam4,
+                          iconVisibility: teas.visibilityTeam4Icon,
                         )
                       ],
                     ),

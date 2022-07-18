@@ -1,12 +1,14 @@
 import 'package:animate_do/animate_do.dart';
 import 'package:flutter/material.dart';
-import 'package:pantomim/main.dart';
 
 import '../../generated/l10n.dart';
+import '../../main.dart';
 import '../../module/constans/constant.dart';
+import '../../module/extension/extension.dart';
 import '../../module/widgets/circle_button.dart';
 import '../../module/widgets/icon_animation_play.dart';
 import '../dialog_screns/dialog_setting.dart';
+import 'detail_game_screans_for_lunch.dart';
 import 'type_of_match_screans.dart';
 
 class MenoScreans extends StatelessWidget {
@@ -45,14 +47,18 @@ class MenoScreans extends StatelessWidget {
                         },
                         backgroundColor: kblue),
                     teamProvider.backLastGame
-                        ? SizedBox(
-                            width: 70,
-                            height: 70,
-                            child: Padding(
-                                padding: const EdgeInsets.only(top: 0),
-                                child: Center(
-                                    child: Image.asset(
-                                        'assets/icons/backgame.png'))))
+                        ? InkWell(
+                            onTap: (() =>
+                                context.nextScreans(const DetailGameScreans())),
+                            child: SizedBox(
+                                width: 70,
+                                height: 70,
+                                child: Padding(
+                                    padding: const EdgeInsets.only(top: 0),
+                                    child: Center(
+                                        child: Image.asset(
+                                            'assets/icons/backgame.png')))),
+                          )
                         : CricleButton(
                             iconColor: kwhite.withOpacity(0.2),
                             iconData: Icons.restart_alt,
@@ -123,6 +129,7 @@ class MenoScreans extends StatelessWidget {
                       borderRadius: BorderRadius.circular(100),
                       onTap: () {
                         teamProvider.backGameIconShow(false);
+                        teamProvider.getResetInformation();
                         Navigator.push(
                             context,
                             MaterialPageRoute(

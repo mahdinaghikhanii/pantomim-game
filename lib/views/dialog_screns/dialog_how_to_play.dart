@@ -1,8 +1,9 @@
 import 'package:flutter/material.dart';
-import 'package:pantomim/models/howtoplay_dialog.dart';
-import 'package:pantomim/module/constans/constant.dart';
-import 'package:pantomim/provider/pagecontoroler_provider.dart';
 import 'package:provider/provider.dart';
+
+import '../../models/howtoplay_dialog.dart';
+import '../../module/constans/constant.dart';
+import '../../provider/pagecontoroler_provider.dart';
 
 class DialogHowToPlay extends StatelessWidget {
   const DialogHowToPlay({Key? key}) : super(key: key);
@@ -58,7 +59,7 @@ class DialogHowToPlay extends StatelessWidget {
                                   overflow: TextOverflow.ellipsis,
                                 ),
                               ),
-                            )
+                            ),
                           ],
                         ),
                         /*       SizedBox(

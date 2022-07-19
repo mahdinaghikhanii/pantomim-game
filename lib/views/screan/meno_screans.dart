@@ -48,6 +48,7 @@ class MenoScreans extends StatelessWidget {
                         backgroundColor: kblue),
                     teamProvider.backLastGame
                         ? InkWell(
+                            borderRadius: BorderRadius.circular(60),
                             onTap: (() =>
                                 context.nextScreans(const DetailGameScreans())),
                             child: SizedBox(
@@ -119,16 +120,13 @@ class MenoScreans extends StatelessWidget {
                       ],
                     ),
                   ),
-                  SizedBox(
-                    height: size.height * 0.30,
-                  ),
+                  SizedBox(height: size.height * 0.30),
                 ]),
                 const IconAnimation(),
                 Positioned(
                     child: InkWell(
                       borderRadius: BorderRadius.circular(100),
                       onTap: () {
-                        teamProvider.backGameIconShow(false);
                         teamProvider.getResetInformation();
                         Navigator.push(
                             context,

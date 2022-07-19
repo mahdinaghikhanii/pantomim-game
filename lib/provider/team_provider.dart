@@ -396,15 +396,20 @@ class TeamProvider extends ChangeNotifier {
   String get getNameTeam4 => _nameTeam4;
 
   getResetInformation() async {
+    backGameIconShow(false);
     final perfs = await SharedPreferences.getInstance();
-    _nameTeam1 = "تیم ۱";
-    await perfs.setString("name-team-1", "تیم ۱");
+    _nameTeam1 = "تیم 1";
+    await perfs.setString("name-team-1", "تیم 1");
     _nameTeam2 = "تیم 2";
-    await perfs.setString("name-team-2", "تیم ۲");
+    await perfs.setString("name-team-2", "تیم 2");
     _nameTeam3 = "تیم 3";
-    await perfs.setString("name-team-3", "تیم ۳");
+    await perfs.setString("name-team-3", "تیم 3");
     _nameTeam4 = "تیم 4";
-    await perfs.setString("name-team-4", "تیم ۴");
+    await perfs.setString("name-team-4", "تیم 4");
+    _numberOfTeams = 2;
+    await perfs.setInt("number-of-team", 2);
+    _numberOfRoundsOfGameTitle = 3;
+    await perfs.setInt('numberofRoundsOfGame', 3);
     notifyListeners();
   }
 
@@ -415,10 +420,9 @@ class TeamProvider extends ChangeNotifier {
     _nameTeam3 = perfs.getString("name-team-3") ?? "تیم 3";
     _nameTeam4 = perfs.getString("name-team-4") ?? "تیم 4";
     _showIconbackGame = perfs.getBool('ShowIconBackGame') ?? false;
-
-    /*_numberOfTeams = perfs.getInt("number-of-team") ?? 2;
+    _numberOfTeams = perfs.getInt("number-of-team") ?? 2;
     _numberofRoundsOfGame = perfs.getInt("numberofRoundsOfGame") ?? 3;
-    _numberOfRoundsOfGameTitle = perfs.getInt("numberOfRoundsGameTitle") ?? 1;*/
+    _numberOfRoundsOfGameTitle = perfs.getInt("numberOfRoundsGameTitle") ?? 1;
 
     notifyListeners();
   }

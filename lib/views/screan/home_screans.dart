@@ -12,7 +12,6 @@ class HomeScreans extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    // ignore: unused_local_variable
     final size = MediaQuery.of(context).size;
     var localApp = S.of(context);
 

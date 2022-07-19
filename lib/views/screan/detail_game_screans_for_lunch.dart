@@ -16,15 +16,14 @@ class DetailGameScreans extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     var localApp = S.of(context);
-    final TeamProvider teamProvider = context.watch<TeamProvider>();
+    final teamProviders = Provider.of<TeamProvider>(context, listen: false);
 
-    return WillPopScope(
-        onWillPop: () async {
-          ScaffoldMessenger.of(context);
-
-          return false;
-        },
-        child: Container(
+    return WillPopScope(onWillPop: () async {
+      ScaffoldMessenger.of(context);
+      return false;
+    }, child: FutureBuilder<TeamProvider>(
+      builder: (context, backData) {
+        return Container(
           decoration: backgroundDefaultScafold,
           child: Scaffold(
             backgroundColor: Colors.transparent,
@@ -68,13 +67,13 @@ class DetailGameScreans extends StatelessWidget {
                                 .detailGameScreansForLunchTitleTextRounds,
                             style: Theme.of(context).textTheme.bodyText1),
                         TextSpan(
-                            text: teamProvider.getNumberOfRounds().toString(),
+                            text: teamProviders.getNumberOfRounds().toString(),
                             style: Theme.of(context).textTheme.bodyText1),
                         TextSpan(
                             text: localApp.detailGameScreansForLunchTitleTextIn,
                             style: Theme.of(context).textTheme.bodyText1),
                         TextSpan(
-                            text: teamProvider
+                            text: teamProviders
                                 .gettitleNumberOfRoundsOfGame()
                                 .toString(),
                             style: Theme.of(context).textTheme.bodyText1),
@@ -107,39 +106,39 @@ class DetailGameScreans extends StatelessWidget {
                         ),
                         const SizedBox(height: 20),
                         RowShowTeamAndScore(
-                          nameTeam: teamProvider.getNameTeam1,
+                          nameTeam: teamProviders.getNameTeam1,
                           scoreTeam:
-                              teamProvider.getCounterOfScoreTeam1().toString(),
+                              teamProviders.getCounterOfScoreTeam1().toString(),
                           visiblity: true,
-                          iconVisibility: teamProvider.visibilityTeam1Icon,
+                          iconVisibility: teamProviders.visibilityTeam1Icon,
                         ),
                         const SizedBox(
                           height: 20,
                         ),
                         RowShowTeamAndScore(
-                          nameTeam: teamProvider.getNameTeam2,
+                          nameTeam: teamProviders.getNameTeam2,
                           scoreTeam:
-                              teamProvider.getCounterOfScoreTeam2().toString(),
+                              teamProviders.getCounterOfScoreTeam2().toString(),
                           visiblity: true,
-                          iconVisibility: teamProvider.visibilityTeam2Icon,
+                          iconVisibility: teamProviders.visibilityTeam2Icon,
                         ),
                         const SizedBox(
                           height: 20,
                         ),
                         RowShowTeamAndScore(
-                          nameTeam: teamProvider.getNameTeam3,
+                          nameTeam: teamProviders.getNameTeam3,
                           scoreTeam:
-                              teamProvider.getCounterOfScoreTeam3().toString(),
-                          visiblity: teamProvider.visibilityTeam3,
-                          iconVisibility: teamProvider.visibilityTeam3Icon,
+                              teamProviders.getCounterOfScoreTeam3().toString(),
+                          visiblity: teamProviders.visibilityTeam3,
+                          iconVisibility: teamProviders.visibilityTeam3Icon,
                         ),
                         const SizedBox(height: 20),
                         RowShowTeamAndScore(
-                          nameTeam: teamProvider.getNameTeam4,
+                          nameTeam: teamProviders.getNameTeam4,
                           scoreTeam:
-                              teamProvider.getCounterOfScoreTeam4().toString(),
-                          visiblity: teamProvider.visibilityTeam4,
-                          iconVisibility: teamProvider.visibilityTeam4Icon,
+                              teamProviders.getCounterOfScoreTeam4().toString(),
+                          visiblity: teamProviders.visibilityTeam4,
+                          iconVisibility: teamProviders.visibilityTeam4Icon,
                         )
                       ],
                     ),
@@ -148,6 +147,8 @@ class DetailGameScreans extends StatelessWidget {
               ),
             ),
           ),
-        ));
+        );
+      },
+    ));
   }
 }

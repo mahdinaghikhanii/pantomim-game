@@ -14,7 +14,6 @@ class History with ChangeNotifier {
   void saveAllMatchPlayingGame() async {
     final perfs = await SharedPreferences.getInstance();
     await perfs.setInt("ALL-Game-KEY", _index);
-
     notifyListeners();
   }
 

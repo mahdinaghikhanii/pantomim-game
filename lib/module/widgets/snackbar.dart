@@ -1,20 +1,18 @@
 import 'package:flutter/material.dart';
+import 'package:pantomim/module/constans/constant.dart';
 
-import '../constans/constant.dart';
-import '../extension/extension.dart';
-
-class MyWidget extends StatelessWidget {
-  final String text;
-
-  const MyWidget({Key? key, required this.text}) : super(key: key);
-
-  @override
-  Widget build(BuildContext context) {
+class CustomSnackAlert {
+  static SnackBar showErrorSnackBar(String message) {
     return SnackBar(
-        backgroundColor: kblue,
-        content: Text(
-          text,
-          style: context.textTheme.bodyText1!.copyWith(color: kwhite),
-        ));
+      content: Text(message,
+          style: TextStyle(
+              color: kwhite,
+              fontSize: 16,
+              fontFamily: faPrimaryFontFamily,
+              fontWeight: FontWeight.bold)),
+      backgroundColor: kblue,
+      duration: const Duration(seconds: 4),
+    );
   }
+  // ... another snackbar
 }

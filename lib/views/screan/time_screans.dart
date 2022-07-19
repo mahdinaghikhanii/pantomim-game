@@ -4,6 +4,8 @@ import 'dart:math';
 import 'package:animate_do/animate_do.dart';
 import 'package:flutter/material.dart';
 import 'package:just_audio/just_audio.dart';
+import 'package:pantomim/generated/intl/messages_fa.dart';
+import 'package:pantomim/module/widgets/snackbar.dart';
 import 'package:provider/provider.dart';
 
 import '../../generated/l10n.dart';
@@ -579,6 +581,13 @@ class _TimerScreansState extends State<TimerScreans> {
                             borderRadius: BorderRadius.circular(20),
                             onTap: () {
                               if (duration.inSeconds == 0) {
+                                ScaffoldMessenger.of(context)
+                                  ..hideCurrentSnackBar()
+                                  ..showSnackBar(
+                                    CustomSnackAlert.showErrorSnackBar(
+                                      "لطفا بازی را شروع کنید !",
+                                    ),
+                                  );
                               } else {
                                 context.playAudio('assets/audio/wrong.wav');
                                 teamProvider.subtractioScore();

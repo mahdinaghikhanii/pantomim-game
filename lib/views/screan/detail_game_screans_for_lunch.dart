@@ -1,13 +1,12 @@
 import 'package:flutter/material.dart';
-import 'package:pantomim/provider/team_provider.dart';
 import 'package:provider/provider.dart';
 
 import '../../generated/l10n.dart';
-import '../../main.dart';
 import '../../module/constans/constant.dart';
 import '../../module/extension/extension.dart';
 import '../../module/widgets/double_floatingac_button.dart';
 import '../../module/widgets/rowshowteam_andscore.dart';
+import '../../provider/team_provider.dart';
 import '../dialog_screns/dialog_quit.dart';
 import 'choictopic_screans.dart';
 
@@ -17,7 +16,7 @@ class DetailGameScreans extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     var localApp = S.of(context);
-    final teas = Provider.of<TeamProvider>(context);
+    final TeamProvider teamProvider = context.watch<TeamProvider>();
 
     return WillPopScope(
         onWillPop: () async {
@@ -69,14 +68,15 @@ class DetailGameScreans extends StatelessWidget {
                                 .detailGameScreansForLunchTitleTextRounds,
                             style: Theme.of(context).textTheme.bodyText1),
                         TextSpan(
-                            text: teas.getNumberOfRounds().toString(),
+                            text: teamProvider.getNumberOfRounds().toString(),
                             style: Theme.of(context).textTheme.bodyText1),
                         TextSpan(
                             text: localApp.detailGameScreansForLunchTitleTextIn,
                             style: Theme.of(context).textTheme.bodyText1),
                         TextSpan(
-                            text:
-                                teas.gettitleNumberOfRoundsOfGame().toString(),
+                            text: teamProvider
+                                .gettitleNumberOfRoundsOfGame()
+                                .toString(),
                             style: Theme.of(context).textTheme.bodyText1),
                       ])),
                     ),
@@ -111,7 +111,7 @@ class DetailGameScreans extends StatelessWidget {
                           scoreTeam:
                               teamProvider.getCounterOfScoreTeam1().toString(),
                           visiblity: true,
-                          iconVisibility: teas.visibilityTeam1Icon,
+                          iconVisibility: teamProvider.visibilityTeam1Icon,
                         ),
                         const SizedBox(
                           height: 20,
@@ -121,7 +121,7 @@ class DetailGameScreans extends StatelessWidget {
                           scoreTeam:
                               teamProvider.getCounterOfScoreTeam2().toString(),
                           visiblity: true,
-                          iconVisibility: teas.visibilityTeam2Icon,
+                          iconVisibility: teamProvider.visibilityTeam2Icon,
                         ),
                         const SizedBox(
                           height: 20,
@@ -130,16 +130,16 @@ class DetailGameScreans extends StatelessWidget {
                           nameTeam: teamProvider.getNameTeam3,
                           scoreTeam:
                               teamProvider.getCounterOfScoreTeam3().toString(),
-                          visiblity: teas.visibilityTeam3,
-                          iconVisibility: teas.visibilityTeam3Icon,
+                          visiblity: teamProvider.visibilityTeam3,
+                          iconVisibility: teamProvider.visibilityTeam3Icon,
                         ),
                         const SizedBox(height: 20),
                         RowShowTeamAndScore(
                           nameTeam: teamProvider.getNameTeam4,
                           scoreTeam:
                               teamProvider.getCounterOfScoreTeam4().toString(),
-                          visiblity: teas.visibilityTeam4,
-                          iconVisibility: teas.visibilityTeam4Icon,
+                          visiblity: teamProvider.visibilityTeam4,
+                          iconVisibility: teamProvider.visibilityTeam4Icon,
                         )
                       ],
                     ),

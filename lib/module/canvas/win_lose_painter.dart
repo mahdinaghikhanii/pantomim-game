@@ -1,7 +1,8 @@
 import 'dart:math' as math;
 
 import 'package:flutter/material.dart';
-import 'package:pantomim/models/category.dart';
+
+import '../../models/particle.dart';
 
 class MyPainter extends CustomPainter {
   final List<Particle> particles;

@@ -28,11 +28,10 @@ void main() async {
   SharedPreferences sharedPreferences = await SharedPreferences.getInstance();
   await languageProvider.fetchLocale();
   await teamProvider.getShowIconbackGame();
+
   isviewed = sharedPreferences.getInt('InBoardScreans');
 
-  runApp(MyApp(
-    languageProvider: languageProvider,
-  ));
+  runApp(MyApp(languageProvider: languageProvider));
 }
 
 class MyApp extends StatelessWidget {

@@ -4,7 +4,7 @@ import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 
 import '../../generated/l10n.dart';
-import '../../models/category.dart';
+import '../../models/particle.dart';
 import '../../module/canvas/win_lose_painter.dart';
 import '../../module/constans/constant.dart';
 import '../../module/extension/extension.dart';

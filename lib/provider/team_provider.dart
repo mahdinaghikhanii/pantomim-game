@@ -397,12 +397,14 @@ class TeamProvider extends ChangeNotifier {
 
   getResetInformation() async {
     final perfs = await SharedPreferences.getInstance();
-    await perfs.setString("name-team-1", "تیم ۱");
     _nameTeam1 = "تیم ۱";
-    await perfs.setString("name-team-2", "تیم ۱");
+    await perfs.setString("name-team-1", "تیم ۱");
     _nameTeam2 = "تیم 2";
-    await perfs.setString("name-team-3", "تیم ۱");
-    await perfs.setString("name-team-4", "تیم ۱");
+    await perfs.setString("name-team-2", "تیم ۲");
+    _nameTeam3 = "تیم 3";
+    await perfs.setString("name-team-3", "تیم ۳");
+    _nameTeam4 = "تیم 4";
+    await perfs.setString("name-team-4", "تیم ۴");
     notifyListeners();
   }
 

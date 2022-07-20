@@ -16,7 +16,7 @@ class DetailGameScreans extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     var localApp = S.of(context);
-    final teamProviders = Provider.of<TeamProvider>(context, listen: false);
+    final teamProviders = Provider.of<TeamProvider>(context);
 
     return WillPopScope(onWillPop: () async {
       ScaffoldMessenger.of(context);
@@ -63,19 +63,18 @@ class DetailGameScreans extends StatelessWidget {
                       child: RichText(
                           text: TextSpan(children: [
                         TextSpan(
-                            text: localApp
-                                .detailGameScreansForLunchTitleTextRounds,
-                            style: Theme.of(context).textTheme.bodyText1),
-                        TextSpan(
-                            text: teamProviders.getNumberOfRounds().toString(),
-                            style: Theme.of(context).textTheme.bodyText1),
-                        TextSpan(
-                            text: localApp.detailGameScreansForLunchTitleTextIn,
+                            text: "راند ",
                             style: Theme.of(context).textTheme.bodyText1),
                         TextSpan(
                             text: teamProviders
                                 .gettitleNumberOfRoundsOfGame()
                                 .toString(),
+                            style: Theme.of(context).textTheme.bodyText1),
+                        TextSpan(
+                            text: " از ",
+                            style: Theme.of(context).textTheme.bodyText1),
+                        TextSpan(
+                            text: teamProviders.getNumberOfRounds().toString(),
                             style: Theme.of(context).textTheme.bodyText1),
                       ])),
                     ),

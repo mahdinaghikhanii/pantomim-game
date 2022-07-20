@@ -7,6 +7,9 @@ class TeamProvider extends ChangeNotifier {
   getNumberOfTeams() => _numberOfTeams;
   setNumberOfTeams(int counter) => _numberOfTeams;
 
+  //int _wordscore = 0;
+  //int get getWordScore => _wordscore;
+
   void incrementNumberOfTeams() {
     if (_numberOfTeams > 3) {
       _numberOfTeams;
@@ -142,27 +145,27 @@ class TeamProvider extends ChangeNotifier {
 
   //this part for Score Team Win or lose
 
-  int _counterOfScoreTeam1 = 0;
+  int _wordScoreTeam1 = 0;
 
-  getCounterOfScoreTeam1() => _counterOfScoreTeam1;
-  setCounterOfScoreTeam1(int score) => _counterOfScoreTeam1;
+  getCounterOfScoreTeam1() => _wordScoreTeam1;
+  setCounterOfScoreTeam1(int score) => _wordScoreTeam1;
 
-  int _counterOfScoreTeam2 = 0;
+  int _wordScoreTeam2 = 0;
 
-  getCounterOfScoreTeam2() => _counterOfScoreTeam2;
-  setCounterOfScoreTeam2(int score) => _counterOfScoreTeam2;
-
-  // ignore: prefer_final_fields
-  int _counterOfScoreTeam3 = 0;
-
-  getCounterOfScoreTeam3() => _counterOfScoreTeam3;
-  setCounterOfScoreTeam3(int score) => _counterOfScoreTeam3;
+  getCounterOfScoreTeam2() => _wordScoreTeam2;
+  setCounterOfScoreTeam2(int score) => _wordScoreTeam2;
 
   // ignore: prefer_final_fields
-  int _counterOfScoreTeam4 = 0;
+  int _wordScoreTeam3 = 0;
 
-  getCounterOfScoreTeam4() => _counterOfScoreTeam4;
-  setCounterOfScoreTeam4(int score) => _counterOfScoreTeam4;
+  getCounterOfScoreTeam3() => _wordScoreTeam3;
+  setCounterOfScoreTeam3(int score) => _wordScoreTeam3;
+
+  // ignore: prefer_final_fields
+  int _wordScoreTeam4 = 0;
+
+  getCounterOfScoreTeam4() => _wordScoreTeam4;
+  setCounterOfScoreTeam4(int score) => _wordScoreTeam4;
 
   // this part for Icon visibility
   bool get visibilityIconChoice {
@@ -244,10 +247,10 @@ class TeamProvider extends ChangeNotifier {
   }
 
   void reasetvalue() {
-    _counterOfScoreTeam1 = 0;
-    _counterOfScoreTeam2 = 0;
-    _counterOfScoreTeam3 = 0;
-    _counterOfScoreTeam4 = 0;
+    _wordScoreTeam1 = 0;
+    _wordScoreTeam2 = 0;
+    _wordScoreTeam3 = 0;
+    _wordScoreTeam4 = 0;
     _numberOfTeams = 2;
 
     _numberOfRoundsOfGameTitle = 1;
@@ -287,41 +290,44 @@ class TeamProvider extends ChangeNotifier {
     notifyListeners();
   }
 
-  //this function for Score Team
+  //this function for Score
 
-  void setScoreForAllTeam() {
+  //int time, int lenghtWord
+
+  setScoreForAllTeam(String time, int lenghWord) {
     if (_visibilirtIconTeam1 == true) {
+      if (int.parse(time) < 30) {}
       if (_winorlosebtn == true) {
-        _counterOfScoreTeam1++;
-        _counterOfScoreTeam1++;
+        _wordScoreTeam1++;
+        _wordScoreTeam1++;
       } else {
-        _counterOfScoreTeam1;
+        _wordScoreTeam1;
       }
     }
 
     if (_visibilirtIconTeam2 == true) {
       if (_winorlosebtn == true) {
-        _counterOfScoreTeam2++;
-        _counterOfScoreTeam2++;
+        _wordScoreTeam2++;
+        _wordScoreTeam2++;
       } else {
-        _counterOfScoreTeam2;
+        _wordScoreTeam2;
       }
     }
 
     if (_visibilirtIconTeam3 == true) {
       if (_winorlosebtn == true) {
-        _counterOfScoreTeam3++;
-        _counterOfScoreTeam3++;
+        _wordScoreTeam3++;
+        _wordScoreTeam3++;
       } else {
-        _counterOfScoreTeam3;
+        _wordScoreTeam3;
       }
     }
     if (_visibilirtIconTeam4 == true) {
       if (_winorlosebtn == true) {
-        _counterOfScoreTeam4++;
-        _counterOfScoreTeam4++;
+        _wordScoreTeam4++;
+        _wordScoreTeam4++;
       } else {
-        _counterOfScoreTeam4;
+        _wordScoreTeam4;
       }
     }
     notifyListeners();
@@ -353,23 +359,23 @@ class TeamProvider extends ChangeNotifier {
   void subtractioScore() {
     if (_wrong > 2) {
       _wrong = 0;
+    } else if (_wrong == 3) {
     } else {
       _wrong++;
-      notifyListeners();
     }
 
     if (_wrong == 2) {
       if (_visibilirtIconTeam1 == true) {
-        _counterOfScoreTeam1--;
+        _wordScoreTeam1--;
       }
       if (_visibilirtIconTeam2 == true) {
-        _counterOfScoreTeam2--;
+        _wordScoreTeam2--;
       }
       if (_visibilirtIconTeam3 == true) {
-        _counterOfScoreTeam3--;
+        _wordScoreTeam3--;
       }
       if (_visibilirtIconTeam4 == true) {
-        _counterOfScoreTeam4--;
+        _wordScoreTeam4--;
       }
     }
     notifyListeners();

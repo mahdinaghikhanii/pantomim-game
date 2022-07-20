@@ -74,7 +74,7 @@ class DialogWinOrLose extends StatelessWidget {
 
                                         if (modelProvider.checkbtnwinlose ==
                                             true) {
-                                          modelProvider.setScoreForAllTeam();
+                                          //  modelProvider.setScoreForAllTeam();
                                           modelProvider.setwrontScore(0);
                                         }
                                         Navigator.push(

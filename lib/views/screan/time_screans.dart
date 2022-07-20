@@ -2,15 +2,16 @@ import 'dart:async';
 import 'dart:math';
 
 import 'package:animate_do/animate_do.dart';
+
 import 'package:flutter/material.dart';
 import 'package:just_audio/just_audio.dart';
-import 'package:pantomim/generated/intl/messages_fa.dart';
-import 'package:pantomim/module/widgets/snackbar.dart';
+import 'package:pantomim/views/screan/score_screans.dart';
 import 'package:provider/provider.dart';
 
 import '../../generated/l10n.dart';
 import '../../module/constans/constant.dart';
 import '../../module/extension/extension.dart';
+import '../../module/widgets/snackbar.dart';
 import '../../provider/gametheme_provider.dart';
 import '../../provider/team_provider.dart';
 import '../dialog_screns/dialog_winorlose.dart';
@@ -27,6 +28,7 @@ class _TimerScreansState extends State<TimerScreans> {
   Duration duration = const Duration();
   Timer? timer;
   bool isCountdown = true;
+  bool wrong = false;
 
   @override
   void initState() {
@@ -42,7 +44,7 @@ class _TimerScreansState extends State<TimerScreans> {
     setState(() {
       player.stop();
       timer?.cancel();
-      context.showDialogs(const DialogWinOrLose(), false);
+      context.nextScreans(const ScoreScreans());
     });
   }
 
@@ -50,10 +52,10 @@ class _TimerScreansState extends State<TimerScreans> {
     final addSeconds = isCountdown ? -1 : 1;
     setState(() {
       final seconds = duration.inSeconds + addSeconds;
-      if (seconds == 12) {
+      if (seconds == 11) {
         context.playAudio('assets/audio/s.mp3');
       }
-      if (seconds < 0) {
+      if (seconds < 0 && wrong == false) {
         timer?.cancel();
         showDialog(
             barrierDismissible: false,
@@ -457,6 +459,9 @@ class _TimerScreansState extends State<TimerScreans> {
                               if (isRounning) {
                                 reasetgame();
                                 stopTimper();
+                                setState(() {
+                                  wrong = false;
+                                });
                               } else {
                                 starttopicgame();
                                 startTimer(resets: true);
@@ -589,8 +594,33 @@ class _TimerScreansState extends State<TimerScreans> {
                                     ),
                                   );
                               } else {
-                                context.playAudio('assets/audio/wrong.wav');
                                 teamProvider.subtractioScore();
+                                context.playAudio('assets/audio/wrong.wav');
+
+                                if (teamProvider.getwrongScore == 3) {
+                                  ScaffoldMessenger.of(context)
+                                    ..hideCurrentSnackBar()
+                                    ..showSnackBar(
+                                      CustomSnackAlert.showErrorSnackBar(
+                                          "شما بیش از ۳ خطا داشتید !"),
+                                    );
+                                  stopTimper();
+                                  reset();
+                                  if (wrong == true) {
+                                    teamProvider.setaddcheckforInnigns();
+                                    teamProvider.checkwinorlosegamebtn(false);
+                                    //  teamProvider.setwrontScore(0);
+                                    Navigator.push(
+                                        context,
+                                        MaterialPageRoute(
+                                            builder: (context) =>
+                                                const ScoreScreans()));
+                                  }
+                                }
+
+                                setState(() {
+                                  wrong = true;
+                                });
                               }
                             },
                             child: Container(

@@ -296,38 +296,32 @@ class TeamProvider extends ChangeNotifier {
   int _quicktosayscore = 0;
   int get getQuicktosayscore => _quicktosayscore;
 
-  setScoreForAllTeam(String lenghWord, int win, String time) {
-    int timeSecounds = int.parse(time);
+  setScoreForAllTeam(String lenghWord, int win) {
+    // int timeSecounds = int.parse(time);
     if (_visibilirtIconTeam1 == true) {
       if (win == 1) {
-        if (_gametime == 0) {
-          if (timeSecounds > 35) {
-            _wordScoreTeam1++;
-            _quicktosayscore = 1;
-          }
-        }
-        if (_gametime == 1) {
-          if (timeSecounds > 35) {
-            _wordScoreTeam1++;
-            _quicktosayscore = 1;
-          }
-        }
         if (lenghWord.length < 4) {
           _wordScoreTeam1++;
           _wordScoreTeam1++;
-        } else if (lenghWord.length < 6) {
+        } else if (lenghWord.length < 7) {
           _wordScoreTeam1++;
           _wordScoreTeam1++;
-        } else if (lenghWord.length < 10) {
+        } else if (lenghWord.length < 12) {
           _wordScoreTeam1++;
           _wordScoreTeam1++;
           _wordScoreTeam1++;
-        } else if (lenghWord.length < 16) {
+        } else if (lenghWord.length < 18) {
+          _wordScoreTeam1++;
+          _wordScoreTeam1++;
+          _wordScoreTeam1++;
+          _wordScoreTeam1++;
+        } else if (lenghWord.length < 30) {
           _wordScoreTeam1++;
           _wordScoreTeam1++;
           _wordScoreTeam1++;
           _wordScoreTeam1++;
         }
+        print(_wordScoreTeam1);
       } else {
         _wordScoreTeam1;
       }
@@ -337,23 +331,29 @@ class TeamProvider extends ChangeNotifier {
         if (lenghWord.length < 4) {
           _wordScoreTeam2++;
           _wordScoreTeam2++;
-        } else if (lenghWord.length < 6) {
+        } else if (lenghWord.length < 7) {
           _wordScoreTeam2++;
           _wordScoreTeam2++;
-        } else if (lenghWord.length < 10) {
+        } else if (lenghWord.length < 12) {
           _wordScoreTeam2++;
           _wordScoreTeam2++;
           _wordScoreTeam2++;
-        } else if (lenghWord.length < 16) {
+        } else if (lenghWord.length < 18) {
+          _wordScoreTeam2++;
+          _wordScoreTeam2++;
+          _wordScoreTeam2++;
+          _wordScoreTeam2++;
+        } else if (lenghWord.length < 30) {
           _wordScoreTeam2++;
           _wordScoreTeam2++;
           _wordScoreTeam2++;
           _wordScoreTeam2++;
         }
       } else {
-        _wordScoreTeam1;
+        _wordScoreTeam2;
       }
     }
+
     if (_visibilirtIconTeam3 == true) {
       if (win == 1) {
         if (lenghWord.length < 4) {
@@ -366,22 +366,23 @@ class TeamProvider extends ChangeNotifier {
           _wordScoreTeam3 = 4;
         }
       } else {
-        _wordScoreTeam1;
+        _wordScoreTeam3;
       }
     }
-    if (_visibilirtIconTeam4 == true) {
-      if (win == 1) {
+
+    if (win == 1) {
+      if (_visibilirtIconTeam4 == true) {
         if (lenghWord.length < 4) {
-          _wordScoreTeam2 = 2;
+          _wordScoreTeam4 = 2;
         } else if (lenghWord.length < 6) {
-          _wordScoreTeam2 = 2;
+          _wordScoreTeam4 = 2;
         } else if (lenghWord.length < 10) {
-          _wordScoreTeam2 = 3;
+          _wordScoreTeam4 = 3;
         } else if (lenghWord.length < 16) {
-          _wordScoreTeam2 = 4;
+          _wordScoreTeam4 = 4;
         }
       } else {
-        _wordScoreTeam1;
+        _wordScoreTeam4;
       }
     }
 

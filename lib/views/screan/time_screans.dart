@@ -462,7 +462,7 @@ class _TimerScreansState extends State<TimerScreans> {
 
                                 if (wrong == false) {
                                   teamProvider.setScoreForAllTeam(
-                                      modelProvider.gameTheme, 1, seconds);
+                                      modelProvider.gameTheme, 1);
                                   teamProvider.checkwinorlosegamebtn(true);
                                 }
                               } else {

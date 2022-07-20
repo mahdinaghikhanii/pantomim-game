@@ -15,8 +15,12 @@ class ChoiceTopicScreans extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     final modelProvider = Provider.of<TheThemeOfTheGame>(context);
-
     var localApp = S.of(context);
+
+    void reasetgame() {
+      modelProvider.topicgames(localApp.timescreanstitletext);
+    }
+
     List imageListTopic = [
       'assets/images/topic/food.png',
       'assets/images/topic/fotbal.png',
@@ -97,13 +101,15 @@ class ChoiceTopicScreans extends StatelessWidget {
                             image: Fruitdata[index].image,
                             title: Fruitdata[index].name,
                             onTap: () {
+                              reasetgame();
                               modelProvider.setnumberindex(index);
 
                               Navigator.push(
                                   context,
                                   MaterialPageRoute(
-                                      builder: (context) =>
-                                          const TimerScreans()));
+                                      builder: (context) => TimerScreans(
+                                            choicTopic: index,
+                                          )));
                             });
                       }),
                 ),

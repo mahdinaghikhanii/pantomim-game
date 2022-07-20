@@ -3,7 +3,6 @@
 import 'package:flutter/material.dart';
 
 class TheThemeOfTheGame extends ChangeNotifier {
-  // set DetailGame value
   String _gametheme = "! بزن یریم";
 
   String get gameTheme => _gametheme;

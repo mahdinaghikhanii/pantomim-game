@@ -2,10 +2,8 @@ import 'dart:async';
 import 'dart:math';
 
 import 'package:animate_do/animate_do.dart';
-
 import 'package:flutter/material.dart';
 import 'package:just_audio/just_audio.dart';
-import 'package:pantomim/views/screan/score_screans.dart';
 import 'package:provider/provider.dart';
 
 import '../../generated/l10n.dart';
@@ -15,9 +13,11 @@ import '../../module/widgets/snackbar.dart';
 import '../../provider/gametheme_provider.dart';
 import '../../provider/team_provider.dart';
 import '../dialog_screns/dialog_winorlose.dart';
+import 'score_screans.dart';
 
 class TimerScreans extends StatefulWidget {
-  const TimerScreans({Key? key}) : super(key: key);
+  final int choicTopic;
+  const TimerScreans({Key? key, required this.choicTopic}) : super(key: key);
 
   @override
   State<TimerScreans> createState() => _TimerScreansState();
@@ -29,6 +29,7 @@ class _TimerScreansState extends State<TimerScreans> {
   Timer? timer;
   bool isCountdown = true;
   bool wrong = false;
+  bool check = false;
 
   @override
   void initState() {
@@ -101,10 +102,6 @@ class _TimerScreansState extends State<TimerScreans> {
     final modelProvider = Provider.of<TheThemeOfTheGame>(context);
     final teamProvider = Provider.of<TeamProvider>(context);
     var localApp = S.of(context);
-
-    void reasetgame() {
-      modelProvider.topicgames(localApp.timescreanstitletext);
-    }
 
     void starttopicgame() {
       switch (modelProvider.getnumberindex) {
@@ -457,11 +454,17 @@ class _TimerScreansState extends State<TimerScreans> {
                             borderRadius: BorderRadius.circular(20),
                             onTap: () {
                               if (isRounning) {
-                                reasetgame();
                                 stopTimper();
+
                                 setState(() {
                                   wrong = false;
                                 });
+
+                                if (wrong == false) {
+                                  teamProvider.setScoreForAllTeam(
+                                      modelProvider.gameTheme, 1);
+                                  teamProvider.checkwinorlosegamebtn(true);
+                                }
                               } else {
                                 starttopicgame();
                                 startTimer(resets: true);

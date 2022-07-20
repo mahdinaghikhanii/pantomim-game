@@ -291,45 +291,70 @@ class TeamProvider extends ChangeNotifier {
   }
 
   //this function for Score
-
   //int time, int lenghtWord
 
-  setScoreForAllTeam(String time, int lenghWord) {
+  setScoreForAllTeam(String lenghWord, int win) {
     if (_visibilirtIconTeam1 == true) {
-      if (int.parse(time) < 30) {}
-      if (_winorlosebtn == true) {
-        _wordScoreTeam1++;
-        _wordScoreTeam1++;
+      if (win == 1) {
+        if (lenghWord.length < 4) {
+          _wordScoreTeam1 = 2;
+        } else if (lenghWord.length < 6) {
+          _wordScoreTeam1 = 2;
+        } else if (lenghWord.length < 10) {
+          _wordScoreTeam1 = 3;
+        } else if (lenghWord.length < 16) {
+          _wordScoreTeam1 = 4;
+        }
+      } else {
+        _wordScoreTeam1;
+      }
+    }
+    if (_visibilirtIconTeam2 == true) {
+      if (win == 1) {
+        if (lenghWord.length < 4) {
+          _wordScoreTeam2 = 2;
+        } else if (lenghWord.length < 6) {
+          _wordScoreTeam2 = 2;
+        } else if (lenghWord.length < 10) {
+          _wordScoreTeam2 = 3;
+        } else if (lenghWord.length < 16) {
+          _wordScoreTeam2 = 4;
+        }
+      } else {
+        _wordScoreTeam1;
+      }
+    }
+    if (_visibilirtIconTeam3 == true) {
+      if (win == 1) {
+        if (lenghWord.length < 4) {
+          _wordScoreTeam3 = 2;
+        } else if (lenghWord.length < 6) {
+          _wordScoreTeam3 = 2;
+        } else if (lenghWord.length < 10) {
+          _wordScoreTeam3 = 3;
+        } else if (lenghWord.length < 16) {
+          _wordScoreTeam3 = 4;
+        }
+      } else {
+        _wordScoreTeam1;
+      }
+    }
+    if (_visibilirtIconTeam4 == true) {
+      if (win == 1) {
+        if (lenghWord.length < 4) {
+          _wordScoreTeam2 = 2;
+        } else if (lenghWord.length < 6) {
+          _wordScoreTeam2 = 2;
+        } else if (lenghWord.length < 10) {
+          _wordScoreTeam2 = 3;
+        } else if (lenghWord.length < 16) {
+          _wordScoreTeam2 = 4;
+        }
       } else {
         _wordScoreTeam1;
       }
     }
 
-    if (_visibilirtIconTeam2 == true) {
-      if (_winorlosebtn == true) {
-        _wordScoreTeam2++;
-        _wordScoreTeam2++;
-      } else {
-        _wordScoreTeam2;
-      }
-    }
-
-    if (_visibilirtIconTeam3 == true) {
-      if (_winorlosebtn == true) {
-        _wordScoreTeam3++;
-        _wordScoreTeam3++;
-      } else {
-        _wordScoreTeam3;
-      }
-    }
-    if (_visibilirtIconTeam4 == true) {
-      if (_winorlosebtn == true) {
-        _wordScoreTeam4++;
-        _wordScoreTeam4++;
-      } else {
-        _wordScoreTeam4;
-      }
-    }
     notifyListeners();
   }
 

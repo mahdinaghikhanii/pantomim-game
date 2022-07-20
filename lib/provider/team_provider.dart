@@ -293,17 +293,40 @@ class TeamProvider extends ChangeNotifier {
   //this function for Score
   //int time, int lenghtWord
 
-  setScoreForAllTeam(String lenghWord, int win) {
+  int _quicktosayscore = 0;
+  int get getQuicktosayscore => _quicktosayscore;
+
+  setScoreForAllTeam(String lenghWord, int win, String time) {
+    int timeSecounds = int.parse(time);
     if (_visibilirtIconTeam1 == true) {
       if (win == 1) {
+        if (_gametime == 0) {
+          if (timeSecounds > 35) {
+            _wordScoreTeam1++;
+            _quicktosayscore = 1;
+          }
+        }
+        if (_gametime == 1) {
+          if (timeSecounds > 35) {
+            _wordScoreTeam1++;
+            _quicktosayscore = 1;
+          }
+        }
         if (lenghWord.length < 4) {
-          _wordScoreTeam1 = 2;
+          _wordScoreTeam1++;
+          _wordScoreTeam1++;
         } else if (lenghWord.length < 6) {
-          _wordScoreTeam1 = 2;
+          _wordScoreTeam1++;
+          _wordScoreTeam1++;
         } else if (lenghWord.length < 10) {
-          _wordScoreTeam1 = 3;
+          _wordScoreTeam1++;
+          _wordScoreTeam1++;
+          _wordScoreTeam1++;
         } else if (lenghWord.length < 16) {
-          _wordScoreTeam1 = 4;
+          _wordScoreTeam1++;
+          _wordScoreTeam1++;
+          _wordScoreTeam1++;
+          _wordScoreTeam1++;
         }
       } else {
         _wordScoreTeam1;
@@ -312,13 +335,20 @@ class TeamProvider extends ChangeNotifier {
     if (_visibilirtIconTeam2 == true) {
       if (win == 1) {
         if (lenghWord.length < 4) {
-          _wordScoreTeam2 = 2;
+          _wordScoreTeam2++;
+          _wordScoreTeam2++;
         } else if (lenghWord.length < 6) {
-          _wordScoreTeam2 = 2;
+          _wordScoreTeam2++;
+          _wordScoreTeam2++;
         } else if (lenghWord.length < 10) {
-          _wordScoreTeam2 = 3;
+          _wordScoreTeam2++;
+          _wordScoreTeam2++;
+          _wordScoreTeam2++;
         } else if (lenghWord.length < 16) {
-          _wordScoreTeam2 = 4;
+          _wordScoreTeam2++;
+          _wordScoreTeam2++;
+          _wordScoreTeam2++;
+          _wordScoreTeam2++;
         }
       } else {
         _wordScoreTeam1;

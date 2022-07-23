@@ -293,8 +293,8 @@ class TeamProvider extends ChangeNotifier {
   //this function for Score
   //int time, int lenghtWord
 
-  int _quicktosayscore = 0;
-  int get getQuicktosayscore => _quicktosayscore;
+  //int _quicktosayscore = 0;
+  //int get getQuicktosayscore => _quicktosayscore;
 
   setScoreForAllTeam(String lenghWord, int win) {
     // int timeSecounds = int.parse(time);
@@ -321,7 +321,6 @@ class TeamProvider extends ChangeNotifier {
           _wordScoreTeam1++;
           _wordScoreTeam1++;
         }
-        print(_wordScoreTeam1);
       } else {
         _wordScoreTeam1;
       }
@@ -447,10 +446,10 @@ class TeamProvider extends ChangeNotifier {
     notifyListeners();
   }
 
-  String _nameTeam1 = "";
-  String _nameTeam2 = "";
-  String _nameTeam3 = "";
-  String _nameTeam4 = "";
+  String _nameTeam1 = "تیم ۱";
+  String _nameTeam2 = "تیم ۲";
+  String _nameTeam3 = "تیم ۳";
+  String _nameTeam4 = "تیم ۴";
 
   String get getNameTeam1 => _nameTeam1;
   String get getNameTeam2 => _nameTeam2;

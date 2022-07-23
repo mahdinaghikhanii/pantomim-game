@@ -1,5 +1,7 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:pantomim/models/team.dart';
+import 'package:pantomim/perfs/team_data.dart';
 import 'package:provider/provider.dart';
 
 import '../../generated/l10n.dart';
@@ -63,6 +65,7 @@ class _ChoiceYourTopicState extends State<ChoiceYourTopic> {
   @override
   Widget build(BuildContext context) {
     var localApp = S.of(context);
+    final teamdata = Provider.of<TeamData>(context);
 
     final modelProvider = Provider.of<TeamProvider>(context);
 
@@ -106,6 +109,14 @@ class _ChoiceYourTopicState extends State<ChoiceYourTopic> {
                   ),
                   DounleFloattingButton(
                     ontap: () {
+                      teamdata.addTeamInformation(TeamModel(
+                          modelProvider.getNameTeam1,
+                          modelProvider.getNameTeam2,
+                          modelProvider.getNameTeam3,
+                          modelProvider.getNameTeam4,
+                          modelProvider.getNumberOfTeams(),
+                          modelProvider.getNumberOfRounds(),
+                          modelProvider.gettitleNumberOfRoundsOfGame()));
                       modelProvider.backGameIconShow(true);
                       Provider.of<History>(context, listen: false)
                           .incermnetNumberOfRounds();

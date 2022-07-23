@@ -22,7 +22,7 @@ const styleTextDialogTypeOfMatch =
     TextStyle(color: kblack, fontSize: 17, fontWeight: FontWeight.bold);
 
 const styleTextForScoreTextLost =
-    TextStyle(fontSize: 45, color: kred, fontWeight: FontWeight.bold);
+    TextStyle(fontSize: 38, color: kred, fontWeight: FontWeight.bold);
 const backgroundDefaultScafold2 = BoxDecoration(
     gradient: LinearGradient(
         begin: Alignment.centerLeft,

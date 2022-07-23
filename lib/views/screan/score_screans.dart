@@ -128,20 +128,28 @@ class _ScoreScreansState extends State<ScoreScreans>
                             TextSpan(
                                 text: localApp.scoreScreansTitleTextTextSpanYou,
                                 style: modelProvier.checkbtnwinlose
-                                    ? Theme.of(context).textTheme.headline1
-                                    : styleTextForScoreTextLost),
+                                    ? Theme.of(context)
+                                        .textTheme
+                                        .headline1!
+                                        .copyWith(
+                                            fontSize: 38,
+                                            fontWeight: FontWeight.bold)
+                                    : styleTextForScoreTextLost.copyWith(
+                                        fontSize: 38, color: kwhite)),
                             TextSpan(
                                 text: modelProvier.checkbtnwinlose
-                                    ? localApp.scoreScreansTitleTextTextSpanWon
-                                    : localApp
-                                        .scoreScreansTitleTextTextSpanLost,
-                                style: Theme.of(context).textTheme.subtitle1)
+                                    ? "امتیاز گرفتید"
+                                    : "امتیاز نگرفتید",
+                                style: Theme.of(context)
+                                    .textTheme
+                                    .subtitle1!
+                                    .copyWith(fontSize: 38))
                           ])),
                     ),
                     Container(
                       padding: const EdgeInsets.all(20),
                       width: size.width * 0.83,
-                      height: size.height * 0.52,
+                      height: size.height * 0.58,
                       decoration: BoxDecoration(
                           color: Colors.white24,
                           borderRadius: BorderRadius.circular(50)),
@@ -163,10 +171,13 @@ class _ScoreScreansState extends State<ScoreScreans>
                                 .getCounterOfScoreTeam1()
                                 .toString(),
                           ),
-                          const WidgetShowTextWinOrLoseDetail(
-                            title: 'گزارش خطا‌ :',
-                            score: '0',
+                          WidgetShowTextWinOrLoseDetail(
+                            title: 'امتیاز تشویقی:',
+                            score: modelProvier.getQuicktosayscore.toString(),
                           ),
+                          WidgetShowTextWinOrLoseDetail(
+                              title: 'امتیاز منفی :',
+                              score: modelProvier.getwrongScore.toString()),
                           Padding(
                             padding: const EdgeInsets.only(top: 30, bottom: 10),
                             child: Center(

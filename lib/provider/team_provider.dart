@@ -252,6 +252,7 @@ class TeamProvider extends ChangeNotifier {
     _wordScoreTeam3 = 0;
     _wordScoreTeam4 = 0;
     _numberOfTeams = 2;
+    _showIconbackGame = false;
 
     _numberOfRoundsOfGameTitle = 1;
 
@@ -293,8 +294,8 @@ class TeamProvider extends ChangeNotifier {
   //this function for Score
   //int time, int lenghtWord
 
-  //int _quicktosayscore = 0;
-  //int get getQuicktosayscore => _quicktosayscore;
+  int _quicktosayscore = 0;
+  int get getQuicktosayscore => _quicktosayscore;
 
   setScoreForAllTeam(String lenghWord, int win) {
     // int timeSecounds = int.parse(time);
@@ -303,23 +304,28 @@ class TeamProvider extends ChangeNotifier {
         if (lenghWord.length < 4) {
           _wordScoreTeam1++;
           _wordScoreTeam1++;
+          _quicktosayscore = 2;
         } else if (lenghWord.length < 7) {
           _wordScoreTeam1++;
           _wordScoreTeam1++;
+          _quicktosayscore = 2;
         } else if (lenghWord.length < 12) {
           _wordScoreTeam1++;
           _wordScoreTeam1++;
           _wordScoreTeam1++;
+          _quicktosayscore = 3;
         } else if (lenghWord.length < 18) {
           _wordScoreTeam1++;
           _wordScoreTeam1++;
           _wordScoreTeam1++;
           _wordScoreTeam1++;
+          _quicktosayscore = 4;
         } else if (lenghWord.length < 30) {
           _wordScoreTeam1++;
           _wordScoreTeam1++;
           _wordScoreTeam1++;
           _wordScoreTeam1++;
+          _quicktosayscore = 4;
         }
       } else {
         _wordScoreTeam1;
@@ -330,23 +336,28 @@ class TeamProvider extends ChangeNotifier {
         if (lenghWord.length < 4) {
           _wordScoreTeam2++;
           _wordScoreTeam2++;
+          _quicktosayscore = 2;
         } else if (lenghWord.length < 7) {
           _wordScoreTeam2++;
           _wordScoreTeam2++;
+          _quicktosayscore = 2;
         } else if (lenghWord.length < 12) {
           _wordScoreTeam2++;
           _wordScoreTeam2++;
           _wordScoreTeam2++;
+          _quicktosayscore = 3;
         } else if (lenghWord.length < 18) {
           _wordScoreTeam2++;
           _wordScoreTeam2++;
           _wordScoreTeam2++;
           _wordScoreTeam2++;
+          _quicktosayscore = 4;
         } else if (lenghWord.length < 30) {
           _wordScoreTeam2++;
           _wordScoreTeam2++;
           _wordScoreTeam2++;
           _wordScoreTeam2++;
+          _quicktosayscore = 4;
         }
       } else {
         _wordScoreTeam2;
@@ -354,16 +365,31 @@ class TeamProvider extends ChangeNotifier {
     }
 
     if (_visibilirtIconTeam3 == true) {
-      if (win == 1) {
-        if (lenghWord.length < 4) {
-          _wordScoreTeam3 = 2;
-        } else if (lenghWord.length < 6) {
-          _wordScoreTeam3 = 2;
-        } else if (lenghWord.length < 10) {
-          _wordScoreTeam3 = 3;
-        } else if (lenghWord.length < 16) {
-          _wordScoreTeam3 = 4;
-        }
+      if (lenghWord.length < 4) {
+        _wordScoreTeam3++;
+        _wordScoreTeam3++;
+        _quicktosayscore = 2;
+      } else if (lenghWord.length < 7) {
+        _wordScoreTeam3++;
+        _wordScoreTeam3++;
+        _quicktosayscore = 2;
+      } else if (lenghWord.length < 12) {
+        _wordScoreTeam3++;
+        _wordScoreTeam3++;
+        _wordScoreTeam3++;
+        _quicktosayscore = 3;
+      } else if (lenghWord.length < 18) {
+        _wordScoreTeam3++;
+        _wordScoreTeam3++;
+        _wordScoreTeam3++;
+        _wordScoreTeam3++;
+        _quicktosayscore = 4;
+      } else if (lenghWord.length < 30) {
+        _wordScoreTeam3++;
+        _wordScoreTeam3++;
+        _wordScoreTeam3++;
+        _wordScoreTeam3++;
+        _quicktosayscore = 4;
       } else {
         _wordScoreTeam3;
       }
@@ -372,19 +398,35 @@ class TeamProvider extends ChangeNotifier {
     if (win == 1) {
       if (_visibilirtIconTeam4 == true) {
         if (lenghWord.length < 4) {
-          _wordScoreTeam4 = 2;
-        } else if (lenghWord.length < 6) {
-          _wordScoreTeam4 = 2;
-        } else if (lenghWord.length < 10) {
-          _wordScoreTeam4 = 3;
-        } else if (lenghWord.length < 16) {
-          _wordScoreTeam4 = 4;
+          _wordScoreTeam4++;
+          _wordScoreTeam4++;
+          _quicktosayscore = 2;
+        } else if (lenghWord.length < 7) {
+          _wordScoreTeam4++;
+          _wordScoreTeam4++;
+          _quicktosayscore = 2;
+        } else if (lenghWord.length < 12) {
+          _wordScoreTeam4++;
+          _wordScoreTeam4++;
+          _wordScoreTeam4++;
+          _quicktosayscore = 3;
+        } else if (lenghWord.length < 18) {
+          _wordScoreTeam4++;
+          _wordScoreTeam4++;
+          _wordScoreTeam4++;
+          _wordScoreTeam4++;
+          _quicktosayscore = 4;
+        } else if (lenghWord.length < 30) {
+          _wordScoreTeam4++;
+          _wordScoreTeam4++;
+          _wordScoreTeam4++;
+          _wordScoreTeam4++;
+          _quicktosayscore = 4;
         }
       } else {
         _wordScoreTeam4;
       }
     }
-
     notifyListeners();
   }
 

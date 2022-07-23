@@ -127,7 +127,6 @@ class MenoScreans extends StatelessWidget {
                     child: InkWell(
                       borderRadius: BorderRadius.circular(100),
                       onTap: () {
-                        teamProvider.getResetInformation();
                         Navigator.push(
                             context,
                             MaterialPageRoute(

@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:hive/hive.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 
 class TeamProvider extends ChangeNotifier {
@@ -488,10 +489,10 @@ class TeamProvider extends ChangeNotifier {
     notifyListeners();
   }
 
-  String _nameTeam1 = "تیم ۱";
-  String _nameTeam2 = "تیم ۲";
-  String _nameTeam3 = "تیم ۳";
-  String _nameTeam4 = "تیم ۴";
+  String _nameTeam1 = "";
+  String _nameTeam2 = "";
+  String _nameTeam3 = "";
+  String _nameTeam4 = "";
 
   String get getNameTeam1 => _nameTeam1;
   String get getNameTeam2 => _nameTeam2;
@@ -502,5 +503,33 @@ class TeamProvider extends ChangeNotifier {
     final perfs = await SharedPreferences.getInstance();
     _showIconbackGame = perfs.getBool('ShowIconBackGame') ?? false;
     notifyListeners();
+  }
+
+  void saveData() async {
+    var boxTeam1 = await Hive.openBox("Team-1");
+    var boxTeam2 = await Hive.openBox("Team-2");
+    var boxTeam3 = await Hive.openBox("Team-3");
+    var boxTaem4 = await Hive.openBox("Team-4");
+    var boxNumberOfRoundsGame = await Hive.openBox("numberOfroundsGame");
+
+    boxTeam1.put("Team-1", _nameTeam1);
+    boxTeam2.put("Team-2", _nameTeam2);
+    boxTeam3.put("Team-3", _nameTeam3);
+    boxTaem4.put("Team-4", _nameTeam4);
+    boxNumberOfRoundsGame.put("numberOfroundsGame", _numberofRoundsOfGame);
+    notifyListeners();
+    print(_nameTeam1);
+  }
+
+  void getDataTeam() async {
+    var boxTeam1 = await Hive.openBox("Team-1");
+    var boxTeam2 = await Hive.openBox("Team-2");
+    var boxTeam3 = await Hive.openBox("Team-3");
+    var boxTeam4 = await Hive.openBox("Team-4");
+    var numberOfRoundsGame = await Hive.openBox("numberOfroundsGame");
+
+    // _nameTeam1 = boxTeam1.get('Team-1');
+
+    print(boxTeam1.get('Team-1'));
   }
 }

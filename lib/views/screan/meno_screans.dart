@@ -38,6 +38,7 @@ class MenoScreans extends StatelessWidget {
                         iconColor: kwhite,
                         iconData: Icons.settings,
                         onTap: () {
+                          teamProvider.getDataTeam();
                           showDialog(
                               context: context,
                               builder: (

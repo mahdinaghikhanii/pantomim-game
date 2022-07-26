@@ -483,10 +483,10 @@ class TeamProvider extends ChangeNotifier {
     notifyListeners();
   }
 
-  String _nameTeam1 = "";
-  String _nameTeam2 = "";
-  String _nameTeam3 = "";
-  String _nameTeam4 = "";
+  String _nameTeam1 = "تیم اول";
+  String _nameTeam2 = "تیم دوم ";
+  String _nameTeam3 = "تیم سوم";
+  String _nameTeam4 = "تیم چهارم";
 
   String get getNameTeam1 => _nameTeam1;
   String get getNameTeam2 => _nameTeam2;
@@ -500,6 +500,10 @@ class TeamProvider extends ChangeNotifier {
   }
 
   saveData() async {
+    Hive.box("Team").put('team1', _nameTeam1);
+    Hive.box("Team").put('team2', _nameTeam2);
+    Hive.box("Team").put('team3', _nameTeam3);
+    Hive.box("Team").put('team4', _nameTeam4);
     Hive.box("Team").put('numberofRoundsTitle', _numberOfRoundsOfGameTitle);
     Hive.box("Team").put('gameTime', _gametime);
     Hive.box("Team").put('teamShowIcon', _numberOfTeamShowIconPlay);
@@ -531,11 +535,10 @@ class TeamProvider extends ChangeNotifier {
     _numberOfRoundsOfGameTitle = boxTeam.get("numberofRoundsTitle") ?? 3;
     _numberOfTeamShowIconPlay = boxTeam.get("teamShowIcon");
     _numberOfTeams = boxTeam.get("numberOfTheams");
-    _gametime = boxTeam.get('gameTime') ?? 0;
+    _gametime = boxTeam.get('gameTime') ?? -1;
     _numberofRoundsOfGame = boxTeam.get('numberOfRoundsGame');
     _numberOfTeamShowIconPlay++;
 
-    print(boxTeam.get('teamShowIcon').toString());
     setvisibilityIcon();
 
     notifyListeners();

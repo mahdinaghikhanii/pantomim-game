@@ -107,6 +107,7 @@ class _ChoiceYourTopicState extends State<ChoiceYourTopic> {
                   ),
                   DounleFloattingButton(
                     ontap: () async {
+                      teamProvider.deleteAllDDataHive();
                       await teamProvider.saveData();
                       modelProvider.backGameIconShow(true);
                       Provider.of<History>(context, listen: false)

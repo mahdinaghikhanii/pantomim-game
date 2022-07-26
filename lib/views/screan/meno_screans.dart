@@ -134,7 +134,6 @@ class MenoScreans extends StatelessWidget {
                     child: InkWell(
                       borderRadius: BorderRadius.circular(100),
                       onTap: () {
-                        teamsProvider.deleteAllDDataHive();
                         Navigator.push(
                             context,
                             MaterialPageRoute(

@@ -1,9 +1,9 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import '../../main.dart';
 import 'package:provider/provider.dart';
 
 import '../../generated/l10n.dart';
+import '../../main.dart';
 import '../../module/constans/constant.dart';
 import '../../module/extension/extension.dart';
 import '../../module/widgets/button_add_remove.dart';
@@ -19,15 +19,17 @@ class ChoiceYourTopic extends StatefulWidget {
   State<ChoiceYourTopic> createState() => _ChoiceYourTopicState();
 }
 
+late AnimationController controller;
+late Animation colorAnimation;
+late Animation sizeAnimation;
+
 bool viewVisibleButton = false;
 int selectValue = 0;
 bool _viewAuto = true;
 bool _viewCustom = true;
 
-class _ChoiceYourTopicState extends State<ChoiceYourTopic> {
-  //This state for plus numbe
-  //this methode for unvisibility Text in Screans
-
+class _ChoiceYourTopicState extends State<ChoiceYourTopic>
+    with SingleTickerProviderStateMixin {
   _unsetVisibility() {
     setState(() {
       _viewAuto = true;
@@ -56,6 +58,7 @@ class _ChoiceYourTopicState extends State<ChoiceYourTopic> {
   @override
   void initState() {
     super.initState();
+
     if (selectValue == 0) {
       _viewCustom = false;
     }

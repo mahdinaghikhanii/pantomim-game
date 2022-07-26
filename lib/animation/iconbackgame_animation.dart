@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:pantomim/views/screan/type_of_match_screans.dart';
 import 'package:provider/provider.dart';
 
 import '../module/constans/constant.dart';
@@ -43,7 +42,7 @@ class _IconBackGameAnimationState extends State<IconBackGameAnimation>
       },
       borderRadius: BorderRadius.circular(60),
       child: Container(
-          decoration: BoxDecoration(),
+          decoration: const BoxDecoration(),
           width: sizeAnimation.value,
           height: sizeAnimation.value,
           child: Padding(

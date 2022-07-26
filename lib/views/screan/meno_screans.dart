@@ -1,5 +1,6 @@
 import 'package:animate_do/animate_do.dart';
 import 'package:flutter/material.dart';
+import 'package:pantomim/animation/iconbackgame_animation.dart';
 import 'package:pantomim/provider/team_provider.dart';
 import 'package:provider/provider.dart';
 
@@ -52,21 +53,7 @@ class MenoScreans extends StatelessWidget {
                         },
                         backgroundColor: kblue),
                     teamProvider.backLastGame
-                        ? InkWell(
-                            borderRadius: BorderRadius.circular(60),
-                            onTap: (() {
-                              teamsProvider.getDataTeam();
-                              context.nextScreans(const DetailGameScreans());
-                            }),
-                            child: SizedBox(
-                                width: 70,
-                                height: 70,
-                                child: Padding(
-                                    padding: const EdgeInsets.only(top: 0),
-                                    child: Center(
-                                        child: Image.asset(
-                                            'assets/icons/backgame.png')))),
-                          )
+                        ? const IconBackGameAnimation()
                         : CricleButton(
                             iconColor: kwhite.withOpacity(0.2),
                             iconData: Icons.restart_alt,

@@ -91,37 +91,33 @@ class TeamProvider extends ChangeNotifier {
   //this part for typeofMatchScreans Input Name Screans
 
   changeNameTeams1(String value) async {
-    final perfs = await SharedPreferences.getInstance();
     if (value.length >= 2) {
+      Hive.box("Team").put('team1', _nameTeam1.toString());
       _nameTeam1 = value;
-      await perfs.setString("name-team-1", value);
     }
     notifyListeners();
   }
 
   changeNameTeams2(String value) async {
-    final perfs = await SharedPreferences.getInstance();
     if (value.length >= 2) {
+      Hive.box("Team").put('team2', _nameTeam2.toString());
       _nameTeam2 = value;
-      await perfs.setString("name-team-2", value);
     }
     notifyListeners();
   }
 
   void changeNameTeams3(String value) async {
-    final perfs = await SharedPreferences.getInstance();
     if (value.length >= 2) {
+      Hive.box("Team").put('team3', _nameTeam3.toString());
       _nameTeam3 = value;
-      await perfs.setString("name-team-3", value);
     }
     notifyListeners();
   }
 
   void changeNameTeams4(String value) async {
-    final perfs = await SharedPreferences.getInstance();
     if (value.length >= 2) {
+      Hive.box("Team").put('team4', _nameTeam2.toString());
       _nameTeam4 = value;
-      await perfs.setString("name-team-4", value);
     }
     notifyListeners();
   }
@@ -254,9 +250,7 @@ class TeamProvider extends ChangeNotifier {
     _wordScoreTeam4 = 0;
     _numberOfTeams = 2;
     _showIconbackGame = false;
-
     _numberOfRoundsOfGameTitle = 1;
-
     _numberOfTeamShowIconPlay = -1;
   }
 
@@ -505,31 +499,45 @@ class TeamProvider extends ChangeNotifier {
     notifyListeners();
   }
 
-  void saveData() async {
-    var boxTeam1 = await Hive.openBox("Team-1");
-    var boxTeam2 = await Hive.openBox("Team-2");
-    var boxTeam3 = await Hive.openBox("Team-3");
-    var boxTaem4 = await Hive.openBox("Team-4");
-    var boxNumberOfRoundsGame = await Hive.openBox("numberOfroundsGame");
+  saveData() async {
+    Hive.box("Team").put('numberofRoundsTitle', _numberOfRoundsOfGameTitle);
+    Hive.box("Team").put('gameTime', _gametime);
+    Hive.box("Team").put('teamShowIcon', _numberOfTeamShowIconPlay);
+    Hive.box("Team").put('numberOfTheams', _numberOfTeams);
+    Hive.box("Team").put('numberOfRoundsGame', _numberofRoundsOfGame);
 
-    boxTeam1.put("Team-1", _nameTeam1);
-    boxTeam2.put("Team-2", _nameTeam2);
-    boxTeam3.put("Team-3", _nameTeam3);
-    boxTaem4.put("Team-4", _nameTeam4);
-    boxNumberOfRoundsGame.put("numberOfroundsGame", _numberofRoundsOfGame);
     notifyListeners();
-    print(_nameTeam1);
+  }
+
+  void deleteAllDDataHive() async {
+    var box = await Hive.openBox("Team");
+    box.clear();
+    notifyListeners();
+  }
+
+  updateData() async {
+    var box = await Hive.openBox("Team");
+    box.delete('numberofRoundsTitle');
+    box.delete('teamShowIcon');
   }
 
   void getDataTeam() async {
-    var boxTeam1 = await Hive.openBox("Team-1");
-    var boxTeam2 = await Hive.openBox("Team-2");
-    var boxTeam3 = await Hive.openBox("Team-3");
-    var boxTeam4 = await Hive.openBox("Team-4");
-    var numberOfRoundsGame = await Hive.openBox("numberOfroundsGame");
+    var boxTeam = await Hive.openBox("Team");
+    _nameTeam1 = boxTeam.get('team1') ?? "";
+    _nameTeam2 = boxTeam.get('team2') ?? "";
+    _nameTeam3 = boxTeam.get('team3') ?? "";
+    _nameTeam4 = boxTeam.get('team4') ?? "";
 
-    // _nameTeam1 = boxTeam1.get('Team-1');
+    _numberOfRoundsOfGameTitle = boxTeam.get("numberofRoundsTitle") ?? 3;
+    _numberOfTeamShowIconPlay = boxTeam.get("teamShowIcon");
+    _numberOfTeams = boxTeam.get("numberOfTheams");
+    _gametime = boxTeam.get('gameTime') ?? 0;
+    _numberofRoundsOfGame = boxTeam.get('numberOfRoundsGame');
+    _numberOfTeamShowIconPlay++;
 
-    print(boxTeam1.get('Team-1'));
+    print(boxTeam.get('teamShowIcon').toString());
+    setvisibilityIcon();
+
+    notifyListeners();
   }
 }

@@ -463,12 +463,14 @@ class _TimerScreansState extends State<TimerScreans> {
                                 if (wrong == false) {
                                   teamProvider.setScoreForAllTeam(
                                       modelProvider.gameTheme, 1);
+                                  teamProvider.saveData();
                                   teamProvider.checkwinorlosegamebtn(true);
                                 }
                               } else {
                                 starttopicgame();
                                 startTimer(resets: true);
                                 setState(() {
+                                  teamProvider.updateData();
                                   if (isCountdown) {
                                     switch (teamProvider.getTimeForMatch()) {
                                       case 0:
@@ -612,7 +614,7 @@ class _TimerScreansState extends State<TimerScreans> {
                                   if (wrong == true) {
                                     teamProvider.setaddcheckforInnigns();
                                     teamProvider.checkwinorlosegamebtn(false);
-                                    //  teamProvider.setwrontScore(0);
+
                                     Navigator.push(
                                         context,
                                         MaterialPageRoute(

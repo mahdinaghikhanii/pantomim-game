@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:pantomim/main.dart';
 import 'package:provider/provider.dart';
 
 import '../../generated/l10n.dart';
@@ -65,8 +66,9 @@ class DialogQuit extends StatelessWidget {
                             children: [
                               DounleFloattingButton(
                                 ontap: () {
-                                  appProvider.backGameIconShow(false);
+                                  teamProvider.backGameIconShow(false);
                                   appProvider.reasetvalue();
+                                  appProvider.deleteAllDDataHive();
                                   Navigator.of(context).pushAndRemoveUntil(
                                       MaterialPageRoute(
                                           builder: (context) =>

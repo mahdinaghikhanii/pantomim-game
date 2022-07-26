@@ -119,9 +119,7 @@ class DetailGameScreans extends StatelessWidget {
                               visiblity: true,
                               iconVisibility: teamProviders.visibilityTeam1Icon,
                             ),
-                            const SizedBox(
-                              height: 20,
-                            ),
+                            const SizedBox(height: 20),
                             RowShowTeamAndScore(
                               nameTeam: teamProviders.getNameTeam2,
                               scoreTeam: teamProviders

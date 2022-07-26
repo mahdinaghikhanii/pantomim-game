@@ -1,5 +1,7 @@
 import 'package:animate_do/animate_do.dart';
 import 'package:flutter/material.dart';
+import 'package:pantomim/provider/team_provider.dart';
+import 'package:provider/provider.dart';
 
 import '../../generated/l10n.dart';
 import '../../main.dart';
@@ -18,6 +20,7 @@ class MenoScreans extends StatelessWidget {
   Widget build(BuildContext context) {
     final size = MediaQuery.of(context).size;
     var localApp = S.of(context);
+    final teamsProvider = Provider.of<TeamProvider>(context);
 
     return FadeInUp(
       duration: const Duration(milliseconds: 1200),
@@ -39,6 +42,7 @@ class MenoScreans extends StatelessWidget {
                         iconData: Icons.settings,
                         onTap: () {
                           teamProvider.getDataTeam();
+                          teamsProvider.backGameIconShow(false);
                           showDialog(
                               context: context,
                               builder: (
@@ -50,8 +54,10 @@ class MenoScreans extends StatelessWidget {
                     teamProvider.backLastGame
                         ? InkWell(
                             borderRadius: BorderRadius.circular(60),
-                            onTap: (() =>
-                                context.nextScreans(const DetailGameScreans())),
+                            onTap: (() {
+                              teamsProvider.getDataTeam();
+                              context.nextScreans(const DetailGameScreans());
+                            }),
                             child: SizedBox(
                                 width: 70,
                                 height: 70,
@@ -128,6 +134,7 @@ class MenoScreans extends StatelessWidget {
                     child: InkWell(
                       borderRadius: BorderRadius.circular(100),
                       onTap: () {
+                        teamsProvider.deleteAllDDataHive();
                         Navigator.push(
                             context,
                             MaterialPageRoute(

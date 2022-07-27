@@ -91,32 +91,36 @@ class TeamProvider extends ChangeNotifier {
   //this part for typeofMatchScreans Input Name Screans
 
   changeNameTeams1(String value) async {
+    final box = await Hive.openBox("Team");
     if (value.length >= 2) {
-      Hive.box("Team").put('team1', _nameTeam1.toString());
+      await box.put('team1', _nameTeam1.toString());
       _nameTeam1 = value;
     }
     notifyListeners();
   }
 
   changeNameTeams2(String value) async {
+    final box = await Hive.openBox("Team");
     if (value.length >= 2) {
-      Hive.box("Team").put('team2', _nameTeam2.toString());
+      await box.put('team2', _nameTeam2.toString());
       _nameTeam2 = value;
     }
     notifyListeners();
   }
 
   void changeNameTeams3(String value) async {
+    final box = await Hive.openBox("Team");
     if (value.length >= 2) {
-      Hive.box("Team").put('team3', _nameTeam3.toString());
+      box.put('team3', _nameTeam3.toString());
       _nameTeam3 = value;
     }
     notifyListeners();
   }
 
   void changeNameTeams4(String value) async {
+    final box = await Hive.openBox("Team");
     if (value.length >= 2) {
-      Hive.box("Team").put('team4', _nameTeam2.toString());
+      box.put('team4', _nameTeam2.toString());
       _nameTeam4 = value;
     }
     notifyListeners();
@@ -500,15 +504,16 @@ class TeamProvider extends ChangeNotifier {
   }
 
   saveData() async {
-    Hive.box("Team").put('team1', _nameTeam1);
-    Hive.box("Team").put('team2', _nameTeam2);
-    Hive.box("Team").put('team3', _nameTeam3);
-    Hive.box("Team").put('team4', _nameTeam4);
-    Hive.box("Team").put('numberofRoundsTitle', _numberOfRoundsOfGameTitle);
-    Hive.box("Team").put('gameTime', _gametime);
-    Hive.box("Team").put('teamShowIcon', _numberOfTeamShowIconPlay);
-    Hive.box("Team").put('numberOfTheams', _numberOfTeams);
-    Hive.box("Team").put('numberOfRoundsGame', _numberofRoundsOfGame);
+    final box = await Hive.openBox("Team");
+    box.put('team1', _nameTeam1);
+    box.put('team2', _nameTeam2);
+    box.put('team3', _nameTeam3);
+    box.put('team4', _nameTeam4);
+    box.put('numberofRoundsTitle', _numberOfRoundsOfGameTitle);
+    box.put('gameTime', _gametime);
+    box.put('teamShowIcon', _numberOfTeamShowIconPlay);
+    box.put('numberOfTheams', _numberOfTeams);
+    box.put('numberOfRoundsGame', _numberofRoundsOfGame);
 
     notifyListeners();
   }
@@ -527,16 +532,16 @@ class TeamProvider extends ChangeNotifier {
 
   void getDataTeam() async {
     var boxTeam = await Hive.openBox("Team");
-    _nameTeam1 = boxTeam.get('team1') ?? "";
-    _nameTeam2 = boxTeam.get('team2') ?? "";
+    _nameTeam1 = boxTeam.get('team1') ?? "تیم اول";
+    _nameTeam2 = boxTeam.get('team2') ?? "تیم دوم";
     _nameTeam3 = boxTeam.get('team3') ?? "";
     _nameTeam4 = boxTeam.get('team4') ?? "";
 
     _numberOfRoundsOfGameTitle = boxTeam.get("numberofRoundsTitle") ?? 3;
-    _numberOfTeamShowIconPlay = boxTeam.get("teamShowIcon");
-    _numberOfTeams = boxTeam.get("numberOfTheams");
+    _numberOfTeamShowIconPlay = boxTeam.get("teamShowIcon") ?? -1;
+    _numberOfTeams = boxTeam.get("numberOfTheams") ?? 2;
     _gametime = boxTeam.get('gameTime') ?? -1;
-    _numberofRoundsOfGame = boxTeam.get('numberOfRoundsGame');
+    _numberofRoundsOfGame = boxTeam.get('numberOfRoundsGame') ?? 3;
     _numberOfTeamShowIconPlay++;
 
     setvisibilityIcon();

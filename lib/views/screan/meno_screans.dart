@@ -1,17 +1,15 @@
 import 'package:animate_do/animate_do.dart';
 import 'package:flutter/material.dart';
-import 'package:pantomim/animation/iconbackgame_animation.dart';
-import 'package:pantomim/provider/team_provider.dart';
 import 'package:provider/provider.dart';
 
+import '../../animation/iconbackgame_animation.dart';
 import '../../generated/l10n.dart';
 import '../../main.dart';
 import '../../module/constans/constant.dart';
-import '../../module/extension/extension.dart';
 import '../../module/widgets/circle_button.dart';
 import '../../module/widgets/icon_animation_play.dart';
+import '../../provider/team_provider.dart';
 import '../dialog_screns/dialog_setting.dart';
-import 'detail_game_screans_for_lunch.dart';
 import 'type_of_match_screans.dart';
 
 class MenoScreans extends StatelessWidget {

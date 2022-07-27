@@ -24,8 +24,10 @@ class _IconBackGameAnimationState extends State<IconBackGameAnimation>
     super.initState();
     controller =
         AnimationController(vsync: this, duration: const Duration(seconds: 1));
-    sizeAnimation = Tween<double>(begin: 70, end: 80).animate(controller);
-    colorAnimation = ColorTween(begin: kwhite, end: kblue).animate(controller);
+    sizeAnimation = Tween<double>(begin: 60, end: 70).animate(controller);
+    colorAnimation = ColorTween(
+            begin: Colors.grey.withOpacity(0.2), end: kblue.withOpacity(0.2))
+        .animate(controller);
     controller.addListener(() {
       setState(() {});
     });
@@ -42,12 +44,27 @@ class _IconBackGameAnimationState extends State<IconBackGameAnimation>
       },
       borderRadius: BorderRadius.circular(60),
       child: Container(
-          decoration: const BoxDecoration(),
+          decoration: BoxDecoration(
+            borderRadius: BorderRadius.circular(Constans.kBigBorderRadius),
+            boxShadow: [
+              BoxShadow(
+                color: colorAnimation.value,
+                spreadRadius: 1,
+                blurRadius: 5,
+                offset: const Offset(0, 0), // changes position of shadow
+              ),
+            ],
+          ),
           width: sizeAnimation.value,
           height: sizeAnimation.value,
           child: Padding(
               padding: const EdgeInsets.only(top: 0),
-              child: Center(child: Image.asset('assets/icons/backgame.png')))),
+              child: Center(
+                  child: Image.asset(
+                'assets/icons/backgame.png',
+                height: sizeAnimation.value - 5,
+                width: sizeAnimation.value - 5,
+              )))),
     );
   }
 }

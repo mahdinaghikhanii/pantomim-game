@@ -91,37 +91,37 @@ class TeamProvider extends ChangeNotifier {
   //this part for typeofMatchScreans Input Name Screans
 
   changeNameTeams1(String value) async {
-    final box = await Hive.openBox("Team");
+    var box = await Hive.openBox('Team');
     if (value.length >= 2) {
-      await box.put('team1', _nameTeam1.toString());
       _nameTeam1 = value;
+      box.put('team1', _nameTeam1.toString());
     }
     notifyListeners();
   }
 
   changeNameTeams2(String value) async {
-    final box = await Hive.openBox("Team");
+    var box = await Hive.openBox('Team');
     if (value.length >= 2) {
-      await box.put('team2', _nameTeam2.toString());
       _nameTeam2 = value;
+      box.put('team2', _nameTeam2.toString());
     }
     notifyListeners();
   }
 
   void changeNameTeams3(String value) async {
-    final box = await Hive.openBox("Team");
+    var box = await Hive.openBox('Team');
     if (value.length >= 2) {
-      box.put('team3', _nameTeam3.toString());
       _nameTeam3 = value;
+      box.put('team3', _nameTeam3.toString());
     }
     notifyListeners();
   }
 
   void changeNameTeams4(String value) async {
-    final box = await Hive.openBox("Team");
+    var box = await Hive.openBox('Team');
     if (value.length >= 2) {
-      box.put('team4', _nameTeam2.toString());
       _nameTeam4 = value;
+      box.put('team4', _nameTeam2.toString());
     }
     notifyListeners();
   }
@@ -503,6 +503,8 @@ class TeamProvider extends ChangeNotifier {
     notifyListeners();
   }
 
+  final String key = "";
+
   saveData() async {
     final box = await Hive.openBox("Team");
     box.put('team1', _nameTeam1);
@@ -521,6 +523,7 @@ class TeamProvider extends ChangeNotifier {
   void deleteAllDDataHive() async {
     var box = await Hive.openBox("Team");
     box.clear();
+    box.close();
     notifyListeners();
   }
 
@@ -532,17 +535,18 @@ class TeamProvider extends ChangeNotifier {
 
   void getDataTeam() async {
     var boxTeam = await Hive.openBox("Team");
-    _nameTeam1 = boxTeam.get('team1') ?? "تیم اول";
-    _nameTeam2 = boxTeam.get('team2') ?? "تیم دوم";
+    _nameTeam1 = boxTeam.get('team1') ?? "";
+    _nameTeam2 = boxTeam.get('team2') ?? "";
     _nameTeam3 = boxTeam.get('team3') ?? "";
     _nameTeam4 = boxTeam.get('team4') ?? "";
 
+    _numberOfTeamShowIconPlay++;
+
     _numberOfRoundsOfGameTitle = boxTeam.get("numberofRoundsTitle") ?? 3;
-    _numberOfTeamShowIconPlay = boxTeam.get("teamShowIcon") ?? -1;
+    _numberOfTeamShowIconPlay = boxTeam.get("teamShowIcon") - 1;
     _numberOfTeams = boxTeam.get("numberOfTheams") ?? 2;
     _gametime = boxTeam.get('gameTime') ?? -1;
     _numberofRoundsOfGame = boxTeam.get('numberOfRoundsGame') ?? 3;
-    _numberOfTeamShowIconPlay++;
 
     setvisibilityIcon();
 

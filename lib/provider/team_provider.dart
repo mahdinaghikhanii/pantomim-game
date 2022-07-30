@@ -91,37 +91,33 @@ class TeamProvider extends ChangeNotifier {
   //this part for typeofMatchScreans Input Name Screans
 
   changeNameTeams1(String value) async {
-    var box = await Hive.openBox('Team');
+    final box = await Hive.openBox("Team");
+
     if (value.length >= 2) {
+      await box.put('team1', value);
       _nameTeam1 = value;
-      box.put('team1', _nameTeam1.toString());
     }
     notifyListeners();
   }
 
   changeNameTeams2(String value) async {
-    var box = await Hive.openBox('Team');
     if (value.length >= 2) {
+      await Hive.box("Team").put("team1", value);
       _nameTeam2 = value;
-      box.put('team2', _nameTeam2.toString());
     }
     notifyListeners();
   }
 
   void changeNameTeams3(String value) async {
-    var box = await Hive.openBox('Team');
     if (value.length >= 2) {
       _nameTeam3 = value;
-      box.put('team3', _nameTeam3.toString());
     }
     notifyListeners();
   }
 
   void changeNameTeams4(String value) async {
-    var box = await Hive.openBox('Team');
     if (value.length >= 2) {
       _nameTeam4 = value;
-      box.put('team4', _nameTeam2.toString());
     }
     notifyListeners();
   }
@@ -487,8 +483,8 @@ class TeamProvider extends ChangeNotifier {
     notifyListeners();
   }
 
-  String _nameTeam1 = "تیم اول";
-  String _nameTeam2 = "تیم دوم ";
+  String _nameTeam1 = "";
+  String _nameTeam2 = "";
   String _nameTeam3 = "تیم سوم";
   String _nameTeam4 = "تیم چهارم";
 
@@ -507,10 +503,11 @@ class TeamProvider extends ChangeNotifier {
 
   saveData() async {
     final box = await Hive.openBox("Team");
-    box.put('team1', _nameTeam1);
-    box.put('team2', _nameTeam2);
-    box.put('team3', _nameTeam3);
-    box.put('team4', _nameTeam4);
+    //await box.put('team1', _nameTeam1);
+    await box.put('team2', _nameTeam2);
+    await box.put('team3', _nameTeam3);
+    await box.put('team4', _nameTeam4);
+
     box.put('numberofRoundsTitle', _numberOfRoundsOfGameTitle);
     box.put('gameTime', _gametime);
     box.put('teamShowIcon', _numberOfTeamShowIconPlay);
@@ -523,7 +520,7 @@ class TeamProvider extends ChangeNotifier {
   void deleteAllDDataHive() async {
     var box = await Hive.openBox("Team");
     box.clear();
-    box.close();
+
     notifyListeners();
   }
 
@@ -540,13 +537,15 @@ class TeamProvider extends ChangeNotifier {
     _nameTeam3 = boxTeam.get('team3') ?? "";
     _nameTeam4 = boxTeam.get('team4') ?? "";
 
-    _numberOfTeamShowIconPlay++;
-
     _numberOfRoundsOfGameTitle = boxTeam.get("numberofRoundsTitle") ?? 3;
-    _numberOfTeamShowIconPlay = boxTeam.get("teamShowIcon") - 1;
+    _numberOfTeamShowIconPlay = boxTeam.get("teamShowIcon");
     _numberOfTeams = boxTeam.get("numberOfTheams") ?? 2;
     _gametime = boxTeam.get('gameTime') ?? -1;
     _numberofRoundsOfGame = boxTeam.get('numberOfRoundsGame') ?? 3;
+
+    _numberOfTeamShowIconPlay++;
+
+    // print(boxTeam.get('team1'));
 
     setvisibilityIcon();
 

@@ -455,7 +455,6 @@ class _TimerScreansState extends State<TimerScreans> {
                             onTap: () {
                               if (isRounning) {
                                 stopTimper();
-
                                 setState(() {
                                   wrong = false;
                                 });
@@ -463,7 +462,7 @@ class _TimerScreansState extends State<TimerScreans> {
                                 if (wrong == false) {
                                   teamProvider.setScoreForAllTeam(
                                       modelProvider.gameTheme, 1);
-                                  teamProvider.saveData();
+                                  //    teamProvider.saveData();
                                   teamProvider.checkwinorlosegamebtn(true);
                                 }
                               } else {

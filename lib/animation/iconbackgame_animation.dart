@@ -33,6 +33,12 @@ class _IconBackGameAnimationState extends State<IconBackGameAnimation>
   }
 
   @override
+  void dispose() {
+    controller.stop();
+    super.dispose();
+  }
+
+  @override
   Widget build(BuildContext context) {
     final teamsProvider = Provider.of<TeamProvider>(context);
     return InkWell(
